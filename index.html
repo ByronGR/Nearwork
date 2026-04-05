@@ -51,8 +51,8 @@ nav {
 .nav-cta:hover { background: #333; transform: translateY(-1px); }
 
 /* MEGA MENU — Vercel-style */
-.mega { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-4px); background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); display: grid; gap: 20px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 600; }
-.mega.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: all; }
+.mega { position: absolute; top: calc(100% + 8px); left: 0; transform: translateY(-4px); background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); display: grid; gap: 20px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 600; }
+.mega.show { opacity: 1; transform: translateY(0); pointer-events: all; }
 .mega.cols3 { grid-template-columns: 1fr 1fr 1fr; width: 640px; }
 .mega.cols2 { grid-template-columns: 1fr 1fr; width: 440px; }
 .mega-col-title { font-size: 10px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; padding: 0 8px; }
