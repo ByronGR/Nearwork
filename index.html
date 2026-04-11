@@ -548,13 +548,127 @@ h2 { font-size: clamp(30px, 3.8vw, 48px); font-weight: 800; color: var(--black);
 @keyframes drawerIn { from { right: -60%; } to { right: 0%; } }
 @keyframes glowPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(108,60,225,0.3); } 50% { box-shadow: 0 0 0 8px rgba(108,60,225,0); } }
 .db-card:hover { animation: glowPulse 0.6s ease; }
+
+
+/* ── MOBILE ── */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; border: none; background: none; margin-left: auto; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; transition: all 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: #fff; z-index: 499; overflow-y: auto; padding: 16px; border-top: 1px solid rgba(0,0,0,0.07); }
+.mobile-menu.open { display: block; }
+.mob-section { border-bottom: 1px solid #f0f0f0; padding: 8px 0; }
+.mob-section-title { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.1em; padding: 8px 12px 4px; font-family: Poppins,sans-serif; }
+.mob-link { display: block; font-size: 14px; font-weight: 500; color: #333; padding: 10px 12px; border-radius: 8px; text-decoration: none; transition: background 0.15s; font-family: Poppins,sans-serif; }
+.mob-link:hover { background: #f5f5f5; color: #0D0D0D; }
+.mob-link.highlight { color: #6C3CE1; font-weight: 600; }
+.mob-ctas { padding: 16px 0; display: flex; flex-direction: column; gap: 8px; }
+.mob-cta-candidate { display: block; text-align: center; padding: 13px; border-radius: 8px; border: 1.5px solid #D1D5DB; font-size: 14px; font-weight: 600; color: #0D0D0D; text-decoration: none; font-family: Poppins,sans-serif; }
+.mob-cta-start { display: block; text-align: center; padding: 13px; border-radius: 8px; background: #0D0D0D; font-size: 14px; font-weight: 600; color: #fff; text-decoration: none; font-family: Poppins,sans-serif; }
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-items, .nav-right { display: none; }
+  .hamburger { display: flex; }
+  .hero { padding: 56px 20px 0; }
+  h1 { font-size: clamp(32px, 8vw, 52px); letter-spacing: -1.5px; }
+  .hero-sub { font-size: 15px; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-ghost { width: 100%; max-width: 320px; }
+  .stats-band { padding: 24px 16px; flex-wrap: wrap; }
+  .stat { min-width: 45%; border-right: none; border-bottom: 1px solid rgba(108,60,225,0.18); padding: 16px 8px; }
+  .stat:nth-child(odd) { border-right: 1px solid rgba(108,60,225,0.18); }
+  .stat:last-child { border-bottom: none; }
+  .value-strip { padding: 32px 20px; }
+  .value-props { flex-direction: column; }
+  .value-prop { max-width: 100%; }
+  .tz-band { padding: 56px 20px; }
+  .tz-top-row { grid-template-columns: 1fr; gap: 32px; }
+  .tz-cities { grid-template-columns: 1fr 1fr; }
+  .carousel-slide { padding: 28px 20px; grid-template-columns: 1fr; gap: 24px; }
+  .pipeline-section { padding: 64px 20px; }
+  .pipe-steps-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pipe-steps-row-bottom { grid-template-columns: 1fr; max-width: 100%; }
+  .trust-section { padding: 56px 20px; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .dashboard-section { padding: 56px 20px; }
+  .cta-strip { padding: 40px 20px; flex-direction: column; text-align: center; }
+  .footer-cta-band { padding: 56px 20px; }
+  .footer-cta-title { font-size: clamp(26px, 6vw, 40px); }
+  .footer-cta-buttons { flex-direction: column; align-items: center; }
+  .footer-btn-primary, .footer-btn-ghost { width: 100%; max-width: 300px; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 32px; padding: 40px 20px; }
+  .footer-brand-col { grid-column: 1 / -1; }
+  .footer-bottom { padding: 20px; flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .pipe-steps-row { grid-template-columns: 1fr; }
+  .footer-main { grid-template-columns: 1fr; }
+  .stats-band { flex-direction: column; }
+  .stat { border-right: none !important; border-bottom: 1px solid rgba(108,60,225,0.18); }
+  .stat:last-child { border-bottom: none; }
+  .tz-cities { grid-template-columns: 1fr; }
+}
+
+/* ── FOOTER ── */
+footer{background:#0D0D0D;padding:64px 56px 0;}
+.ft-top{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;padding-bottom:48px;border-bottom:1px solid #1f1f1f;}
+.ft-logo{font-size:26px;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:10px;white-space:nowrap;}
+.ft-logo span{color:#8B5CF6;}
+.ft-tagline{font-size:13px;color:#555;line-height:1.65;max-width:300px;font-weight:300;margin-bottom:20px;}
+.ft-social{display:flex;gap:9px;margin-bottom:20px;}
+.sb{width:36px;height:36px;border-radius:9px;background:#1a1a1a;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s;text-decoration:none;}
+.sb:hover{background:#6C3CE1;border-color:#6C3CE1;}
+.sb svg{width:16px;height:16px;fill:#777;transition:fill .2s;}
+.sb:hover svg{fill:#fff;}
+.ft-reviews{display:flex;gap:10px;flex-wrap:wrap;}
+.review-badge{display:flex;align-items:center;gap:8px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:8px 14px;cursor:pointer;}
+.rb-logo{font-size:12px;font-weight:800;}
+.rb-logo.tp{color:#00B67A;}
+.rb-logo.g2{color:#FF492C;}
+.rb-stars{display:flex;gap:1px;}
+.rb-star{width:11px;height:11px;background:#00B67A;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.rb-star.g2c{background:#FF492C;}
+.rb-text{font-size:10px;color:#555;font-weight:500;}
+.ft-newsletter{display:flex;flex-direction:column;}
+.ft-nl-label{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
+.ft-nl-sub{font-size:12px;color:#555;margin-bottom:16px;line-height:1.6;}
+.ft-nl-row{display:flex;gap:8px;width:100%;}
+.ft-nl-input{flex:1;min-width:0;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:9px;padding:11px 16px;font-size:13px;color:#fff;font-family:'Poppins',sans-serif;outline:none;transition:border-color .2s;}
+.ft-nl-input::placeholder{color:#444;}
+.ft-nl-input:focus{border-color:#6C3CE1;}
+.ft-nl-btn{background:#6C3CE1;color:#fff;font-size:12px;font-weight:600;padding:11px 22px;border-radius:9px;border:none;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;flex-shrink:0;}
+.ft-nl-btn:hover{background:#4F28B8;}
+.ft-nl-note{font-size:10px;color:#333;margin-top:8px;}
+.ft-links{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:40px 0 48px;border-bottom:1px solid #1f1f1f;}
+.ft-col-title{font-size:10px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px;}
+.ftl{display:block;font-size:12px;color:#555;text-decoration:none;margin-bottom:9px;transition:color .2s;cursor:pointer;}
+.ftl:hover{color:#fff;}
+.ftl:last-child{margin-bottom:0;}
+.flb{display:inline-block;font-size:9px;font-weight:700;padding:1px 6px;border-radius:99px;margin-left:5px;vertical-align:middle;}
+.flb.open{background:rgba(16,185,129,0.18);color:#10B981;}
+.flb.new{background:rgba(108,60,225,0.2);color:#8B5CF6;}
+.flb.hiring{background:rgba(251,146,60,0.18);color:#FB923C;}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;padding:18px 0;flex-wrap:wrap;gap:10px;}
+.ft-copy{font-size:11px;color:#2a2a2a;}
+.ft-flag{font-size:11px;color:#2a2a2a;}
+.ft-legal{display:flex;gap:18px;}
+.ft-legal a{font-size:11px;color:#2a2a2a;text-decoration:none;transition:color .2s;}
+.ft-legal a:hover{color:#fff;}
+@media(max-width:768px){
+  footer{padding:48px 20px 0;}
+  .ft-top{grid-template-columns:1fr;gap:36px;}
+  .ft-links{grid-template-columns:1fr 1fr;gap:24px;padding:32px 0 36px;}
+  .ft-bottom{flex-direction:column;align-items:flex-start;gap:8px;}
+  .ft-nl-row{flex-direction:column;}
+  .ft-nl-btn{width:100%;}
+}
+@media(max-width:480px){.ft-links{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">Near<span>work</span></a>
+  <a href="/" class="nav-logo">Near<span>work</span></a>
 
   <div class="nav-items">
 
@@ -566,22 +680,22 @@ h2 { font-size: clamp(30px, 3.8vw, 48px); font-weight: 800; color: var(--black);
       <div class="mega cols3" id="menu-why">
         <div>
           <div class="mega-col-title">Why it works</div>
-          <a class="mega-item" href="why-colombia.html"><div class="mi-icon">🇨🇴</div><div><div class="mi-t">Overview</div><div class="mi-d">Why Colombia is the #1 choice</div></div></a>
-          <a class="mega-item" href="why-colombia-nearshore.html"><div class="mi-icon">🏆</div><div><div class="mi-t">#1 Nearshore destination</div><div class="mi-d">The data and rankings deep dive</div></div></a>
-          <a class="mega-item" href="why-colombia-timezone.html"><div class="mi-icon">🕐</div><div><div class="mi-t">Timezone overlap</div><div class="mi-d">Full breakdown vs Asia & Europe</div></div></a>
-          <a class="mega-item" href="why-colombia-english.html"><div class="mi-icon">🗣️</div><div><div class="mi-t">C1 English standard</div><div class="mi-d">How we assess, what it means</div></div></a>
+          <a class="mega-item" href="why-colombia"><div class="mi-icon">🇨🇴</div><div><div class="mi-t">Overview</div><div class="mi-d">Why Colombia is the #1 choice</div></div></a>
+          <a class="mega-item" href="why-colombia-nearshore"><div class="mi-icon">🏆</div><div><div class="mi-t">#1 Nearshore destination</div><div class="mi-d">The data and rankings deep dive</div></div></a>
+          <a class="mega-item" href="why-colombia-timezone"><div class="mi-icon">🕐</div><div><div class="mi-t">Timezone overlap</div><div class="mi-d">Full breakdown vs Asia & Europe</div></div></a>
+          <a class="mega-item" href="why-colombia-english"><div class="mi-icon">🗣️</div><div><div class="mi-t">C1 English standard</div><div class="mi-d">How we assess, what it means</div></div></a>
         </div>
         <div>
           <div class="mega-col-title">The advantage</div>
-          <a class="mega-item" href="why-colombia-savings.html"><div class="mi-icon">💸</div><div><div class="mi-t">Cost savings</div><div class="mi-d">Role-by-role salary comparison</div></div></a>
-          <a class="mega-item" href="why-colombia-universities.html"><div class="mi-icon">🎓</div><div><div class="mi-t">University talent</div><div class="mi-d">Academic depth behind the pool</div></div></a>
-          <a class="mega-item" href="why-colombia-why-now.html"><div class="mi-icon">🚀</div><div><div class="mi-t">Why now</div><div class="mi-d">Market timing & 2026 trends</div></div></a>
-          <a class="mega-item" href="why-colombia-vs-others.html"><div class="mi-icon">⚡</div><div><div class="mi-t">Nearwork vs others</div><div class="mi-d">vs LinkedIn, agencies & more</div></div></a>
+          <a class="mega-item" href="why-colombia-savings"><div class="mi-icon">💸</div><div><div class="mi-t">Cost savings</div><div class="mi-d">Role-by-role salary comparison</div></div></a>
+          <a class="mega-item" href="why-colombia-universities"><div class="mi-icon">🎓</div><div><div class="mi-t">University talent</div><div class="mi-d">Academic depth behind the pool</div></div></a>
+          <a class="mega-item" href="why-colombia-why-now"><div class="mi-icon">🚀</div><div><div class="mi-t">Why now</div><div class="mi-d">Market timing & 2026 trends</div></div></a>
+          <a class="mega-item" href="why-colombia-vs-others"><div class="mi-icon">⚡</div><div><div class="mi-t">Nearwork vs others</div><div class="mi-d">vs LinkedIn, agencies & more</div></div></a>
         </div>
         <div>
           <div class="mega-col-title">Cities</div>
-          <a class="mega-item" href="why-colombia-medellin.html"><div class="mi-icon">🏙️</div><div><div class="mi-t">Medellín</div><div class="mi-d">Silicon Valley of Latin America</div></div></a>
-          <a class="mega-item" href="why-colombia-bogota.html"><div class="mi-icon">🌆</div><div><div class="mi-t">Bogotá</div><div class="mi-d">Largest talent pool in Colombia</div></div></a>
+          <a class="mega-item" href="why-colombia-medellin"><div class="mi-icon">🏙️</div><div><div class="mi-t">Medellín</div><div class="mi-d">Silicon Valley of Latin America</div></div></a>
+          <a class="mega-item" href="why-colombia-bogota"><div class="mi-icon">🌆</div><div><div class="mi-t">Bogotá</div><div class="mi-d">Largest talent pool in Colombia</div></div></a>
         </div>
       </div>
     </div>
@@ -594,22 +708,22 @@ h2 { font-size: clamp(30px, 3.8vw, 48px); font-weight: 800; color: var(--black);
       <div class="mega cols2" id="menu-how">
         <div>
           <div class="mega-col-title">The process</div>
-          <a class="mega-item" href="how-it-works.html"><div class="mi-icon">📋</div><div><div class="mi-t">Overview</div><div class="mi-d">How Nearwork works end-to-end</div></div></a>
-          <a class="mega-item" href="how-it-works-pipeline.html"><div class="mi-icon">🔬</div><div><div class="mi-t">Our 7-stage pipeline</div><div class="mi-d">Each stage explained in depth</div></div></a>
-          <a class="mega-item" href="how-it-works-vetting.html"><div class="mi-icon">✅</div><div><div class="mi-t">Screening & vetting</div><div class="mi-d">Tech test, English, background check</div></div></a>
+          <a class="mega-item" href="how-it-works"><div class="mi-icon">📋</div><div><div class="mi-t">Overview</div><div class="mi-d">How Nearwork works end-to-end</div></div></a>
+          <a class="mega-item" href="how-it-works-pipeline"><div class="mi-icon">🔬</div><div><div class="mi-t">Our 7-stage pipeline</div><div class="mi-d">Each stage explained in depth</div></div></a>
+          <a class="mega-item" href="how-it-works-vetting"><div class="mi-icon">✅</div><div><div class="mi-t">Screening & vetting</div><div class="mi-d">Tech test, English, background check</div></div></a>
         </div>
         <div>
           <div class="mega-col-title">After you hire</div>
-          <a class="mega-item" href="how-it-works-dashboard.html"><div class="mi-icon">👀</div><div><div class="mi-t">Your dashboard</div><div class="mi-d">What clients see, how it works</div></div></a>
-          <a class="mega-item" href="how-it-works-guarantee.html"><div class="mi-icon">🛡️</div><div><div class="mi-t">6-month guarantee</div><div class="mi-d">Full terms, what's covered</div></div></a>
-          <a class="mega-item" href="how-it-works-after-hire.html"><div class="mi-icon">🤝</div><div><div class="mi-t">After you hire</div><div class="mi-d">Follow-ups & post-placement</div></div></a>
+          <a class="mega-item" href="how-it-works-dashboard"><div class="mi-icon">👀</div><div><div class="mi-t">Your dashboard</div><div class="mi-d">What clients see, how it works</div></div></a>
+          <a class="mega-item" href="how-it-works-guarantee"><div class="mi-icon">🛡️</div><div><div class="mi-t">6-month guarantee</div><div class="mi-d">Full terms, what's covered</div></div></a>
+          <a class="mega-item" href="how-it-works-after-hire"><div class="mi-icon">🤝</div><div><div class="mi-t">After you hire</div><div class="mi-d">Follow-ups & post-placement</div></div></a>
         </div>
       </div>
     </div>
 
     <!-- PRICING -->
     <div class="nav-item">
-      <a href="pricing.html" class="nav-btn">Pricing</a>
+      <a href="pricing" class="nav-btn">Pricing</a>
     </div>
 
     <!-- FOR CANDIDATES -->
@@ -620,17 +734,17 @@ h2 { font-size: clamp(30px, 3.8vw, 48px); font-weight: 800; color: var(--black);
       <div class="mega cols2" id="menu-candidates">
         <div>
           <div class="mega-col-title">Get hired</div>
-          <a class="mega-item" href="candidates-apply.html"><div class="mi-icon">🇨🇴</div><div><div class="mi-t">Apply now</div><div class="mi-d">Join our bench before roles open</div></div></a>
-          <a class="mega-item" href="candidates-process.html"><div class="mi-icon">🔍</div><div><div class="mi-t">What to expect</div><div class="mi-d">The process from your POV</div></div></a>
-          <a class="mega-item" href="candidates-english.html"><div class="mi-icon">🗣️</div><div><div class="mi-t">English requirements</div><div class="mi-d">What C1 means & how to prepare</div></div></a>
-          <a class="mega-item" href="candidates-faq.html"><div class="mi-icon">❓</div><div><div class="mi-t">Candidate FAQ</div><div class="mi-d">Questions before & after applying</div></div></a>
+          <a class="mega-item" href="candidates-apply"><div class="mi-icon">🇨🇴</div><div><div class="mi-t">Apply now</div><div class="mi-d">Join our bench before roles open</div></div></a>
+          <a class="mega-item" href="candidates-process"><div class="mi-icon">🔍</div><div><div class="mi-t">What to expect</div><div class="mi-d">The process from your POV</div></div></a>
+          <a class="mega-item" href="candidates-english"><div class="mi-icon">🗣️</div><div><div class="mi-t">English requirements</div><div class="mi-d">What C1 means & how to prepare</div></div></a>
+          <a class="mega-item" href="candidates-faq"><div class="mi-icon">❓</div><div><div class="mi-t">Candidate FAQ</div><div class="mi-d">Questions before & after applying</div></div></a>
         </div>
         <div>
           <div class="mega-col-title">Open roles</div>
-          <a class="mega-item" href="candidates-roles.html"><div class="mi-icon">🤝</div><div><div class="mi-t">Customer Success Manager</div><div class="mi-d">Most hired · Bilingual · Remote</div></div></a>
-          <a class="mega-item" href="candidates-roles.html"><div class="mi-icon">📞</div><div><div class="mi-t">Sales Development Rep</div><div class="mi-d">Outbound · SaaS · High demand</div></div></a>
-          <a class="mega-item" href="candidates-roles.html"><div class="mi-icon">🛠️</div><div><div class="mi-t">Technical Support</div><div class="mi-d">Tier 1 & 2 · Fast growing</div></div></a>
-          <a class="mega-item" href="candidates-roles.html"><div class="mi-icon">📣</div><div><div class="mi-t">View all roles →</div><div class="mi-d">Full list with salary ranges</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">🤝</div><div><div class="mi-t">Customer Success Manager</div><div class="mi-d">Most hired · Bilingual · Remote</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">📞</div><div><div class="mi-t">Sales Development Rep</div><div class="mi-d">Outbound · SaaS · High demand</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">🛠️</div><div><div class="mi-t">Technical Support</div><div class="mi-d">Tier 1 & 2 · Fast growing</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">📣</div><div><div class="mi-t">View all roles →</div><div class="mi-d">Full list with salary ranges</div></div></a>
         </div>
       </div>
     </div>
@@ -643,15 +757,15 @@ h2 { font-size: clamp(30px, 3.8vw, 48px); font-weight: 800; color: var(--black);
       <div class="mega cols2" id="menu-resources" style="left:auto;right:0;">
         <div>
           <div class="mega-col-title">Learn</div>
-          <a class="mega-item" href="resources-blog.html"><div class="mi-icon">✍️</div><div><div class="mi-t">Blog</div><div class="mi-d">Articles & hiring insights</div></div></a>
-          <a class="mega-item" href="resources-hiring-guides.html"><div class="mi-icon">📖</div><div><div class="mi-t">Hiring guides</div><div class="mi-d">Downloadable & web guides</div></div></a>
-          <a class="mega-item" href="resources-colombia-report.html"><div class="mi-icon">📊</div><div><div class="mi-t">Colombia market report</div><div class="mi-d">Flagship research piece</div></div></a>
+          <a class="mega-item" href="resources-blog"><div class="mi-icon">✍️</div><div><div class="mi-t">Blog</div><div class="mi-d">Articles & hiring insights</div></div></a>
+          <a class="mega-item" href="resources-hiring-guides"><div class="mi-icon">📖</div><div><div class="mi-t">Hiring guides</div><div class="mi-d">Downloadable & web guides</div></div></a>
+          <a class="mega-item" href="resources-colombia-report"><div class="mi-icon">📊</div><div><div class="mi-t">Colombia market report</div><div class="mi-d">Flagship research piece</div></div></a>
         </div>
         <div>
           <div class="mega-col-title">Data & support</div>
-          <a class="mega-item" href="resources-salary-guide.html"><div class="mi-icon">💰</div><div><div class="mi-t">SaaS salary guide</div><div class="mi-d">Colombia vs US by role</div></div></a>
-          <a class="mega-item" href="resources-case-studies.html"><div class="mi-icon">🏆</div><div><div class="mi-t">Case studies</div><div class="mi-d">Client success stories</div></div></a>
-          <a class="mega-item" href="resources-help-center.html"><div class="mi-icon">🆘</div><div><div class="mi-t">Help center</div><div class="mi-d">FAQ for clients & candidates</div></div></a>
+          <a class="mega-item" href="resources-salary-guide"><div class="mi-icon">💰</div><div><div class="mi-t">SaaS salary guide</div><div class="mi-d">Colombia vs US by role</div></div></a>
+          <a class="mega-item" href="resources-case-studies"><div class="mi-icon">🏆</div><div><div class="mi-t">Case studies</div><div class="mi-d">Client success stories</div></div></a>
+          <a class="mega-item" href="resources-help-center"><div class="mi-icon">🆘</div><div><div class="mi-t">Help center</div><div class="mi-d">FAQ for clients & candidates</div></div></a>
         </div>
       </div>
     </div>
@@ -662,22 +776,33 @@ h2 { font-size: clamp(30px, 3.8vw, 48px); font-weight: 800; color: var(--black);
         About us <span class="nchev">▾</span>
       </button>
       <div class="simple-menu" id="menu-about">
-        <a class="sm-item" href="about.html">About Nearwork</a>
-        <a class="sm-item" href="about-story.html">Our story</a>
-        <a class="sm-item" href="about-team.html">Team</a>
-        <a class="sm-item" href="about-careers.html">Careers at Nearwork</a>
-        <a class="sm-item" href="about-press.html">Press</a>
-        <a class="sm-item" href="contact.html">Contact us</a>
+        <a class="sm-item" href="about">About Nearwork</a>
+        <a class="sm-item" href="about-story">Our story</a>
+        <a class="sm-item" href="about-team">Team</a>
+        <a class="sm-item" href="about-careers">Careers at Nearwork</a>
+        <a class="sm-item" href="about-press">Press</a>
+        <a class="sm-item" href="contact">Contact us</a>
       </div>
     </div>
 
   </div>
 
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-right">
-    <a href="candidates-apply.html" class="nav-login">I'm a candidate</a>
-    <a href="contact.html" class="nav-cta">Get started →</a>
+    <a href="candidates-apply" class="nav-login">I'm a candidate</a>
+    <a href="contact" class="nav-cta">Get started →</a>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mob-section"><div class="mob-section-title">Why Colombia</div><a class="mob-link" href="why-colombia">Overview</a><a class="mob-link" href="why-colombia-nearshore">#1 Nearshore destination</a><a class="mob-link" href="why-colombia-timezone">Timezone overlap</a><a class="mob-link" href="why-colombia-savings">Cost savings</a><a class="mob-link" href="why-colombia-english">C1 English standard</a><a class="mob-link" href="why-colombia-medellin">Medellín</a><a class="mob-link" href="why-colombia-bogota">Bogotá</a><a class="mob-link" href="why-colombia-vs-others">Nearwork vs others</a></div>
+  <div class="mob-section"><div class="mob-section-title">How it works</div><a class="mob-link" href="how-it-works">Overview</a><a class="mob-link" href="how-it-works-pipeline">Our 7-stage pipeline</a><a class="mob-link" href="how-it-works-dashboard">Your dashboard</a><a class="mob-link" href="how-it-works-guarantee">6-month guarantee</a><a class="mob-link" href="how-it-works-after-hire">After you hire</a></div>
+  <div class="mob-section"><div class="mob-section-title">For Candidates</div><a class="mob-link highlight" href="candidates-apply">Apply now</a><a class="mob-link" href="candidates-roles">Open roles</a><a class="mob-link" href="candidates-process">What to expect</a><a class="mob-link" href="candidates-faq">Candidate FAQ</a></div>
+  <div class="mob-section"><div class="mob-section-title">Resources</div><a class="mob-link" href="resources-blog">Blog</a><a class="mob-link" href="resources-salary-guide">SaaS salary guide</a><a class="mob-link" href="resources-help-center">Help center</a></div>
+  <div class="mob-section"><div class="mob-section-title">Company</div><a class="mob-link" href="pricing">Pricing</a><a class="mob-link" href="about">About us</a><a class="mob-link" href="contact">Contact us</a></div>
+  <div class="mob-ctas"><a class="mob-cta-candidate" href="candidates-apply">I am a candidate</a><a class="mob-cta-start" href="contact">Get started →</a></div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1305,121 +1430,72 @@ h2 { font-size: clamp(30px, 3.8vw, 48px); font-weight: 800; color: var(--black);
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-glow"></div>
-
-  <!-- CTA Band -->
-  <div class="footer-cta-band">
-    <div class="footer-cta-eyebrow">🚀 Ready to hire smarter?</div>
-    <h2 class="footer-cta-title">Your next great hire<br>is already in <span>Colombia.</span></h2>
-    <p class="footer-cta-sub">Stop burning budget on overpriced US talent. Get your first shortlist in 21 days — or we work for free.</p>
-    <div class="footer-cta-buttons">
-      <button class="footer-btn-primary">Start hiring today →</button>
-      <button class="footer-btn-ghost">Calculate my savings</button>
-    </div>
-    <div class="footer-trust-pills">
-      <div class="footer-trust-pill"><span>🛡️</span> 6-month replacement guarantee</div>
-      <div class="footer-trust-pill"><span>💸</span> Flat fee, no hidden costs</div>
-      <div class="footer-trust-pill"><span>📊</span> Full candidate transparency</div>
-      <div class="footer-trust-pill"><span>⚡</span> First shortlist in 21 days</div>
-    </div>
-  </div>
-
-  <!-- Main Footer Grid — 5 columns -->
-  <div class="footer-main">
-    <!-- Brand col -->
-    <div class="footer-brand-col">
-      <div class="footer-brand-logo">Near<span>work</span></div>
-      <p class="footer-brand-desc">Connecting US SaaS companies with elite, English-speaking Colombian talent. Radically transparent. Built for operators who value results.</p>
-      <div class="footer-social-row">
-        <a href="https://linkedin.com/company/nearwork" class="footer-social-btn" title="LinkedIn" target="_blank">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="#" class="footer-social-btn" title="Twitter/X">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-        </a>
-        <a href="#" class="footer-social-btn" title="Email">✉️</a>
-        <a href="#" class="footer-social-btn" title="Trustpilot">
-          <!-- Trustpilot star logo -->
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="24" height="24" rx="4" fill="#00B67A"/>
-            <path d="M12 4l2.09 6.26H20l-5.18 3.76 1.98 6.12L12 16.27l-4.8 3.87 1.98-6.12L4 10.26h5.91L12 4z" fill="white"/>
-          </svg>
-        </a>
-        <a href="#" class="footer-social-btn" title="G2">
-          <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <rect width="24" height="24" rx="4" fill="#FF492C"/>
-            <!-- G2 logo: C-arc shape with superscript 2 -->
-            <!-- Main C arc -->
-            <path d="M17 8.5 A6 6 0 1 0 17 15.5 L14.5 15.5 A3.5 3.5 0 1 1 14.5 8.5 Z" fill="white"/>
-            <!-- Superscript 2 -->
-            <text x="15.5" y="9.5" font-family="Arial, sans-serif" font-weight="900" font-size="5.5" fill="white" text-anchor="middle">2</text>
-          </svg>
-        </a>
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo">Near<span>work</span></div>
+      <div class="ft-tagline">Connecting US SaaS companies with elite, English-speaking Colombian professionals. Vetted. Transparent. Guaranteed.</div>
+      <div class="ft-social">
+        <a href="#" class="sb" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="sb" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="#" class="sb" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="sb" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+      <div class="ft-reviews">
+        <div class="review-badge"><div class="rb-logo tp">Trustpilot</div><div class="rb-stars"><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div></div><div class="rb-text">5.0 · 48 reviews</div></div>
+        <div class="review-badge"><div class="rb-logo g2">G2</div><div class="rb-stars"><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div></div><div class="rb-text">4.9 · 31 reviews</div></div>
       </div>
     </div>
-
-    <!-- For Companies -->
-    <div>
-      <div class="footer-col-title">For Companies</div>
-      <ul class="footer-col-links">
-        <li><a href="#why-colombia">Why Colombia</a></li>
-        <li><a href="#pipeline">Our 7-stage pipeline</a></li>
-        <li><a href="#dashboard">Client dashboard</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Get started <span class="new-badge">Free</span></a></li>
-      </ul>
-    </div>
-
-    <!-- For Talent -->
-    <div>
-      <div class="footer-col-title">For Talent</div>
-      <ul class="footer-col-links">
-        <li><a href="#apply">Apply to our bench</a></li>
-        <li><a href="#apply">Open roles</a></li>
-        <li><a href="#apply">Earn in USD</a></li>
-        <li><a href="#apply">What we look for</a></li>
-        <li><a href="#apply">Candidate FAQ</a></li>
-      </ul>
-    </div>
-
-    <!-- Company -->
-    <div>
-      <div class="footer-col-title">Company</div>
-      <ul class="footer-col-links">
-        <li><a href="#">Our story</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Press</a></li>
-        <li><a href="#">Blog <span class="new-badge">New</span></a></li>
-        <li><a href="#contact">Contact us</a></li>
-      </ul>
-    </div>
-
-    <!-- Resources -->
-    <div>
-      <div class="footer-col-title">Resources</div>
-      <ul class="footer-col-links">
-        <li><a href="#">Savings calculator</a></li>
-        <li><a href="#">LatAm hiring guide</a></li>
-        <li><a href="#">Colombia talent report</a></li>
-        <li><a href="#">SaaS role benchmarks</a></li>
-        <li><a href="#">Onboarding checklist</a></li>
-      </ul>
+    <div class="ft-newsletter">
+      <div class="ft-nl-label">Stay in the loop</div>
+      <div class="ft-nl-sub">Hiring insights, Colombia market updates, and Nearwork news — delivered monthly. No spam, ever.</div>
+      <div class="ft-nl-row"><input class="ft-nl-input" type="email" placeholder="your@company.com"/><button class="ft-nl-btn">Subscribe →</button></div>
+      <div class="ft-nl-note">No spam. Unsubscribe anytime.</div>
     </div>
   </div>
-
-  <!-- Footer Bottom -->
-  <div class="footer-bottom">
-    <div class="footer-bottom-left">
-      <span class="footer-copy">© 2026 Nearwork. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Policy</a>
-      </div>
+  <div class="ft-links">
+    <div>
+      <div class="ft-col-title">Company</div>
+      <a class="ftl" href="about">About us</a>
+      <a class="ftl" href="about-story">Our story</a>
+      <a class="ftl" href="about-team">Team</a>
+      <a class="ftl" href="about-careers">Careers <span class="flb hiring">Hiring</span></a>
+      <a class="ftl" href="about-press">Press</a>
+      <a class="ftl" href="contact">Contact us</a>
     </div>
-    <div class="footer-bottom-right">
-      <div class="footer-flag-badge">🇨🇴 Proudly serving Colombian talent</div>
-      <div class="footer-flag-badge">🇺🇸 Built for US SaaS</div>
+    <div>
+      <div class="ft-col-title">For Companies</div>
+      <a class="ftl" href="why-colombia">Why Colombia</a>
+      <a class="ftl" href="how-it-works">How it works</a>
+      <a class="ftl" href="pricing">Pricing</a>
+      <a class="ftl" href="how-it-works-dashboard">Your dashboard</a>
+      <a class="ftl" href="how-it-works-savings">ROI calculator</a>
+      <a class="ftl" href="contact">Schedule a call</a>
+    </div>
+    <div>
+      <div class="ft-col-title">For Candidates</div>
+      <a class="ftl" href="candidates-apply">Apply now <span class="flb open">Open</span></a>
+      <a class="ftl" href="candidates-roles">Roles we place</a>
+      <a class="ftl" href="candidates-process">What to expect</a>
+      <a class="ftl" href="candidates-english">English requirements</a>
+      <a class="ftl" href="candidates-faq">Candidate FAQ</a>
+    </div>
+    <div>
+      <div class="ft-col-title">Resources</div>
+      <a class="ftl" href="resources-blog">Blog</a>
+      <a class="ftl" href="resources-hiring-guides">Hiring guides</a>
+      <a class="ftl" href="resources-colombia-report">Colombia market report <span class="flb new">New</span></a>
+      <a class="ftl" href="resources-salary-guide">SaaS salary guide</a>
+      <a class="ftl" href="resources-case-studies">Case studies</a>
+      <a class="ftl" href="resources-help-center">Help center</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 Nearwork Inc. All rights reserved.</div>
+    <div class="ft-flag">🇨🇴 Built for Colombia. Designed for the world.</div>
+    <div class="ft-legal">
+      <a href="privacy-policy">Privacy policy</a>
+      <a href="terms-of-service">Terms of service</a>
+      <a href="cookie-policy">Cookie policy</a>
     </div>
   </div>
 </footer>
@@ -1764,6 +1840,12 @@ const statObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 statNums.forEach(s => statObs.observe(s));
+
+// MOBILE MENU
+function toggleMobile() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("open");
+}
 
 // Ticker: subtle fade-in
 const ticker = document.querySelector('.ticker-section');
