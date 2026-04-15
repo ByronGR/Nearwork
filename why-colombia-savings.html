@@ -230,10 +230,8 @@ nav { padding: 0 20px; }
 .nav-login:hover { color: var(--black); background: rgba(0,0,0,0.04); }
 .nav-cta { background: var(--black); color: var(--white); font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 8px; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; transition: background 0.2s, transform 0.15s; }
 .nav-cta:hover { background: #333; transform: translateY(-1px); }
-.nav-items, .nav-right { display: none; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; border: none; background: none; margin-left: auto; }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; transition: all 0.3s; }
-.hamburger { display: flex; }
 .mega { position: absolute; top: calc(100% + 8px); left: 0; transform: translateY(-4px); background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); display: grid; gap: 20px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 600; }
 .mega.show { opacity: 1; transform: translateY(0); pointer-events: all; }
 .mega.cols3 { grid-template-columns: 1fr 1fr 1fr; width: 640px; }
@@ -305,6 +303,13 @@ footer{padding:48px 20px 0;}
 .sb:hover{background:#6C3CE1;border-color:#6C3CE1;}
 .sb svg{width:16px;height:16px;fill:#777;transition:fill .2s;}
 .sb:hover svg{fill:#fff;}
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-items, .nav-right { display: none; }
+  .hamburger { display: flex; }
+}
+
 </style>
 </head>
 <body>
