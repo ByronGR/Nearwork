@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bogotá Talent Pool | Hire in Bogotá Colombia | Nearwork</title>
+<meta name="description" content="Bogotá is Colombia's largest talent market — a corporate powerhouse with the depth and scale to support ambitious hiring plans.">
+<meta name="keywords" content="Bogotá hiring, Colombia corporate talent, hire Bogotá professionals, nearshore Bogotá">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --purple:#6C3CE1;--pd:#4F28B8;--pl:#8B5CF6;--pp:#F0EBFF;
+  --black:#0D0D0D;--white:#fff;
+  --g1:#F9FAFB;--g2:#F3F4F6;--g3:#D1D5DB;--g4:#9CA3AF;--g5:#6B7280;--g6:#374151;
+  --green:#10B981;--gl:#6EE7B7;--red:#EF4444;--amber:#F59E0B;
+  --blue:#2563EB;--bl:#93C5FD;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;color:var(--black);background:var(--white);overflow-x:hidden;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:var(--black);position:relative;display:flex;align-items:center;padding:100px 5% 80px;overflow:hidden;}
+.hero-skyline{position:absolute;bottom:0;left:0;right:0;height:300px;pointer-events:none;z-index:0;}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 5% 60%,rgba(37,99,235,0.14),transparent 48%),
+  radial-gradient(ellipse at 90% 20%,rgba(108,60,225,0.12),transparent 45%),
+  radial-gradient(ellipse at 50% 100%,rgba(37,99,235,0.08),transparent 40%);
+pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);background-size:56px 56px;pointer-events:none;}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.3);border-radius:99px;padding:7px 16px;font-size:11px;font-weight:700;color:var(--bl);text-transform:uppercase;letter-spacing:.12em;margin-bottom:28px;opacity:0;animation:fadeUp .6s ease .1s forwards;}
+.hero-h1{font-size:clamp(36px,5vw,62px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2.5px;margin-bottom:20px;opacity:0;animation:fadeUp .6s ease .2s forwards;}
+.hero-h1 em{font-style:normal;color:var(--bl);}
+.hero-sub{font-size:17px;color:rgba(255,255,255,0.5);line-height:1.75;font-weight:300;max-width:480px;margin-bottom:36px;opacity:0;animation:fadeUp .6s ease .3s forwards;}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp .6s ease .4s forwards;}
+.btn-primary{background:var(--purple);color:#fff;font-size:14px;font-weight:700;padding:14px 30px;border-radius:9px;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 24px rgba(108,60,225,0.35);}
+.btn-primary:hover{background:var(--pd);transform:translateY(-2px);}
+.btn-ghost-light{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.75);font-size:14px;font-weight:600;padding:14px 24px;border-radius:9px;text-decoration:none;border:1px solid rgba(255,255,255,0.12);transition:all .2s;}
+.btn-ghost-light:hover{background:rgba(255,255,255,0.12);color:#fff;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slideIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+/* Hero stats */
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hs-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px;opacity:0;animation:slideIn .5s ease forwards;}
+.hs-card:nth-child(1){animation-delay:.3s;}
+.hs-card:nth-child(2){animation-delay:.45s;}
+.hs-card:nth-child(3){animation-delay:.6s;}
+.hs-card:nth-child(4){animation-delay:.75s;}
+.hs-card.accent{background:rgba(37,99,235,0.12);border-color:rgba(37,99,235,0.3);}
+.hs-num{font-size:34px;font-weight:900;color:#fff;letter-spacing:-2px;line-height:1;margin-bottom:5px;}
+.hs-num em{color:var(--bl);font-style:normal;}
+.hs-label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.45);line-height:1.4;}
+.hs-sub{font-size:10px;color:rgba(255,255,255,0.22);margin-top:3px;}
+.scroll-cue{position:absolute;bottom:36px;left:5%;display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,0.2);opacity:0;animation:fadeUp .6s ease .9s forwards;z-index:1;}
+.scroll-line{width:32px;height:1px;background:rgba(255,255,255,0.15);}
+
+/* ── SHARED ── */
+section{padding:96px 5%;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-eyebrow{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px;color:var(--purple);}
+.section-h2{font-size:clamp(28px,4vw,46px);font-weight:900;color:var(--black);line-height:1.08;letter-spacing:-2px;margin-bottom:14px;}
+.section-h2 em{font-style:normal;color:var(--purple);}
+.section-sub{font-size:16px;color:var(--g5);line-height:1.75;font-weight:300;max-width:540px;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
+.keyline{display:flex;align-items:center;gap:20px;background:var(--black);border-radius:14px;padding:28px 32px;margin-top:32px;}
+.kl-bar{width:4px;border-radius:99px;flex-shrink:0;}
+.kl-text{font-size:clamp(15px,2vw,22px);font-weight:800;color:#fff;letter-spacing:-.5px;line-height:1.35;}
+.kl-text em{font-style:normal;}
+
+/* ── CITY POSITIONING ── */
+.city-section{background:var(--g1);}
+.city-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.city-facts{display:flex;flex-direction:column;gap:10px;}
+.cf-item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:#fff;border-radius:11px;border:1.5px solid var(--g3);transition:border-color .2s;}
+.cf-item:hover{border-color:var(--purple);}
+.cf-icon{width:40px;height:40px;border-radius:10px;background:var(--pp);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.cf-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:3px;}
+.cf-desc{font-size:12px;color:var(--g5);line-height:1.55;}
+/* Corporate visual panel */
+.city-visual{background:linear-gradient(160deg,#0a0a1a,#0D0D0D);border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,0.06);}
+.cv-label{font-size:10px;font-weight:700;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:.14em;margin-bottom:18px;}
+.cv-districts{display:flex;flex-direction:column;gap:8px;}
+.cv-district{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:11px 14px;}
+.cvd-color{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.cvd-name{font-size:12px;font-weight:700;color:#fff;margin-bottom:2px;}
+.cvd-desc{font-size:10px;color:rgba(255,255,255,0.3);}
+.cv-scale-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
+.cvs{background:rgba(255,255,255,0.04);border-radius:9px;padding:14px;}
+.cvs-num{font-size:22px;font-weight:900;color:var(--bl);letter-spacing:-1px;margin-bottom:3px;}
+.cvs-label{font-size:10px;color:rgba(255,255,255,0.3);line-height:1.4;}
+
+/* ── TALENT SCALE ── */
+.talent-section{background:#fff;}
+.talent-inner{max-width:1100px;margin:0 auto;}
+.roles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px;}
+.role-card{border-radius:14px;border:1.5px solid var(--g3);padding:24px;transition:border-color .2s,transform .2s,background .2s;position:relative;overflow:hidden;}
+.role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g2);}
+.role-card:nth-child(1)::before{background:linear-gradient(90deg,var(--purple),var(--pl));}
+.role-card:nth-child(2)::before{background:linear-gradient(90deg,var(--blue),var(--bl));}
+.role-card:nth-child(3)::before{background:linear-gradient(90deg,var(--green),var(--gl));}
+.role-card:nth-child(4)::before{background:linear-gradient(90deg,var(--amber),#FDE68A);}
+.role-card:nth-child(5)::before{background:linear-gradient(90deg,var(--pl),var(--purple));}
+.role-card:nth-child(6)::before{background:linear-gradient(90deg,var(--green),var(--blue));}
+.role-card:hover{border-color:var(--purple);transform:translateY(-3px);}
+.rc-icon{font-size:28px;margin-bottom:12px;display:block;}
+.rc-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:6px;letter-spacing:-.3px;}
+.rc-desc{font-size:12px;color:var(--g5);line-height:1.6;margin-bottom:10px;}
+.rc-avail{font-size:10px;font-weight:700;color:var(--purple);background:var(--pp);padding:3px 9px;border-radius:99px;display:inline-flex;}
+.scale-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px;}
+.sn-card{background:var(--black);border-radius:14px;padding:22px;text-align:center;}
+.sn-num{font-size:30px;font-weight:900;color:var(--bl);letter-spacing:-1.5px;margin-bottom:5px;}
+.sn-label{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.4;}
+
+/* ── SCALABILITY ── */
+.scale-section{background:var(--black);position:relative;overflow:hidden;}
+.scale-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 40%,rgba(37,99,235,0.12),transparent 52%),radial-gradient(ellipse at 10% 70%,rgba(108,60,225,0.1),transparent 45%);}
+.scale-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.scale-section .section-eyebrow{color:rgba(255,255,255,0.3);}
+.scale-section .section-h2{color:#fff;}
+.scale-section .section-h2 em{color:var(--bl);}
+.scale-section .section-sub{color:rgba(255,255,255,0.4);}
+.scale-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px;}
+.sg-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:26px;transition:border-color .2s,background .2s;}
+.sg-card:hover{border-color:rgba(37,99,235,0.4);background:rgba(37,99,235,0.05);}
+.sg-icon{font-size:28px;margin-bottom:14px;display:block;}
+.sg-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:7px;}
+.sg-desc{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.65;}
+.sg-tag{display:inline-flex;margin-top:12px;font-size:10px;font-weight:700;color:var(--bl);background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.2);padding:3px 9px;border-radius:99px;}
+/* Scale comparison bars */
+.scale-compare{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:28px 32px;margin-top:20px;}
+.sc-title{font-size:11px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;}
+.sc-row{margin-bottom:16px;}
+.sc-row:last-child{margin-bottom:0;}
+.sc-row-label{display:flex;justify-content:space-between;margin-bottom:6px;}
+.sc-row-name{font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);}
+.sc-row-val{font-size:12px;font-weight:700;color:var(--bl);}
+.sc-track{height:6px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden;}
+.sc-fill{height:6px;border-radius:99px;transition:width 1.2s ease;}
+
+/* ── CORPORATE EXPERIENCE ── */
+.corp-section{background:var(--g1);}
+.corp-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.corp-traits{display:flex;flex-direction:column;gap:10px;}
+.ct-item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:#fff;border-radius:11px;border:1.5px solid var(--g3);transition:border-color .2s;}
+.ct-item:hover{border-color:var(--purple);}
+.ct-icon{width:36px;height:36px;border-radius:9px;background:var(--pp);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.ct-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:3px;}
+.ct-desc{font-size:12px;color:var(--g5);line-height:1.55;}
+.corp-visual{background:linear-gradient(135deg,var(--black),#0a0a1a);border-radius:18px;padding:36px;}
+.corpv-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px;}
+.corpv-companies{display:flex;flex-direction:column;gap:8px;}
+.corpc{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:9px;}
+.corpc-av{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;}
+.corpc-name{font-size:12px;font-weight:700;color:#fff;}
+.corpc-type{font-size:10px;color:rgba(255,255,255,0.35);}
+.corpc-badge{margin-left:auto;font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;}
+.cb-blue{background:rgba(37,99,235,0.2);color:var(--bl);}
+.cb-green{background:rgba(16,185,129,0.15);color:var(--gl);}
+.cb-purple{background:rgba(108,60,225,0.2);color:var(--pl);}
+
+/* ── UNIVERSITIES ── */
+.uni-section{background:#fff;}
+.uni-inner{max-width:1100px;margin:0 auto;}
+.uni-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px;}
+.ug-card{border-radius:12px;border:1.5px solid var(--g3);padding:20px;transition:border-color .2s,transform .15s;}
+.ug-card:hover{border-color:var(--purple);transform:translateY(-3px);}
+.ug-abbr{font-size:22px;font-weight:900;letter-spacing:-1px;line-height:1;margin-bottom:8px;}
+.ug-name{font-size:12px;font-weight:700;color:var(--black);margin-bottom:4px;line-height:1.3;}
+.ug-focus{font-size:10px;color:var(--g5);line-height:1.5;}
+
+/* ── GLOBAL ALIGNMENT ── */
+.global-section{background:var(--g1);}
+.global-inner{max-width:1100px;margin:0 auto;}
+.global-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px;}
+.gg-card{background:#fff;border-radius:14px;border:1.5px solid var(--g3);padding:22px;text-align:center;transition:border-color .2s,transform .2s;}
+.gg-card:hover{border-color:var(--purple);transform:translateY(-3px);}
+.gg-icon{font-size:30px;margin-bottom:12px;display:block;}
+.gg-title{font-size:13px;font-weight:700;color:var(--black);margin-bottom:6px;}
+.gg-desc{font-size:12px;color:var(--g5);line-height:1.6;}
+
+/* ── RETENTION ── */
+.retention-section{background:var(--black);position:relative;overflow:hidden;}
+.ret-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 60%,rgba(37,99,235,0.1),transparent 50%),radial-gradient(ellipse at 80% 30%,rgba(108,60,225,0.1),transparent 50%);}
+.ret-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.retention-section .section-eyebrow{color:rgba(255,255,255,0.3);}
+.retention-section .section-h2{color:#fff;}
+.retention-section .section-h2 em{color:var(--bl);}
+.retention-section .section-sub{color:rgba(255,255,255,0.4);}
+.ret-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px;}
+.ret-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:26px;transition:border-color .2s;}
+.ret-card:hover{border-color:rgba(37,99,235,0.3);}
+.ret-icon{font-size:28px;margin-bottom:14px;display:block;}
+.ret-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:7px;}
+.ret-desc{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.65;}
+.ret-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px;}
+.rst{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px;text-align:center;}
+.rst-num{font-size:28px;font-weight:900;color:var(--bl);letter-spacing:-1.5px;margin-bottom:5px;}
+.rst-label{font-size:10px;color:rgba(255,255,255,0.3);line-height:1.5;}
+
+/* ── CITY vs CITY ── */
+.compare-section{background:var(--g1);}
+.compare-inner{max-width:1100px;margin:0 auto;}
+.city-compare{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:stretch;margin-top:48px;}
+.cc-col{border-radius:16px;padding:28px;}
+.cc-col.medellin{background:#fff;border:1.5px solid var(--g3);}
+.cc-col.bogota{background:var(--black);border:1.5px solid rgba(37,99,235,0.2);}
+.cc-city-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;}
+.cc-col.medellin .cc-city-label{color:var(--purple);}
+.cc-col.bogota .cc-city-label{color:var(--bl);}
+.cc-city-name{font-size:22px;font-weight:900;letter-spacing:-1px;margin-bottom:16px;}
+.cc-col.medellin .cc-city-name{color:var(--black);}
+.cc-col.bogota .cc-city-name{color:#fff;}
+.cc-items{display:flex;flex-direction:column;gap:8px;}
+.cc-item{display:flex;align-items:center;gap:8px;font-size:12px;}
+.cc-col.medellin .cc-item{color:var(--g6);}
+.cc-col.bogota .cc-item{color:rgba(255,255,255,0.55);}
+.cc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.cc-col.medellin .cc-dot{background:var(--purple);}
+.cc-col.bogota .cc-dot{background:var(--bl);}
+.cc-middle{display:flex;align-items:center;justify-content:center;}
+.cc-vs{font-size:14px;font-weight:800;color:var(--g4);background:#fff;border:1.5px solid var(--g3);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+
+/* ── NEARWORK ── */
+.nearwork-section{background:#fff;}
+.nearwork-inner{max-width:1100px;margin:0 auto;}
+.nw-process{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px;}
+.nwp-card{background:var(--g1);border-radius:14px;border:1.5px solid var(--g3);padding:26px;transition:border-color .2s,transform .2s;}
+.nwp-card:hover{border-color:var(--purple);transform:translateY(-3px);}
+.nwp-num{display:inline-flex;width:28px;height:28px;border-radius:8px;background:var(--purple);color:#fff;font-size:12px;font-weight:800;align-items:center;justify-content:center;margin-bottom:14px;}
+.nwp-icon{font-size:26px;margin-bottom:10px;display:block;}
+.nwp-title{font-size:15px;font-weight:700;color:var(--black);margin-bottom:7px;letter-spacing:-.3px;}
+.nwp-desc{font-size:13px;color:var(--g5);line-height:1.65;}
+
+/* ── CTA ── */
+.cta-section{background:linear-gradient(135deg,#0D0D0D 0%,#0a0a1a 50%,#0D0D0D 100%);padding:120px 5%;text-align:center;position:relative;overflow:hidden;}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(37,99,235,0.12),transparent 55%);}
+.cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto;}
+.cta-h2{font-size:clamp(32px,5vw,54px);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-2.5px;margin-bottom:16px;}
+.cta-h2 em{font-style:normal;color:var(--bl);}
+.cta-sub{font-size:16px;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:36px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-cta-main{background:var(--purple);color:#fff;font-size:15px;font-weight:700;padding:16px 36px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s;box-shadow:0 4px 32px rgba(108,60,225,0.4);}
+.btn-cta-main:hover{background:var(--pd);transform:translateY(-2px);}
+.btn-cta-ghost{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.75);font-size:15px;font-weight:600;padding:16px 30px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.12);transition:all .2s;}
+.btn-cta-ghost:hover{background:rgba(255,255,255,0.12);}
+
+@media(max-width:1000px){
+  .hero-inner,.city-inner,.corp-inner{grid-template-columns:1fr;gap:48px;}
+  .roles-grid,.scale-grid,.ret-grid{grid-template-columns:1fr 1fr;}
+  .scale-numbers,.ret-stats,.global-grid{grid-template-columns:1fr 1fr;}
+  .uni-grid{grid-template-columns:1fr 1fr;}
+  .city-compare{grid-template-columns:1fr;gap:12px;}
+  .cc-middle{display:none;}
+  .nw-process{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  section{padding:64px 5%;}
+  .roles-grid,.nw-process{grid-template-columns:1fr;}
+  .scale-grid,.ret-grid{grid-template-columns:1fr;}
+  .scale-numbers,.ret-stats,.global-grid,.uni-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  
+  .hamburger{display:flex;}
+}
+
+/* ── Shared nav + footer ── */
+nav {
+  position: sticky; top: 0; z-index: 500;
+  display: flex; align-items: center;
+  padding: 0 32px; height: 60px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  gap: 0;
+}
+nav { padding: 0 20px; }
+.nav-logo { font-size: 20px; font-weight: 900; color: var(--black); letter-spacing: -1px; text-decoration: none; flex-shrink: 0; white-space: nowrap; }
+.nav-logo span { color: var(--purple); }
+.nav-items { display: flex; align-items: center; gap: 0; margin-left: 24px; flex: 1; }
+.nav-item { position: relative; }
+.nav-btn { display: flex; align-items: center; gap: 4px; font-size: 13.5px; font-weight: 500; color: #333; padding: 6px 12px; border-radius: 7px; cursor: pointer; border: none; background: none; font-family: 'Poppins', sans-serif; transition: color .15s, background .15s; white-space: nowrap; text-decoration: none; }
+.nav-btn:hover { color: var(--black); background: rgba(0,0,0,0.05); }
+.nav-btn.open { color: var(--black); background: rgba(0,0,0,0.05); }
+.nav-btn.open .nchev { transform: rotate(180deg); }
+.nav-right { display: flex; gap: 8px; align-items: center; flex-shrink: 0; margin-left: auto; }
+.nav-login { font-size: 13.5px; font-weight: 500; color: #333; background: none; border: none; padding: 7px 14px; border-radius: 7px; cursor: pointer; font-family: 'Poppins', sans-serif; transition: color .15s, background .15s; }
+.nav-login:hover { color: var(--black); background: rgba(0,0,0,0.04); }
+.nav-cta { background: var(--black); color: var(--white); font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 8px; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; transition: background 0.2s, transform 0.15s; }
+.nav-cta:hover { background: #333; transform: translateY(-1px); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; border: none; background: none; margin-left: auto; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; transition: all 0.3s; }
+.mega { position: absolute; top: calc(100% + 8px); left: 0; transform: translateY(-4px); background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); display: grid; gap: 20px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 600; }
+.mega.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+.mega.cols3 { grid-template-columns: 1fr 1fr 1fr; width: 640px; }
+.mega.cols2 { grid-template-columns: 1fr 1fr; width: 440px; }
+.mega-col-title { font-size: 10px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; padding: 0 8px; }
+.mega-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 8px; border-radius: 9px; cursor: pointer; transition: background .12s; margin-bottom: 1px; }
+.mega-item:hover { background: #F5F5F5; }
+.mega-item:hover .mi-t { color: var(--black); }
+.nchev { font-size: 8px; transition: transform .2s; display: inline-block; opacity: 0.5; }
+.nchev { transform: rotate(180deg); }
+.simple-menu { position: absolute; top: calc(100% + 8px); left: 0; background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 5px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); width: 185px; opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity .15s, transform .15s; z-index: 600; }
+.simple-menu.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+.sm-item { padding: 8px 12px; font-size: 13px; color: #333; border-radius: 7px; cursor: pointer; font-weight: 500; transition: background .12s, color .12s; }
+.sm-item:hover { background: #F5F5F5; color: var(--black); }
+.mi-t { color: var(--black); }
+.mi-icon { width: 32px; height: 32px; border-radius: 8px; background: #F5F5F5; border: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.mi-t { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 1px; transition: color .12s; }
+.mi-d { font-size: 11px; color: #888; line-height: 1.35; }
+footer { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.22); border-radius: 12px; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+footer { background: rgba(16,185,129,0.15); border-radius: 8px; padding: 10px 14px; margin-top: 4px; }
+footer {
+  background: #0A0A0A;
+  color: #fff;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+footer{background:#0D0D0D;padding:64px 56px 0;}
+footer{padding:48px 20px 0;}
+.ft-top{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;padding-bottom:48px;border-bottom:1px solid #1f1f1f;}
+.ft-logo{font-size:26px;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:10px;white-space:nowrap;}
+.ft-logo span{color:#8B5CF6;}
+.ft-tagline{font-size:13px;color:#555;line-height:1.65;max-width:300px;font-weight:300;margin-bottom:20px;}
+.ft-social{display:flex;gap:9px;margin-bottom:20px;}
+.ft-reviews{display:flex;gap:10px;flex-wrap:wrap;}
+.ft-newsletter{display:flex;flex-direction:column;}
+.ft-nl-label{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
+.ft-nl-sub{font-size:12px;color:#555;margin-bottom:16px;line-height:1.6;}
+.ft-nl-row{display:flex;gap:8px;width:100%;}
+.ft-nl-input{flex:1;min-width:0;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:9px;padding:11px 16px;font-size:13px;color:#fff;font-family:'Poppins',sans-serif;outline:none;transition:border-color .2s;}
+.ft-nl-input::placeholder{color:#444;}
+.ft-nl-input:focus{border-color:#6C3CE1;}
+.ft-nl-btn{background:#6C3CE1;color:#fff;font-size:12px;font-weight:600;padding:11px 22px;border-radius:9px;border:none;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;flex-shrink:0;}
+.ft-nl-btn:hover{background:#4F28B8;}
+.ft-nl-note{font-size:10px;color:#333;margin-top:8px;}
+.ft-links{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:40px 0 48px;border-bottom:1px solid #1f1f1f;}
+.ft-col-title{font-size:10px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px;}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;padding:18px 0;flex-wrap:wrap;gap:10px;}
+.ft-copy{font-size:11px;color:#2a2a2a;}
+.ft-flag{font-size:11px;color:#2a2a2a;}
+.ft-legal{display:flex;gap:18px;}
+.ft-legal a{font-size:11px;color:#2a2a2a;text-decoration:none;transition:color .2s;}
+.ft-legal a:hover{color:#fff;}
+.ft-top{grid-template-columns:1fr;gap:36px;}
+.ft-links{grid-template-columns:1fr 1fr;gap:24px;padding:32px 0 36px;}
+.ft-bottom{flex-direction:column;align-items:flex-start;gap:8px;}
+.ft-nl-row{flex-direction:column;}
+.ft-nl-btn{width:100%;}
+.ft-links{grid-template-columns:1fr;}
+.rb-logo{font-size:12px;font-weight:800;}
+.rb-logo.tp{color:#00B67A;}
+.rb-logo.g2{color:#FF492C;}
+.rb-stars{display:flex;gap:1px;}
+.rb-star{width:11px;height:11px;background:#00B67A;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.rb-star.g2c{background:#FF492C;}
+.rb-text{font-size:10px;color:#555;font-weight:500;}
+.review-badge{display:flex;align-items:center;gap:8px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:8px 14px;cursor:pointer;}
+.sb{width:36px;height:36px;border-radius:9px;background:#1a1a1a;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s;text-decoration:none;}
+.sb:hover{background:#6C3CE1;border-color:#6C3CE1;}
+.sb svg{width:16px;height:16px;fill:#777;transition:fill .2s;}
+.sb:hover svg{fill:#fff;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Near<span>work</span></a>
+
+  <div class="nav-items">
+
+    <!-- WHY COLOMBIA -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-why" onclick="navToggle('why')">
+        Why Colombia <span class="nchev">▾</span>
+      </button>
+      <div class="mega cols3" id="menu-why">
+        <div>
+          <div class="mega-col-title">Why it works</div>
+          <a class="mega-item" href="why-colombia"><div class="mi-icon">🇨🇴</div><div><div class="mi-t">Overview</div><div class="mi-d">Why Colombia is the #1 choice</div></div></a>
+          <a class="mega-item" href="why-colombia-nearshore"><div class="mi-icon">🏆</div><div><div class="mi-t">#1 Nearshore destination</div><div class="mi-d">The data and rankings deep dive</div></div></a>
+          <a class="mega-item" href="why-colombia-timezone"><div class="mi-icon">🕐</div><div><div class="mi-t">Timezone overlap</div><div class="mi-d">Full breakdown vs Asia & Europe</div></div></a>
+          <a class="mega-item" href="why-colombia-english"><div class="mi-icon">🗣️</div><div><div class="mi-t">C1 English standard</div><div class="mi-d">How we assess, what it means</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">The advantage</div>
+          <a class="mega-item" href="why-colombia-savings"><div class="mi-icon">💸</div><div><div class="mi-t">Cost savings</div><div class="mi-d">Role-by-role salary comparison</div></div></a>
+          <a class="mega-item" href="why-colombia-universities"><div class="mi-icon">🎓</div><div><div class="mi-t">University talent</div><div class="mi-d">Academic depth behind the pool</div></div></a>
+          <a class="mega-item" href="why-colombia-why-now"><div class="mi-icon">🚀</div><div><div class="mi-t">Why now</div><div class="mi-d">Market timing & 2026 trends</div></div></a>
+          <a class="mega-item" href="why-colombia-vs-others"><div class="mi-icon">⚡</div><div><div class="mi-t">Nearwork vs others</div><div class="mi-d">vs LinkedIn, agencies & more</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">Cities</div>
+          <a class="mega-item" href="why-colombia-medellin"><div class="mi-icon">🏙️</div><div><div class="mi-t">Medellín</div><div class="mi-d">Silicon Valley of Latin America</div></div></a>
+          <a class="mega-item" href="why-colombia-bogota"><div class="mi-icon">🌆</div><div><div class="mi-t">Bogotá</div><div class="mi-d">Largest talent pool in Colombia</div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-how" onclick="navToggle('how')">
+        How it works <span class="nchev">▾</span>
+      </button>
+      <div class="mega cols2" id="menu-how">
+        <div>
+          <div class="mega-col-title">The process</div>
+          <a class="mega-item" href="how-it-works"><div class="mi-icon">📋</div><div><div class="mi-t">Overview</div><div class="mi-d">How Nearwork works end-to-end</div></div></a>
+          <a class="mega-item" href="how-it-works-pipeline"><div class="mi-icon">🔬</div><div><div class="mi-t">Our 7-stage pipeline</div><div class="mi-d">Each stage explained in depth</div></div></a>
+          <a class="mega-item" href="how-it-works-vetting"><div class="mi-icon">✅</div><div><div class="mi-t">Screening & vetting</div><div class="mi-d">Tech test, English, background check</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">After you hire</div>
+          <a class="mega-item" href="how-it-works-dashboard"><div class="mi-icon">👀</div><div><div class="mi-t">Your dashboard</div><div class="mi-d">What clients see, how it works</div></div></a>
+          <a class="mega-item" href="how-it-works-guarantee"><div class="mi-icon">🛡️</div><div><div class="mi-t">6-month guarantee</div><div class="mi-d">Full terms, what's covered</div></div></a>
+          <a class="mega-item" href="how-it-works-after-hire"><div class="mi-icon">🤝</div><div><div class="mi-t">After you hire</div><div class="mi-d">Follow-ups & post-placement</div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="nav-item">
+      <a href="pricing" class="nav-btn">Pricing</a>
+    </div>
+
+    <!-- FOR CANDIDATES -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-candidates" onclick="navToggle('candidates')">
+        For Candidates <span class="nchev">▾</span>
+      </button>
+      <div class="mega cols2" id="menu-candidates">
+        <div>
+          <div class="mega-col-title">Get hired</div>
+          <a class="mega-item" href="candidates-apply"><div class="mi-icon">🇨🇴</div><div><div class="mi-t">Apply now</div><div class="mi-d">Join our bench before roles open</div></div></a>
+          <a class="mega-item" href="candidates-process"><div class="mi-icon">🔍</div><div><div class="mi-t">What to expect</div><div class="mi-d">The process from your POV</div></div></a>
+          <a class="mega-item" href="candidates-english"><div class="mi-icon">🗣️</div><div><div class="mi-t">English requirements</div><div class="mi-d">What C1 means & how to prepare</div></div></a>
+          <a class="mega-item" href="candidates-faq"><div class="mi-icon">❓</div><div><div class="mi-t">Candidate FAQ</div><div class="mi-d">Questions before & after applying</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">Open roles</div>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">🤝</div><div><div class="mi-t">Customer Success Manager</div><div class="mi-d">Most hired · Bilingual · Remote</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">📞</div><div><div class="mi-t">Sales Development Rep</div><div class="mi-d">Outbound · SaaS · High demand</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">🛠️</div><div><div class="mi-t">Technical Support</div><div class="mi-d">Tier 1 & 2 · Fast growing</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">📣</div><div><div class="mi-t">View all roles →</div><div class="mi-d">Full list with salary ranges</div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-resources" onclick="navToggle('resources')">
+        Resources <span class="nchev">▾</span>
+      </button>
+      <div class="mega cols2" id="menu-resources" style="left:auto;right:0;">
+        <div>
+          <div class="mega-col-title">Learn</div>
+          <a class="mega-item" href="resources-blog"><div class="mi-icon">✍️</div><div><div class="mi-t">Blog</div><div class="mi-d">Articles & hiring insights</div></div></a>
+          <a class="mega-item" href="resources-hiring-guides"><div class="mi-icon">📖</div><div><div class="mi-t">Hiring guides</div><div class="mi-d">Downloadable & web guides</div></div></a>
+          <a class="mega-item" href="resources-colombia-report"><div class="mi-icon">📊</div><div><div class="mi-t">Colombia market report</div><div class="mi-d">Flagship research piece</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">Data & support</div>
+          <a class="mega-item" href="resources-salary-guide"><div class="mi-icon">💰</div><div><div class="mi-t">SaaS salary guide</div><div class="mi-d">Colombia vs US by role</div></div></a>
+          <a class="mega-item" href="resources-case-studies"><div class="mi-icon">🏆</div><div><div class="mi-t">Case studies</div><div class="mi-d">Client success stories</div></div></a>
+          <a class="mega-item" href="resources-help-center"><div class="mi-icon">🆘</div><div><div class="mi-t">Help center</div><div class="mi-d">FAQ for clients & candidates</div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT US -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-about" onclick="navToggle('about')">
+        About us <span class="nchev">▾</span>
+      </button>
+      <div class="simple-menu" id="menu-about">
+        <a class="sm-item" href="about">About Nearwork</a>
+        <a class="sm-item" href="about-story">Our story</a>
+        <a class="sm-item" href="about-team">Team</a>
+        <a class="sm-item" href="about-careers">Careers at Nearwork</a>
+        <a class="sm-item" href="about-press">Press</a>
+        <a class="sm-item" href="contact">Contact us</a>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="candidates-apply" class="nav-login">I'm a candidate</a>
+    <a href="contact" class="nav-cta">Get started →</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <!-- Bogotá skyline SVG — denser, taller, more corporate than Medellín -->
+  <svg class="hero-skyline" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+    <defs>
+      <linearGradient id="bldGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0a0a1a"/>
+        <stop offset="100%" stop-color="#0D0D0D"/>
+      </linearGradient>
+      <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1e3a5f"/>
+        <stop offset="100%" stop-color="#0D0D0D"/>
+      </linearGradient>
+    </defs>
+    <!-- Distant mountains — Andes backdrop -->
+    <path d="M0 300 L0 200 Q80 120 160 160 Q220 190 280 130 Q360 60 440 100 Q520 140 580 80 Q660 20 740 60 Q820 100 880 50 Q960 0 1040 40 Q1120 80 1180 50 Q1260 20 1340 55 Q1400 80 1440 60 L1440 300 Z" fill="rgba(37,99,235,0.05)"/>
+    <!-- Dense corporate skyline — more towers, more uniform, more structured -->
+    <!-- Far left cluster -->
+    <rect x="0" y="220" width="20" height="80" fill="url(#bldGrad)" opacity="0.3"/>
+    <rect x="24" y="200" width="16" height="100" fill="url(#bldGrad)" opacity="0.35"/>
+    <rect x="44" y="210" width="24" height="90" fill="url(#bldGrad)" opacity="0.3"/>
+    <rect x="72" y="195" width="18" height="105" fill="url(#bldGrad)" opacity="0.38"/>
+    <!-- Left-center cluster -->
+    <rect x="110" y="180" width="26" height="120" fill="url(#bldGrad)" opacity="0.45"/>
+    <rect x="140" y="160" width="20" height="140" fill="url(#bldGrad)" opacity="0.5"/>
+    <rect x="164" y="170" width="30" height="130" fill="url(#bldGrad)" opacity="0.45"/>
+    <rect x="198" y="150" width="22" height="150" fill="url(#bldGrad)" opacity="0.55"/>
+    <rect x="224" y="165" width="28" height="135" fill="url(#bldGrad)" opacity="0.5"/>
+    <!-- Glass curtain-wall tower (stepped top) -->
+    <rect x="260" y="100" width="34" height="200" fill="url(#blueGrad)" opacity="0.6"/>
+    <rect x="263" y="80" width="28" height="30" fill="url(#blueGrad)" opacity="0.55"/>
+    <rect x="266" y="60" width="22" height="28" fill="url(#blueGrad)" opacity="0.5"/>
+    <!-- Window rows on curtain wall tower -->
+    <rect x="265" y="90" width="4" height="3" fill="rgba(147,197,253,0.5)" rx="1"/>
+    <rect x="273" y="90" width="4" height="3" fill="rgba(147,197,253,0.4)" rx="1"/>
+    <rect x="281" y="90" width="4" height="3" fill="rgba(147,197,253,0.5)" rx="1"/>
+    <rect x="265" y="103" width="4" height="3" fill="rgba(147,197,253,0.3)" rx="1"/>
+    <rect x="273" y="103" width="4" height="3" fill="rgba(147,197,253,0.5)" rx="1"/>
+    <rect x="265" y="116" width="4" height="3" fill="rgba(147,197,253,0.4)" rx="1"/>
+    <rect x="273" y="116" width="4" height="3" fill="rgba(147,197,253,0.3)" rx="1"/>
+    <rect x="281" y="116" width="4" height="3" fill="rgba(147,197,253,0.5)" rx="1"/>
+    <!-- Mid buildings -->
+    <rect x="300" y="130" width="26" height="170" fill="url(#bldGrad)" opacity="0.6"/>
+    <rect x="330" y="115" width="32" height="185" fill="url(#bldGrad)" opacity="0.65"/>
+    <rect x="366" y="125" width="24" height="175" fill="url(#bldGrad)" opacity="0.6"/>
+    <!-- Tallest center cluster -->
+    <rect x="400" y="60" width="36" height="240" fill="url(#blueGrad)" opacity="0.75"/>
+    <rect x="440" y="40" width="28" height="260" fill="url(#blueGrad)" opacity="0.8"/>
+    <!-- Antenna on tallest -->
+    <line x1="454" y1="40" x2="454" y2="8" stroke="rgba(147,197,253,0.7)" stroke-width="2"/>
+    <circle cx="454" cy="6" r="3" fill="#93C5FD" opacity="0.9"/>
+    <rect x="472" y="55" width="40" height="245" fill="url(#blueGrad)" opacity="0.78"/>
+    <rect x="516" y="70" width="32" height="230" fill="url(#blueGrad)" opacity="0.72"/>
+    <!-- More center density -->
+    <rect x="552" y="85" width="28" height="215" fill="url(#bldGrad)" opacity="0.68"/>
+    <rect x="584" y="100" width="36" height="200" fill="url(#bldGrad)" opacity="0.65"/>
+    <rect x="624" y="90" width="30" height="210" fill="url(#blueGrad)" opacity="0.7"/>
+    <rect x="658" y="75" width="24" height="225" fill="url(#blueGrad)" opacity="0.72"/>
+    <!-- Right cluster -->
+    <rect x="690" y="110" width="32" height="190" fill="url(#bldGrad)" opacity="0.62"/>
+    <rect x="726" y="125" width="26" height="175" fill="url(#bldGrad)" opacity="0.58"/>
+    <rect x="756" y="105" width="38" height="195" fill="url(#bldGrad)" opacity="0.65"/>
+    <rect x="798" y="130" width="28" height="170" fill="url(#bldGrad)" opacity="0.55"/>
+    <rect x="830" y="145" width="22" height="155" fill="url(#bldGrad)" opacity="0.5"/>
+    <rect x="856" y="120" width="34" height="180" fill="url(#bldGrad)" opacity="0.58"/>
+    <!-- Far right taper -->
+    <rect x="900" y="155" width="28" height="145" fill="url(#bldGrad)" opacity="0.48"/>
+    <rect x="932" y="165" width="22" height="135" fill="url(#bldGrad)" opacity="0.43"/>
+    <rect x="960" y="175" width="30" height="125" fill="url(#bldGrad)" opacity="0.4"/>
+    <rect x="994" y="185" width="24" height="115" fill="url(#bldGrad)" opacity="0.37"/>
+    <rect x="1040" y="190" width="28" height="110" fill="url(#bldGrad)" opacity="0.35"/>
+    <rect x="1080" y="200" width="22" height="100" fill="url(#bldGrad)" opacity="0.32"/>
+    <rect x="1120" y="210" width="26" height="90" fill="url(#bldGrad)" opacity="0.3"/>
+    <rect x="1160" y="215" width="20" height="85" fill="url(#bldGrad)" opacity="0.28"/>
+    <rect x="1200" y="220" width="28" height="80" fill="url(#bldGrad)" opacity="0.26"/>
+    <rect x="1260" y="225" width="22" height="75" fill="url(#bldGrad)" opacity="0.24"/>
+    <rect x="1300" y="230" width="30" height="70" fill="url(#bldGrad)" opacity="0.22"/>
+    <rect x="1360" y="235" width="24" height="65" fill="url(#bldGrad)" opacity="0.2"/>
+    <rect x="1400" y="240" width="40" height="60" fill="url(#bldGrad)" opacity="0.18"/>
+    <!-- Window accents on main towers -->
+    <rect x="406" y="75" width="5" height="3" fill="rgba(147,197,253,0.6)" rx="1"/>
+    <rect x="416" y="75" width="5" height="3" fill="rgba(147,197,253,0.4)" rx="1"/>
+    <rect x="426" y="75" width="5" height="3" fill="rgba(147,197,253,0.6)" rx="1"/>
+    <rect x="406" y="88" width="5" height="3" fill="rgba(147,197,253,0.3)" rx="1"/>
+    <rect x="416" y="88" width="5" height="3" fill="rgba(147,197,253,0.5)" rx="1"/>
+    <rect x="448" y="52" width="4" height="3" fill="rgba(147,197,253,0.7)" rx="1"/>
+    <rect x="456" y="52" width="4" height="3" fill="rgba(108,60,225,0.5)" rx="1"/>
+    <rect x="448" y="65" width="4" height="3" fill="rgba(147,197,253,0.5)" rx="1"/>
+    <rect x="456" y="65" width="4" height="3" fill="rgba(147,197,253,0.4)" rx="1"/>
+    <rect x="479" y="82" width="5" height="3" fill="rgba(147,197,253,0.5)" rx="1"/>
+    <rect x="489" y="82" width="5" height="3" fill="rgba(108,60,225,0.4)" rx="1"/>
+    <rect x="499" y="82" width="5" height="3" fill="rgba(147,197,253,0.5)" rx="1"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">🇨🇴 Bogotá, Colombia</div>
+      <h1 class="hero-h1">Colombia's largest and most <em>established</em> talent market.</h1>
+      <p class="hero-sub">A major business hub with one of the deepest talent pools in Latin America — ideal for companies looking to scale efficiently and reliably.</p>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="/book">Book a free call →</a>
+        <a class="btn-ghost-light" href="/why-colombia">Why Colombia</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hs-card accent">
+        <div class="hs-num"><em>8M+</em></div>
+        <div class="hs-label">Population — largest city in Colombia</div>
+        <div class="hs-sub">Greater Bogotá metro area</div>
+      </div>
+      <div class="hs-card">
+        <div class="hs-num">CST</div>
+        <div class="hs-label">Full US timezone overlap — real-time collaboration</div>
+        <div class="hs-sub">UTC–5 · No async gaps</div>
+      </div>
+      <div class="hs-card">
+        <div class="hs-num"><em>160K+</em></div>
+        <div class="hs-label">University graduates per year across all disciplines</div>
+        <div class="hs-sub">Colombia's largest graduate pipeline</div>
+      </div>
+      <div class="hs-card accent">
+        <div class="hs-num"><em>#1</em></div>
+        <div class="hs-label">Colombia's economic and corporate capital</div>
+        <div class="hs-sub">Headquarters of 70% of Fortune 500 LatAm ops</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="scroll-line"></div>Explore the city</div>
+</section>
+
+<!-- ══ CITY POSITIONING ══ -->
+<section class="city-section">
+  <div class="city-inner section-inner" style="max-width:1100px;">
+    <div class="reveal">
+      <div class="section-eyebrow">The business capital of Colombia</div>
+      <h2 class="section-h2">Where corporate Colombia <em>operates.</em></h2>
+      <p class="section-sub" style="margin-bottom:32px;">Bogotá is the economic and corporate center of Colombia — headquarters for major corporations, financial institutions, and multinational companies. That density of professional environments produces a workforce unlike anywhere else in the country.</p>
+      <div class="city-facts">
+        <div class="cf-item">
+          <div class="cf-icon">🏛️</div>
+          <div><div class="cf-title">Headquarters of 70% of Fortune 500 LatAm operations</div><div class="cf-desc">Global companies chose Bogotá first when entering Latin America — creating a professional culture shaped by international standards from day one.</div></div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-icon">🏦</div>
+          <div><div class="cf-title">Colombia's financial and banking center</div><div class="cf-desc">Home to the Bolsa de Colombia, all major banks, and the country's largest financial services sector — producing finance, ops, and compliance professionals at scale.</div></div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-icon">🌐</div>
+          <div><div class="cf-title">International trade and commerce hub</div><div class="cf-desc">Bogotá handles 40%+ of Colombia's international trade — giving its workforce deep familiarity with cross-border business, compliance, and communication.</div></div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-icon">🚀</div>
+          <div><div class="cf-title">Growing tech and startup district (Chapinero)</div><div class="cf-desc">Bogotá's Chapinero neighborhood has become Colombia's fastest-growing startup corridor — combining corporate experience with entrepreneurial energy.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="city-visual reveal reveal-delay-2">
+      <div class="cv-label">Key business districts</div>
+      <div class="cv-districts">
+        <div class="cv-district">
+          <div class="cvd-color" style="background:#2563EB;"></div>
+          <div><div class="cvd-name">Centro Internacional</div><div class="cvd-desc">Corporate HQs · Banking · Government ministries</div></div>
+        </div>
+        <div class="cv-district">
+          <div class="cvd-color" style="background:#8B5CF6;"></div>
+          <div><div class="cvd-name">Chapinero</div><div class="cvd-desc">Startups · Tech companies · Co-working hubs</div></div>
+        </div>
+        <div class="cv-district">
+          <div class="cvd-color" style="background:#10B981;"></div>
+          <div><div class="cvd-name">Santa Bárbara / Usaquén</div><div class="cvd-desc">Multinationals · Professional services · Finance</div></div>
+        </div>
+        <div class="cv-district">
+          <div class="cvd-color" style="background:#F59E0B;"></div>
+          <div><div class="cvd-name">El Dorado Corridor</div><div class="cvd-desc">Logistics · International trade · Airport business zone</div></div>
+        </div>
+      </div>
+      <div class="cv-scale-row">
+        <div class="cvs"><div class="cvs-num">8M+</div><div class="cvs-label">City population — biggest talent market in Colombia</div></div>
+        <div class="cvs"><div class="cvs-num">160K+</div><div class="cvs-label">University graduates entering the workforce annually</div></div>
+        <div class="cvs"><div class="cvs-num">40%</div><div class="cvs-label">Of Colombia's GDP generated in Bogotá</div></div>
+        <div class="cvs"><div class="cvs-num">500+</div><div class="cvs-label">Multinational company offices operating in the city</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="section-inner" style="max-width:1100px;margin:32px auto 0;">
+    <div class="keyline reveal">
+      <div class="kl-bar" style="height:44px;background:linear-gradient(to bottom,#2563EB,#93C5FD);"></div>
+      <div class="kl-text">"Scale requires depth — and <em style="color:var(--bl);">Bogotá delivers it.</em>"</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TALENT SCALE ══ -->
+<section class="talent-section">
+  <div class="talent-inner section-inner" style="max-width:1100px;">
+    <div class="reveal" style="max-width:580px;">
+      <div class="section-eyebrow">Access to a large and diverse talent pool</div>
+      <h2 class="section-h2">The roles you need — <em>at the scale you need them.</em></h2>
+      <p class="section-sub">Whether you're hiring one specialist or building a team of twenty, Bogotá's talent market supports it. No bottlenecks, no waiting — just qualified candidates across every function.</p>
+    </div>
+    <div class="roles-grid">
+      <div class="role-card reveal reveal-delay-1">
+        <span class="rc-icon">🤝</span>
+        <div class="rc-title">Customer Success</div>
+        <div class="rc-desc">Account management, QBRs, churn reduction, US client communication</div>
+        <div class="rc-avail">Deep pipeline</div>
+      </div>
+      <div class="role-card reveal reveal-delay-2">
+        <span class="rc-icon">📞</span>
+        <div class="rc-title">Sales Development</div>
+        <div class="rc-desc">Outbound prospecting, sequencing, cold calling, HubSpot, pipeline building</div>
+        <div class="rc-avail">High availability</div>
+      </div>
+      <div class="role-card reveal reveal-delay-3">
+        <span class="rc-icon">💻</span>
+        <div class="rc-title">Technical Support</div>
+        <div class="rc-desc">Tier 1 & 2 support, API troubleshooting, Zendesk, onboarding</div>
+        <div class="rc-avail">Large pool</div>
+      </div>
+      <div class="role-card reveal reveal-delay-1">
+        <span class="rc-icon">📣</span>
+        <div class="rc-title">Marketing Operations</div>
+        <div class="rc-desc">HubSpot automation, email campaigns, lead scoring, analytics, content</div>
+        <div class="rc-avail">Growing fast</div>
+      </div>
+      <div class="role-card reveal reveal-delay-2">
+        <span class="rc-icon">📊</span>
+        <div class="rc-title">Finance & Operations</div>
+        <div class="rc-desc">Financial analysis, bookkeeping, operations management, compliance</div>
+        <div class="rc-avail">Corporate-trained</div>
+      </div>
+      <div class="role-card reveal reveal-delay-3">
+        <span class="rc-icon">⚙️</span>
+        <div class="rc-title">Specialized & Technical</div>
+        <div class="rc-desc">Software development, data analysis, product operations, QA</div>
+        <div class="rc-avail">Scalable</div>
+      </div>
+    </div>
+    <div class="scale-numbers">
+      <div class="sn-card reveal reveal-delay-1"><div class="sn-num">160K+</div><div class="sn-label">Graduates per year from Bogotá universities</div></div>
+      <div class="sn-card reveal reveal-delay-2"><div class="sn-num">65%+</div><div class="sn-label">Cost savings vs equivalent US hire</div></div>
+      <div class="sn-card reveal reveal-delay-3"><div class="sn-num">21d</div><div class="sn-label">Average days to first shortlist</div></div>
+      <div class="sn-card reveal reveal-delay-4"><div class="sn-num">500+</div><div class="sn-label">Multinationals training talent in the city</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SCALABILITY ══ -->
+<section class="scale-section">
+  <div class="scale-bg"></div>
+  <div class="scale-inner section-inner" style="max-width:1100px;">
+    <div class="reveal" style="max-width:560px;">
+      <div class="section-eyebrow">Built for growth</div>
+      <h2 class="section-h2">Bogotá doesn't run out of <em>candidates.</em></h2>
+      <p class="section-sub">For companies looking to expand quickly, Bogotá's sheer scale removes the constraint. High candidate availability, faster hiring cycles, flexibility across any role — this is where you scale without friction.</p>
+    </div>
+    <div class="scale-grid">
+      <div class="sg-card reveal reveal-delay-1">
+        <span class="sg-icon">👥</span>
+        <div class="sg-title">High candidate availability</div>
+        <div class="sg-desc">Colombia's largest graduate pipeline means Nearwork always has pre-vetted candidates to draw from — no waiting, no delays, no dry spells.</div>
+        <div class="sg-tag">→ 160K+ new graduates per year</div>
+      </div>
+      <div class="sg-card reveal reveal-delay-2">
+        <span class="sg-icon">⚡</span>
+        <div class="sg-title">Faster hiring cycles at scale</div>
+        <div class="sg-desc">The depth of Bogotá's talent pool means we can run multiple searches in parallel — staffing a team of 5 takes the same time as staffing one role.</div>
+        <div class="sg-tag">→ Under 21 days to first shortlist</div>
+      </div>
+      <div class="sg-card reveal reveal-delay-3">
+        <span class="sg-icon">🔄</span>
+        <div class="sg-title">Flexibility across all functions</div>
+        <div class="sg-desc">CS, SDR, Tech Support, Marketing, Finance, Ops — Bogotá covers every function you need. No role is too specialized, no volume too high.</div>
+        <div class="sg-tag">→ 6 disciplines · Any volume</div>
+      </div>
+    </div>
+    <div class="scale-compare reveal" style="margin-top:20px;">
+      <div class="sc-title">Bogotá talent market capacity</div>
+      <div class="sc-row">
+        <div class="sc-row-label"><span class="sc-row-name">Annual graduate output</span><span class="sc-row-val">160,000+</span></div>
+        <div class="sc-track"><div class="sc-fill" style="width:0%;background:linear-gradient(90deg,#2563EB,#93C5FD);" data-w="95%"></div></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-row-label"><span class="sc-row-name">Corporate-environment experience</span><span class="sc-row-val">91%</span></div>
+        <div class="sc-track"><div class="sc-fill" style="width:0%;background:linear-gradient(90deg,#2563EB,#93C5FD);" data-w="91%"></div></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-row-label"><span class="sc-row-name">C1 English proficiency</span><span class="sc-row-val">89%</span></div>
+        <div class="sc-track"><div class="sc-fill" style="width:0%;background:linear-gradient(90deg,#6C3CE1,#8B5CF6);" data-w="89%"></div></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-row-label"><span class="sc-row-name">Remote work readiness</span><span class="sc-row-val">86%</span></div>
+        <div class="sc-track"><div class="sc-fill" style="width:0%;background:linear-gradient(90deg,#10B981,#6EE7B7);" data-w="86%"></div></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-row-label"><span class="sc-row-name">Multinational company experience</span><span class="sc-row-val">78%</span></div>
+        <div class="sc-track"><div class="sc-fill" style="width:0%;background:linear-gradient(90deg,#2563EB,#93C5FD);" data-w="78%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CORPORATE EXPERIENCE ══ -->
+<section class="corp-section">
+  <div class="corp-inner section-inner" style="max-width:1100px;">
+    <div class="reveal">
+      <div class="section-eyebrow">Corporate experience advantage</div>
+      <h2 class="section-h2">Professionals shaped by <em>structured environments.</em></h2>
+      <p class="section-sub" style="margin-bottom:32px;">Bogotá's dense corporate ecosystem means candidates have already worked inside complex organizations — with structured workflows, performance standards, and international communication expectations built in.</p>
+      <div class="corp-traits">
+        <div class="ct-item">
+          <div class="ct-icon">📋</div>
+          <div><div class="ct-title">Structured workflow familiarity</div><div class="ct-desc">Already versed in SLAs, escalation paths, OKRs, and performance reviews — the operational foundations US companies run on.</div></div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-icon">🌐</div>
+          <div><div class="ct-title">Multinational communication standards</div><div class="ct-desc">Many candidates have worked directly with US, European, or Asian leadership teams — already adapted to the tone and pace of international business.</div></div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-icon">⚙️</div>
+          <div><div class="ct-title">Process-driven mindset</div><div class="ct-desc">Corporate environments build discipline: documentation habits, response time standards, escalation protocols — candidates arrive with these already in place.</div></div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-icon">📈</div>
+          <div><div class="ct-title">Performance accountability culture</div><div class="ct-desc">Used to quota tracking, KPI reporting, and formal feedback cycles — which means fast ramp-up and strong alignment to US SaaS performance expectations.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="corp-visual reveal reveal-delay-2">
+      <div class="corpv-label">Companies already training Bogotá talent</div>
+      <div class="corpv-companies">
+        <div class="corpc">
+          <div class="corpc-av" style="background:linear-gradient(135deg,#4285F4,#34A853);">G</div>
+          <div><div class="corpc-name">Google Colombia</div><div class="corpc-type">Tech · GCP · Cloud operations</div></div>
+          <div class="corpc-badge cb-blue">Active</div>
+        </div>
+        <div class="corpc">
+          <div class="corpc-av" style="background:linear-gradient(135deg,#FF9900,#232F3E);">A</div>
+          <div><div class="corpc-name">Amazon Web Services</div><div class="corpc-type">Cloud · Sales · Customer success</div></div>
+          <div class="corpc-badge cb-blue">Active</div>
+        </div>
+        <div class="corpc">
+          <div class="corpc-av" style="background:linear-gradient(135deg,#00A1F1,#7CBB00);">MS</div>
+          <div><div class="corpc-name">Microsoft Colombia</div><div class="corpc-type">Enterprise · Partner success · Tech</div></div>
+          <div class="corpc-badge cb-blue">Active</div>
+        </div>
+        <div class="corpc">
+          <div class="corpc-av" style="background:linear-gradient(135deg,#00A1E0,#032D60);">SF</div>
+          <div><div class="corpc-name">Salesforce LatAm</div><div class="corpc-type">CRM · Sales · Customer success</div></div>
+          <div class="corpc-badge cb-green">Expanding</div>
+        </div>
+        <div class="corpc">
+          <div class="corpc-av" style="background:linear-gradient(135deg,#6C3CE1,#4F28B8);">AC</div>
+          <div><div class="corpc-name">Accenture Colombia</div><div class="corpc-type">Consulting · Operations · Finance</div></div>
+          <div class="corpc-badge cb-purple">700+ staff</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;padding:12px 14px;background:rgba(255,255,255,0.04);border-radius:9px;font-size:11px;color:rgba(255,255,255,0.3);line-height:1.6;">The professionals these companies trained are entering the job market — and Nearwork connects you directly to them.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ UNIVERSITIES ══ -->
+<section class="uni-section">
+  <div class="uni-inner section-inner" style="max-width:1100px;">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <div class="section-eyebrow">Education infrastructure</div>
+      <h2 class="section-h2" style="text-align:center;">Supported by <em>Colombia's top universities.</em></h2>
+      <p class="section-sub" style="margin:0 auto;">Bogotá houses Colombia's most prestigious institutions — producing a higher volume of graduates than any other city, across every discipline US SaaS companies need.</p>
+    </div>
+    <div class="uni-grid">
+      <div class="ug-card reveal reveal-delay-1">
+        <div class="ug-abbr" style="color:var(--purple);">Uniandes</div>
+        <div class="ug-name">Universidad de los Andes</div>
+        <div class="ug-focus">Colombia's #1 ranked. Business · Engineering · Economics · MBA</div>
+      </div>
+      <div class="ug-card reveal reveal-delay-2">
+        <div class="ug-abbr" style="color:var(--blue);">Javeriana</div>
+        <div class="ug-name">Pontificia Universidad Javeriana</div>
+        <div class="ug-focus">Communications · Business · Law · Finance · Strong English programs</div>
+      </div>
+      <div class="ug-card reveal reveal-delay-3">
+        <div class="ug-abbr" style="color:var(--amber);">Rosario</div>
+        <div class="ug-name">Universidad del Rosario</div>
+        <div class="ug-focus">Law · Economics · International Relations · Business</div>
+      </div>
+      <div class="ug-card reveal reveal-delay-4">
+        <div class="ug-abbr" style="color:var(--green);">UNAL</div>
+        <div class="ug-name">Universidad Nacional</div>
+        <div class="ug-focus">Engineering · Sciences · Technology · Architecture</div>
+      </div>
+    </div>
+    <div class="keyline reveal" style="margin-top:24px;">
+      <div class="kl-bar" style="height:44px;background:linear-gradient(to bottom,var(--purple),var(--pl));"></div>
+      <div class="kl-text">"A consistent pipeline of talent, <em style="color:var(--pl);">ready to perform.</em>"</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GLOBAL ALIGNMENT ══ -->
+<section class="global-section">
+  <div class="global-inner section-inner" style="max-width:1100px;">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <div class="section-eyebrow">Global alignment</div>
+      <h2 class="section-h2" style="text-align:center;">Aligned with <em>international business standards.</em></h2>
+      <p class="section-sub" style="margin:0 auto;">Bogotá's workforce has been shaped by decades of multinational presence. Integration into US teams is smooth, structured, and efficient from day one.</p>
+    </div>
+    <div class="global-grid">
+      <div class="gg-card reveal reveal-delay-1">
+        <span class="gg-icon">🗣️</span>
+        <div class="gg-title">Communication standards</div>
+        <div class="gg-desc">Accustomed to US email etiquette, Slack culture, meeting norms, and async documentation expectations.</div>
+      </div>
+      <div class="gg-card reveal reveal-delay-2">
+        <span class="gg-icon">📊</span>
+        <div class="gg-title">Performance expectations</div>
+        <div class="gg-desc">Already familiar with quota targets, KPI dashboards, and data-driven performance reviews from corporate environments.</div>
+      </div>
+      <div class="gg-card reveal reveal-delay-3">
+        <span class="gg-icon">⚙️</span>
+        <div class="gg-title">Business process fluency</div>
+        <div class="gg-desc">Versed in SOPs, escalation frameworks, CRM hygiene, and the structured workflows US SaaS teams depend on.</div>
+      </div>
+      <div class="gg-card reveal reveal-delay-4">
+        <span class="gg-icon">🕐</span>
+        <div class="gg-title">Timezone alignment</div>
+        <div class="gg-desc">CST — full overlap with US East and West Coast business hours. No async bottlenecks, no delayed responses.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RETENTION ══ -->
+<section class="retention-section">
+  <div class="ret-bg"></div>
+  <div class="ret-inner section-inner" style="max-width:1100px;">
+    <div class="reveal" style="max-width:560px;">
+      <div class="section-eyebrow">Stability for long-term growth</div>
+      <h2 class="section-h2">Bogotá builds <em>consistent, reliable teams.</em></h2>
+      <p class="section-sub">Bogotá's professional culture values career development and long-term employment. Professionals here aren't job-hopping — they're building careers. That translates directly into team stability for your business.</p>
+    </div>
+    <div class="ret-grid">
+      <div class="ret-card reveal reveal-delay-1">
+        <span class="ret-icon">📈</span>
+        <div class="ret-title">Career development culture</div>
+        <div class="ret-desc">Bogotá professionals actively invest in certifications, skill development, and career progression — making your team better every quarter.</div>
+      </div>
+      <div class="ret-card reveal reveal-delay-2">
+        <span class="ret-icon">🏢</span>
+        <div class="ret-title">Long-term employment mindset</div>
+        <div class="ret-desc">Shaped by corporate environments where 2–5 year tenures are standard, Bogotá professionals bring a stability mindset that reduces churn.</div>
+      </div>
+      <div class="ret-card reveal reveal-delay-3">
+        <span class="ret-icon">🎯</span>
+        <div class="ret-title">High performance consistency</div>
+        <div class="ret-desc">Corporate experience creates professionals who show up reliably, meet deadlines, and maintain performance standards without micromanagement.</div>
+      </div>
+    </div>
+    <div class="ret-stats">
+      <div class="rst reveal reveal-delay-1"><div class="rst-num">92%</div><div class="rst-label">12-month retention across Nearwork's Bogotá placements</div></div>
+      <div class="rst reveal reveal-delay-2"><div class="rst-num">2.1×</div><div class="rst-label">Longer tenure vs US equivalent remote hires</div></div>
+      <div class="rst reveal reveal-delay-3"><div class="rst-num">4.7/5</div><div class="rst-label">Average client satisfaction for Bogotá placements</div></div>
+      <div class="rst reveal reveal-delay-4"><div class="rst-num">89%</div><div class="rst-label">Of Bogotá candidates with prior multinational experience</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOGOTÁ vs MEDELLÍN ══ -->
+<section class="compare-section">
+  <div class="compare-inner section-inner" style="max-width:1100px;">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <div class="section-eyebrow">Two cities, one strategy</div>
+      <h2 class="section-h2" style="text-align:center;">Medellín and Bogotá — <em>both sides of the market.</em></h2>
+      <p class="section-sub" style="margin:0 auto;">You don't have to choose. Nearwork operates across both cities — giving you access to innovation-driven talent and corporate-trained depth, depending on what your role requires.</p>
+    </div>
+    <div class="city-compare reveal" style="margin-top:48px;">
+      <div class="cc-col medellin">
+        <div class="cc-city-label">Medellín</div>
+        <div class="cc-city-name">Innovation + Energy</div>
+        <div class="cc-items">
+          <div class="cc-item"><div class="cc-dot"></div>Colombia's innovation capital</div>
+          <div class="cc-item"><div class="cc-dot"></div>Startup and tech ecosystem</div>
+          <div class="cc-item"><div class="cc-dot"></div>80K+ graduates per year</div>
+          <div class="cc-item"><div class="cc-dot"></div>City of Eternal Spring — 22°C</div>
+          <div class="cc-item"><div class="cc-dot"></div>94% 12-month retention rate</div>
+          <div class="cc-item"><div class="cc-dot"></div>Strong for CS, SDR, Marketing Ops</div>
+        </div>
+      </div>
+      <div class="cc-middle"><div class="cc-vs">vs</div></div>
+      <div class="cc-col bogota">
+        <div class="cc-city-label">Bogotá</div>
+        <div class="cc-city-name">Scale + Corporate Depth</div>
+        <div class="cc-items">
+          <div class="cc-item"><div class="cc-dot"></div>Colombia's business capital</div>
+          <div class="cc-item"><div class="cc-dot"></div>500+ multinationals operating</div>
+          <div class="cc-item"><div class="cc-dot"></div>160K+ graduates per year</div>
+          <div class="cc-item"><div class="cc-dot"></div>Colombia's largest talent pool</div>
+          <div class="cc-item"><div class="cc-dot"></div>92% 12-month retention rate</div>
+          <div class="cc-item"><div class="cc-dot"></div>Deep pipeline for any volume or role</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEARWORK ══ -->
+<section class="nearwork-section">
+  <div class="nearwork-inner section-inner" style="max-width:1100px;">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <div class="section-eyebrow">Your gateway to Bogotá</div>
+      <h2 class="section-h2" style="text-align:center;">Scale without friction — <em>starting now.</em></h2>
+      <p class="section-sub" style="margin:0 auto;">Nearwork connects you directly to Bogotá's talent market through a structured, efficient process. Identify, evaluate, hire — without the noise.</p>
+    </div>
+    <div class="nw-process">
+      <div class="nwp-card reveal reveal-delay-1">
+        <div class="nwp-num">01</div>
+        <span class="nwp-icon">🎯</span>
+        <div class="nwp-title">Identify qualified candidates</div>
+        <div class="nwp-desc">We search Bogotá's talent pool — targeting professionals with the background, English level, and corporate experience your role demands.</div>
+      </div>
+      <div class="nwp-card reveal reveal-delay-2">
+        <div class="nwp-num">02</div>
+        <span class="nwp-icon">✅</span>
+        <div class="nwp-title">Manage the full process</div>
+        <div class="nwp-desc">Profile review, background check, English evaluation, role-specific assessment — all done before you see a single candidate.</div>
+      </div>
+      <div class="nwp-card reveal reveal-delay-3">
+        <div class="nwp-num">03</div>
+        <span class="nwp-icon">🚀</span>
+        <div class="nwp-title">Match talent to your needs</div>
+        <div class="nwp-desc">2–3 pre-vetted, scored candidates. You choose. 6-month replacement guarantee behind every hire. Scale confidently.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-inner reveal">
+    <h2 class="cta-h2">Build your team with confidence <em>in Bogotá.</em></h2>
+    <p class="cta-sub">Access one of Latin America's deepest talent markets and scale your team effectively. Book a free call — we'll show you what's available right now.</p>
+    <div class="cta-btns">
+      <a class="btn-cta-main" href="/book">Book a free call →</a>
+      <a class="btn-cta-ghost" href="/why-colombia">Why Colombia</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo">Near<span>work</span></div>
+      <div class="ft-tagline">Connecting US SaaS companies with elite, English-speaking Colombian professionals. Vetted. Transparent. Guaranteed.</div>
+      <div class="ft-social">
+        <a href="#" class="sb" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="sb" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="#" class="sb" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="sb" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+      <div class="ft-reviews">
+        <div class="review-badge"><div class="rb-logo tp">Trustpilot</div><div class="rb-stars"><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div></div><div class="rb-text">5.0 · 48 reviews</div></div>
+        <div class="review-badge"><div class="rb-logo g2">G2</div><div class="rb-stars"><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div></div><div class="rb-text">4.9 · 31 reviews</div></div>
+      </div>
+    </div>
+    <div class="ft-newsletter">
+      <div class="ft-nl-label">Stay in the loop</div>
+      <div class="ft-nl-sub">Hiring insights, Colombia market updates, and Nearwork news — delivered monthly. No spam, ever.</div>
+      <div class="ft-nl-row"><input class="ft-nl-input" type="email" placeholder="your@company.com"/><button class="ft-nl-btn">Subscribe →</button></div>
+      <div class="ft-nl-note">No spam. Unsubscribe anytime.</div>
+    </div>
+  </div>
+  <div class="ft-links">
+    <div>
+      <div class="ft-col-title">Company</div>
+      <a class="ftl" href="about">About us</a>
+      <a class="ftl" href="about-story">Our story</a>
+      <a class="ftl" href="about-team">Team</a>
+      <a class="ftl" href="about-careers">Careers <span class="flb hiring">Hiring</span></a>
+      <a class="ftl" href="about-press">Press</a>
+      <a class="ftl" href="contact">Contact us</a>
+    </div>
+    <div>
+      <div class="ft-col-title">For Companies</div>
+      <a class="ftl" href="why-colombia">Why Colombia</a>
+      <a class="ftl" href="how-it-works">How it works</a>
+      <a class="ftl" href="pricing">Pricing</a>
+      <a class="ftl" href="how-it-works-dashboard">Your dashboard</a>
+      <a class="ftl" href="how-it-works-savings">ROI calculator</a>
+      <a class="ftl" href="contact">Schedule a call</a>
+    </div>
+    <div>
+      <div class="ft-col-title">For Candidates</div>
+      <a class="ftl" href="candidates-apply">Apply now <span class="flb open">Open</span></a>
+      <a class="ftl" href="candidates-roles">Roles we place</a>
+      <a class="ftl" href="candidates-process">What to expect</a>
+      <a class="ftl" href="candidates-english">English requirements</a>
+      <a class="ftl" href="candidates-faq">Candidate FAQ</a>
+    </div>
+    <div>
+      <div class="ft-col-title">Resources</div>
+      <a class="ftl" href="resources-blog">Blog</a>
+      <a class="ftl" href="resources-hiring-guides">Hiring guides</a>
+      <a class="ftl" href="resources-colombia-report">Colombia market report <span class="flb new">New</span></a>
+      <a class="ftl" href="resources-salary-guide">SaaS salary guide</a>
+      <a class="ftl" href="resources-case-studies">Case studies</a>
+      <a class="ftl" href="resources-help-center">Help center</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 Nearwork Inc. All rights reserved.</div>
+    <div class="ft-flag">🇨🇴 Built for Colombia. Designed for the world.</div>
+    <div class="ft-legal">
+      <a href="privacy-policy">Privacy policy</a>
+      <a href="terms-of-service">Terms of service</a>
+      <a href="cookie-policy">Cookie policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Animate bars
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.sc-fill').forEach(bar => { bar.style.width = bar.dataset.w; });
+      barObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+const barTarget = document.querySelector('.scale-compare');
+if (barTarget) barObserver.observe(barTarget);
+
+function navToggle(id) {
+  const menu = document.getElementById('menu-' + id);
+  const btn  = document.getElementById('btn-' + id);
+  if (!menu) return;
+  const isOpen = menu.classList.contains('show');
+  ['why','how','candidates','resources','about'].forEach(k => {
+    const m = document.getElementById('menu-'+k);
+    const b = document.getElementById('btn-'+k);
+    if (m) m.classList.remove('show');
+    if (b) b.classList.remove('open');
+  });
+  if (!isOpen) { menu.classList.add('show'); if (btn) btn.classList.add('open'); }
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-item')) {
+    ['why','how','candidates','resources','about'].forEach(k => {
+      const m = document.getElementById('menu-'+k);
+      const b = document.getElementById('btn-'+k);
+      if (m) m.classList.remove('show');
+      if (b) b.classList.remove('open');
+    });
+  }
+});
+function toggleMobile() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("open");
+}
+</script>
+</body>
+</html>
