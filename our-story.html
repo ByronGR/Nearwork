@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story | How Nearwork Started | Nearwork</title>
+<meta name="description" content="How Nearwork started, what we realized about the hiring process, and why we're building a better way to connect US companies with Colombian talent.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --purple:#6C3CE1;--pd:#4F28B8;--pl:#8B5CF6;--pp:#F0EBFF;
+  --black:#0D0D0D;--white:#fff;
+  --g1:#F9FAFB;--g2:#F3F4F6;--g3:#D1D5DB;--g4:#9CA3AF;--g5:#6B7280;--g6:#374151;
+  --green:#10B981;--gl:#6EE7B7;--amber:#F59E0B;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;color:var(--black);background:var(--white);overflow-x:hidden;}
+
+/* ── HERO ── */
+.hero{min-height:80vh;background:var(--black);position:relative;display:flex;align-items:center;padding:140px 5% 80px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 8% 60%,rgba(108,60,225,0.16),transparent 48%),
+  radial-gradient(ellipse at 88% 25%,rgba(16,185,129,0.08),transparent 45%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:56px 56px;}
+.hero-inner{max-width:780px;margin:0 auto;width:100%;position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(108,60,225,0.15);border:1px solid rgba(108,60,225,0.3);border-radius:99px;padding:7px 16px;font-size:11px;font-weight:700;color:var(--pl);text-transform:uppercase;letter-spacing:.12em;margin-bottom:28px;opacity:0;animation:fadeUp .6s ease .1s forwards;}
+.hero-h1{font-size:clamp(52px,9vw,96px);font-weight:900;color:#fff;line-height:.95;letter-spacing:-4px;margin-bottom:24px;opacity:0;animation:fadeUp .6s ease .2s forwards;}
+.hero-sub{font-size:18px;color:rgba(255,255,255,0.45);line-height:1.7;font-weight:300;max-width:520px;opacity:0;animation:fadeUp .6s ease .3s forwards;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── MAIN NARRATIVE ── */
+.narrative{background:var(--white);padding:0 5%;}
+.narrative-inner{max-width:720px;margin:0 auto;padding:80px 0 100px;}
+
+/* Chapter heading */
+.ch-wrap{margin-bottom:56px;}
+.ch-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--g4);margin-bottom:8px;display:flex;align-items:center;gap:12px;}
+.ch-num::after{content:'';flex:1;height:1px;background:var(--g3);}
+.ch-h2{font-size:clamp(26px,4vw,40px);font-weight:900;color:var(--black);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;}
+.ch-h2 em{font-style:normal;color:var(--purple);}
+
+/* Body copy */
+.ch-p{font-size:17px;color:var(--g6);line-height:1.85;margin-bottom:18px;font-weight:300;}
+.ch-p strong{color:var(--black);font-weight:700;}
+.ch-p:last-of-type{margin-bottom:0;}
+
+/* Pull quote */
+.pull-quote{border-left:3px solid var(--purple);padding:2px 0 2px 24px;margin:28px 0;font-size:18px;font-weight:700;color:var(--black);line-height:1.45;letter-spacing:-.3px;}
+.pull-quote em{font-style:normal;color:var(--purple);}
+
+/* Insight block */
+.insight{background:var(--g1);border-radius:12px;border:1.5px solid var(--g3);padding:22px 26px;margin:24px 0;display:flex;gap:14px;align-items:flex-start;}
+.insight-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.insight-text{font-size:14px;color:var(--g6);line-height:1.75;}
+.insight-text strong{color:var(--black);}
+
+/* List */
+.ch-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:16px 0;}
+.ch-list li{font-size:16px;color:var(--g6);line-height:1.7;padding-left:20px;position:relative;font-weight:300;}
+.ch-list li::before{content:'—';position:absolute;left:0;color:var(--g4);}
+.ch-list.highlighted li{color:var(--black);font-weight:500;}
+.ch-list.highlighted li::before{color:var(--purple);}
+
+/* Section divider */
+.ch-divider{height:1px;background:var(--g2);margin:56px 0;}
+
+/* Year badge inline */
+.year-badge{display:inline-flex;align-items:center;gap:6px;background:var(--pp);border:1px solid rgba(108,60,225,0.15);border-radius:99px;padding:4px 12px;font-size:11px;font-weight:700;color:var(--purple);margin:0 4px;vertical-align:middle;}
+
+/* Three pillars (Section 5) */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0;}
+.pillar{background:var(--g1);border-radius:12px;border:1.5px solid var(--g3);padding:20px;text-align:center;transition:border-color .2s,transform .15s;}
+.pillar:nth-child(1){border-top:3px solid var(--purple);}
+.pillar:nth-child(2){border-top:3px solid var(--green);}
+.pillar:nth-child(3){border-top:3px solid var(--amber);}
+.pillar:hover{transform:translateY(-2px);}
+.pillar-icon{font-size:24px;margin-bottom:8px;display:block;}
+.pillar-title{font-size:13px;font-weight:700;color:var(--black);}
+
+/* Closing statement */
+.closing{background:var(--black);border-radius:14px;padding:32px 36px;margin-top:48px;}
+.closing-text{font-size:18px;font-weight:700;color:#fff;line-height:1.5;letter-spacing:-.3px;margin-bottom:10px;}
+.closing-text em{color:var(--pl);font-style:normal;}
+.closing-sub{font-size:13px;color:rgba(255,255,255,0.35);}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── CTA ── */
+.cta-section{background:linear-gradient(135deg,#0D0D0D 0%,#1a0a3e 50%,#0D0D0D 100%);padding:120px 5%;text-align:center;position:relative;overflow:hidden;}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(108,60,225,0.15),transparent 55%);}
+.cta-inner{position:relative;z-index:1;max-width:600px;margin:0 auto;}
+.cta-h2{font-size:clamp(30px,5vw,52px);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-2.5px;margin-bottom:14px;}
+.cta-h2 em{font-style:normal;color:var(--pl);}
+.cta-sub{font-size:16px;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:32px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-cta-main{background:var(--purple);color:#fff;font-size:15px;font-weight:700;padding:16px 36px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s;box-shadow:0 4px 32px rgba(108,60,225,0.4);}
+.btn-cta-main:hover{background:var(--pd);transform:translateY(-2px);}
+.btn-cta-ghost{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.75);font-size:15px;font-weight:600;padding:16px 30px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.12);transition:all .2s;}
+.btn-cta-ghost:hover{background:rgba(255,255,255,0.12);}
+
+@media(max-width:640px){
+  .pillars{grid-template-columns:1fr;}
+  .hero-h1{letter-spacing:-3px;}
+  .narrative-inner{padding:60px 0 80px;}
+}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  
+  .hamburger{display:flex;}
+}
+
+nav {
+  position: sticky; top: 0; z-index: 500;
+  display: flex; align-items: center;
+  padding: 0 32px; height: 60px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  gap: 0;
+}
+nav { padding: 0 20px; }
+.nav-logo { font-size: 20px; font-weight: 900; color: var(--black); letter-spacing: -1px; text-decoration: none; flex-shrink: 0; white-space: nowrap; }
+.nav-logo span { color: var(--purple); }
+.nav-items { display: flex; align-items: center; gap: 0; margin-left: 24px; flex: 1; }
+.nav-item { position: relative; }
+.nav-btn { display: flex; align-items: center; gap: 4px; font-size: 13.5px; font-weight: 500; color: #333; padding: 6px 12px; border-radius: 7px; cursor: pointer; border: none; background: none; font-family: 'Poppins', sans-serif; transition: color .15s, background .15s; white-space: nowrap; text-decoration: none; }
+.nav-btn:hover { color: var(--black); background: rgba(0,0,0,0.05); }
+.nav-btn.open { color: var(--black); background: rgba(0,0,0,0.05); }
+.nav-btn.open .nchev { transform: rotate(180deg); }
+.nav-right { display: flex; gap: 8px; align-items: center; flex-shrink: 0; margin-left: auto; }
+.nav-login { font-size: 13.5px; font-weight: 500; color: #333; background: none; border: none; padding: 7px 14px; border-radius: 7px; cursor: pointer; font-family: 'Poppins', sans-serif; transition: color .15s, background .15s; }
+.nav-login:hover { color: var(--black); background: rgba(0,0,0,0.04); }
+.nav-cta { background: var(--black); color: var(--white); font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 8px; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; transition: background 0.2s, transform 0.15s; }
+.nav-cta:hover { background: #333; transform: translateY(-1px); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; border: none; background: none; margin-left: auto; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; transition: all 0.3s; }
+.mega { position: absolute; top: calc(100% + 8px); left: 0; transform: translateY(-4px); background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); display: grid; gap: 20px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 600; }
+.mega.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+.mega.cols3 { grid-template-columns: 1fr 1fr 1fr; width: 640px; }
+.mega.cols2 { grid-template-columns: 1fr 1fr; width: 440px; }
+.mega-col-title { font-size: 10px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; padding: 0 8px; }
+.mega-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 8px; border-radius: 9px; cursor: pointer; transition: background .12s; margin-bottom: 1px; }
+.mega-item:hover { background: #F5F5F5; }
+.mega-item:hover .mi-t { color: var(--black); }
+.nchev { font-size: 8px; transition: transform .2s; display: inline-block; opacity: 0.5; }
+.nchev { transform: rotate(180deg); }
+.simple-menu { position: absolute; top: calc(100% + 8px); left: 0; background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 5px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); width: 185px; opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity .15s, transform .15s; z-index: 600; }
+.simple-menu.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+.sm-item { padding: 8px 12px; font-size: 13px; color: #333; border-radius: 7px; cursor: pointer; font-weight: 500; transition: background .12s, color .12s; }
+.sm-item:hover { background: #F5F5F5; color: var(--black); }
+.mi-t { color: var(--black); }
+.mi-icon { width: 32px; height: 32px; border-radius: 8px; background: #F5F5F5; border: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.mi-t { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 1px; transition: color .12s; }
+.mi-d { font-size: 11px; color: #888; line-height: 1.35; }
+footer { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.22); border-radius: 12px; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+footer { background: rgba(16,185,129,0.15); border-radius: 8px; padding: 10px 14px; margin-top: 4px; }
+footer {
+  background: #0A0A0A;
+  color: #fff;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+footer{background:#0D0D0D;padding:64px 56px 0;}
+footer{padding:48px 20px 0;}
+.ft-top{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;padding-bottom:48px;border-bottom:1px solid #1f1f1f;}
+.ft-logo{font-size:26px;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:10px;white-space:nowrap;}
+.ft-logo span{color:#8B5CF6;}
+.ft-tagline{font-size:13px;color:#555;line-height:1.65;max-width:300px;font-weight:300;margin-bottom:20px;}
+.ft-social{display:flex;gap:9px;margin-bottom:20px;}
+.ft-reviews{display:flex;gap:10px;flex-wrap:wrap;}
+.ft-newsletter{display:flex;flex-direction:column;}
+.ft-nl-label{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
+.ft-nl-sub{font-size:12px;color:#555;margin-bottom:16px;line-height:1.6;}
+.ft-nl-row{display:flex;gap:8px;width:100%;}
+.ft-nl-input{flex:1;min-width:0;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:9px;padding:11px 16px;font-size:13px;color:#fff;font-family:'Poppins',sans-serif;outline:none;transition:border-color .2s;}
+.ft-nl-input::placeholder{color:#444;}
+.ft-nl-input:focus{border-color:#6C3CE1;}
+.ft-nl-btn{background:#6C3CE1;color:#fff;font-size:12px;font-weight:600;padding:11px 22px;border-radius:9px;border:none;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;flex-shrink:0;}
+.ft-nl-btn:hover{background:#4F28B8;}
+.ft-nl-note{font-size:10px;color:#333;margin-top:8px;}
+.ft-links{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:40px 0 48px;border-bottom:1px solid #1f1f1f;}
+.ft-col-title{font-size:10px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px;}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;padding:18px 0;flex-wrap:wrap;gap:10px;}
+.ft-copy{font-size:11px;color:#2a2a2a;}
+.ft-flag{font-size:11px;color:#2a2a2a;}
+.ft-legal{display:flex;gap:18px;}
+.ft-legal a{font-size:11px;color:#2a2a2a;text-decoration:none;transition:color .2s;}
+.ft-legal a:hover{color:#fff;}
+.ft-top{grid-template-columns:1fr;gap:36px;}
+.ft-links{grid-template-columns:1fr 1fr;gap:24px;padding:32px 0 36px;}
+.ft-bottom{flex-direction:column;align-items:flex-start;gap:8px;}
+.ft-nl-row{flex-direction:column;}
+.ft-nl-btn{width:100%;}
+.ft-links{grid-template-columns:1fr;}
+.rb-logo{font-size:12px;font-weight:800;}
+.rb-logo.tp{color:#00B67A;}
+.rb-logo.g2{color:#FF492C;}
+.rb-stars{display:flex;gap:1px;}
+.rb-star{width:11px;height:11px;background:#00B67A;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.rb-star.g2c{background:#FF492C;}
+.rb-text{font-size:10px;color:#555;font-weight:500;}
+.review-badge{display:flex;align-items:center;gap:8px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:8px 14px;cursor:pointer;}
+.sb{width:36px;height:36px;border-radius:9px;background:#1a1a1a;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s;text-decoration:none;}
+.sb:hover{background:#6C3CE1;border-color:#6C3CE1;}
+.sb svg{width:16px;height:16px;fill:#777;transition:fill .2s;}
+.sb:hover svg{fill:#fff;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Near<span>work</span></a>
+
+  <div class="nav-items">
+
+    <!-- WHY COLOMBIA -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-why" onclick="navToggle('why')">
+        Why Colombia <span class="nchev">▾</span>
+      </button>
+      <div class="mega cols3" id="menu-why">
+        <div>
+          <div class="mega-col-title">Why it works</div>
+          <a class="mega-item" href="why-colombia"><div class="mi-icon">🇨🇴</div><div><div class="mi-t">Overview</div><div class="mi-d">Why Colombia is the #1 choice</div></div></a>
+          <a class="mega-item" href="why-colombia-nearshore"><div class="mi-icon">🏆</div><div><div class="mi-t">#1 Nearshore destination</div><div class="mi-d">The data and rankings deep dive</div></div></a>
+          <a class="mega-item" href="why-colombia-timezone"><div class="mi-icon">🕐</div><div><div class="mi-t">Timezone overlap</div><div class="mi-d">Full breakdown vs Asia & Europe</div></div></a>
+          <a class="mega-item" href="why-colombia-english"><div class="mi-icon">🗣️</div><div><div class="mi-t">C1 English standard</div><div class="mi-d">How we assess, what it means</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">The advantage</div>
+          <a class="mega-item" href="why-colombia-savings"><div class="mi-icon">💸</div><div><div class="mi-t">Cost savings</div><div class="mi-d">Role-by-role salary comparison</div></div></a>
+          <a class="mega-item" href="why-colombia-universities"><div class="mi-icon">🎓</div><div><div class="mi-t">University talent</div><div class="mi-d">Academic depth behind the pool</div></div></a>
+          <a class="mega-item" href="why-colombia-why-now"><div class="mi-icon">🚀</div><div><div class="mi-t">Why now</div><div class="mi-d">Market timing & 2026 trends</div></div></a>
+          <a class="mega-item" href="why-colombia-vs-others"><div class="mi-icon">⚡</div><div><div class="mi-t">Nearwork vs others</div><div class="mi-d">vs LinkedIn, agencies & more</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">Cities</div>
+          <a class="mega-item" href="why-colombia-medellin"><div class="mi-icon">🏙️</div><div><div class="mi-t">Medellín</div><div class="mi-d">Silicon Valley of Latin America</div></div></a>
+          <a class="mega-item" href="why-colombia-bogota"><div class="mi-icon">🌆</div><div><div class="mi-t">Bogotá</div><div class="mi-d">Largest talent pool in Colombia</div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-how" onclick="navToggle('how')">
+        How it works <span class="nchev">▾</span>
+      </button>
+      <div class="mega cols2" id="menu-how">
+        <div>
+          <div class="mega-col-title">The process</div>
+          <a class="mega-item" href="how-it-works"><div class="mi-icon">📋</div><div><div class="mi-t">Overview</div><div class="mi-d">How Nearwork works end-to-end</div></div></a>
+          <a class="mega-item" href="how-it-works-pipeline"><div class="mi-icon">🔬</div><div><div class="mi-t">Our 7-stage pipeline</div><div class="mi-d">Each stage explained in depth</div></div></a>
+          <a class="mega-item" href="how-it-works-vetting"><div class="mi-icon">✅</div><div><div class="mi-t">Screening & vetting</div><div class="mi-d">Tech test, English, background check</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">After you hire</div>
+          <a class="mega-item" href="how-it-works-dashboard"><div class="mi-icon">👀</div><div><div class="mi-t">Your dashboard</div><div class="mi-d">What clients see, how it works</div></div></a>
+          <a class="mega-item" href="how-it-works-guarantee"><div class="mi-icon">🛡️</div><div><div class="mi-t">6-month guarantee</div><div class="mi-d">Full terms, what's covered</div></div></a>
+          <a class="mega-item" href="how-it-works-after-hire"><div class="mi-icon">🤝</div><div><div class="mi-t">After you hire</div><div class="mi-d">Follow-ups & post-placement</div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="nav-item">
+      <a href="pricing" class="nav-btn">Pricing</a>
+    </div>
+
+    <!-- FOR CANDIDATES -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-candidates" onclick="navToggle('candidates')">
+        For Candidates <span class="nchev">▾</span>
+      </button>
+      <div class="mega cols2" id="menu-candidates">
+        <div>
+          <div class="mega-col-title">Get hired</div>
+          <a class="mega-item" href="candidates-apply"><div class="mi-icon">🇨🇴</div><div><div class="mi-t">Apply now</div><div class="mi-d">Join our bench before roles open</div></div></a>
+          <a class="mega-item" href="candidates-process"><div class="mi-icon">🔍</div><div><div class="mi-t">What to expect</div><div class="mi-d">The process from your POV</div></div></a>
+          <a class="mega-item" href="candidates-english"><div class="mi-icon">🗣️</div><div><div class="mi-t">English requirements</div><div class="mi-d">What C1 means & how to prepare</div></div></a>
+          <a class="mega-item" href="candidates-faq"><div class="mi-icon">❓</div><div><div class="mi-t">Candidate FAQ</div><div class="mi-d">Questions before & after applying</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">Open roles</div>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">🤝</div><div><div class="mi-t">Customer Success Manager</div><div class="mi-d">Most hired · Bilingual · Remote</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">📞</div><div><div class="mi-t">Sales Development Rep</div><div class="mi-d">Outbound · SaaS · High demand</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">🛠️</div><div><div class="mi-t">Technical Support</div><div class="mi-d">Tier 1 & 2 · Fast growing</div></div></a>
+          <a class="mega-item" href="candidates-roles"><div class="mi-icon">📣</div><div><div class="mi-t">View all roles →</div><div class="mi-d">Full list with salary ranges</div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-resources" onclick="navToggle('resources')">
+        Resources <span class="nchev">▾</span>
+      </button>
+      <div class="mega cols2" id="menu-resources" style="left:auto;right:0;">
+        <div>
+          <div class="mega-col-title">Learn</div>
+          <a class="mega-item" href="resources-blog"><div class="mi-icon">✍️</div><div><div class="mi-t">Blog</div><div class="mi-d">Articles & hiring insights</div></div></a>
+          <a class="mega-item" href="resources-hiring-guides"><div class="mi-icon">📖</div><div><div class="mi-t">Hiring guides</div><div class="mi-d">Downloadable & web guides</div></div></a>
+          <a class="mega-item" href="resources-colombia-report"><div class="mi-icon">📊</div><div><div class="mi-t">Colombia market report</div><div class="mi-d">Flagship research piece</div></div></a>
+        </div>
+        <div>
+          <div class="mega-col-title">Data & support</div>
+          <a class="mega-item" href="resources-salary-guide"><div class="mi-icon">💰</div><div><div class="mi-t">SaaS salary guide</div><div class="mi-d">Colombia vs US by role</div></div></a>
+          <a class="mega-item" href="resources-case-studies"><div class="mi-icon">🏆</div><div><div class="mi-t">Case studies</div><div class="mi-d">Client success stories</div></div></a>
+          <a class="mega-item" href="resources-help-center"><div class="mi-icon">🆘</div><div><div class="mi-t">Help center</div><div class="mi-d">FAQ for clients & candidates</div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT US -->
+    <div class="nav-item">
+      <button class="nav-btn" id="btn-about" onclick="navToggle('about')">
+        About us <span class="nchev">▾</span>
+      </button>
+      <div class="simple-menu" id="menu-about">
+        <a class="sm-item" href="about">About Nearwork</a>
+        <a class="sm-item" href="about-story">Our story</a>
+        <a class="sm-item" href="about-team">Team</a>
+        <a class="sm-item" href="about-careers">Careers at Nearwork</a>
+        <a class="sm-item" href="about-press">Press</a>
+        <a class="sm-item" href="contact">Contact us</a>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="candidates-apply" class="nav-login">I'm a candidate</a>
+    <a href="contact" class="nav-cta">Get started →</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">🏢 About Nearwork</div>
+    <h1 class="hero-h1">Our<br>Story.</h1>
+    <p class="hero-sub">How Nearwork started — and why we're building a better way to hire.</p>
+  </div>
+</section>
+
+<!-- ══ NARRATIVE ══ -->
+<div class="narrative">
+  <div class="narrative-inner">
+
+    <!-- Chapter 1 -->
+    <div class="ch-wrap reveal">
+      <div class="ch-num">Chapter 01 &nbsp;· &nbsp;The beginning</div>
+      <h2 class="ch-h2">Where it <em>started.</em></h2>
+      <p class="ch-p">Nearwork was founded in <span class="year-badge">2024</span> with a simple but important goal: help companies hire better.</p>
+      <p class="ch-p">We began by working with local and international companies looking to build teams in Colombia. These were companies that had identified the opportunity — high-quality professionals, strong English, excellent cost efficiency, full US timezone alignment — but didn't have a reliable way to access it.</p>
+      <p class="ch-p">At first, it seemed like a talent problem. There weren't enough candidates, or the right ones were hard to find. But it didn't take long to realize something more fundamental was broken.</p>
+      <div class="pull-quote">The real issue wasn't talent — <em>it was the hiring process itself.</em></div>
+    </div>
+
+    <div class="ch-divider"></div>
+
+    <!-- Chapter 2 -->
+    <div class="ch-wrap reveal">
+      <div class="ch-num">Chapter 02 &nbsp;· &nbsp;The problem</div>
+      <h2 class="ch-h2">What we <em>saw.</em></h2>
+      <p class="ch-p">The more companies we worked with, the clearer the pattern became. Hiring in most organizations — regardless of size or industry — looked like this:</p>
+      <ul class="ch-list">
+        <li>Disorganized — no defined process, no clear owner, no structured timeline</li>
+        <li>Reactive — responding to whoever showed up, rather than finding the right fit</li>
+        <li>Opaque — neither the company nor the candidate knew what was happening or why</li>
+      </ul>
+      <p class="ch-p">Companies were receiving resumes without context or verification. Candidates were going through unclear evaluation processes with no feedback and no visibility. Both sides were losing time — and trust.</p>
+      <div class="insight">
+        <span class="insight-icon">💡</span>
+        <div class="insight-text">The pain wasn't lack of talent. Colombia has a deep, growing professional class — motivated, educated, and increasingly equipped to work in international environments. <strong>The pain was that no one had built a process around that talent that actually worked for US companies.</strong></div>
+      </div>
+      <p class="ch-p">That gap is what Nearwork was built to close.</p>
+    </div>
+
+    <div class="ch-divider"></div>
+
+    <!-- Chapter 3 -->
+    <div class="ch-wrap reveal">
+      <div class="ch-num">Chapter 03 &nbsp;· &nbsp;The decision</div>
+      <h2 class="ch-h2">What we decided <em>to build.</em></h2>
+      <p class="ch-p">We could have followed the traditional model — send CVs, collect fees, repeat. It's the path of least resistance in the staffing industry, and it works in the short term.</p>
+      <p class="ch-p">We chose not to.</p>
+      <p class="ch-p">Instead, we spent the time building something fundamentally different: a structured hiring system — not just a staffing service. One that:</p>
+      <ul class="ch-list highlighted">
+        <li>Creates clarity for companies — with a defined process, real visibility, and honest communication</li>
+        <li>Respects candidates' time — with structured evaluation, clear feedback, and meaningful opportunities</li>
+        <li>Brings transparency to every step — through a live dashboard, recruiter notes, and post-hire follow-up</li>
+      </ul>
+      <p class="ch-p">This meant building a 7-stage vetting pipeline, a client-facing Kanban dashboard, a candidate portal, a 6-month replacement guarantee, and a post-hire check-in structure. All of it, from scratch — because nothing that already existed was built to do what we needed it to do.</p>
+      <div class="pull-quote">"We're not here for transactions. <em>We're here for results.</em>"</div>
+    </div>
+
+    <div class="ch-divider"></div>
+
+    <!-- Chapter 4 -->
+    <div class="ch-wrap reveal">
+      <div class="ch-num">Chapter 04 &nbsp;· &nbsp;Growth</div>
+      <h2 class="ch-h2">Growing <em>the vision.</em></h2>
+      <p class="ch-p">In <span class="year-badge">2026</span>, we began expanding our reach — making our approach more accessible to more companies and deepening our presence across Colombia's four strongest nearshore cities: Medellín, Bogotá, Barranquilla, and Bucaramanga.</p>
+      <p class="ch-p">Each city has a distinct talent profile. Medellín brings innovation and energy. Bogotá offers scale and corporate depth. Barranquilla provides a cost-efficiency advantage with a motivated, early-mover candidate pool. Bucaramanga delivers precision and some of the highest retention rates we've seen anywhere in the country.</p>
+      <p class="ch-p">Together, they give us coverage of nearly every hiring strategy a US SaaS company might need. As we grow, the goal stays the same: improve how companies hire — and how candidates experience that process.</p>
+    </div>
+
+    <div class="ch-divider"></div>
+
+    <!-- Chapter 5 -->
+    <div class="ch-wrap reveal">
+      <div class="ch-num">Chapter 05 &nbsp;· &nbsp;Today</div>
+      <h2 class="ch-h2">Where we <em>are today.</em></h2>
+      <p class="ch-p">Nearwork continues to evolve as a platform built around three principles that have never changed since we started.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-icon">🏗️</span>
+          <div class="pillar-title">Structure</div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">👁️</span>
+          <div class="pillar-title">Transparency</div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🎯</span>
+          <div class="pillar-title">Accountability</div>
+        </div>
+      </div>
+      <p class="ch-p">We work with companies that want more than just candidates. They want a process they can trust — one where they know what's happening, why decisions are being made, and what comes next. That's what we've built, and it's what we stand behind with a 6-month replacement guarantee on every placement.</p>
+      <div class="insight">
+        <span class="insight-icon">📊</span>
+        <div class="insight-text"><strong>What the data shows:</strong> 94% average 12-month retention across Nearwork placements. Under 21 days to first shortlist. 2–3 pre-vetted candidates per search. These aren't goals — they're the current baseline.</div>
+      </div>
+    </div>
+
+    <div class="ch-divider"></div>
+
+    <!-- Chapter 6 -->
+    <div class="ch-wrap reveal">
+      <div class="ch-num">Chapter 06 &nbsp;· &nbsp;Looking forward</div>
+      <h2 class="ch-h2">What's <em>next.</em></h2>
+      <p class="ch-p">We're continuing to build, improve, and expand — not just to grow Nearwork as a company, but to set a higher standard for how hiring should work in the nearshore space.</p>
+      <p class="ch-p">That means better tooling, deeper city coverage, more refined vetting, and a candidate experience that continues to improve as we learn from every placement we make.</p>
+      <p class="ch-p">Most of all, it means staying focused on the thing that started all of this: the belief that hiring can be done better — and that building the right process is what makes that possible.</p>
+      <div class="closing reveal">
+        <div class="closing-text">"Built for Colombia. <em>Designed for the world.</em>"</div>
+        <div class="closing-sub">Nearwork — our tagline, our direction, our commitment from day one</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-inner reveal">
+    <h2 class="cta-h2">Be part of what <em>we're building.</em></h2>
+    <p class="cta-sub">Whether you're a company looking for the right hire, or a candidate ready to work with US SaaS teams — Nearwork was built for you.</p>
+    <div class="cta-btns">
+      <a class="btn-cta-main" href="/book">Book a free call →</a>
+      <a class="btn-cta-ghost" href="/about">About Nearwork</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo">Near<span>work</span></div>
+      <div class="ft-tagline">Connecting US SaaS companies with elite, English-speaking Colombian professionals. Vetted. Transparent. Guaranteed.</div>
+      <div class="ft-social">
+        <a href="#" class="sb" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="sb" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="#" class="sb" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="sb" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+      <div class="ft-reviews">
+        <div class="review-badge"><div class="rb-logo tp">Trustpilot</div><div class="rb-stars"><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div><div class="rb-star"></div></div><div class="rb-text">5.0 · 48 reviews</div></div>
+        <div class="review-badge"><div class="rb-logo g2">G2</div><div class="rb-stars"><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div><div class="rb-star g2c"></div></div><div class="rb-text">4.9 · 31 reviews</div></div>
+      </div>
+    </div>
+    <div class="ft-newsletter">
+      <div class="ft-nl-label">Stay in the loop</div>
+      <div class="ft-nl-sub">Hiring insights, Colombia market updates, and Nearwork news — delivered monthly. No spam, ever.</div>
+      <div class="ft-nl-row"><input class="ft-nl-input" type="email" placeholder="your@company.com"/><button class="ft-nl-btn">Subscribe →</button></div>
+      <div class="ft-nl-note">No spam. Unsubscribe anytime.</div>
+    </div>
+  </div>
+  <div class="ft-links">
+    <div>
+      <div class="ft-col-title">Company</div>
+      <a class="ftl" href="about">About us</a>
+      <a class="ftl" href="about-story">Our story</a>
+      <a class="ftl" href="about-team">Team</a>
+      <a class="ftl" href="about-careers">Careers <span class="flb hiring">Hiring</span></a>
+      <a class="ftl" href="about-press">Press</a>
+      <a class="ftl" href="contact">Contact us</a>
+    </div>
+    <div>
+      <div class="ft-col-title">For Companies</div>
+      <a class="ftl" href="why-colombia">Why Colombia</a>
+      <a class="ftl" href="how-it-works">How it works</a>
+      <a class="ftl" href="pricing">Pricing</a>
+      <a class="ftl" href="how-it-works-dashboard">Your dashboard</a>
+      <a class="ftl" href="how-it-works-savings">ROI calculator</a>
+      <a class="ftl" href="contact">Schedule a call</a>
+    </div>
+    <div>
+      <div class="ft-col-title">For Candidates</div>
+      <a class="ftl" href="candidates-apply">Apply now <span class="flb open">Open</span></a>
+      <a class="ftl" href="candidates-roles">Roles we place</a>
+      <a class="ftl" href="candidates-process">What to expect</a>
+      <a class="ftl" href="candidates-english">English requirements</a>
+      <a class="ftl" href="candidates-faq">Candidate FAQ</a>
+    </div>
+    <div>
+      <div class="ft-col-title">Resources</div>
+      <a class="ftl" href="resources-blog">Blog</a>
+      <a class="ftl" href="resources-hiring-guides">Hiring guides</a>
+      <a class="ftl" href="resources-colombia-report">Colombia market report <span class="flb new">New</span></a>
+      <a class="ftl" href="resources-salary-guide">SaaS salary guide</a>
+      <a class="ftl" href="resources-case-studies">Case studies</a>
+      <a class="ftl" href="resources-help-center">Help center</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 Nearwork Inc. All rights reserved.</div>
+    <div class="ft-flag">🇨🇴 Built for Colombia. Designed for the world.</div>
+    <div class="ft-legal">
+      <a href="privacy-policy">Privacy policy</a>
+      <a href="terms-of-service">Terms of service</a>
+      <a href="cookie-policy">Cookie policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+function navToggle(id) {
+  const menu = document.getElementById('menu-' + id);
+  const btn  = document.getElementById('btn-' + id);
+  if (!menu) return;
+  const isOpen = menu.classList.contains('show');
+  ['why','how','candidates','resources','about'].forEach(k => {
+    const m = document.getElementById('menu-'+k);
+    const b = document.getElementById('btn-'+k);
+    if (m) m.classList.remove('show');
+    if (b) b.classList.remove('open');
+  });
+  if (!isOpen) { menu.classList.add('show'); if (btn) btn.classList.add('open'); }
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-item')) {
+    ['why','how','candidates','resources','about'].forEach(k => {
+      const m = document.getElementById('menu-'+k);
+      const b = document.getElementById('btn-'+k);
+      if (m) m.classList.remove('show');
+      if (b) b.classList.remove('open');
+    });
+  }
+});
+function toggleMobile() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("open");
+}
+</script>
+</body>
+</html>
