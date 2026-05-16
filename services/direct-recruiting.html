@@ -17,6 +17,417 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="service-page.css">
+<style>
+  .candidate-flow-hero {
+    position:relative;
+    min-height:590px;
+    border:1px solid var(--border);
+    border-radius:32px;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(231,76,124,.14), transparent 26%),
+      radial-gradient(circle at 82% 76%, rgba(22,160,133,.18), transparent 28%),
+      linear-gradient(145deg,#fff 0%,#fff 50%,var(--teal-lt) 100%);
+    box-shadow:0 28px 90px rgba(0,0,0,.12);
+    overflow:hidden;
+    padding:24px;
+  }
+  .candidate-flow-hero::before {
+    content:'';
+    position:absolute;
+    inset:70px 52px;
+    border-radius:999px;
+    border:1px dashed rgba(22,160,133,.32);
+  }
+  .company-core {
+    position:absolute;
+    left:50%;
+    top:50%;
+    z-index:4;
+    width:235px;
+    transform:translate(-50%,-50%);
+    border:2px solid var(--teal);
+    border-radius:28px;
+    background:#fff;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 24px 70px rgba(22,160,133,.20);
+  }
+  .company-core span, .candidate-orbit-card span, .flow-status-strip span {
+    display:block;
+    color:var(--fg-3);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .company-core strong {
+    display:block;
+    margin:6px 0;
+    font-size:34px;
+    line-height:1;
+    letter-spacing:-.065em;
+  }
+  .company-core small {
+    display:block;
+    color:var(--teal-dk);
+    font-weight:800;
+  }
+  .candidate-orbit-card {
+    position:absolute;
+    z-index:3;
+    width:230px;
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:rgba(255,255,255,.92);
+    padding:13px;
+    box-shadow:0 18px 48px rgba(0,0,0,.10);
+    animation:candidateDrift 7s var(--ease) infinite;
+  }
+  .candidate-orbit-card.c1 { left:26px; top:72px; }
+  .candidate-orbit-card.c2 { right:28px; top:88px; animation-delay:.35s; }
+  .candidate-orbit-card.c3 { left:44px; bottom:148px; animation-delay:.7s; }
+  .candidate-orbit-card.c4 { right:46px; bottom:138px; animation-delay:1.05s; }
+  .candidate-orbit-card.highlight {
+    border-color:var(--pink-mid);
+    background:linear-gradient(135deg,#fff,var(--pink-lt));
+  }
+  .candidate-person {
+    display:flex;
+    align-items:center;
+    gap:11px;
+    margin-top:9px;
+  }
+  .candidate-person img {
+    width:52px;
+    height:52px;
+    border-radius:16px;
+    object-fit:cover;
+    box-shadow:0 8px 22px rgba(0,0,0,.12);
+  }
+  .candidate-person strong {
+    display:block;
+    font-size:16px;
+    letter-spacing:-.035em;
+  }
+  .candidate-person small {
+    display:block;
+    color:var(--fg-3);
+    font-size:11px;
+    line-height:1.25;
+  }
+  .candidate-score {
+    margin-left:auto;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--teal-lt);
+    color:var(--teal-dk);
+    font-size:12px;
+    font-weight:900;
+  }
+  .flow-line {
+    position:absolute;
+    z-index:1;
+    height:3px;
+    border-radius:999px;
+    background:linear-gradient(90deg,transparent,var(--teal),var(--pink),transparent);
+    opacity:.65;
+    animation:flowPulse 3.8s var(--ease) infinite;
+  }
+  .flow-line.one { left:205px; right:50%; top:166px; transform:rotate(11deg); }
+  .flow-line.two { left:50%; right:206px; top:176px; transform:rotate(-9deg); animation-delay:.4s; }
+  .flow-line.three { left:218px; right:50%; bottom:172px; transform:rotate(-13deg); animation-delay:.8s; }
+  .flow-line.four { left:50%; right:224px; bottom:160px; transform:rotate(10deg); animation-delay:1.2s; }
+  .flow-status-strip {
+    position:absolute;
+    left:24px;
+    right:24px;
+    bottom:20px;
+    z-index:5;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:9px;
+  }
+  .flow-status-strip div {
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:#fff;
+    padding:13px;
+  }
+  .flow-status-strip strong {
+    display:block;
+    margin-top:4px;
+    font-size:14px;
+    letter-spacing:-.03em;
+  }
+  @keyframes candidateDrift {
+    0%,100% { transform:translate(0,0); }
+    50% { transform:translate(10px,-7px); }
+  }
+  @keyframes flowPulse {
+    0%,100% { opacity:.22; transform-origin:center; }
+    50% { opacity:.9; }
+  }
+  .salary-intel-builder {
+    display:grid;
+    grid-template-columns:.82fr 1.18fr;
+    gap:22px;
+    align-items:stretch;
+  }
+  .salary-calc-card, .salary-results-card {
+    border:1px solid var(--border);
+    border-radius:28px;
+    background:#fff;
+    padding:28px;
+    box-shadow:0 18px 54px rgba(0,0,0,.06);
+  }
+  .salary-calc-card {
+    display:grid;
+    gap:16px;
+    background:linear-gradient(145deg,#fff,var(--teal-lt));
+  }
+  .salary-calc-card label {
+    display:grid;
+    gap:8px;
+    color:var(--fg-3);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+  }
+  .salary-calc-card select,
+  .salary-calc-card input {
+    min-height:54px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:#fff;
+    color:var(--fg);
+    padding:0 14px;
+    font:700 15px/1.2 Poppins, sans-serif;
+  }
+  .salary-results-card {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    background:linear-gradient(145deg,#fff,var(--bg));
+  }
+  .salary-result-tile {
+    min-height:160px;
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:#fff;
+    padding:21px;
+  }
+  .salary-result-tile span {
+    color:var(--fg-3);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .salary-result-tile strong {
+    display:block;
+    margin:18px 0 8px;
+    font-size:34px;
+    line-height:1;
+    letter-spacing:-.065em;
+  }
+  .salary-result-tile small {
+    color:var(--fg-2);
+    line-height:1.45;
+  }
+  .salary-result-tile.savings {
+    grid-column:1 / -1;
+    color:#fff;
+    background:radial-gradient(circle at 86% 18%, rgba(231,76,124,.42), transparent 30%), linear-gradient(135deg,#111,#27121d);
+    border-color:#111;
+  }
+  .salary-result-tile.savings span,
+  .salary-result-tile.savings small { color:rgba(255,255,255,.72); }
+  .salary-result-tile.savings strong { color:#fff; font-size:58px; }
+  .salary-disclaimer {
+    grid-column:1 / -1;
+    color:var(--fg-3);
+    font-size:12px;
+    line-height:1.55;
+  }
+  .direct-pricing-preview {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:24px;
+  }
+  .direct-pricing-preview .direct-price-card {
+    min-height:310px;
+  }
+  .pricing-quick-cta {
+    margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    border:1px solid var(--teal-mid);
+    border-radius:24px;
+    background:linear-gradient(135deg,#fff,var(--teal-lt));
+    padding:20px;
+  }
+  .pricing-quick-cta strong {
+    display:block;
+    font-size:20px;
+    letter-spacing:-.04em;
+  }
+  .pricing-quick-cta span {
+    color:var(--fg-2);
+    font-size:13px;
+  }
+  .market-comparison-grid {
+    display:grid;
+    grid-template-columns:.82fr 1.18fr;
+    gap:20px;
+    align-items:stretch;
+  }
+  .market-cost-visual, .market-cost-table {
+    border:1px solid var(--border);
+    border-radius:28px;
+    background:#fff;
+    overflow:hidden;
+    box-shadow:0 18px 54px rgba(0,0,0,.06);
+  }
+  .market-cost-visual {
+    min-height:420px;
+    padding:28px;
+    display:grid;
+    align-items:end;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .cost-column {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    gap:12px;
+    min-height:345px;
+  }
+  .cost-column i {
+    display:block;
+    width:100%;
+    max-width:110px;
+    border-radius:18px 18px 8px 8px;
+    background:linear-gradient(180deg,var(--teal),var(--teal-dk));
+    box-shadow:0 18px 45px rgba(22,160,133,.18);
+  }
+  .cost-column.us i { height:96%; background:linear-gradient(180deg,#2f4057,#111827); }
+  .cost-column.agency i { height:78%; background:linear-gradient(180deg,var(--pink),#9f2e58); }
+  .cost-column.nearwork i { height:52%; background:linear-gradient(180deg,var(--teal),var(--teal-dk)); }
+  .cost-column span {
+    text-align:center;
+    min-height:42px;
+    color:var(--fg-2);
+    font-size:13px;
+    font-weight:800;
+  }
+  .cost-column strong {
+    border:1px solid var(--border);
+    border-radius:999px;
+    background:#fff;
+    padding:9px 12px;
+    font-size:20px;
+    letter-spacing:-.05em;
+  }
+  .market-cost-table .row {
+    display:grid;
+    grid-template-columns:.7fr .55fr 1.2fr;
+    gap:18px;
+    align-items:center;
+    padding:24px;
+    border-bottom:1px solid var(--border);
+  }
+  .market-cost-table .row:last-child { border-bottom:0; }
+  .market-cost-table .row.head {
+    background:#111;
+    color:#fff;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .market-cost-table strong {
+    font-size:18px;
+    letter-spacing:-.04em;
+  }
+  .market-cost-table b {
+    font-size:20px;
+    letter-spacing:-.05em;
+  }
+  .market-cost-table p {
+    color:var(--fg-2);
+    line-height:1.45;
+    font-size:13px;
+  }
+  .market-cost-table .winner {
+    background:var(--teal-lt);
+  }
+  .market-cost-table .winner b { color:var(--teal-dk); }
+  .market-savings-banner {
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:20px;
+    border-radius:28px;
+    background:radial-gradient(circle at 75% 35%, rgba(231,76,124,.30), transparent 32%), #111;
+    color:#fff;
+    padding:26px 30px;
+  }
+  .market-savings-banner span {
+    color:rgba(255,255,255,.62);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .market-savings-banner strong {
+    font-size:44px;
+    line-height:1;
+    color:var(--pink);
+    letter-spacing:-.065em;
+  }
+  .market-savings-banner p {
+    color:rgba(255,255,255,.72);
+    justify-self:end;
+  }
+  @media (max-width:1100px) {
+    .candidate-flow-hero { min-height:620px; }
+    .candidate-orbit-card { width:210px; }
+    .flow-status-strip { grid-template-columns:1fr 1fr; }
+    .salary-intel-builder, .market-comparison-grid { grid-template-columns:1fr; }
+    .direct-pricing-preview { grid-template-columns:1fr; }
+  }
+  @media (max-width:760px) {
+    .candidate-flow-hero { min-height:auto; display:grid; gap:12px; }
+    .candidate-flow-hero::before, .flow-line { display:none; }
+    .company-core, .candidate-orbit-card, .flow-status-strip {
+      position:relative;
+      left:auto !important;
+      right:auto !important;
+      top:auto !important;
+      bottom:auto !important;
+      transform:none;
+      width:auto;
+    }
+    .company-core { margin:0 auto; }
+    .flow-status-strip { grid-template-columns:1fr; }
+    .salary-results-card { grid-template-columns:1fr; }
+    .market-cost-visual { min-height:330px; padding:18px; gap:10px; }
+    .market-cost-table .row { grid-template-columns:1fr; }
+    .market-savings-banner { grid-template-columns:1fr; }
+    .market-savings-banner p { justify-self:start; }
+  }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -87,7 +498,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="dd-panel">
           <a class="dd-item" href="../pricing.html">
             <div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-            <div><div class="dd-title">All plans & pricing</div><div class="dd-desc">Standard, Lite, Essential, Elite — full breakdown</div></div>
+            <div><div class="dd-title">All plans & pricing</div><div class="dd-desc">Essential, Growth, Scale — full breakdown</div></div>
+          </a>
+          <a class="dd-item" href="eor.html#eor-pricing">
+            <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div>
+            <div><div class="dd-title">EOR pricing</div><div class="dd-desc">Jump to EOR plans, fees, and benefits</div></div>
           </a>
           <a class="dd-item" href="../cost-calculator.html">
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="16" y1="18" x2="16" y2="18.01"/></svg></div>
@@ -156,7 +571,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="mobile-menu" id="mobMenu">
   <div class="mob-section"><div class="mob-section-title">Services</div><a class="mob-link" href="direct-recruiting.html">Direct Recruiting</a><a class="mob-link" href="eor.html">EOR</a><a class="mob-link" href="strategic-partner-program.html">Strategic Partner Program</a><a class="mob-link" href="managed-team.html">Managed Team</a></div>
   <div class="mob-section"><div class="mob-section-title">Industries</div><a class="mob-link" href="../industries/customer-service.html">Customer service</a><a class="mob-link" href="../industries/technology.html">Technology</a><a class="mob-link" href="../industries/sales.html">Sales</a><a class="mob-link" href="../industries/finance.html">Finance & accounting</a><a class="mob-link" href="../industries/marketing.html">Marketing</a><a class="mob-link" href="../industries/operations.html">Operations & admin</a></div>
-  <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="../pricing.html">Pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="https://jobs.nearwork.co" target="_blank">Browse jobs</a><a class="mob-link" href="../about.html">About</a><a class="mob-link" href="../how-it-works.html">How it works</a></div>
+  <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="../pricing.html">Pricing</a><a class="mob-link" href="eor.html#eor-pricing">EOR pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="https://jobs.nearwork.co" target="_blank">Browse jobs</a><a class="mob-link" href="../about.html">About</a><a class="mob-link" href="../how-it-works.html">How it works</a></div>
   <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div>
 </div>
 <main>
@@ -169,31 +584,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-actions"><a class="btn primary" href="/book">Book a strategy call</a><a class="btn" href="#pricing">See pricing</a></div>
       <div class="hero-proof-row punchy-proof"><strong>21</strong><span>days to finalists</span><strong>$48k</strong><span>estimated savings / hire / year</span></div>
     </div>
-    <div class="direct-pipeline-showcase hero-side lively-pipeline reveal" aria-label="Animated recruiting pipeline">
-      <div class="demo-top direct-clean-top"><strong>Live finalist pipeline</strong><em>$48k saved / hire / year</em></div>
-      <div class="pipeline-board-visual">
-        <div class="pipeline-lane active"><span>Presented</span><div class="profile-mini"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=80" alt="Candidate Maria"><div><strong>Maria C.</strong><small>Helpdesk Support</small></div><em>86</em></div><div class="profile-mini"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80" alt="Candidate Diego"><div><strong>Diego R.</strong><small>Customer Success</small></div><em>79</em></div></div>
-        <div class="pipeline-lane"><span>Client review</span><div class="profile-mini selected"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80" alt="Candidate Ana"><div><strong>Ana G.</strong><small>Salesforce · C1</small></div><em>91</em></div></div>
-        <div class="pipeline-lane"><span>Interview</span><div class="profile-mini"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&q=80" alt="Candidate Mateo"><div><strong>Mateo L.</strong><small>Ops coordinator</small></div><em>82</em></div></div>
-        <div class="candidate-evidence-panel">
-          <div class="side-pill">Candidate evidence</div>
-          <div class="hero-profile-head"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80" alt="Ana profile"><div><strong>Ana Gomez</strong><span>Helpdesk Support finalist</span></div><b>91</b></div>
-          <div class="mini-radar hero-radar"><svg viewBox="0 0 180 180"><polygon points="90,12 164,55 164,125 90,168 16,125 16,55" fill="none" stroke="#D8D8D4"/><polygon points="90,30 145,62 132,123 90,146 43,118 39,64" fill="rgba(22,160,133,.20)" stroke="#16A085" stroke-width="4"/><polygon points="90,50 126,73 120,109 90,124 59,108 55,75" fill="rgba(231,76,124,.12)" stroke="#E74C7C" stroke-width="3"/></svg></div>
-          <div class="evidence-pills"><span>Tech 84</span><span>English C1</span><span>DISC High C/S</span></div>
-        </div>
+    <div class="candidate-flow-hero reveal" aria-label="Candidates moving into your company">
+      <div class="flow-line one"></div>
+      <div class="flow-line two"></div>
+      <div class="flow-line three"></div>
+      <div class="flow-line four"></div>
+      <div class="candidate-orbit-card c1">
+        <span>Customer success</span>
+        <div class="candidate-person"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=80" alt="Candidate Maria Castro"><div><strong>Maria Castro</strong><small>Senior CSM · Bogota</small></div><b class="candidate-score">94</b></div>
+      </div>
+      <div class="candidate-orbit-card c2 highlight">
+        <span>Salesforce admin</span>
+        <div class="candidate-person"><img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?auto=format&fit=crop&w=160&q=80" alt="Candidate Ana Gomez"><div><strong>Ana Gomez</strong><small>Salesforce · C1 English</small></div><b class="candidate-score">91</b></div>
+      </div>
+      <div class="candidate-orbit-card c3">
+        <span>Support lead</span>
+        <div class="candidate-person"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80" alt="Candidate Diego Ramirez"><div><strong>Diego Ramirez</strong><small>Helpdesk lead · Medellin</small></div><b class="candidate-score">87</b></div>
+      </div>
+      <div class="candidate-orbit-card c4">
+        <span>Operations</span>
+        <div class="candidate-person"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&q=80" alt="Candidate Mateo Lopez"><div><strong>Mateo Lopez</strong><small>Ops coordinator · Cali</small></div><b class="candidate-score">82</b></div>
+      </div>
+      <div class="company-core">
+        <span>Your company</span>
+        <strong>Acme Corp</strong>
+        <small>Vetted finalists become your team</small>
+      </div>
+      <div class="flow-status-strip">
+        <div><span>Matched</span><strong>Skills + role fit</strong></div>
+        <div><span>Assessed</span><strong>English, tech, DISC</strong></div>
+        <div><span>Presented</span><strong>Evidence-ready profiles</strong></div>
+        <div><span>Hired</span><strong>Your employee</strong></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section savings-band early-savings"><div class="inner savings-inner reveal"><div><div class="tag">Salary intelligence</div><h2>Know the savings before you open the role.</h2><p>Use Nearwork salary data and market benchmarks to estimate what a role should cost in Colombia, how much you could save, and what level of candidate the market can support.</p></div><a class="btn primary" href="../cost-calculator.html">Find out here</a></div></section>
+<section class="section savings-band early-savings" id="salary-intelligence">
+  <div class="inner">
+    <div class="section-head reveal">
+      <div class="tag">Salary intelligence</div>
+      <h2>Put in what you pay today. See what Nearwork could save.</h2>
+      <p class="section-lede">Choose a role, enter your current US annual cost, and get a directional estimate for the same role through Nearwork in Colombia.</p>
+    </div>
+    <div class="salary-intel-builder reveal">
+      <div class="salary-calc-card">
+        <label>Role
+          <select id="salaryRole">
+            <option value="helpdesk">Helpdesk Support Lead</option>
+            <option value="success">Customer Success Manager</option>
+            <option value="sdr">Sales Development Rep</option>
+            <option value="ops">Operations Manager</option>
+            <option value="dev">Full-stack Developer</option>
+          </select>
+        </label>
+        <label>Current US annual cost
+          <input id="usCostInput" type="number" min="25000" step="500" value="102500">
+        </label>
+        <a class="btn primary" href="../cost-calculator.html">Open full calculator</a>
+      </div>
+      <div class="salary-results-card">
+        <div class="salary-result-tile"><span>Your current cost</span><strong id="currentCost">$102,500</strong><small>Annual total compensation estimate.</small></div>
+        <div class="salary-result-tile"><span>Nearwork estimate</span><strong id="nearworkCost">$54,300</strong><small>Recruiting-ready annual cost estimate.</small></div>
+        <div class="salary-result-tile"><span>Estimated reduction</span><strong id="savingPct">47%</strong><small>Based on the selected role.</small></div>
+        <div class="salary-result-tile savings"><span>Estimated annual savings</span><strong id="annualSavings">$48,200 / year</strong><small>Estimates vary by role scope, seniority, benefits, FX, and market conditions.</small></div>
+        <p class="salary-disclaimer">These figures are planning estimates, not a final quote. Final pricing depends on role requirements, compensation package, hiring model, benefits, and any EOR or managed support add-ons.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="section alt compact-section" id="pricing"><div class="inner"><div class="section-head reveal"><div class="tag">Pricing</div><h2>Pay for the hire. Not the search.</h2><p class="section-lede">Flat placement fees. No percentage of salary. No hidden markups. Reduce labor costs further with a retainer plan — the more you hire, the lower your per-hire fee.</p></div><div class="direct-price-grid">
-  <div class="direct-price-card reveal"><span>Standard</span><h3>No monthly commitment</h3><div class="direct-price">Free <small>+ $3,990 per hire</small></div><p>Best when you want to try Nearwork for one role.</p><ul><li>Role kickoff</li><li>Shortlist and assessment summary</li><li>Placement fee only when you hire</li></ul></div>
-  <div class="direct-price-card reveal"><span>Lite</span><h3>For occasional hiring</h3><div class="direct-price">$990/mo <small>+ $2,990 per hire</small></div><p>For companies hiring a few roles per year.</p><ul><li>Recruiting rhythm</li><li>Candidate pipeline visibility</li><li>Lower placement fee</li></ul></div>
-  <div class="direct-price-card popular reveal"><span>Essential</span><h3>Dedicated hiring manager</h3><div class="direct-price">$1,500/mo <small>+ $2,190 per hire</small></div><p>The strongest plan for active hiring teams.</p><ul><li>Dedicated hiring manager</li><li>Priority shortlist</li><li>Best mix of speed and cost</li></ul></div>
-  <div class="direct-price-card reveal"><span>Elite</span><h3>Unlimited hires, price lock</h3><div class="direct-price">$2,500/mo <small>+ $1,490 per hire</small></div><p>For teams turning Nearwork into their hiring engine.</p><ul><li>Lowest placement fee</li><li>Multiple active openings</li><li>Predictable hiring capacity</li></ul></div>
-</div></div></section>
+<section class="section alt compact-section" id="pricing"><div class="inner"><div class="section-head reveal"><div class="tag">Pricing</div><h2>A quick view of direct recruiting pricing.</h2><p class="section-lede">Three simple plans. Monthly retainers lower the placement fee, and yearly billing discounts the monthly fee by 15%.</p></div><div class="direct-pricing-preview">
+  <div class="direct-price-card reveal"><span>Essential</span><h3>One-role hiring</h3><div class="direct-price">$0/mo <small>+ $3,490 per hire</small></div><p>Best when you need one strong hire and want to keep the commitment light.</p><ul><li>Up to 2 shortlisted candidates</li><li>English + technical review</li><li>3-month replacement guarantee</li></ul></div>
+  <div class="direct-price-card popular reveal"><span>Growth</span><h3>Ongoing hiring</h3><div class="direct-price">$990/mo <small>+ $1,990 per hire</small></div><p>Built for teams opening roles regularly and needing a stronger recruiting rhythm.</p><ul><li>Up to 5 shortlisted candidates</li><li>Assigned talent specialist</li><li>Weekly progress call</li></ul></div>
+  <div class="direct-price-card reveal"><span>Scale</span><h3>Long-term pipeline</h3><div class="direct-price">$2,500/mo <small>+ $1,300 per hire</small></div><p>For companies that want Nearwork as a recurring hiring engine.</p><ul><li>Unlimited candidates per role</li><li>Priority coordination</li><li>1 in-person verification / month</li></ul></div>
+</div><div class="pricing-quick-cta reveal"><div><strong>Need the full plan breakdown?</strong><span>See monthly vs yearly pricing, shortlist limits, guarantees, support levels, and add-ons.</span></div><a class="btn primary" href="../pricing.html">View full pricing</a></div></div></section>
 
 <section class="section assessment-section"><div class="inner split"><div class="reveal"><div class="tag">Assessment intelligence</div><h2>Questions are selected from the role, not copied from a template.</h2><p class="section-lede">Nearwork pulls from the question bank based on the opening’s skills, role, and seniority. AI helps summarize what the assessment says about the candidate so your team can make a faster, clearer decision.</p><div class="hero-actions"><a class="btn primary" href="/book">Ask about assessments</a><a class="btn" href="../cost-calculator.html">Estimate my savings</a></div></div><div class="assessment-machine reveal"><div class="question-bank"><span>Question bank</span><div>Salesforce</div><div>Helpdesk</div><div>Problem solving</div><div>Customer retention</div></div><div class="question-picker"><div class="picker-dot"></div><h3>Opening: Helpdesk Support</h3><p>Skills detected: Salesforce, ticket quality, troubleshooting, English C1.</p><div class="picked-question">Q42 · What is the best escalation path when SLA risk is high?</div><div class="picked-question alt">Q17 · How would you document a recurring issue?</div><div class="picked-question">Q28 · Which CRM signals show renewal risk?</div></div><div class="ai-summary"><span>AI review</span><strong>Strong technical base. Follow up on complex escalation judgment.</strong></div></div></div></section>
 
@@ -203,7 +668,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="section alt"><div class="inner"><div class="section-head reveal"><div class="tag">Nearwork vs. disconnected vendors</div><h2>One team beats five disconnected vendors.</h2></div><div class="comparison-matrix reveal"><div class="matrix-head"><span>Feature</span><span>Agency</span><span>Internal team</span><span>Nearwork</span></div><div><strong>Live pipeline</strong><span class="bad">×</span><span class="mid">Partial</span><span class="good">✓</span></div><div><strong>Assessment + DISC</strong><span class="bad">×</span><span class="mid">Manual</span><span class="good">✓</span></div><div><strong>Cost benchmarks</strong><span class="bad">×</span><span class="mid">Slow</span><span class="good">✓</span></div><div><strong>EOR + payroll option</strong><span class="bad">×</span><span class="bad">×</span><span class="good">✓</span></div><div><strong>After-hire support</strong><span class="bad">×</span><span class="mid">Internal</span><span class="good">✓</span></div></div></div></section>
 
-<section class="section market-section"><div class="inner"><div class="section-head reveal"><div class="tag">Market comparison</div><h2>Show the numbers on the page.</h2><p class="section-lede">A client should immediately see the difference: same business hours, vetted English, and a much lower annual cost.</p></div><div class="cost-comparison-board reveal"><div class="cost-bars"><div class="cost-bar us"><span>US local hire</span><strong>$102,500</strong><i style="height:100%"></i></div><div class="cost-bar agency"><span>Traditional agency</span><strong>$82,000</strong><i style="height:80%"></i></div><div class="cost-bar nearwork"><span>Nearwork Colombia</span><strong>$54,300</strong><i style="height:53%"></i></div></div><div class="cost-table"><div class="cost-table-head"><span>Model</span><span>Annual cost</span><span>What you get</span></div><div><strong>US local hire</strong><span>$102,500</span><p>Salary, benefits, hiring overhead, management load.</p></div><div><strong>Traditional agency</strong><span>$82,000+</span><p>Candidate search, but payroll and support often sit elsewhere.</p></div><div class="best"><strong>Nearwork</strong><span>$54,300</span><p>Recruiting, assessments, pipeline visibility, and optional EOR/support.</p></div></div><div class="savings-callout"><span>Projected savings</span><strong>$48,200 / year</strong><p>Example for one Helpdesk Support Lead.</p></div></div></div></section>
+<section class="section market-section"><div class="inner"><div class="section-head reveal"><div class="tag">Market comparison</div><h2>Make the cost difference impossible to miss.</h2><p class="section-lede">Same business hours, vetted English, structured assessment data, and a lower annual cost that is easy to explain to finance.</p></div><div class="market-comparison-grid reveal">
+  <div class="market-cost-visual" aria-label="Annual cost comparison">
+    <div class="cost-column us"><i></i><span>US local hire</span><strong>$102,500</strong></div>
+    <div class="cost-column agency"><i></i><span>Traditional agency</span><strong>$82,000+</strong></div>
+    <div class="cost-column nearwork"><i></i><span>Nearwork</span><strong>$54,300</strong></div>
+  </div>
+  <div class="market-cost-table">
+    <div class="row head"><span>Model</span><span>Annual cost</span><span>What you get</span></div>
+    <div class="row"><strong>US local hire</strong><b>$102,500</b><p>Salary, benefits, hiring overhead, recruiting time, and management load.</p></div>
+    <div class="row"><strong>Traditional agency</strong><b>$82,000+</b><p>Candidate search, but payroll, EOR, support, and post-hire operations usually sit somewhere else.</p></div>
+    <div class="row winner"><strong>Nearwork</strong><b>$54,300</b><p>Recruiting, candidate assessments, pipeline visibility, salary intelligence, and optional EOR or support services.</p></div>
+  </div>
+</div><div class="market-savings-banner reveal"><span>Projected savings</span><strong>$48,200 / year</strong><p>Example for one Helpdesk Support Lead. Savings can grow as you add roles or build a managed team.</p></div></div></section>
 
 <section class="section"><div class="inner cta reveal"><div><h2>Ready to see what Nearwork can find for your role?</h2><p>Book a free strategy call. We will talk through salary, role requirements, hiring timeline, and the best service model for your team.</p></div><a class="btn" href="/book">Book a strategy call</a></div></section>
 </main>
@@ -248,6 +725,41 @@ const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); revealObs.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+const salaryBenchmarks = {
+  helpdesk: { label: 'Helpdesk Support Lead', nearwork: 54300, us: 102500 },
+  success: { label: 'Customer Success Manager', nearwork: 50600, us: 115000 },
+  sdr: { label: 'Sales Development Rep', nearwork: 36900, us: 88000 },
+  ops: { label: 'Operations Manager', nearwork: 67600, us: 130000 },
+  dev: { label: 'Full-stack Developer', nearwork: 80800, us: 165000 }
+};
+const money = value => new Intl.NumberFormat('en-US', { style:'currency', currency:'USD', maximumFractionDigits:0 }).format(Math.max(0, Number(value) || 0));
+const roleInput = document.getElementById('salaryRole');
+const usCostInput = document.getElementById('usCostInput');
+const currentCost = document.getElementById('currentCost');
+const nearworkCost = document.getElementById('nearworkCost');
+const savingPct = document.getElementById('savingPct');
+const annualSavings = document.getElementById('annualSavings');
+function updateSalaryEstimate() {
+  if (!roleInput || !usCostInput) return;
+  const role = salaryBenchmarks[roleInput.value] || salaryBenchmarks.helpdesk;
+  const usCost = Number(usCostInput.value || role.us);
+  const nearwork = role.nearwork;
+  const savings = Math.max(0, usCost - nearwork);
+  const pct = usCost > 0 ? Math.round((savings / usCost) * 100) : 0;
+  currentCost.textContent = money(usCost);
+  nearworkCost.textContent = money(nearwork);
+  savingPct.textContent = pct + '%';
+  annualSavings.textContent = money(savings) + ' / year';
+}
+if (roleInput && usCostInput) {
+  roleInput.addEventListener('change', () => {
+    const role = salaryBenchmarks[roleInput.value] || salaryBenchmarks.helpdesk;
+    usCostInput.value = role.us;
+    updateSalaryEstimate();
+  });
+  usCostInput.addEventListener('input', updateSalaryEstimate);
+  updateSalaryEstimate();
+}
 </script>
 </body>
 </html>

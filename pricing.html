@@ -18,36 +18,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="services/service-page.css">
 <style>
-  .pricing-page-hero .direct-hero-inner.two-col { grid-template-columns:minmax(420px,.86fr) minmax(560px,1.14fr); }
+  .pricing-page-hero .direct-hero-inner.two-col { grid-template-columns:minmax(420px,.9fr) minmax(520px,1.1fr); }
   .pricing-page-hero h1 { max-width:760px; }
-  .rotating-price-word { display:inline-block; position:relative; vertical-align:baseline; color:var(--gold); width:6.95em; height:1.02em; overflow:hidden; }
-  .rotating-price-word span { position:absolute; left:0; top:0; opacity:0; transform:translateY(.34em); animation:priceWordSwap 8s var(--ease) infinite; }
-  .rotating-price-word span:nth-child(2) { animation-delay:2s; }
-  .rotating-price-word span:nth-child(3) { animation-delay:4s; }
-  .rotating-price-word span:nth-child(4) { animation-delay:6s; }
-  .rotating-price-word::after { content:''; position:absolute; left:0; right:0; bottom:.05em; height:.17em; border-radius:999px; background:var(--gold-lt); z-index:-1; }
-  @keyframes priceWordSwap {
-    0%, 18% { opacity:1; transform:translateY(0); }
-    24%, 100% { opacity:0; transform:translateY(-.26em); }
-  }
+  .pricing-page-hero h1 span { color:var(--pink); position:relative; z-index:1; display:inline-block; }
+  .pricing-page-hero h1 span::after { content:''; position:absolute; left:0; right:0; bottom:.04em; height:.18em; border-radius:999px; background:var(--pink-lt); z-index:-1; }
   .pricing-hero-card { background:linear-gradient(145deg,#fff 0%,#fff 44%,var(--teal-lt) 100%); border:1px solid var(--border); border-radius:30px; padding:24px; box-shadow:0 28px 80px rgba(0,0,0,.12); }
   .pricing-hero-top { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-bottom:18px; border-bottom:1px solid var(--border); }
   .pricing-hero-top strong { font-size:20px; letter-spacing:-.035em; }
   .pricing-hero-top span { color:var(--teal-dk); background:var(--teal-lt); border:1px solid var(--teal-mid); border-radius:999px; padding:7px 10px; font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
-  .pricing-proof-strip { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
-  .pricing-proof-strip span { display:inline-flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--border); border-radius:999px; padding:8px 11px; color:var(--fg-2); font-size:12px; font-weight:800; }
-  .pricing-proof-strip span::before { content:'✓'; color:var(--teal-dk); }
-  .savings-proof-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:12px; margin-top:18px; }
-  .savings-proof-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:18px; min-height:156px; }
-  .savings-proof-card.highlight { background:linear-gradient(145deg,var(--fg),#28111d); color:#fff; border-color:var(--fg); grid-row:span 2; display:flex; flex-direction:column; justify-content:space-between; }
-  .savings-proof-card span { display:block; color:var(--fg-3); font-size:10px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px; }
-  .savings-proof-card.highlight span { color:rgba(255,255,255,.58); }
-  .savings-proof-card strong { display:block; font-size:44px; line-height:1; letter-spacing:-.07em; color:var(--gold-dk); }
-  .savings-proof-card.highlight strong { color:#fff; font-size:62px; }
-  .savings-proof-card p { color:var(--fg-2); font-size:13px; line-height:1.55; margin-top:10px; }
-  .savings-proof-card.highlight p { color:rgba(255,255,255,.74); }
-  .savings-proof-card blockquote { font-size:18px; line-height:1.45; letter-spacing:-.02em; font-weight:700; margin-top:10px; }
-  .savings-proof-card cite { display:block; color:var(--teal-dk); font-style:normal; font-size:12px; font-weight:900; margin-top:14px; }
+  .pricing-proof-list { display:grid; gap:12px; margin-top:18px; }
+  .pricing-proof-row { display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center; background:#fff; border:1px solid var(--border); border-radius:18px; padding:16px; }
+  .pricing-proof-row b { width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:var(--teal-lt); color:var(--teal-dk); }
+  .pricing-proof-row strong { display:block; font-size:16px; letter-spacing:-.035em; }
+  .pricing-proof-row small { display:block; color:var(--fg-3); margin-top:3px; }
+  .pricing-proof-row em { font-style:normal; color:var(--pink); font-size:18px; font-weight:900; letter-spacing:-.05em; }
   .pricing-snapshot { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px; }
   .pricing-snapshot div { background:#fff; border:1px solid var(--border); border-radius:18px; padding:16px; min-height:132px; }
   .pricing-snapshot span { display:block; color:var(--fg-3); font-size:10px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px; }
@@ -107,7 +91,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width:1024px) {
     .pricing-page-hero .direct-hero-inner.two-col, .plan-grid, .pricing-final-cta { grid-template-columns:1fr; }
     .plan-card.growth { transform:none; }
-    .savings-proof-grid { grid-template-columns:1fr; }
     .pricing-snapshot { grid-template-columns:1fr; }
     .pricing-snapshot .best { transform:none; }
   }
@@ -263,7 +246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="mobile-menu" id="mobMenu">
   <div class="mob-section"><div class="mob-section-title">Services</div><a class="mob-link" href="services/direct-recruiting.html">Direct Recruiting</a><a class="mob-link" href="services/eor.html">EOR</a><a class="mob-link" href="services/strategic-partner-program.html">Strategic Partner Program</a><a class="mob-link" href="services/managed-team.html">Managed Team</a></div>
   <div class="mob-section"><div class="mob-section-title">Industries</div><a class="mob-link" href="industries/customer-service.html">Customer service</a><a class="mob-link" href="industries/technology.html">Technology</a><a class="mob-link" href="industries/sales.html">Sales</a><a class="mob-link" href="industries/finance.html">Finance & accounting</a><a class="mob-link" href="industries/marketing.html">Marketing</a><a class="mob-link" href="industries/operations.html">Operations & admin</a></div>
-  <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="pricing.html">Pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="https://jobs.nearwork.co" target="_blank">Browse jobs</a><a class="mob-link" href="about.html">About</a><a class="mob-link" href="how-it-works.html">How it works</a></div>
+  <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="pricing.html">Pricing</a><a class="mob-link" href="services/eor.html#eor-pricing">EOR pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="https://jobs.nearwork.co" target="_blank">Browse jobs</a><a class="mob-link" href="about.html">About</a><a class="mob-link" href="how-it-works.html">How it works</a></div>
   <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div>
 </div>
 <main>
@@ -271,38 +254,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="direct-hero-inner two-col">
       <div class="direct-hero-copy reveal">
         <div class="eyebrow">Direct Recruiting Pricing</div>
-        <h1>Pricing for <span class="rotating-price-word" aria-label="predictable savings"><span>predictable</span><span>transparent</span><span>scalable</span><span>lower-cost</span></span> hiring.</h1>
-        <p class="hero-copy">Pick a plan based on hiring volume, support level, and how much visibility your team needs.</p>
+        <h1>Clear pricing for <span>lower-cost</span> hiring.</h1>
+        <p class="hero-copy">Pick the plan by hiring volume, support level, and how much pipeline visibility your team needs. Placement fees are fixed, not a percentage of salary.</p>
         <div class="hero-actions">
           <a class="btn primary" href="/book">Book a strategy call</a>
           <a class="btn" href="#plans">See plans</a>
         </div>
-        <div class="pricing-proof-strip">
-          <span>Placement fee shown upfront</span>
-          <span>Annual subscription savings visible</span>
-          <span>EOR pricing available separately</span>
-        </div>
       </div>
       <div class="pricing-hero-card reveal">
         <div class="pricing-hero-top">
-          <strong>Savings clients can see</strong>
+          <strong>What changes when you hire through Nearwork</strong>
           <span>Pricing proof</span>
         </div>
-        <div class="savings-proof-grid">
-          <div class="savings-proof-card highlight">
-            <span>Example annual savings</span>
-            <strong>$48k</strong>
-            <p>Saved per Helpdesk Support hire compared with a typical US local hire.</p>
+        <div class="pricing-proof-list">
+          <div class="pricing-proof-row">
+            <b>1</b>
+            <div><strong>Flat placement fee</strong><small>No percentage of salary and no surprise markup.</small></div>
+            <em>$3,490</em>
           </div>
-          <div class="savings-proof-card">
-            <span>Loopstack</span>
-            <blockquote>"We hired faster and kept the hiring cost predictable."</blockquote>
-            <cite>$92k saved across two roles</cite>
+          <div class="pricing-proof-row">
+            <b>2</b>
+            <div><strong>Lower fee when you hire often</strong><small>Growth and Scale lower the per-hire fee.</small></div>
+            <em>$1,990</em>
           </div>
-          <div class="savings-proof-card">
-            <span>Crestline SaaS</span>
-            <blockquote>"The shortlist made the decision clearer for our team."</blockquote>
-            <cite>51% lower annual role cost</cite>
+          <div class="pricing-proof-row">
+            <b>3</b>
+            <div><strong>Yearly discount on monthly fee</strong><small>15% discount applies to the subscription, not the placement fee.</small></div>
+            <em>15%</em>
           </div>
         </div>
       </div>
