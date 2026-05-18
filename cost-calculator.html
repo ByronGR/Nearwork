@@ -97,10 +97,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="16" y1="18" x2="16" y2="18.01"/></svg></div>
             <div><div class="dd-title">Cost calculator</div><div class="dd-desc">See your savings — reduce labor costs by up to 70%</div></div>
           </a>
-          <a class="dd-item" href="compare.html">
-            <div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M3 3h18v6H3zM3 15h18v6H3z"/></svg></div>
-            <div><div class="dd-title">Compare to in-house</div><div class="dd-desc">Side-by-side cost & speed comparison</div></div>
-          </a>
         </div>
       </div>
       <div class="dd" data-dd="candidates">
@@ -117,10 +113,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a class="dd-item" href="candidates/what-to-expect.html">
             <div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
             <div><div class="dd-title">What to expect</div><div class="dd-desc">Our process, from your point of view</div></div>
-          </a>
-          <a class="dd-item" href="candidates/english-requirements.html">
-            <div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
-            <div><div class="dd-title">English requirements</div><div class="dd-desc">C1 standard — what we look for & how we test</div></div>
           </a>
         </div>
       </div>
@@ -163,7 +155,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="pricing.html">Pricing</a><a class="mob-link" href="services/eor.html#eor-pricing">EOR pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="https://jobs.nearwork.co" target="_blank">Browse jobs</a><a class="mob-link" href="about.html">About</a><a class="mob-link" href="how-it-works.html">How it works</a></div>
   <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div>
 </div>
-<main><section class="hero marketing-page calc-hero"><div class="direct-hero-inner two-col"><div class="direct-hero-copy reveal"><div class="eyebrow">Cost calculator</div><h1>See what Colombia can <span>save</span>.</h1><p class="hero-copy">This page is ready for Airtable-backed salary benchmarks through the secure API endpoint.</p></div><div class="calc-visual reveal"><div class="calc-ticker"><span>US annual cost</span><strong>$102,500</strong></div><div class="calc-ticker green"><span>Nearwork annual cost</span><strong>$54,300</strong></div><div class="calc-save-card"><span>Estimated savings</span><strong>$48,200</strong><small>per hire / year</small></div></div></div></section><section class="section"><div class="inner cta reveal"><div><h2>Ready to talk through your role?</h2><p>Book a strategy call and we will map roles, salaries, service model, and timeline.</p></div><a class="btn" href="/book">Book a strategy call</a></div></section></main><footer>
+<main>
+<section class="hero marketing-page calc-hero"><div class="direct-hero-inner two-col"><div class="direct-hero-copy reveal"><div class="eyebrow">Cost calculator</div><h1>Estimate your <span>annual savings</span>.</h1><p class="hero-copy">Choose the role, enter what you pay today, and see a planning estimate for a Nearwork Colombia hire. Add EOR to model payroll, compliance, and benefits without losing the savings story.</p><div class="hero-actions"><a class="btn primary" href="#calculator">Start calculating</a><a class="btn" href="/book">Book a strategy call</a></div></div><div class="calc-visual reveal"><div class="calc-ticker"><span>US annual cost</span><strong id="heroUsCost">$82,000</strong></div><div class="calc-ticker green"><span>Nearwork annual cost</span><strong id="heroNwCost">$27,000</strong></div><div class="calc-save-card"><span>Estimated savings</span><strong id="heroSavings">$55,000</strong><small>per hire / year</small></div></div></div></section>
+<section class="section" id="calculator"><div class="inner"><div class="section-head reveal"><div class="tag">Build the scenario</div><h2>One page for role, salary, FX, and EOR.</h2><p class="section-lede">The current static version uses built-in Nearwork role benchmarks and a planning FX rate. It is structured so the same role list can be replaced by the Airtable salary endpoint later without changing the page experience.</p></div><div class="calc-builder-grid"><div class="calc-panel reveal"><div class="calc-form"><div class="calc-field"><label for="roleSelect">Role</label><select id="roleSelect"></select></div><div class="calc-field"><label for="currencySelect">Current cost currency</label><select id="currencySelect"><option value="USD">USD</option><option value="COP">COP</option></select></div><div class="calc-field"><label for="currentCost">What do you pay today?</label><input id="currentCost" inputmode="numeric" value="82000" aria-label="Current annual cost"></div><div class="calc-field"><label for="headcount">How many people?</label><input id="headcount" inputmode="numeric" value="1" aria-label="Headcount"></div><div class="calc-field"><label for="eorSelect">Add EOR benefits?</label><select id="eorSelect"><option value="none">No EOR</option><option value="core">Core EOR - $350/mo</option><option value="plus">Plus EOR - $500/mo</option><option value="max">Max EOR - $750/mo</option></select></div></div><p class="calc-disclaimer">Planning FX: 3,900 COP/USD. These salary estimates are directional and should be validated during role intake.</p></div><div class="calc-output reveal"><div class="calc-output-top"><div class="calc-result-card"><span>Your annual cost</span><strong id="currentAnnual">$82,000</strong></div><div class="calc-result-card"><span>Nearwork estimate</span><strong id="nearworkAnnual">$27,000</strong></div></div><div class="calc-savings-hero"><span>Estimated annual savings</span><strong id="annualSavings">$55,000</strong><p id="savingsCopy">You are paying 67% less for the same role coverage, before considering speed, replacement support, and reduced hiring overhead.</p></div><div class="eor-benefit-panel" id="eorBenefits"><div><strong>Recruiting estimate</strong><span id="roleBenchmark">Includes salary planning and Scale placement fee.</span></div><div><strong>EOR value</strong><span id="eorCopy">Select an EOR plan to add payroll, local compliance, and benefits.</span></div></div></div></div></div></section>
+<section class="section alt"><div class="inner"><div class="future-match-band reveal"><div><strong>Benefits can improve retention while keeping total cost lower.</strong><p>With EOR, the employee can receive locally relevant benefits like medical insurance, mental wellness, gym and wellness, internet bonus, life insurance, and learning budget, while your total annual model can still be lower than a US hire.</p></div><div class="match-card-stack"><div><span>Core</span><b>Payroll + contracts + compliance</b></div><div><span>Plus</span><b>Core + HR support + curated benefits</b></div><div><span>Max</span><b>Full benefit package and priority support</b></div></div></div></div></section>
+<section class="section"><div class="inner cta reveal"><div><h2>Want the exact model for your role?</h2><p>Book a strategy call and we will map salary, seniority, service model, EOR benefits, and the right hiring plan.</p></div><a class="btn" href="/book">Book a strategy call</a></div></section>
+<script>
+const FX_COP_PER_USD = 3900;
+const PLACEMENT_FEE = 1300;
+const roles = [
+  {id:'customer-support', label:'Customer Support Specialist', nearworkMonthly:1450, defaultUsAnnual:58000},
+  {id:'helpdesk', label:'Helpdesk Support', nearworkMonthly:1800, defaultUsAnnual:65000},
+  {id:'technical-support', label:'Technical Support Specialist', nearworkMonthly:2100, defaultUsAnnual:76000},
+  {id:'sdr', label:'Sales Development Rep', nearworkMonthly:2150, defaultUsAnnual:82000},
+  {id:'account-executive', label:'Account Executive', nearworkMonthly:3300, defaultUsAnnual:115000},
+  {id:'sales-ops', label:'Sales Operations Specialist', nearworkMonthly:2600, defaultUsAnnual:92000},
+  {id:'marketing-specialist', label:'Marketing Specialist', nearworkMonthly:2050, defaultUsAnnual:78000},
+  {id:'growth-marketer', label:'Growth Marketer', nearworkMonthly:2800, defaultUsAnnual:105000},
+  {id:'crm-specialist', label:'CRM / Lifecycle Specialist', nearworkMonthly:2450, defaultUsAnnual:90000},
+  {id:'frontend-dev', label:'Frontend Developer', nearworkMonthly:3900, defaultUsAnnual:145000},
+  {id:'fullstack-dev', label:'Full-stack Developer', nearworkMonthly:4200, defaultUsAnnual:165000},
+  {id:'qa-automation', label:'QA Automation Engineer', nearworkMonthly:2850, defaultUsAnnual:105000},
+  {id:'data-analyst', label:'Data Analyst', nearworkMonthly:2600, defaultUsAnnual:95000},
+  {id:'finance-analyst', label:'Finance Analyst', nearworkMonthly:1950, defaultUsAnnual:72000},
+  {id:'bookkeeper', label:'Bookkeeper / Accounting Support', nearworkMonthly:1600, defaultUsAnnual:62000},
+  {id:'ops-coordinator', label:'Operations Coordinator', nearworkMonthly:1650, defaultUsAnnual:62000},
+  {id:'executive-assistant', label:'Executive Assistant', nearworkMonthly:1550, defaultUsAnnual:60000},
+  {id:'recruiting-coordinator', label:'Recruiting Coordinator', nearworkMonthly:1700, defaultUsAnnual:64000}
+];
+const eorPlans = {
+  none:{monthly:0, label:'No EOR', copy:'Select an EOR plan to add payroll, local compliance, and benefits.'},
+  core:{monthly:350, label:'Core EOR', copy:'Adds compliant employment, contracts, payroll coordination, invoicing support, and local HR guidance.'},
+  plus:{monthly:500, label:'Plus EOR', copy:'Adds Core plus HR support, smoother onboarding, and curated benefits such as internet bonus, life insurance, and wellness support.'},
+  max:{monthly:750, label:'Max EOR', copy:'Adds full coverage: medical insurance, mental wellness, gym and wellness, internet bonus, life insurance, and learning budget.'}
+};
+const roleSelect = document.getElementById('roleSelect');
+const currencySelect = document.getElementById('currencySelect');
+const currentCost = document.getElementById('currentCost');
+const headcount = document.getElementById('headcount');
+const eorSelect = document.getElementById('eorSelect');
+roles.forEach(role => roleSelect.add(new Option(role.label, role.id)));
+roleSelect.value = 'sdr';
+function money(n, currency='USD') {
+  return new Intl.NumberFormat('en-US',{style:'currency',currency,maximumFractionDigits:0}).format(Math.max(0, Math.round(n)));
+}
+function numberOnly(value) { return Number(String(value).replace(/[^0-9.]/g,'')) || 0; }
+function updateCalc(fromRole=false) {
+  const role = roles.find(r => r.id === roleSelect.value) || roles[0];
+  if (fromRole) currentCost.value = role.defaultUsAnnual;
+  const currency = currencySelect.value;
+  const people = Math.max(1, Math.round(numberOnly(headcount.value) || 1));
+  const entered = numberOnly(currentCost.value);
+  const currentAnnualUsdPerPerson = currency === 'COP' ? entered / FX_COP_PER_USD : entered;
+  const eor = eorPlans[eorSelect.value];
+  const nearworkPerPerson = role.nearworkMonthly * 12 + PLACEMENT_FEE + eor.monthly * 12;
+  const currentTotal = currentAnnualUsdPerPerson * people;
+  const nearworkTotal = nearworkPerPerson * people;
+  const savings = currentTotal - nearworkTotal;
+  const pct = currentTotal > 0 ? Math.round((savings / currentTotal) * 100) : 0;
+  document.getElementById('currentAnnual').textContent = money(currentTotal);
+  document.getElementById('nearworkAnnual').textContent = money(nearworkTotal);
+  document.getElementById('annualSavings').textContent = money(savings);
+  document.getElementById('heroUsCost').textContent = money(currentAnnualUsdPerPerson);
+  document.getElementById('heroNwCost').textContent = money(nearworkPerPerson);
+  document.getElementById('heroSavings').textContent = money(currentAnnualUsdPerPerson - nearworkPerPerson);
+  document.getElementById('savingsCopy').textContent = savings > 0 ? 'Estimated ' + pct + '% lower annual cost for ' + people + ' ' + (people === 1 ? 'person' : 'people') + ', while keeping recruiting, screening, and visibility inside the Nearwork process.' : 'This scenario is close to or above your current annual cost. We should review seniority, scope, and service model together.';
+  document.getElementById('roleBenchmark').textContent = role.label + ': ' + money(role.nearworkMonthly) + '/mo salary benchmark + ' + money(PLACEMENT_FEE) + ' Scale placement fee.';
+  document.getElementById('eorCopy').textContent = eor.copy;
+}
+[roleSelect,currencySelect,currentCost,headcount,eorSelect].forEach(el => el.addEventListener('input', () => updateCalc(false)));
+roleSelect.addEventListener('change', () => updateCalc(true));
+currencySelect.addEventListener('change', () => { const role = roles.find(r => r.id === roleSelect.value); currentCost.value = currencySelect.value === 'COP' ? Math.round(role.defaultUsAnnual * FX_COP_PER_USD) : role.defaultUsAnnual; updateCalc(false); });
+updateCalc(true);
+</script>
+</main><footer>
   <div class="trust-badges">
     <div class="trust-badge"><div class="trust-badge-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg></div><span class="tb-label"><strong>Nearwork portal</strong> for clients and candidates</span></div>
     <div class="trust-badge"><div class="trust-badge-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg></div><span class="tb-label"><strong>Structured pipeline</strong> from profile review to hired</span></div>
@@ -177,7 +242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div><div class="footer-col-title">Services</div><ul class="footer-links"><li><a href="services/direct-recruiting.html">Direct Recruiting</a></li><li><a href="services/eor.html">EOR</a></li><li><a href="services/strategic-partner-program.html">Strategic Partner Program</a></li><li><a href="services/managed-team.html">Managed Team</a></li></ul></div>
     <div><div class="footer-col-title">Industries</div><ul class="footer-links"><li><a href="industries/customer-service.html">Customer service</a></li><li><a href="industries/technology.html">Technology</a></li><li><a href="industries/sales.html">Sales</a></li><li><a href="industries/finance.html">Finance & accounting</a></li><li><a href="industries/marketing.html">Marketing</a></li><li><a href="industries/operations.html">Operations & admin</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="about.html">About Nearwork</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="why-colombia.html">Why Colombia</a></li><li><a href="our-story.html">Our story</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
-    <div><div class="footer-col-title">Candidates</div><ul class="footer-links"><li><a href="https://talent.nearwork.co" target="_blank">Candidate login</a></li><li><a href="https://jobs.nearwork.co" target="_blank">Browse open roles</a></li><li><a href="candidates/what-to-expect.html">What to expect</a></li><li><a href="candidates/english-requirements.html">English requirements</a></li></ul></div>
+    <div><div class="footer-col-title">Candidates</div><ul class="footer-links"><li><a href="https://talent.nearwork.co" target="_blank">Candidate login</a></li><li><a href="https://jobs.nearwork.co" target="_blank">Browse open roles</a></li><li><a href="candidates/what-to-expect.html">What to expect</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span class="footer-copy">© 2026 Nearwork. All rights reserved.</span><span class="footer-co"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Built with care from Colombia · Serving the US & Canada</span><div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms-of-service.html">Terms</a><a href="cookie-policy.html">Cookies</a></div></div>
 </footer>
