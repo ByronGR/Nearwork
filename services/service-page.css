@@ -1117,13 +1117,115 @@ footer { background:var(--white); border-top:1px solid var(--border); padding:72
 .match-card-stack div { background:#fff; border:1px solid var(--border); border-radius:18px; padding:16px; display:flex; justify-content:space-between; gap:12px; align-items:center; }
 .match-card-stack span { color:var(--fg-3); font-size:12px; }
 .match-card-stack b { color:var(--teal-dk); }
+
+/* Company, candidate, and Colombia story pages */
+.candidate-home-card,.about-origin-card,.how-split-card,.colombia-advantage-card {
+  border:1px solid var(--border);
+  border-radius:32px;
+  background:radial-gradient(circle at 18% 12%, rgba(22,160,133,.15), transparent 34%), radial-gradient(circle at 92% 88%, rgba(231,76,124,.12), transparent 32%), #fff;
+  box-shadow:0 26px 82px rgba(0,0,0,.1);
+  padding:28px;
+}
+.candidate-profile-mini { display:flex; align-items:center; gap:14px; border:1px solid var(--teal-mid); background:var(--teal-lt); border-radius:24px; padding:18px; }
+.candidate-profile-mini b { width:58px; height:58px; border-radius:20px; display:grid; place-items:center; background:var(--teal); color:#fff; font-size:20px; }
+.candidate-profile-mini strong,.candidate-match-pill strong { display:block; font-size:20px; letter-spacing:-.045em; }
+.candidate-profile-mini span,.candidate-match-pill span { color:var(--fg-2); font-size:13px; }
+.candidate-match-pill { margin:14px 0; border:1px solid var(--border); border-radius:20px; padding:18px; background:#fff; }
+.candidate-home-line { display:grid; grid-template-columns:auto 1fr auto 1fr auto; align-items:center; gap:12px; margin:24px 0; color:var(--teal-dk); font-weight:900; }
+.candidate-home-line em { height:3px; border-radius:999px; background:linear-gradient(90deg,var(--teal),var(--pink)); }
+.candidate-home-note { border-radius:20px; padding:18px; background:#111; color:#fff; font-weight:700; line-height:1.55; }
+.candidate-process-section { background:linear-gradient(180deg,#fff 0%, var(--bg) 100%); }
+.candidate-vertical-flow { position:relative; display:grid; gap:18px; max-width:1040px; margin:0 auto; }
+.candidate-vertical-flow::before { content:''; position:absolute; left:33px; top:22px; bottom:22px; width:3px; border-radius:999px; background:linear-gradient(var(--teal),var(--pink),var(--gold)); }
+.candidate-step-large { position:relative; z-index:1; display:grid; grid-template-columns:68px 1fr; gap:18px; align-items:start; }
+.candidate-step-large > span { width:68px; height:68px; border-radius:22px; display:grid; place-items:center; background:#111; color:#fff; font-weight:900; box-shadow:0 12px 32px rgba(0,0,0,.16); }
+.candidate-step-large > div { border:1px solid var(--border); border-radius:26px; background:#fff; padding:26px 30px; box-shadow:0 18px 48px rgba(0,0,0,.055); }
+.candidate-step-large:nth-child(odd) > div { background:linear-gradient(145deg,#fff,var(--teal-lt)); border-color:var(--teal-mid); }
+.candidate-step-large:nth-child(3n) > div { background:linear-gradient(145deg,#fff,var(--gold-lt)); border-color:var(--gold-mid); }
+.candidate-step-large h3 { font-size:26px; letter-spacing:-.055em; margin-bottom:8px; }
+.candidate-step-large p { color:var(--fg-2); line-height:1.7; }
+.candidate-stage-board { display:grid; grid-template-columns:repeat(7,1fr); gap:10px; align-items:stretch; }
+.candidate-stage-board div { min-height:130px; border:1px solid var(--border); border-radius:20px; padding:18px; background:#fff; box-shadow:0 12px 30px rgba(0,0,0,.04); }
+.candidate-stage-board div:nth-child(odd) { background:var(--teal-lt); border-color:var(--teal-mid); }
+.candidate-stage-board div:nth-child(3n) { background:var(--violet-lt); border-color:#dbc7e8; }
+.candidate-stage-board b { display:block; font-size:17px; letter-spacing:-.045em; margin-bottom:8px; }
+.candidate-stage-board span { color:var(--fg-2); font-size:12.5px; line-height:1.45; }
+.candidate-info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.about-origin-card,.how-split-card,.colombia-advantage-card { display:grid; gap:14px; }
+.about-year,.how-split-card div,.colombia-advantage-card div { border:1px solid var(--border); border-radius:22px; background:#fff; padding:20px; }
+.about-year.active { border-color:var(--teal-mid); background:var(--teal-lt); transform:scale(1.025); }
+.about-year span,.colombia-advantage-card strong { display:block; color:var(--teal-dk); font-size:38px; font-weight:900; letter-spacing:-.07em; line-height:1; margin-bottom:8px; }
+.about-year p,.how-split-card span,.colombia-advantage-card span { color:var(--fg-2); line-height:1.55; }
+.about-story-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:22px; align-items:start; }
+.about-story-copy { border:1px solid var(--border); border-radius:30px; background:#fff; padding:36px; box-shadow:0 18px 54px rgba(0,0,0,.055); }
+.about-story-copy h2 { font-size:clamp(38px,4.8vw,68px); line-height:.98; letter-spacing:-.075em; margin:8px 0 20px; }
+.about-story-copy p { color:var(--fg-2); line-height:1.8; margin-top:14px; }
+.about-principles { display:grid; gap:14px; }
+.about-principles div,.about-difference-card,.colombia-reason,.colombia-nearwork-card {
+  border:1px solid var(--border);
+  border-radius:26px;
+  background:#fff;
+  padding:26px;
+  box-shadow:0 16px 44px rgba(0,0,0,.045);
+}
+.about-principles div:nth-child(1),.about-difference-card:nth-child(1),.colombia-reason:nth-child(1),.colombia-reason:nth-child(4),.colombia-nearwork-card:nth-child(1) { background:linear-gradient(145deg,#fff,var(--teal-lt)); border-color:var(--teal-mid); }
+.about-principles div:nth-child(2),.about-difference-card:nth-child(2),.colombia-reason:nth-child(2),.colombia-reason:nth-child(5),.colombia-nearwork-card:nth-child(2) { background:linear-gradient(145deg,#fff,var(--gold-lt)); border-color:var(--gold-mid); }
+.about-principles div:nth-child(3),.about-difference-card:nth-child(3),.colombia-reason:nth-child(3),.colombia-reason:nth-child(6),.colombia-nearwork-card:nth-child(3) { background:linear-gradient(145deg,#fff,var(--violet-lt)); border-color:#dbc7e8; }
+.about-principles strong { display:block; font-size:24px; letter-spacing:-.055em; margin-bottom:8px; }
+.about-principles span { color:var(--fg-2); line-height:1.55; }
+.about-difference-grid,.colombia-reason-grid,.colombia-nearwork-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.about-difference-card b,.colombia-reason b { display:inline-flex; width:44px; height:44px; align-items:center; justify-content:center; border-radius:14px; background:#111; color:#fff; margin-bottom:26px; }
+.about-difference-card h3,.colombia-reason h3,.colombia-nearwork-card h3 { font-size:25px; line-height:1.1; letter-spacing:-.055em; margin-bottom:10px; }
+.about-difference-card p,.colombia-reason p,.colombia-nearwork-card p { color:var(--fg-2); line-height:1.65; }
+.about-belief-band { border-radius:32px; padding:42px; color:#fff; background:radial-gradient(circle at 88% 8%, rgba(231,76,124,.42), transparent 34%), linear-gradient(135deg,#111,#123d43); display:grid; grid-template-columns:.8fr 1fr; gap:28px; align-items:center; }
+.about-belief-band strong { font-size:clamp(42px,5vw,74px); line-height:.95; letter-spacing:-.075em; color:var(--gold); }
+.about-belief-band p { color:rgba(255,255,255,.76); font-size:18px; line-height:1.65; }
+.how-split-card { grid-template-columns:1fr; }
+.how-split-card strong { display:block; font-size:28px; letter-spacing:-.06em; margin-bottom:8px; }
+.how-split-card div:first-child { background:var(--teal-lt); border-color:var(--teal-mid); }
+.how-split-card div:last-child { background:var(--violet-lt); border-color:#dbc7e8; }
+.how-path { position:relative; display:grid; gap:18px; max-width:1080px; margin:0 auto; }
+.how-path::before { content:''; position:absolute; left:36px; top:28px; bottom:28px; width:3px; border-radius:999px; background:linear-gradient(var(--teal),var(--gold),var(--pink)); }
+.how-path-step { position:relative; z-index:1; display:grid; grid-template-columns:74px 1fr; gap:18px; align-items:start; }
+.how-path-step > span { width:74px; height:74px; border-radius:24px; display:grid; place-items:center; background:#111; color:#fff; font-weight:900; box-shadow:0 14px 34px rgba(0,0,0,.14); }
+.how-path-step > div { border:1px solid var(--border); border-radius:28px; background:#fff; padding:28px 32px; box-shadow:0 18px 52px rgba(0,0,0,.05); }
+.client-path .how-path-step:nth-child(odd) > div { background:linear-gradient(145deg,#fff,var(--teal-lt)); border-color:var(--teal-mid); }
+.candidate-path .how-path-step:nth-child(odd) > div { background:linear-gradient(145deg,#fff,var(--violet-lt)); border-color:#dbc7e8; }
+.how-path-step h3 { font-size:28px; letter-spacing:-.06em; margin-bottom:8px; }
+.how-path-step p { color:var(--fg-2); line-height:1.7; }
+.client-visibility-board { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.client-visibility-board div { border:1px solid var(--border); border-radius:24px; background:#fff; padding:24px; min-height:160px; }
+.client-visibility-board div:nth-child(1) { background:var(--teal-lt); border-color:var(--teal-mid); }
+.client-visibility-board div:nth-child(2) { background:var(--gold-lt); border-color:var(--gold-mid); }
+.client-visibility-board div:nth-child(3) { background:var(--violet-lt); border-color:#dbc7e8; }
+.client-visibility-board strong { display:block; font-size:24px; letter-spacing:-.055em; margin-bottom:8px; }
+.client-visibility-board span { color:var(--fg-2); }
+.colombia-advantage-card { grid-template-columns:1fr 1fr; }
+.colombia-advantage-card div:first-child { background:var(--teal-lt); border-color:var(--teal-mid); }
+.colombia-advantage-card div:nth-child(2) { background:var(--gold-lt); border-color:var(--gold-mid); }
+.colombia-advantage-card div:nth-child(3) { background:var(--violet-lt); border-color:#dbc7e8; }
+.colombia-market-board { border:1px solid var(--border); border-radius:32px; background:#fff; padding:34px; display:grid; grid-template-columns:.9fr 1.1fr; gap:24px; box-shadow:0 18px 54px rgba(0,0,0,.055); }
+.colombia-market-copy h2 { font-size:clamp(38px,4.8vw,64px); line-height:.98; letter-spacing:-.075em; margin:10px 0 16px; }
+.colombia-market-copy p { color:var(--fg-2); line-height:1.7; }
+.colombia-role-pills { display:flex; flex-wrap:wrap; gap:10px; align-content:center; }
+.colombia-role-pills span { border:1px solid var(--border); background:var(--bg); border-radius:999px; padding:12px 14px; font-weight:800; color:var(--fg-2); }
+.colombia-role-pills span:nth-child(3n+1) { background:var(--teal-lt); border-color:var(--teal-mid); color:var(--teal-dk); }
+.colombia-role-pills span:nth-child(3n+2) { background:var(--gold-lt); border-color:var(--gold-mid); }
+.colombia-role-pills span:nth-child(3n) { background:var(--violet-lt); border-color:#dbc7e8; }
 @media (max-width:1024px) {
   .calc-builder-grid,.candidate-journey,.future-match-band { grid-template-columns:1fr; }
   .industry-norm-grid,.candidate-stage-map { grid-template-columns:1fr 1fr; }
   .country-table .industry-table-row { grid-template-columns:1fr; }
+  .candidate-stage-board,.candidate-info-grid,.about-story-grid,.about-difference-grid,.colombia-reason-grid,.colombia-nearwork-grid,.client-visibility-board,.colombia-market-board { grid-template-columns:1fr 1fr; }
+  .about-belief-band { grid-template-columns:1fr; }
 }
 @media (max-width:760px) {
   .industry-visual-grid,.industry-signal-card.featured,.industry-page .industry-proof-strip,.industry-norm-grid,.calc-output-top,.eor-benefit-panel,.candidate-stage-map { grid-template-columns:1fr; }
   .industry-visual { min-height:auto; }
   .industry-page .industry-proof-strip strong { font-size:30px; }
+  .candidate-home-line,.candidate-step-large,.how-path-step,.candidate-stage-board,.candidate-info-grid,.about-story-grid,.about-difference-grid,.colombia-reason-grid,.colombia-nearwork-grid,.client-visibility-board,.colombia-market-board,.colombia-advantage-card { grid-template-columns:1fr; }
+  .candidate-vertical-flow::before,.how-path::before { display:none; }
+  .candidate-step-large > span,.how-path-step > span { width:54px; height:54px; border-radius:18px; }
+  .candidate-step-large > div,.how-path-step > div,.about-story-copy { padding:22px; }
+  .about-belief-band { padding:30px; }
 }
