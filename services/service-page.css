@@ -847,7 +847,11 @@ h2 { font-size:clamp(30px,3.3vw,48px); line-height:1.1; letter-spacing:-.04em; m
 .legal-shell { max-width:900px; }
 .legal-shell h1 { font-size:56px; letter-spacing:-.07em; margin:10px 0 8px; }
 .legal-shell h2 { font-size:24px; letter-spacing:-.045em; margin:34px 0 10px; }
+.legal-shell h3 { font-size:17px; letter-spacing:-.03em; margin:22px 0 8px; font-weight:800; }
 .legal-shell p { color:var(--fg-2); line-height:1.75; }
+.legal-shell ul { color:var(--fg-2); line-height:1.75; margin:8px 0 16px; padding-left:22px; }
+.legal-shell li { margin-bottom:6px; }
+.legal-shell strong { color:var(--fg); font-weight:700; }
 .legal-updated { color:var(--fg-3) !important; font-weight:700; margin-bottom:28px; }
 .direct-clean-top,.managed-clean-top { background:linear-gradient(90deg,#fff,var(--teal-lt)); border-bottom:1px solid var(--teal-mid); }
 .direct-clean-top strong,.managed-clean-top strong { font-size:13px; letter-spacing:-.02em; }
@@ -1037,6 +1041,9 @@ footer { background:var(--white); border-top:1px solid var(--border); padding:72
   .calc-ticker strong,.calc-save-card strong,.compare-stack strong,.pricing-orbit strong,.about-card-stack strong,.colombia-grid strong { font-size:30px; }
   .legal-section { padding-top:116px; }
   .legal-shell h1 { font-size:40px; }
+  .legal-shell { padding:22px; }
+  .legal-shell h2 { font-size:20px; }
+  .legal-shell h3 { font-size:15px; }
 }
 
 /* Industry refresh + calculator/candidate utility pages */
