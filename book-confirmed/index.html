@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="6148d6e3-2b04-4050-b86c-8dd5b98a516a" data-blockingmode="auto" type="text/javascript"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNTZWD4Q');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Booking Confirmed | Nearwork</title>
+<meta name="description" content="Your strategy call with Nearwork is confirmed. We look forward to speaking with you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--teal:#16A085;--teal-lt:#E8F8F5;--ink:#111;--muted:#6B7280;--bg:#F5F4F0;--sans:'Poppins',system-ui,sans-serif;}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+.confirm-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px;}
+.confirm-card{background:#fff;border-radius:20px;box-shadow:0 4px 24px rgba(0,0,0,0.08);max-width:560px;width:100%;padding:48px 40px;text-align:center;}
+.confirm-emoji{font-size:56px;margin-bottom:16px;}
+.confirm-heading{font-size:28px;font-weight:800;letter-spacing:-0.03em;margin-bottom:10px;color:var(--ink);}
+.confirm-name{color:var(--teal);}
+.confirm-sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:28px;}
+.confirm-details{background:var(--teal-lt);border-radius:14px;padding:20px 24px;margin-bottom:28px;text-align:left;}
+.confirm-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;}
+.confirm-detail:last-child{margin-bottom:0;}
+.confirm-detail svg{width:20px;height:20px;color:var(--teal);flex-shrink:0;margin-top:2px;}
+.confirm-detail-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:2px;}
+.confirm-detail-value{font-size:14px;font-weight:600;color:var(--ink);}
+.confirm-steps{text-align:left;margin-bottom:32px;}
+.confirm-steps-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:14px;}
+.confirm-step{display:flex;gap:12px;margin-bottom:14px;}
+.confirm-step:last-child{margin-bottom:0;}
+.confirm-step-num{width:28px;height:28px;border-radius:50%;background:var(--teal-lt);color:var(--teal);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.confirm-step-text{font-size:13px;color:var(--muted);line-height:1.5;}
+.confirm-step-text strong{color:var(--ink);}
+.confirm-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--teal);color:#fff;border:none;border-radius:99px;font-size:14px;font-weight:600;font-family:var(--sans);text-decoration:none;cursor:pointer;transition:background .2s;}
+.confirm-cta:hover{background:#12866E;}
+.confirm-cta svg{width:16px;height:16px;}
+.confirm-footer{text-align:center;padding:24px 20px;font-size:12px;color:var(--muted);}
+.confirm-footer a{color:var(--teal);text-decoration:none;font-weight:600;}
+@media(max-width:480px){
+  .confirm-card{padding:32px 24px;border-radius:16px;}
+  .confirm-heading{font-size:22px;}
+  .confirm-details{padding:16px 18px;}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNTZWD4Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="confirm-wrap">
+  <div class="confirm-card">
+    <div class="confirm-emoji">🎉</div>
+    <h1 class="confirm-heading">You're all set<span id="nameGreeting"></span>!</h1>
+    <p class="confirm-sub">Your strategy call with Nearwork is confirmed. You'll receive a calendar invite shortly with all the details.</p>
+
+    <div class="confirm-details" id="detailsBlock" style="display:none;">
+      <div class="confirm-detail" id="eventRow" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <div><div class="confirm-detail-label">Meeting</div><div class="confirm-detail-value" id="eventName"></div></div>
+      </div>
+      <div class="confirm-detail" id="timeRow" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div><div class="confirm-detail-label">When</div><div class="confirm-detail-value" id="eventTime"></div></div>
+      </div>
+    </div>
+
+    <div class="confirm-steps">
+      <div class="confirm-steps-title">What happens next</div>
+      <div class="confirm-step"><div class="confirm-step-num">1</div><div class="confirm-step-text"><strong>Calendar invite</strong> — Check your inbox for the meeting link and details.</div></div>
+      <div class="confirm-step"><div class="confirm-step-num">2</div><div class="confirm-step-text"><strong>Prep the role</strong> — Think about the position you need, seniority level, and timeline.</div></div>
+      <div class="confirm-step"><div class="confirm-step-num">3</div><div class="confirm-step-text"><strong>We'll talk through it</strong> — Role fit, cost range, and the best service path for your team.</div></div>
+    </div>
+
+    <a href="https://www.nearwork.co" class="confirm-cta">
+      Back to Nearwork
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<div class="confirm-footer">
+  Questions? Reach us at <a href="mailto:support@nearwork.co">support@nearwork.co</a>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const name = params.get('invitee_full_name') || params.get('name') || '';
+const eventType = params.get('event_type_name') || '';
+const startTime = params.get('event_start_time') || '';
+
+if (name) {
+  const firstName = decodeURIComponent(name).split(' ')[0];
+  document.getElementById('nameGreeting').textContent = ', ' + firstName;
+}
+
+if (eventType || startTime) {
+  document.getElementById('detailsBlock').style.display = '';
+}
+
+if (eventType) {
+  document.getElementById('eventRow').style.display = '';
+  document.getElementById('eventName').textContent = decodeURIComponent(eventType);
+}
+
+if (startTime) {
+  document.getElementById('timeRow').style.display = '';
+  try {
+    const d = new Date(decodeURIComponent(startTime));
+    document.getElementById('eventTime').textContent = d.toLocaleDateString('en-US', {
+      weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
+    }) + ' at ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  } catch {
+    document.getElementById('eventTime').textContent = decodeURIComponent(startTime);
+  }
+}
+</script>
+
+<script>window.intercomSettings={api_base:"https://api-iam.intercom.io",app_id:"pelltlav"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic("reattach_activator");ic("update",w.intercomSettings)}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;var l=function(){var s=d.createElement("script");s.type="text/javascript";s.async=true;s.src="https://widget.intercom.io/widget/pelltlav";var x=d.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x)};if(document.readyState==="complete"){l()}else{w.addEventListener("load",l,false)}}})();</script>
+</body>
+</html>
