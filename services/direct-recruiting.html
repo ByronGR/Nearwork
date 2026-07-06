@@ -2,13 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="6148d6e3-2b04-4050-b86c-8dd5b98a516a" data-blockingmode="auto" type="text/javascript"></script>
+
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MNTZWD4Q');</script>
+
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -17,8 +13,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="service-page.css">
+<link rel="stylesheet" href="/service-page.css">
 <style>
+  /* ── Direct Recruiting BOLD money hero ── */
+  .dr-hero-bold { padding:140px 28px 84px; text-align:center; }
+  .dr-bold-inner { max-width:1060px; margin:0 auto; position:relative; z-index:2; }
+  /* floating accent chips (like the homepage hero) */
+  .dr-hero-floaters { position:absolute; inset:0; z-index:1; pointer-events:none; }
+  .dr-floaty { position:absolute; display:inline-flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--border); border-radius:15px; padding:11px 15px; box-shadow:0 18px 44px -18px rgba(0,0,0,.22); font-size:13px; font-weight:600; color:var(--fg); white-space:nowrap; animation:drFloat var(--d,7s) ease-in-out infinite; animation-delay:var(--delay,0s); }
+  .dr-floaty .fic { width:32px; height:32px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .dr-floaty .fic svg { width:16px; height:16px; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .dr-floaty small { display:block; font-size:11px; font-weight:600; color:var(--fg-3); margin-top:1px; }
+  .dr-floaty strong { font-size:14px; font-weight:800; letter-spacing:-.02em; }
+  @keyframes drFloat { 0%,100% { transform:translateY(0) rotate(var(--r,0deg)); } 50% { transform:translateY(-13px) rotate(var(--r,0deg)); } }
+  @media (prefers-reduced-motion: reduce) { .dr-floaty { animation:none; } }
+  @media (max-width:1320px) { .dr-hero-floaters { display:none; } }
+  .dr-bold-inner .eyebrow { display:inline-flex; margin:0 auto 22px; }
+  .dr-bold-h1 { font-size:clamp(44px,6.6vw,88px); line-height:1.0; font-weight:800; letter-spacing:-.05em; }
+  .dr-bold-h1 span { color:var(--teal); }
+  .dr-bold-sub { max-width:660px; margin:26px auto 0; font-size:clamp(16px,1.7vw,19px); line-height:1.6; color:var(--fg-2); }
+  .dr-money { display:grid; grid-template-columns:1fr auto 1fr; align-items:stretch; gap:18px; max-width:880px; margin:52px auto 0; }
+  .dr-money-side { position:relative; border:1px solid var(--border); border-radius:28px; background:#fff; padding:32px 26px 30px; box-shadow:0 20px 60px -38px rgba(0,0,0,.28); text-align:center; }
+  .dr-money-side.near { border:2px solid var(--teal); background:linear-gradient(180deg,var(--teal-lt),#fff); box-shadow:0 30px 76px -30px rgba(22,160,133,.45); }
+  .dr-money-tag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); padding:6px 13px; border-radius:999px; background:var(--bg-cream); }
+  .dr-money-tag.teal { color:var(--teal-dk); background:#fff; border:1px solid var(--teal-mid); }
+  .dr-money-amt { font-size:clamp(34px,4.8vw,54px); font-weight:800; letter-spacing:-.05em; margin:18px 0 2px; line-height:1; }
+  .dr-money-amt small { font-size:.34em; font-weight:700; color:var(--fg-3); letter-spacing:0; }
+  .dr-money-people { display:flex; justify-content:center; align-items:center; margin:20px 0 0; min-height:56px; }
+  .dr-money-people img { width:56px; height:56px; border-radius:50%; border:3px solid #fff; object-fit:cover; margin-left:-14px; box-shadow:0 8px 20px rgba(0,0,0,.14); }
+  .dr-money-people img:first-child { margin-left:0; }
+  .dr-money-side.local .dr-money-people img { filter:grayscale(.5) opacity(.82); }
+  .dr-money-label { margin-top:16px; font-size:15.5px; font-weight:700; }
+  .dr-money-side.local .dr-money-label { color:var(--fg-2); }
+  .dr-money-side.near .dr-money-label { color:var(--teal-dk); }
+  .dr-money-multi { position:absolute; top:-14px; left:50%; transform:translateX(-50%); display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:800; letter-spacing:-.01em; color:#fff; background:var(--teal); padding:7px 15px; border-radius:999px; box-shadow:0 10px 24px -8px rgba(22,160,133,.6); white-space:nowrap; }
+  .dr-money-vs { align-self:center; font-size:30px; font-weight:800; color:var(--fg-4); }
+  .dr-hero-bold .hero-actions { justify-content:center; margin-top:40px; }
+  .dr-bold-proof { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px 22px; margin-top:30px; font-size:13.5px; color:var(--fg-2); }
+  .dr-bold-proof span { display:inline-flex; align-items:center; gap:8px; }
+  .dr-bold-proof span b { width:7px; height:7px; border-radius:50%; background:var(--teal); }
+  .dr-role-rotator { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:32px auto 0; max-width:700px; }
+  .dr-role-chip { font-size:13px; font-weight:600; color:var(--fg-2); background:#fff; border:1px solid var(--border); border-radius:999px; padding:8px 15px; cursor:pointer; transition:background .2s,border-color .2s,color .2s; }
+  .dr-role-chip:hover { border-color:var(--teal-mid); color:var(--fg); }
+  .dr-role-chip.active { background:var(--teal); border-color:var(--teal); color:#fff; }
+  .dr-fade { animation:drFade .5s var(--ease); }
+  @keyframes drFade { from { opacity:0; transform:translateY(7px); } to { opacity:1; transform:none; } }
+  .dr-money-people img { animation:drPop .45s var(--ease) backwards; }
+  @keyframes drPop { from { opacity:0; transform:scale(.6); } to { opacity:1; transform:scale(1); } }
+  @media (max-width:720px) {
+    .dr-money { grid-template-columns:1fr; gap:30px; }
+    .dr-money-vs { transform:rotate(90deg); }
+  }
+
+  /* ── Direct Recruiting hero: process strip + ranked shortlist panel ── */
+  .dr-flow-steps { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:24px 0 30px; }
+  .dr-flow-steps .step { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--fg-2); background:#fff; border:1px solid var(--border); border-radius:999px; padding:9px 15px; }
+  .dr-flow-steps .step b { width:7px; height:7px; border-radius:50%; background:var(--teal); }
+  .dr-flow-steps .arr { color:var(--fg-4); font-weight:700; }
+  .dr-hero-panel { position:relative; border:1px solid var(--border); border-radius:28px; background:#fff; box-shadow:0 34px 90px -34px rgba(0,0,0,.30); overflow:hidden; }
+  .dr-hero-panel-top { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:22px 24px; border-bottom:1px solid var(--border); background:linear-gradient(180deg,var(--teal-lt),#fff); }
+  .dr-panel-role span { display:block; font-size:10.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+  .dr-panel-role strong { display:block; font-size:18px; letter-spacing:-.03em; margin-top:4px; }
+  .dr-panel-badge { display:inline-flex; align-items:center; gap:8px; flex-shrink:0; padding:9px 14px; border-radius:999px; background:#fff; border:1px solid var(--teal-mid); color:var(--teal-dk); font-size:12.5px; font-weight:700; white-space:nowrap; }
+  .dr-panel-badge .pdot { width:8px; height:8px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 4px var(--teal-lt); }
+  .dr-cand-list { display:flex; flex-direction:column; }
+  .dr-cand { display:flex; align-items:center; gap:15px; padding:18px 24px; border-bottom:1px solid var(--border); }
+  .dr-cand:last-child { border-bottom:none; }
+  .dr-cand.top { background:linear-gradient(90deg,var(--teal-lt),transparent 78%); }
+  .dr-cand-rank { width:20px; flex-shrink:0; font-size:13px; font-weight:800; color:var(--fg-4); text-align:center; }
+  .dr-cand.top .dr-cand-rank { color:var(--teal-dk); }
+  .dr-cand img { width:48px; height:48px; border-radius:14px; object-fit:cover; flex-shrink:0; box-shadow:0 8px 20px rgba(0,0,0,.10); }
+  .dr-cand-id { min-width:0; flex:1; }
+  .dr-cand-id strong { display:block; font-size:15.5px; letter-spacing:-.02em; }
+  .dr-cand-id small { display:block; color:var(--fg-3); font-size:12px; margin-top:1px; }
+  .dr-cand-tags { display:flex; gap:6px; margin-top:8px; flex-wrap:wrap; }
+  .dr-cand-tags i { font-style:normal; font-size:10.5px; font-weight:600; color:var(--fg-2); background:var(--bg-cream); border-radius:6px; padding:3px 8px; }
+  .dr-cand-tags i.rec { color:var(--teal-dk); background:var(--teal-lt); }
+  .dr-cand-score { flex-shrink:0; text-align:center; min-width:42px; }
+  .dr-cand-score b { display:block; font-size:24px; font-weight:800; letter-spacing:-.05em; color:var(--teal-dk); line-height:1; }
+  .dr-cand-score span { display:block; font-size:8.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-4); margin-top:4px; }
+  .dr-hero-panel-foot { display:flex; align-items:center; gap:10px; padding:16px 24px; background:var(--bg-cream); font-size:12.5px; color:var(--fg-2); }
+  .dr-hero-panel-foot svg { width:16px; height:16px; stroke:var(--teal); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+  .dr-hero-panel-foot strong { color:var(--fg); font-weight:700; }
+  @media (max-width:760px) {
+    .dr-hero-panel { margin-top:6px; }
+    .dr-cand-tags { display:none; }
+  }
+
   .candidate-flow-hero {
     position:relative;
     min-height:590px;
@@ -443,16 +524,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .market-savings-banner { grid-template-columns:1fr; }
     .market-savings-banner p { justify-self:start; }
   }
+  /* ── Redesigned hero ── */
+  .dr-hero-stats { display:flex; flex-wrap:wrap; gap:14px 30px; margin-top:32px; }
+  .dr-hero-stats strong { display:block; font-size:26px; letter-spacing:-.045em; color:var(--teal-dk); line-height:1; }
+  .dr-hero-stats span { display:block; font-size:12px; color:var(--fg-3); margin-top:6px; max-width:150px; line-height:1.35; }
+  .dr-hero-card { background:#fff; border:1px solid var(--border); border-radius:24px; box-shadow:0 30px 80px rgba(0,0,0,.12); overflow:hidden; }
+  .dr-card-head { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:18px 20px; border-bottom:1px solid var(--border); background:linear-gradient(180deg,#fff,var(--teal-lt)); }
+  .dr-card-kick { display:block; font-size:10px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); margin-bottom:5px; }
+  .dr-card-head strong { font-size:18px; letter-spacing:-.03em; color:var(--fg); }
+  .dr-card-badge { flex-shrink:0; font-size:11px; font-weight:800; color:var(--teal-dk); background:#fff; border:1px solid var(--teal-mid); border-radius:999px; padding:6px 12px; }
+  .dr-cand-list { display:flex; flex-direction:column; gap:10px; padding:16px; }
+  .dr-cand { display:flex; align-items:center; gap:13px; border:1px solid var(--border); border-radius:16px; padding:12px 14px; background:#fff; }
+  .dr-cand.top { border-color:var(--teal-mid); background:linear-gradient(135deg,#fff,var(--teal-lt)); }
+  .dr-cand img { width:46px; height:46px; border-radius:14px; object-fit:cover; flex-shrink:0; }
+  .dr-cand-id { min-width:0; }
+  .dr-cand-id strong { display:block; font-size:15px; letter-spacing:-.02em; color:var(--fg); }
+  .dr-cand-id small { display:block; font-size:12px; color:var(--fg-3); margin-top:1px; }
+  .dr-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:7px; }
+  .dr-tags span { font-size:10px; font-weight:700; color:var(--teal-dk); background:var(--teal-lt); border-radius:999px; padding:3px 8px; }
+  .dr-score { margin-left:auto; text-align:center; flex-shrink:0; }
+  .dr-score b { display:block; font-size:22px; font-weight:800; color:var(--teal); letter-spacing:-.03em; line-height:1; }
+  .dr-score span { display:block; font-size:9px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:var(--fg-3); margin-top:3px; }
+  .dr-steps { position:relative; display:flex; align-items:flex-start; gap:6px; padding:16px 18px 18px; border-top:1px solid var(--border); }
+  .dr-steps::before { content:''; position:absolute; left:46px; right:46px; top:25px; height:2px; background:var(--border-d); }
+  .dr-step { position:relative; z-index:1; flex:1; text-align:center; font-size:11px; font-weight:700; color:var(--fg-3); }
+  .dr-dot { display:flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; margin:0 auto 8px; border:2px solid var(--border-d); background:#fff; }
+  .dr-dot svg { width:9px; height:9px; stroke:#fff; stroke-width:3.4; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .dr-step.done .dr-dot { background:var(--teal); border-color:var(--teal); }
+  .dr-step.done { color:var(--fg-2); }
+  .dr-step.active .dr-dot { background:#fff; border-color:var(--teal); box-shadow:0 0 0 4px var(--teal-lt); }
+  .dr-step.active { color:var(--teal-dk); }
+  @media (max-width:760px) {
+    .dr-hero-stats { gap:14px 22px; }
+    .dr-step { font-size:10px; }
+  }
 </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNTZWD4Q"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 <!-- End Google Tag Manager (noscript) -->
 <div class="nav-wrap">
   <div class="nav-pill" id="nav-pill">
-    <a href="../index.html" class="wordmark">Nearwork</a>
+    <a href="/" class="wordmark">Nearwork</a>
     <nav class="nav-center" id="navCenter">
       <div class="dd" data-dd="services">
         <button class="dd-btn">Services <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -465,13 +579,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <div><div class="dd-title">EOR</div><div class="dd-desc">Hire talent without opening a local entity</div></div>
           </a>
-          <a class="dd-item" href="strategic-partner-program.html">
-            <div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 17l2 2 3-4"/></svg></div>
-            <div><div class="dd-title">Strategic Partner Program</div><div class="dd-desc">White-label recruiting for partner firms</div></div>
-          </a>
           <a class="dd-item" href="managed-team.html">
             <div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></div>
             <div><div class="dd-title">Managed Team</div><div class="dd-desc">Dedicated teams with leads, managers, and support</div></div>
+          </a>
+          <a class="dd-item" href="strategic-partner-program.html">
+            <div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 17l2 2 3-4"/></svg></div>
+            <div><div class="dd-title">Strategic Partner Program</div><div class="dd-desc">White-label recruiting for partner firms</div></div>
           </a>
           
         </div>
@@ -479,11 +593,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="dd" data-dd="industries">
         <button class="dd-btn">Industries <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
         <div class="dd-panel wide wide-grid">
-          <a class="dd-item" href="../industries/customer-service.html">
+          <a class="dd-item" href="../industries/customer-support.html">
             <div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
             <div><div class="dd-title">Customer service</div><div class="dd-desc">Customer service outsourcing — dedicated remote teams</div></div>
           </a>
-          <a class="dd-item" href="../industries/technology.html">
+          <a class="dd-item" href="../industries/software-development.html">
             <div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
             <div><div class="dd-title">Technology</div><div class="dd-desc">Hire remote developers and engineering teams</div></div>
           </a>
@@ -491,15 +605,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
             <div><div class="dd-title">Sales</div><div class="dd-desc">Outsourced sales — SDRs, AEs, and revenue ops</div></div>
           </a>
-          <a class="dd-item" href="../industries/finance.html">
+          <a class="dd-item" href="../industries/finance-and-accounting.html">
             <div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
             <div><div class="dd-title">Finance & accounting</div><div class="dd-desc">Outsourced accounting services and bookkeeping</div></div>
           </a>
-          <a class="dd-item" href="../industries/marketing.html">
+          <a class="dd-item" href="../industries/marketing-and-content.html">
             <div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 01-5.8-1.6"/></svg></div>
             <div><div class="dd-title">Marketing</div><div class="dd-desc">Remote marketing teams and growth operations</div></div>
           </a>
-          <a class="dd-item" href="../industries/operations.html">
+          <a class="dd-item" href="../industries/operations-and-administration.html">
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
             <div><div class="dd-title">Operations & admin</div><div class="dd-desc">Outsourced administrative services and ops support</div></div>
           </a>
@@ -520,7 +634,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div>
             <div><div class="dd-title">EOR pricing</div><div class="dd-desc">Jump to EOR plans, fees, and benefits</div></div>
           </a>
-          <a class="dd-item" href="../cost-calculator.html">
+          <a class="dd-item" href="/services/direct-recruiting.html">
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="16" y1="18" x2="16" y2="18.01"/></svg></div>
             <div><div class="dd-title">Cost calculator</div><div class="dd-desc">See your savings — reduce labor costs by up to 70%</div></div>
           </a>
@@ -567,127 +681,1117 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
     <div class="nav-right">
       <a href="https://app.nearwork.co" class="nav-ghost">Client login</a>
-      <a href="/book" class="nav-cta">Hire on demand <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="/book.html" class="nav-cta">Hire on demand <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <button class="hamburger" id="hamBtn" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </div>
 <div class="mobile-menu" id="mobMenu">
-  <div class="mob-section"><div class="mob-section-title">Services</div><a class="mob-link" href="direct-recruiting.html">Direct Recruiting</a><a class="mob-link" href="eor.html">EOR</a><a class="mob-link" href="strategic-partner-program.html">Strategic Partner Program</a><a class="mob-link" href="managed-team.html">Managed Team</a></div>
-  <div class="mob-section"><div class="mob-section-title">Industries</div><a class="mob-link" href="../industries/customer-service.html">Customer service</a><a class="mob-link" href="../industries/technology.html">Technology</a><a class="mob-link" href="../industries/sales.html">Sales</a><a class="mob-link" href="../industries/finance.html">Finance & accounting</a><a class="mob-link" href="../industries/marketing.html">Marketing</a><a class="mob-link" href="../industries/operations.html">Operations & admin</a></div>
+  <div class="mob-section"><div class="mob-section-title">Services</div><a class="mob-link" href="direct-recruiting.html">Direct Recruiting</a><a class="mob-link" href="eor.html">EOR</a><a class="mob-link" href="managed-team.html">Managed Team</a><a class="mob-link" href="strategic-partner-program.html">Strategic Partner Program</a></div>
+  <div class="mob-section"><div class="mob-section-title">Industries</div><a class="mob-link" href="../industries/customer-support.html">Customer service</a><a class="mob-link" href="../industries/software-development.html">Technology</a><a class="mob-link" href="../industries/sales.html">Sales</a><a class="mob-link" href="../industries/finance-and-accounting.html">Finance & accounting</a><a class="mob-link" href="../industries/marketing-and-content.html">Marketing</a><a class="mob-link" href="../industries/operations-and-administration.html">Operations & admin</a></div>
   <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="../pricing.html">Pricing</a><a class="mob-link" href="eor.html#eor-pricing">EOR pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="https://jobs.nearwork.co" target="_blank">Browse jobs</a><a class="mob-link" href="../about.html">About</a><a class="mob-link" href="../how-it-works.html">How it works</a></div>
-  <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div>
+  <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book.html">Hire on demand</a></div>
 </div>
 <main>
-<section class="hero direct-hero">
-  <div class="direct-hero-inner two-col">
-    <div class="direct-hero-copy reveal">
-      <div class="eyebrow">Direct Recruiting</div>
-      <h1>Hire better. See <span>everything.</span></h1>
-      <p class="hero-copy">Nearwork sources, screens, assesses, and presents finalists with clear evidence. You see the pipeline, the scores, and the reason behind each recommendation.</p>
-      <div class="hero-actions"><a class="btn primary" href="/book">Book a strategy call</a><a class="btn" href="#pricing">See pricing</a></div>
-      <div class="hero-proof-row punchy-proof"><strong>21</strong><span>days to finalists</span><strong>$48k</strong><span>estimated savings / hire / year</span></div>
+<section class="hero direct-hero dr-hero-bold">
+  <div class="dr-hero-floaters" aria-hidden="true">
+    <div class="dr-floaty" style="top:13%; left:2.5%; --r:-5deg; --d:7.5s;">
+      <span class="fic" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal-dk)"><path d="M3 6h.01M3 12h.01M3 18h.01M8 6h13M8 12h13M8 18h13"/></svg></span>
+      <div><strong>3 ranked finalists</strong><small>per role, not 50 resumes</small></div>
     </div>
-    <div class="candidate-flow-hero reveal" aria-label="Candidates moving into your company">
-      <div class="flow-line one"></div>
-      <div class="flow-line two"></div>
-      <div class="flow-line three"></div>
-      <div class="flow-line four"></div>
-      <div class="candidate-orbit-card c1">
-        <span>Customer success</span>
-        <div class="candidate-person"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=80" alt="Candidate Maria Castro"><div><strong>Maria Castro</strong><small>Senior CSM · Bogota</small></div><b class="candidate-score">94</b></div>
-      </div>
-      <div class="candidate-orbit-card c2 highlight">
-        <span>Salesforce admin</span>
-        <div class="candidate-person"><img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?auto=format&fit=crop&w=160&q=80" alt="Candidate Ana Gomez"><div><strong>Ana Gomez</strong><small>Salesforce · C1 English</small></div><b class="candidate-score">91</b></div>
-      </div>
-      <div class="candidate-orbit-card c3">
-        <span>Support lead</span>
-        <div class="candidate-person"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80" alt="Candidate Diego Ramirez"><div><strong>Diego Ramirez</strong><small>Helpdesk lead · Medellin</small></div><b class="candidate-score">87</b></div>
-      </div>
-      <div class="candidate-orbit-card c4">
-        <span>Operations</span>
-        <div class="candidate-person"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&q=80" alt="Candidate Mateo Lopez"><div><strong>Mateo Lopez</strong><small>Ops coordinator · Cali</small></div><b class="candidate-score">82</b></div>
-      </div>
-      <div class="company-core">
-        <span>Your company</span>
-        <strong>Acme Corp</strong>
-      </div>
+    <div class="dr-floaty" style="top:66%; left:2.5%; --r:4deg; --d:8.4s; --delay:.7s;">
+      <span class="fic" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <div><strong>~21 days</strong><small>to your shortlist</small></div>
+    </div>
+    <div class="dr-floaty" style="top:13%; right:2.5%; --r:5deg; --d:8s; --delay:.4s;">
+      <span class="fic" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <div><strong>Every candidate vetted</strong><small>skills · English · DISC</small></div>
+    </div>
+    <div class="dr-floaty" style="top:66%; right:2.5%; --r:-4deg; --d:7.1s; --delay:1s;">
+      <span class="fic" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal-dk)"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+      <div><strong>$0 until you hire</strong><small>no upfront cost</small></div>
     </div>
   </div>
-</section>
+  <div class="dr-bold-inner reveal">
+    <div class="eyebrow">Direct Recruiting</div>
+    <h1 class="dr-bold-h1">One US salary.<br><span>A whole team.</span></h1>
+    <p class="dr-bold-sub">The math behind direct recruiting is simple: what you pay for a single US employee hires a full vetted team through Nearwork — same skills, same time zone, a fraction of the cost.</p>
 
-<section class="section savings-band early-savings" id="salary-intelligence">
-  <div class="inner">
-    <div class="section-head reveal">
-      <div class="tag">Salary intelligence</div>
-      <h2>Put in what you pay today. See what Nearwork could save.</h2>
-      <p class="section-lede">Choose a role, enter your current US annual cost, and get a directional estimate for the same role through Nearwork in Colombia.</p>
+    <div class="dr-money" id="drMoney">
+      <div class="dr-money-side local">
+        <span class="dr-money-tag">The old way</span>
+        <div class="dr-money-amt" id="drAmtOld">$115,000<small>/yr</small></div>
+        <div class="dr-money-people" id="drPeopleOld"></div>
+        <div class="dr-money-label" id="drLabelOld">= 1 Customer Success Manager</div>
+      </div>
+      <div class="dr-money-vs">=</div>
+      <div class="dr-money-side near">
+        <span class="dr-money-multi" id="drMulti">2× the team</span>
+        <span class="dr-money-tag teal">With Nearwork</span>
+        <div class="dr-money-amt" id="drAmtNew">$115,000<small>/yr</small></div>
+        <div class="dr-money-people" id="drPeopleNew"></div>
+        <div class="dr-money-label" id="drLabelNew">= 2 Customer Success Managers</div>
+      </div>
     </div>
-    <div class="salary-intel-builder reveal">
-      <div class="salary-calc-card">
-        <label>Role
-          <select id="salaryRole">
-            <option value="helpdesk">Helpdesk Support Lead</option>
-            <option value="support">Customer Support Specialist</option>
-            <option value="success">Customer Success Manager</option>
-            <option value="sdr">Sales Development Rep</option>
-            <option value="ae">Account Executive</option>
-            <option value="ops">Operations Manager</option>
-            <option value="project">Project Manager</option>
-            <option value="data">Data Analyst</option>
-            <option value="finance">Finance / Accounting Specialist</option>
-            <option value="marketing">Marketing Specialist</option>
-            <option value="qa">QA Analyst</option>
-            <option value="dev">Full-stack Developer</option>
-            <option value="product">Product Manager</option>
-          </select>
-        </label>
-        <label>Current US annual cost
-          <input id="usCostInput" type="number" min="25000" step="500" value="102500">
-        </label>
-        <a class="btn primary" href="../cost-calculator.html">Open full calculator</a>
-      </div>
-      <div class="salary-results-card">
-        <div class="salary-result-tile"><span>Your current cost</span><strong id="currentCost">$102,500</strong><small>Annual total compensation estimate.</small></div>
-        <div class="salary-result-tile pop"><span>Nearwork estimate</span><strong id="nearworkCost">$54,300</strong><small>Recruiting-ready annual cost estimate.</small></div>
-        <div class="salary-result-tile pop percent"><span>Estimated reduction</span><strong id="savingPct">47%</strong><small>Based on the selected role.</small></div>
-        <div class="salary-result-tile savings"><span>Estimated annual savings</span><strong id="annualSavings">$48,200 / year</strong><small>Estimates vary by role scope, seniority, benefits, FX, and market conditions.</small></div>
-        <p class="salary-disclaimer">These figures are planning estimates, not a final quote. Final pricing depends on role requirements, compensation package, hiring model, benefits, and any EOR or managed support add-ons.</p>
-      </div>
+
+    <div class="dr-role-rotator" id="drRoles"></div>
+
+    <div class="hero-actions"><a class="btn primary" href="/book.html">Book a strategy call</a><a class="btn" href="#salary-intelligence">Calculate your savings</a></div>
+    <div class="dr-bold-proof">
+      <span><b></b>Finalists in ~21 days</span>
+      <span><b></b>Up to 65% lower cost</span>
+      <span><b></b>3-month free replacement</span>
     </div>
   </div>
 </section>
 
-<section class="section alt compact-section" id="pricing"><div class="inner"><div class="section-head reveal"><div class="tag">Pricing</div><h2>A quick view of direct recruiting pricing.</h2><p class="section-lede">Three simple plans. Monthly retainers lower the placement fee, and yearly billing discounts the monthly fee by 15%.</p></div><div class="direct-pricing-preview">
-  <div class="direct-price-card reveal"><span>Essential</span><h3>One-role hiring</h3><div class="direct-price">$0/mo <small>+ $3,490 per hire</small></div><p>Best when you need one strong hire and want to keep the commitment light.</p><ul><li>Up to 2 shortlisted candidates</li><li>English + technical review</li><li>3-month replacement guarantee</li></ul></div>
-  <div class="direct-price-card popular reveal"><span>Growth</span><h3>Ongoing hiring</h3><div class="direct-price">$990/mo <small>+ $1,990 per hire</small></div><p>Built for teams opening roles regularly and needing a stronger recruiting rhythm.</p><ul><li>Up to 5 shortlisted candidates</li><li>Assigned talent specialist</li><li>Weekly progress call</li></ul></div>
-  <div class="direct-price-card reveal"><span>Scale</span><h3>Long-term pipeline</h3><div class="direct-price">$2,500/mo <small>+ $1,300 per hire</small></div><p>For companies that want Nearwork as a recurring hiring engine.</p><ul><li>Unlimited candidates per role</li><li>Priority coordination</li><li>1 in-person verification / month</li></ul></div>
-</div><div class="pricing-quick-cta reveal"><div><strong>Need the full plan breakdown?</strong><span>See monthly vs yearly pricing, shortlist limits, guarantees, support levels, and add-ons.</span></div><a class="btn primary" href="../pricing.html">View full pricing</a></div></div></section>
+<style id="proofstrip-styles">
+.dr-proofstrip { max-width:1000px; margin:0 auto; padding:0 28px 10px; }
+.dr-proofstrip-inner { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; border:1px solid var(--border); border-radius:18px; background:#fff; box-shadow:0 14px 40px rgba(0,0,0,.05); padding:15px 24px; }
+.dr-stars { display:inline-flex; gap:2px; flex-shrink:0; }
+.dr-stars svg { width:16px; height:16px; fill:#E6A817; }
+.dr-proofstrip q { font-size:15px; font-weight:600; color:var(--fg); quotes:none; }
+.dr-proofstrip cite { font-size:13px; color:var(--fg-3); font-style:normal; white-space:nowrap; }
+@media (max-width:620px) { .dr-proofstrip q { font-size:14px; } }
+</style>
+<div class="dr-proofstrip reveal"><div class="dr-proofstrip-inner">
+  <span class="dr-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 14.6 8.6 21.6 9 16.2 13.5 18 20.4 12 16.5 6 20.4 7.8 13.5 2.4 9 9.4 8.6 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 14.6 8.6 21.6 9 16.2 13.5 18 20.4 12 16.5 6 20.4 7.8 13.5 2.4 9 9.4 8.6 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 14.6 8.6 21.6 9 16.2 13.5 18 20.4 12 16.5 6 20.4 7.8 13.5 2.4 9 9.4 8.6 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 14.6 8.6 21.6 9 16.2 13.5 18 20.4 12 16.5 6 20.4 7.8 13.5 2.4 9 9.4 8.6 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 14.6 8.6 21.6 9 16.2 13.5 18 20.4 12 16.5 6 20.4 7.8 13.5 2.4 9 9.4 8.6 12 2"/></svg></span>
+  <q>“Three pre-assessed finalists in two weeks — we hired the first one we interviewed.”</q>
+  <cite>— Andrea M., Head of CX</cite>
+</div></div>
 
-<section class="section assessment-section"><div class="inner split"><div class="reveal"><div class="tag">Assessment intelligence</div><h2>Your role decides the assessment, not a generic template.</h2><p class="section-lede">Nearwork’s proprietary assessment system pulls from our question bank based on the skills, tools, seniority, and outcomes you need. The result is an assessment built to show whether a candidate can actually do the work.</p><div class="hero-actions"><a class="btn primary" href="/book">Ask about assessments</a><a class="btn" href="../cost-calculator.html">Estimate my savings</a></div></div><div class="assessment-machine reveal"><div class="question-bank"><span>Question bank</span><div>Salesforce</div><div>Helpdesk</div><div>Problem solving</div><div>Customer retention</div></div><div class="question-picker"><div class="picker-dot"></div><h3>Opening: Helpdesk Support</h3><p>Skills detected: Salesforce, ticket quality, troubleshooting, English C1.</p><div class="picked-question">Q42 · What is the best escalation path when SLA risk is high?</div><div class="picked-question alt">Q17 · How would you document a recurring issue?</div><div class="picked-question">Q28 · Which CRM signals show renewal risk?</div></div><div class="ai-summary"><span>AI review</span><strong>Strong technical base. Follow up on complex escalation judgment.</strong></div></div></div></section>
+<script>
+(function(){
+  // Real USD benchmarks (annual). count = how many Nearwork hires fit one US salary.
+  // Professional headshots, face-cropped for a consistent look.
+  var FA = '?auto=format&fit=facearea&facepad=2.8&w=160&h=160&q=80';
+  var POOL = [
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d' + FA,
+    'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2' + FA,
+    'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7' + FA,
+    'https://images.unsplash.com/photo-1580489944761-15a19d654956' + FA,
+    'https://images.unsplash.com/photo-1568602471122-7832951cc4c5' + FA,
+    'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e' + FA,
+    'https://images.unsplash.com/photo-1557862921-37829c790f19' + FA,
+    'https://images.unsplash.com/photo-1544005313-94ddf0286df2' + FA,
+    'https://images.unsplash.com/photo-1560250097-0b93528c311a' + FA,
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330' + FA,
+    'https://images.unsplash.com/photo-1633332755192-727a05c4013d' + FA,
+    'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c' + FA,
+    'https://images.unsplash.com/photo-1639149888905-fb39731f2e6c' + FA,
+    'https://images.unsplash.com/photo-1611432579699-484f7990b127' + FA,
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d' + FA,
+    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80' + FA,
+    'https://images.unsplash.com/photo-1545167622-3a6ac756afa4' + FA,
+    'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f' + FA,
+    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e' + FA,
+    'https://images.unsplash.com/photo-1534528741775-53994a69daeb' + FA
+  ];
+  // US = 2026 market average (Glassdoor/Indeed/BuiltIn). NW = Nearwork mid-level monthly × 12.
+  var ROLES = [
+    { role:'Full-stack Developer', us:120000, nw:37200, old:0 },
+    { role:'DevOps Engineer',      us:130000, nw:35700, old:1 },
+    { role:'QA Engineer',          us:100000, nw:27600, old:2 },
+    { role:'Frontend Developer',   us:110000, nw:34200, old:3 },
+    { role:'Data Analyst',         us:85000,  nw:30000, old:4 }
+  ];
+  var fmt = function(n){ return '$' + Math.round(n).toLocaleString('en-US'); };
+  function plural(role, n){ return n === 1 ? role : (role.replace(/Rep$/, 'Reps').replace(/Manager$/, 'Managers').replace(/Developer$/, 'Developers').replace(/Analyst$/, 'Analysts').replace(/Specialist$/, 'Specialists').replace(/Engineer$/, 'Engineers')); }
 
-<section class="section alt stage-animation-section"><div class="inner"><div class="section-head reveal"><div class="tag">How the pipeline moves</div><h2>Every stage has a job. Every update has context.</h2><p class="section-lede">Clients do not need to guess what Nearwork is doing. The process is visible, organized, and designed to remove noise.</p></div><div class="stage-story reveal"><div class="story-runner"></div><div class="story-step"><span>01</span><h3>Kickoff</h3><p>Define the role, salary range, must-have skills, schedule, and what a great hire looks like.</p></div><div class="story-step"><span>02</span><h3>Source</h3><p>Search the Colombian talent market and reach candidates who match the role.</p></div><div class="story-step"><span>03</span><h3>Screen</h3><p>Validate English, compensation, experience, and motivation before they reach you.</p></div><div class="story-step"><span>04</span><h3>Assess</h3><p>Use role-based technical questions, DISC, and structured recruiter notes.</p></div><div class="story-step"><span>05</span><h3>Present</h3><p>Share finalist profiles with scores, salary expectations, and hiring recommendations.</p></div><div class="story-step"><span>06</span><h3>Hire + support</h3><p>Keep Nearwork for recruiting only, or add EOR, payroll, benefits, and support.</p></div></div></div></section>
+  var amtOld = document.getElementById('drAmtOld'), amtNew = document.getElementById('drAmtNew');
+  var labOld = document.getElementById('drLabelOld'), labNew = document.getElementById('drLabelNew');
+  var pplOld = document.getElementById('drPeopleOld'), pplNew = document.getElementById('drPeopleNew');
+  var multi  = document.getElementById('drMulti');
+  var chips  = document.getElementById('drRoles');
 
-<section class="section"><div class="inner"><div class="section-head reveal"><div class="tag">Why companies choose Nearwork</div><h2>A recruiting partner that feels inside your team.</h2><p class="section-lede">We are not here to hide behind a spreadsheet. We show the work, explain the recommendation, and stay useful after the offer is signed.</p></div><div class="promise-grid reveal"><div class="promise-card teal"><span>01</span><h3>Transparent pipeline</h3><p>See who is moving, why they are moving, and what still needs to happen.</p></div><div class="promise-card pink"><span>02</span><h3>Real evidence</h3><p>Candidate profiles include skills, English, salary, DISC, assessment data, and recruiter context.</p></div><div class="promise-card violet"><span>03</span><h3>One partner after hire</h3><p>Recruiting, payroll, benefits, EOR, support teams, and managed operations can stay in one place.</p></div></div></div></section>
+  // build chips
+  ROLES.forEach(function(r, i){
+    var c = document.createElement('button');
+    c.className = 'dr-role-chip' + (i === 0 ? ' active' : '');
+    c.type = 'button';
+    c.textContent = r.role;
+    c.addEventListener('click', function(){ show(i, true); });
+    chips.appendChild(c);
+  });
 
-<section class="section alt"><div class="inner"><div class="section-head reveal"><div class="tag">Nearwork vs. disconnected vendors</div><h2>One team beats five disconnected vendors.</h2></div><div class="comparison-matrix reveal"><div class="matrix-head"><span>Feature</span><span>Agency</span><span>Internal team</span><span>Nearwork</span></div><div><strong>Live pipeline</strong><span class="bad">×</span><span class="mid">Partial</span><span class="good">✓</span></div><div><strong>Assessment + DISC</strong><span class="bad">×</span><span class="mid">Manual</span><span class="good">✓</span></div><div><strong>Cost benchmarks</strong><span class="bad">×</span><span class="mid">Slow</span><span class="good">✓</span></div><div><strong>EOR + payroll option</strong><span class="bad">×</span><span class="bad">×</span><span class="good">✓</span></div><div><strong>After-hire support</strong><span class="bad">×</span><span class="mid">Internal</span><span class="good">✓</span></div></div></div></section>
+  function avatars(el, n, startIdx){
+    el.innerHTML = '';
+    for (var k = 0; k < n; k++){
+      var img = document.createElement('img');
+      img.src = POOL[(startIdx + k) % POOL.length];
+      img.alt = '';
+      img.style.animationDelay = (k * 70) + 'ms';
+      el.appendChild(img);
+    }
+  }
 
-<section class="section market-section"><div class="inner"><div class="section-head reveal"><div class="tag">Market comparison</div><h2>Make the cost difference impossible to miss.</h2><p class="section-lede">Same business hours, vetted English, structured assessment data, and a lower annual cost that is easy to explain to finance.</p></div><div class="market-comparison-grid reveal">
-  <div class="market-cost-visual" aria-label="Annual cost comparison">
-    <div class="cost-column us"><i></i><span>US local hire</span><strong>$102,500</strong></div>
-    <div class="cost-column agency"><i></i><span>Traditional agency</span><strong>$82,000+</strong></div>
-    <div class="cost-column nearwork"><i></i><span>Nearwork</span><strong>$54,300</strong></div>
+  var idx = 0, timer = null, manual = false;
+  function show(i, isClick){
+    idx = i;
+    var r = ROLES[i];
+    var count = Math.floor(r.us / r.nw);   // honest multiple from the data
+    var teamCost = count * r.nw;
+    amtOld.innerHTML = fmt(r.us) + '<small>/yr</small>';
+    amtNew.innerHTML = '&lt; ' + fmt(r.us) + '<small>/yr</small>';
+    labOld.textContent = '= 1 ' + r.role;
+    labNew.textContent = '= ' + count + ' ' + plural(r.role, count);
+    multi.textContent = count + '× the team';
+    var base = i * 4;
+    avatars(pplOld, 1, base);
+    avatars(pplNew, count, base + 1);
+    [amtOld, amtNew, labOld, labNew].forEach(function(el){
+      el.classList.remove('dr-fade'); void el.offsetWidth; el.classList.add('dr-fade');
+    });
+    [].forEach.call(chips.children, function(c, ci){ c.classList.toggle('active', ci === i); });
+    if (isClick){ manual = true; clearInterval(timer); startTimer(); }
+  }
+  function startTimer(){
+    timer = setInterval(function(){ show((idx + 1) % ROLES.length); }, 3600);
+  }
+  show(0);
+  startTimer();
+})();
+</script>
+
+<!-- ══ HOW IT WORKS ══ -->
+<style>
+  .dr-how { padding:104px 28px; background:var(--white); }
+  .dr-how-inner { max-width:1180px; margin:0 auto; }
+  .dr-how-head { text-align:center; max-width:700px; margin:0 auto 64px; }
+  .dr-how-head .eyebrow { display:inline-flex; margin-bottom:18px; }
+  .dr-how-head h2 { font-size:clamp(32px,4.2vw,54px); font-weight:800; letter-spacing:-.04em; line-height:1.04; }
+  .dr-how-head h2 span { color:var(--teal); }
+  .dr-how-head p { margin-top:18px; font-size:clamp(16px,1.6vw,18px); color:var(--fg-2); line-height:1.6; }
+  .dr-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; }
+  .dr-steps::before { content:''; position:absolute; top:34px; left:12%; right:4%; height:2px; background:linear-gradient(90deg,var(--teal),var(--gold),var(--violet),#E0962A); opacity:.45; z-index:0; }
+  .dr-step-end { position:absolute; top:18px; right:-2px; z-index:1; display:flex; flex-direction:column; align-items:center; gap:7px; }
+  .dr-step-end .dot { width:34px; height:34px; border-radius:50%; background:var(--teal); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px -6px rgba(22,160,133,.6); }
+  .dr-step-end .dot svg { width:18px; height:18px; stroke:#fff; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .dr-step-end span { font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--teal-dk); }
+  .dr-step { position:relative; z-index:1; }
+  .dr-step-ic { width:68px; height:68px; border-radius:20px; display:flex; align-items:center; justify-content:center; margin-bottom:22px; box-shadow:0 0 0 6px #fff; }
+  .dr-step-ic svg { width:30px; height:30px; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .dr-step-chips { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin-bottom:13px; }
+  .dr-who { font-size:10.5px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; border-radius:999px; padding:4px 10px; }
+  .dr-step-day { display:inline-block; font-size:11px; font-weight:700; color:var(--fg-3); }
+  /* per-step accent colors */
+  .dr-step.s1 .dr-step-ic { background:var(--teal-lt); border:1px solid var(--teal-mid); } .dr-step.s1 .dr-step-ic svg { stroke:var(--teal-dk); } .dr-step.s1 .dr-who { color:var(--teal-dk); background:var(--teal-lt); }
+  .dr-step.s2 .dr-step-ic { background:var(--gold-lt); border:1px solid var(--gold-mid); } .dr-step.s2 .dr-step-ic svg { stroke:var(--gold-dk); } .dr-step.s2 .dr-who { color:var(--gold-dk); background:var(--gold-lt); }
+  .dr-step.s3 .dr-step-ic { background:var(--violet-lt); border:1px solid #DCC8EC; } .dr-step.s3 .dr-step-ic svg { stroke:var(--violet); } .dr-step.s3 .dr-who { color:var(--violet); background:var(--violet-lt); }
+  .dr-step.s4 .dr-step-ic { background:#FBEFD9; border:1px solid #E7C885; } .dr-step.s4 .dr-step-ic svg { stroke:#B5781C; } .dr-step.s4 .dr-who { color:#B5781C; background:#FBEFD9; }
+  .dr-step h3 { font-size:20px; font-weight:800; letter-spacing:-.02em; margin-bottom:9px; color:var(--fg); }
+  .dr-step h3 b { color:var(--fg-4); font-weight:800; margin-right:9px; }
+  .dr-step p { font-size:14px; line-height:1.55; color:var(--fg-2); }
+  .dr-how-foot { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px; margin-top:64px; padding:26px 34px; border:1px solid var(--border); border-radius:26px; background:var(--bg-cream); }
+  .dr-how-foot-stats { display:flex; flex-wrap:wrap; gap:16px 40px; }
+  .dr-how-foot-stat strong { display:block; font-size:23px; font-weight:800; letter-spacing:-.03em; color:var(--teal-dk); line-height:1.1; }
+  .dr-how-foot-stat span { font-size:13px; color:var(--fg-2); }
+  .dr-how-foot .btn.primary { white-space:nowrap; }
+  @media (max-width:860px){ .dr-steps{ grid-template-columns:1fr 1fr; gap:38px 24px; } .dr-steps::before{ display:none; } .dr-step-end{ display:none; } }
+  @media (max-width:520px){ .dr-steps{ grid-template-columns:1fr; } }
+</style>
+<section class="dr-how" id="how-it-works" data-screen-label="How it works">
+  <div class="dr-how-inner">
+    <div class="dr-how-head reveal">
+      <div class="eyebrow">How it works</div>
+      <h2>From open role to hired in <span>about 21 days.</span></h2>
+      <p>No job posts to write, no resumes to wade through, no payroll to set up. You tell us the role — we do the rest and hand you finalists worth interviewing.</p>
+    </div>
+    <div class="dr-steps reveal">
+      <div class="dr-step s1">
+        <div class="dr-step-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></div>
+        <div class="dr-step-chips"><span class="dr-who">You · 30 min</span><span class="dr-step-day">Day 0</span></div>
+        <h3><b>01</b>Tell us who you need</h3>
+        <p>One 30-min call. Share the role, skills, and budget — we build the scorecard.</p>
+      </div>
+      <div class="dr-step s2">
+        <div class="dr-step-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8.5 11l1.8 1.8 3.2-3.6"/></svg></div>
+        <div class="dr-step-chips"><span class="dr-who">Nearwork</span><span class="dr-step-day">Day 1–10</span></div>
+        <h3><b>02</b>We find &amp; vet them</h3>
+        <p>We search our vetted Colombian talent pool and test everyone — skills, English, DISC.</p>
+      </div>
+      <div class="dr-step s3">
+        <div class="dr-step-ic"><svg viewBox="0 0 24 24"><path d="M3 6h.01M3 12h.01M3 18h.01M8 6h13M8 12h13M8 18h13"/></svg></div>
+        <div class="dr-step-chips"><span class="dr-who">You</span><span class="dr-step-day">Day 10–21</span></div>
+        <h3><b>03</b>Pick from 3 finalists</h3>
+        <p>Just 3 ranked finalists with scores and evidence. We book the interviews.</p>
+      </div>
+      <div class="dr-step s4">
+        <div class="dr-step-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg></div>
+        <div class="dr-step-chips"><span class="dr-who">Nearwork</span><span class="dr-step-day">Day 21+</span></div>
+        <h3><b>04</b>We handle the rest</h3>
+        <p>Choose your hire. We run the offer, payroll, compliance, and support.</p>
+      </div>
+      <div class="dr-step-end" aria-hidden="true">
+        <span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span>Hired</span>
+      </div>
+    </div>
+    <div class="dr-how-foot reveal">
+      <div class="dr-how-foot-stats">
+        <div class="dr-how-foot-stat"><strong>~21 days</strong><span>to your first finalists</span></div>
+        <div class="dr-how-foot-stat"><strong>3 months</strong><span>free replacement guarantee</span></div>
+        <div class="dr-how-foot-stat"><strong>$0</strong><span>until you actually hire</span></div>
+      </div>
+      <a class="btn primary" href="/book.html">Book a strategy call</a>
+    </div>
   </div>
-  <div class="market-cost-table">
-    <div class="row head"><span>Model</span><span>Annual cost</span><span>What you get</span></div>
-    <div class="row"><strong>US local hire</strong><b>$102,500</b><p>Salary, benefits, hiring overhead, recruiting time, and management load.</p></div>
-    <div class="row"><strong>Traditional agency</strong><b>$82,000+</b><p>Candidate search, but payroll, EOR, support, and post-hire operations usually sit somewhere else.</p></div>
-    <div class="row winner"><strong>Nearwork</strong><b>$54,300</b><p>Recruiting, candidate assessments, pipeline visibility, salary intelligence, and optional EOR or support services.</p></div>
-  </div>
-</div><div class="market-savings-banner reveal"><span>Projected savings</span><strong>$48,200 / year</strong><p>Example for one Helpdesk Support Lead. Savings can grow as you add roles or build a managed team.</p></div></div></section>
+</section>
 
-<section class="section"><div class="inner cta reveal"><div><h2>Ready to see what Nearwork can find for your role?</h2><p>Book a free strategy call. We will talk through salary, role requirements, hiring timeline, and the best service model for your team.</p></div><a class="btn" href="/book">Book a strategy call</a></div></section>
+<style>
+  .ci { padding:104px 28px; background:var(--bg-cream); }
+  .ci-inner { max-width:1080px; margin:0 auto; }
+  .ci-head { text-align:center; max-width:640px; margin:0 auto 48px; }
+  .ci-head .eyebrow { display:inline-flex; margin-bottom:18px; }
+  .ci-head h2 { font-size:clamp(32px,4.2vw,52px); font-weight:800; letter-spacing:-.04em; line-height:1.04; }
+  .ci-head h2 span { color:var(--teal); }
+  .ci-head p { margin-top:16px; font-size:clamp(15px,1.6vw,18px); color:var(--fg-2); line-height:1.6; }
+  .ci-card { display:grid; grid-template-columns:.85fr 1.15fr; border:1px solid var(--border); border-radius:28px; background:#fff; overflow:hidden; box-shadow:0 30px 80px -42px rgba(0,0,0,.28); }
+  .ci-controls { padding:34px; background:linear-gradient(180deg,var(--teal-lt),#fff); border-right:1px solid var(--border); display:flex; flex-direction:column; gap:28px; }
+  .ci-field label { display:flex; align-items:center; justify-content:space-between; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-3); margin-bottom:13px; }
+  .ci-field label b { font-size:16px; color:var(--teal-dk); letter-spacing:-.02em; text-transform:none; }
+  .ci-roles { display:flex; flex-wrap:wrap; gap:8px; }
+  .ci-role { font-size:12.5px; font-weight:600; color:var(--fg-2); background:#fff; border:1px solid var(--border); border-radius:999px; padding:8px 13px; cursor:pointer; transition:background .18s,border-color .18s,color .18s; }
+  .ci-role:hover { border-color:var(--teal-mid); color:var(--fg); }
+  .ci-role.on { background:var(--teal); border-color:var(--teal); color:#fff; }
+  .ci-seg { display:flex; background:#fff; border:1px solid var(--border); border-radius:13px; padding:4px; gap:4px; }
+  .ci-seg button { flex:1; font:600 13px/1 Poppins,sans-serif; color:var(--fg-2); background:none; border:none; border-radius:9px; padding:11px 8px; cursor:pointer; transition:background .18s,color .18s; }
+  .ci-seg button.on { background:var(--teal); color:#fff; box-shadow:0 4px 12px -4px rgba(22,160,133,.5); }
+  #ciHires { -webkit-appearance:none; appearance:none; width:100%; height:6px; border-radius:999px; background:var(--teal-mid); outline:none; }
+  #ciHires::-webkit-slider-thumb { -webkit-appearance:none; width:22px; height:22px; border-radius:50%; background:var(--teal); border:3px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.25); cursor:pointer; }
+  #ciHires::-moz-range-thumb { width:22px; height:22px; border-radius:50%; background:var(--teal); border:3px solid #fff; cursor:pointer; }
+  .ci-range-ticks { display:flex; justify-content:space-between; font-size:11px; color:var(--fg-4); margin-top:8px; }
+  .ci-results { padding:34px; display:flex; flex-direction:column; gap:24px; }
+  .ci-save span { font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-3); }
+  .ci-save strong { display:block; font-size:clamp(42px,5.6vw,64px); font-weight:800; letter-spacing:-.05em; color:var(--teal-dk); line-height:1; margin:9px 0; }
+  .ci-save em { font-style:normal; font-size:14px; color:var(--fg-2); }
+  .ci-save em b { color:var(--teal-dk); font-weight:800; }
+  .ci-bars { display:flex; flex-direction:column; gap:11px; }
+  .ci-bar-row { display:grid; grid-template-columns:84px 1fr 86px; align-items:center; gap:12px; }
+  .ci-bar-lbl { font-size:13px; font-weight:600; color:var(--fg-2); }
+  .ci-bar { height:26px; background:var(--bg-cream); border-radius:8px; overflow:hidden; }
+  .ci-bar i { display:block; height:100%; width:0; border-radius:8px; transition:width .6s var(--ease); }
+  .ci-bar i.us { background:var(--fg-4); }
+  .ci-bar i.nw { background:var(--teal); }
+  .ci-bar-row b { font-size:14px; font-weight:800; letter-spacing:-.02em; text-align:right; }
+  .ci-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .ci-stat { border-radius:16px; padding:16px 15px; background:var(--bg-cream); }
+  .ci-stat span { display:block; font-size:11px; font-weight:700; color:var(--fg-3); margin-bottom:5px; }
+  .ci-stat strong { font-size:20px; font-weight:800; letter-spacing:-.03em; color:var(--fg); }
+  .ci-stat em { display:block; font-style:normal; font-size:12.5px; font-weight:700; color:var(--fg-3); margin-top:4px; }
+  .ci-stat.c-nw { background:var(--teal-lt); }
+  .ci-stat.c-nw span, .ci-stat.c-nw em { color:var(--teal-dk); opacity:.85; }
+  .ci-stat.c-save { background:var(--teal); }
+  .ci-stat.c-save span { color:rgba(255,255,255,.8); }
+  .ci-stat.c-save strong { color:#fff; }
+  .ci-stat.c-save em { color:rgba(255,255,255,.92); }
+  .ci-stat.c-pct { background:var(--gold-lt); }
+  .ci-stat.c-pct strong { color:var(--gold-dk); }
+  .ci-stat.c-pct span, .ci-stat.c-pct em { color:var(--gold-dk); opacity:.85; }
+  .ci-incl { margin-top:4px; padding-top:22px; border-top:1px solid var(--border); }
+  .ci-incl > span { display:block; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-3); margin-bottom:13px; }
+  .ci-incl ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .ci-incl li { display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; color:var(--fg-2); }
+  .ci-incl li svg { width:18px; height:18px; flex-shrink:0; padding:3px; border-radius:50%; background:var(--teal-lt); stroke:var(--teal-dk); fill:none; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+  .ci-cta { display:flex; flex-direction:column; gap:10px; }
+  .ci-cta .btn.primary { align-self:flex-start; }
+  .ci-eor { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:18px 20px; border:1px dashed var(--violet); border-radius:18px; background:var(--violet-lt); }
+  .ci-eor-txt strong { display:block; font-size:14px; font-weight:800; letter-spacing:-.01em; color:var(--fg); margin-bottom:3px; }
+  .ci-eor-txt span { font-size:13px; color:var(--fg-2); }
+  .ci-eor-txt b { color:var(--violet); font-weight:800; }
+  .ci-eor .btn { white-space:nowrap; flex-shrink:0; }
+  @media (max-width:560px){ .ci-eor{ flex-direction:column; align-items:flex-start; } }
+  .ci-note { font-size:11.5px; color:var(--fg-4); line-height:1.45; }
+  .ci-search { position:relative; }
+  .ci-search > svg { position:absolute; left:14px; top:50%; transform:translateY(-50%); width:17px; height:17px; stroke:var(--fg-3); fill:none; stroke-width:2; pointer-events:none; }
+  .ci-search input { width:100%; min-height:50px; border:1px solid var(--border); border-radius:14px; background:#fff; padding:0 14px 0 40px; font:600 14px/1 Poppins,sans-serif; color:var(--fg); }
+  .ci-search input:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 3px var(--teal-lt); }
+  .ci-drop { position:absolute; top:calc(100% + 6px); left:0; right:0; background:#fff; border:1px solid var(--border); border-radius:14px; box-shadow:0 18px 44px -16px rgba(0,0,0,.22); max-height:266px; overflow-y:auto; z-index:20; display:none; padding:6px; }
+  .ci-search.open .ci-drop { display:block; }
+  .ci-opt { padding:10px 12px; border-radius:9px; font-size:13.5px; color:var(--fg-2); cursor:pointer; }
+  .ci-opt:hover, .ci-opt.active { background:var(--teal-lt); color:var(--fg); }
+  .ci-opt b { color:var(--teal-dk); font-weight:700; }
+  .ci-opt.none { color:var(--fg-4); cursor:default; }
+  .ci-est-note { font-size:11px; font-weight:600; color:var(--fg-4); margin-top:8px; }
+  @media (max-width:840px){ .ci-card{ grid-template-columns:1fr; } .ci-controls{ border-right:none; border-bottom:1px solid var(--border); } }
+</style>
+<section class="ci" id="salary-intelligence" data-screen-label="Cost calculator">
+  <div class="ci-inner">
+    <div class="ci-head reveal">
+      <div class="eyebrow">Cost calculator</div>
+      <h2>See exactly what you'd <span>save.</span></h2>
+      <p>Pick a role, choose the level, and set how many you're hiring. We'll show your US cost vs. Nearwork — built on 2026 market data and our real rates.</p>
+    </div>
+    <div class="ci-card reveal">
+      <div class="ci-controls">
+        <div class="ci-field">
+          <label>Role</label>
+          <div class="ci-search" id="ciSearch">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="ciInput" placeholder="Type a role… e.g. Backend Developer" autocomplete="off" spellcheck="false">
+            <div class="ci-drop" id="ciDrop"></div>
+          </div>
+        </div>
+        <div class="ci-field">
+          <label>Seniority</label>
+          <div class="ci-seg" id="ciLevel">
+            <button type="button" data-lvl="0">Junior</button>
+            <button type="button" data-lvl="1" class="on">Mid</button>
+            <button type="button" data-lvl="2">Senior</button>
+          </div>
+        </div>
+        <div class="ci-field">
+          <label>How many hires <b id="ciHiresVal">1</b></label>
+          <input type="range" id="ciHires" min="1" max="10" value="1">
+          <div class="ci-range-ticks"><span>1</span><span>10</span></div>
+        </div>
+        <div class="ci-incl">
+          <span>Every hire includes</span>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>In-depth role &amp; candidate insights</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Sourcing, vetting &amp; DISC assessment</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>A recruiter to guide you the whole way</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Full support for you and your team</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>3-month replacement guarantee</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ci-results">
+        <div class="ci-save">
+          <span>Estimated savings</span>
+          <strong id="ciSave">~$72,000</strong>
+          <em>for one hire — <b>per role, per year</b></em>
+        </div>
+        <div class="ci-bars">
+          <div class="ci-bar-row"><span class="ci-bar-lbl">US hire</span><div class="ci-bar"><i class="us" id="ciBarUs"></i></div><b id="ciUs">~$120K</b></div>
+          <div class="ci-bar-row"><span class="ci-bar-lbl">Nearwork</span><div class="ci-bar"><i class="nw" id="ciBarNw"></i></div><b id="ciNw">~$37K</b></div>
+        </div>
+        <div class="ci-stats">
+          <div class="ci-stat c-nw"><span>Nearwork cost</span><strong id="ciMonthly">$2,800–$3,200</strong><em id="ciNwYr">per month, all-in</em></div>
+          <div class="ci-stat c-save"><span>You save</span><strong id="ciSaveMo">~$6,050 / mo</strong><em id="ci3yr">~$72,000 / yr</em></div>
+          <div class="ci-stat c-pct"><span>Lower cost</span><strong id="ciPct">~68%</strong><em>vs. a US hire</em></div>
+        </div>
+        <div class="ci-cta">
+          <a class="btn primary" href="/book.html">Get an exact quote</a>
+          <span class="ci-note">Ballpark estimates from 2026 US market salaries and Nearwork's rate ranges. Your exact quote depends on scope, seniority, and hiring model.</span>
+        </div>
+        <div class="ci-eor">
+          <div class="ci-eor-txt">
+            <strong>Want payroll, benefits &amp; compliance handled too?</strong>
+            <span>Add full EOR and you still save <b id="ciEorSave">~$70,000</b> a year, per role.</span>
+          </div>
+          <a class="btn" href="eor.html">See EOR →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="/role-salaries.js"></script>
+<script>
+(function(){
+  var ROLES = (window.NW_ROLES || []).slice();
+  // Popular non-tech roles not in the source sheet — estimated Nearwork monthly USD (jr/mid/sr).
+  var EXTRA = [
+    { role:'Customer Success Manager', jr:2800, mid:4200, sr:5800 },
+    { role:'Account Executive',        jr:2800, mid:4200, sr:6000 },
+    { role:'Account Manager',          jr:2500, mid:3700, sr:5000 },
+    { role:'Sales Development Rep',     jr:2000, mid:3000, sr:4200 },
+    { role:'Operations Manager',       jr:3000, mid:4400, sr:6200 },
+    { role:'Marketing Specialist',     jr:2000, mid:3100, sr:4400 },
+    { role:'Marketing Manager',        jr:2800, mid:4200, sr:5800 },
+    { role:'Social Media Manager',     jr:1800, mid:2700, sr:3800 },
+    { role:'Content Writer',           jr:1500, mid:2300, sr:3300 },
+    { role:'Graphic Designer',         jr:1700, mid:2600, sr:3800 },
+    { role:'Finance / Accounting Specialist', jr:2200, mid:3300, sr:4600 },
+    { role:'Accountant',               jr:2000, mid:3000, sr:4200 },
+    { role:'Bookkeeper',               jr:1500, mid:2200, sr:3100 },
+    { role:'Executive Assistant',      jr:1500, mid:2200, sr:3100 },
+    { role:'HR Specialist / Recruiter', jr:2000, mid:3000, sr:4200 }
+  ];
+  var have = {}; ROLES.forEach(function(r){ have[r.role.toLowerCase()] = true; });
+  EXTRA.forEach(function(r){ if (!have[r.role.toLowerCase()]) ROLES.push(r); });
+  ROLES.sort(function(a,b){ return a.role.localeCompare(b.role); });
+  if (!ROLES.length) return;
+  var EOR_FEE = 500;                 // $/contractor/month (EOR Plus — includes real benefits)
+  // Estimated US market cost = Nearwork annual × a role-appropriate multiple (varies by role type).
+  function usMult(name){
+    var n = name.toLowerCase();
+    if (/architect|director|principal|head |tech lead|team lead|delivery manager|cto/.test(n)) return 3.6;
+    if (/scientist|machine learning|devops|cloud|data engineer|solutions/.test(n)) return 3.4;
+    if (/developer|engineer/.test(n)) return 3.3;
+    if (/qa|tester|test/.test(n)) return 3.2;
+    if (/success/.test(n)) return 2.9;
+    if (/support|helpdesk|service|customer/.test(n)) return 2.6;
+    if (/account executive|account manager|sdr|sales|business development/.test(n)) return 2.9;
+    if (/manager|scrum|agile|product owner|project|coach/.test(n)) return 3.1;
+    if (/designer|ux|ui/.test(n)) return 3.0;
+    if (/analyst|business intelligence|reporting/.test(n)) return 3.0;
+    if (/marketing|content|social|writer/.test(n)) return 2.7;
+    if (/finance|account|bookkeep/.test(n)) return 2.7;
+    if (/assistant|coordinator|admin|recruit|\bhr\b/.test(n)) return 2.5;
+    return 3.0;
+  }
+  var LVL = ['jr','mid','sr'];
+  function roundTo(n, step){ return Math.round(n / step) * step; }
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function approx(n, step){ return '~' + money(roundTo(n, step)); }
+  function approxK(n){ var v = roundTo(n, n >= 100000 ? 5000 : 1000); return '~$' + Math.round(v/1000) + 'K'; }
+  function rangeMo(n){ var lo = Math.floor(n*0.92/100)*100, hi = Math.ceil(n*1.08/100)*100; return '$' + lo.toLocaleString('en-US') + '–$' + hi.toLocaleString('en-US'); }
+
+  var input = document.getElementById('ciInput');
+  var search = document.getElementById('ciSearch');
+  var drop = document.getElementById('ciDrop');
+  var segEl = document.getElementById('ciLevel');
+  var hiresEl = document.getElementById('ciHires');
+  var hiresVal = document.getElementById('ciHiresVal');
+  var el = {
+    save:document.getElementById('ciSave'), pct:document.getElementById('ciPct'),
+    us:document.getElementById('ciUs'), nw:document.getElementById('ciNw'),
+    barUs:document.getElementById('ciBarUs'), barNw:document.getElementById('ciBarNw'),
+    monthly:document.getElementById('ciMonthly'), nwYr:document.getElementById('ciNwYr'),
+    saveMo:document.getElementById('ciSaveMo'), saveYr:document.getElementById('ci3yr'),
+    eorSave:document.getElementById('ciEorSave')
+  };
+  var lvl = 1;
+  var sel = ROLES.find(function(r){ return /fullstack|full-stack/i.test(r.role); }) || ROLES[0];
+  input.value = sel.role;
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function renderDrop(q){
+    q = (q || '').trim().toLowerCase();
+    var list = ROLES.filter(function(r){ return r.role.toLowerCase().indexOf(q) > -1; }).slice(0, 60);
+    if (!list.length){ drop.innerHTML = '<div class="ci-opt none">No matching role</div>'; return; }
+    drop.innerHTML = list.map(function(r){
+      var name = esc(r.role), html = name;
+      if (q){ var i = r.role.toLowerCase().indexOf(q); if (i > -1) html = esc(r.role.slice(0,i)) + '<b>' + esc(r.role.slice(i,i+q.length)) + '</b>' + esc(r.role.slice(i+q.length)); }
+      return '<div class="ci-opt" data-role="' + name + '">' + html + '</div>';
+    }).join('');
+  }
+  function open(q){ renderDrop(q); search.classList.add('open'); }
+  function close(){ search.classList.remove('open'); }
+
+  // On focus show the full list as examples; filter only once they type.
+  input.addEventListener('focus', function(){ input.select(); open(''); });
+  input.addEventListener('input', function(){ open(input.value); });
+  drop.addEventListener('mousedown', function(e){
+    var opt = e.target.closest('.ci-opt'); if (!opt || opt.classList.contains('none')) return;
+    var r = ROLES.find(function(x){ return x.role === opt.getAttribute('data-role'); });
+    if (r){ sel = r; input.value = r.role; close(); render(); }
+  });
+  document.addEventListener('click', function(e){ if (!search.contains(e.target)) close(); });
+
+  [].forEach.call(segEl.children, function(btn){
+    btn.addEventListener('click', function(){ lvl = +btn.getAttribute('data-lvl'); [].forEach.call(segEl.children, function(c){ c.classList.toggle('on', c === btn); }); render(); });
+  });
+  hiresEl.addEventListener('input', function(){ hiresVal.textContent = hiresEl.value; render(); });
+
+  function animate(node, to, fmtFn){
+    var from = node._v || 0; node._v = to;
+    var start = performance.now(), dur = 460;
+    function step(now){ var t = Math.min(1,(now-start)/dur), e = 1-Math.pow(1-t,3); node.textContent = fmtFn(from+(to-from)*e); if (t<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+
+  function render(){
+    var h = +hiresEl.value;
+    var nwMonthly = sel[LVL[lvl]];
+    var nwA = nwMonthly * 12 * h;
+    var usA = nwA * usMult(sel.role);
+    var save = usA - nwA;
+    var pct = Math.round(save / usA * 100);
+    animate(el.save, save, function(v){ return approx(v, 1000); });
+    animate(el.pct, pct, function(v){ return '~' + Math.round(v) + '%'; });
+    el.us.textContent = approxK(usA);
+    el.nw.textContent = approxK(nwA);
+    el.barUs.style.width = '100%';
+    el.barNw.style.width = Math.max(6, (nwA / usA * 100)) + '%';
+    el.monthly.textContent = rangeMo(nwMonthly * h);
+    el.nwYr.textContent = 'per month, all-in';
+    el.saveMo.textContent = approx(save / 12, 50) + ' / mo';
+    el.saveYr.textContent = approx(save, 1000) + ' / yr';
+    el.eorSave.textContent = approx(usA - (nwA + EOR_FEE * 12 * h), 1000);
+  }
+  render();
+})();
+</script>
+
+<style id="pricing-preview-styles">
+/* ── Pricing preview · "no subscription required" ── */
+#pricing .pp-clarity { display:grid; grid-template-columns:1fr auto 1fr; align-items:stretch; gap:14px; margin:28px 0 8px; }
+.pp-clarity-item { background:#fff; border:1px solid var(--border); border-radius:20px; padding:22px 24px; }
+.pp-clarity-item.lead { border:1.5px solid var(--gold-mid); background:linear-gradient(140deg,var(--gold-lt),#fff 72%); }
+.pp-clarity-q { display:block; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-3); margin-bottom:9px; }
+.pp-clarity-item strong { display:block; font-size:21px; letter-spacing:-.04em; line-height:1.12; }
+.pp-clarity-item em { display:block; font-style:normal; color:var(--fg-2); font-size:13.5px; margin-top:6px; line-height:1.5; }
+.pp-clarity-item.lead em { color:var(--gold-dk); font-weight:600; }
+.pp-clarity-arrow { align-self:center; color:var(--fg-4); }
+.pp-clarity-arrow svg { width:26px; height:26px; stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+
+/* billing toggle */
+.pp-billing { display:flex; align-items:center; justify-content:center; gap:12px; margin:24px 0 22px; font-size:13.5px; font-weight:600; }
+.pp-bl { color:var(--fg-3); transition:color .2s; }
+.pp-bl.on { color:var(--fg); }
+.pp-disc { color:var(--teal-dk); font-weight:700; }
+.pp-toggle { position:relative; width:46px; height:26px; border-radius:999px; border:1px solid var(--border-d); background:#fff; cursor:pointer; padding:0; flex-shrink:0; transition:background .2s, border-color .2s; }
+.pp-toggle::after { content:''; position:absolute; top:2px; left:2px; width:20px; height:20px; border-radius:50%; background:var(--teal); transition:transform .22s var(--ease); }
+#pricing[data-billing="yearly"] .pp-toggle { background:var(--teal-lt); border-color:var(--teal-mid); }
+#pricing[data-billing="yearly"] .pp-toggle::after { transform:translateX(20px); }
+.pp-billed { display:none; font-style:normal; font-size:11px; font-weight:700; color:var(--teal-dk); margin-left:4px; }
+#pricing[data-billing="yearly"] .pp-billed { display:inline; }
+
+/* layout switching */
+.pp-layout { display:none; }
+#pricing[data-pricing-layout="split"] .pp-split { display:grid; }
+#pricing[data-pricing-layout="cards"] .pp-cards { display:grid; }
+#pricing[data-pricing-layout="stacked"] .pp-stacked { display:grid; }
+
+/* shared */
+.pp-save { display:inline-block; background:var(--teal-lt); color:var(--teal-dk); font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; margin-left:6px; white-space:nowrap; }
+.pp-save.violet { color:#784899; background:var(--violet-lt); }
+.pp-mcard.scale { border-color:#D9C7F0; box-shadow:0 16px 44px rgba(175,122,197,.16); }
+.pp-break { color:var(--fg-2); font-size:12.5px; line-height:1.55; margin-top:12px; }
+.pp-break b { color:var(--fg); font-weight:700; }
+
+/* Layout A · split */
+.pp-split { grid-template-columns:1fr 1fr; gap:16px; align-items:stretch; }
+.pp-payhire { border:1.5px solid var(--gold-mid); border-radius:26px; background:linear-gradient(170deg,var(--gold-lt),#fff 62%); padding:30px 30px 28px; display:flex; flex-direction:column; }
+.pp-badge { display:inline-flex; width:max-content; align-items:center; gap:6px; font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:7px 13px; border-radius:999px; }
+.pp-badge.dark { background:var(--fg); color:#fff; }
+.pp-payhire h3 { font-size:26px; letter-spacing:-.04em; margin:16px 0 4px; }
+.pp-bigprice { font-size:46px; font-weight:800; letter-spacing:-.055em; line-height:1; }
+.pp-bigprice small { font-size:.34em; font-weight:700; color:var(--fg-3); letter-spacing:0; }
+.pp-zero { margin-top:11px; font-size:14px; font-weight:700; color:var(--gold-dk); }
+.pp-payhire p { color:var(--fg-2); font-size:13.5px; line-height:1.6; margin:14px 0 0; }
+.pp-feat { list-style:none; display:grid; gap:9px; margin:16px 0 22px; color:var(--fg-2); font-size:13px; }
+.pp-feat li::before { content:'✓'; color:var(--gold-dk); font-weight:800; margin-right:8px; }
+.pp-payhire .btn { margin-top:auto; }
+.pp-members { display:flex; flex-direction:column; gap:14px; }
+.pp-members-head { font-size:13.5px; font-weight:700; color:var(--fg); }
+.pp-members-head span { color:var(--fg-3); font-weight:500; }
+.pp-mcard { border:1px solid var(--border); border-radius:22px; background:#fff; padding:22px 24px; flex:1; }
+.pp-mcard.popular { border-color:var(--teal-mid); box-shadow:0 18px 48px rgba(22,160,133,.12); }
+.pp-mtop { display:flex; align-items:center; justify-content:space-between; }
+.pp-mname { font-size:18px; font-weight:700; letter-spacing:-.03em; }
+.pp-pill { font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--teal-dk); background:var(--teal-lt); padding:5px 10px; border-radius:999px; }
+.pp-mprice { margin:13px 0 4px; font-size:30px; font-weight:800; letter-spacing:-.05em; line-height:1; }
+.pp-mprice small { font-size:.46em; font-weight:700; color:var(--fg-3); letter-spacing:0; }
+.pp-mfee { font-size:14px; color:var(--fg-2); font-weight:600; }
+.pp-mfee strong { color:var(--fg); }
+
+/* Layout B · cards */
+.pp-cards { grid-template-columns:repeat(3,1fr); gap:16px; }
+.pp-cards .direct-price-card { min-height:340px; }
+.pp-tag-nomem { background:var(--fg) !important; color:#fff !important; border-color:var(--fg) !important; }
+.pp-cards .pp-card-warm { background:linear-gradient(180deg,#fff,var(--gold-lt)); border-color:var(--gold-mid); }
+.pp-cards .pp-card-violet { background:linear-gradient(180deg,#fff,var(--violet-lt)); }
+.pp-cards .pp-card-violet > span { color:#784899; }
+.pp-cards .pp-card-violet li::before { color:#784899; }
+
+/* Layout C · stacked */
+.pp-stacked { gap:16px; }
+.pp-shero { border:1.5px solid var(--gold-mid); border-radius:26px; background:linear-gradient(120deg,var(--gold-lt),#fff 58%); padding:28px 32px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; }
+.pp-shero-left { max-width:520px; }
+.pp-shero h3 { font-size:24px; letter-spacing:-.04em; margin:13px 0 6px; }
+.pp-shero p { color:var(--fg-2); font-size:13.5px; line-height:1.6; }
+.pp-shero-right { text-align:right; }
+.pp-shero-right .pp-bigprice { font-size:42px; }
+.pp-shero-right .pp-zero { margin-top:8px; }
+.pp-sgrid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+/* Tweaks panel (variations) */
+.pp-tweaks { position:fixed; right:16px; bottom:16px; z-index:2147483646; width:248px; background:rgba(250,249,247,.82); -webkit-backdrop-filter:blur(24px) saturate(160%); backdrop-filter:blur(24px) saturate(160%); border:.5px solid rgba(255,255,255,.6); border-radius:14px; box-shadow:0 12px 40px rgba(0,0,0,.18); font-family:'Poppins',sans-serif; color:#29261b; display:none; }
+.pp-tweaks.open { display:block; }
+.pp-tw-hd { display:flex; align-items:center; justify-content:space-between; padding:11px 9px 11px 15px; }
+.pp-tw-hd b { font-size:12.5px; font-weight:600; }
+.pp-tw-x { border:0; background:transparent; color:rgba(41,38,27,.55); width:24px; height:24px; border-radius:6px; cursor:pointer; font-size:13px; }
+.pp-tw-x:hover { background:rgba(0,0,0,.06); color:#29261b; }
+.pp-tw-body { padding:0 14px 14px; }
+.pp-tw-lbl { font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:rgba(41,38,27,.5); margin-bottom:7px; }
+.pp-seg { display:flex; gap:3px; background:rgba(0,0,0,.05); border-radius:9px; padding:3px; }
+.pp-seg button { flex:1; border:0; background:transparent; font-family:inherit; font-size:11.5px; font-weight:600; color:rgba(41,38,27,.62); padding:6px 4px; border-radius:7px; cursor:pointer; }
+.pp-seg button.on { background:#fff; color:#111; box-shadow:0 1px 4px rgba(0,0,0,.1); }
+
+@media (max-width:920px) {
+  #pricing .pp-clarity { grid-template-columns:1fr; }
+  .pp-clarity-arrow svg { transform:rotate(90deg); }
+  .pp-split, .pp-cards, .pp-sgrid { grid-template-columns:1fr; }
+  .pp-shero-right { text-align:left; }
+}
+</style>
+
+<section class="section alt compact-section" id="pricing" data-pricing-layout="split" data-billing="monthly" data-screen-label="Pricing"><div class="inner"><div class="section-head reveal"><div class="tag">Pricing — a quick taste</div><h2>Hire without a subscription.</h2><p class="section-lede">Pay one placement fee per hire — no membership, no monthly cost. Hiring every month? A membership lowers that fee, but it's always optional. <a href="../pricing.html" style="color:var(--teal-dk);font-weight:600;text-decoration:underline;text-underline-offset:3px;">See full pricing →</a></p></div>
+
+  <div class="pp-clarity reveal">
+    <div class="pp-clarity-item lead"><span class="pp-clarity-q">Just hiring once?</span><strong>Pay per placement.</strong><em>$0 / month. No subscription, nothing to cancel.</em></div>
+    <div class="pp-clarity-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    <div class="pp-clarity-item"><span class="pp-clarity-q">Hiring every month?</span><strong>Add a membership.</strong><em>Optional — it lowers your fee on every single hire.</em></div>
+  </div>
+
+  <div class="pp-billing reveal"><span class="pp-bl on" data-bl="monthly">Monthly</span><button class="pp-toggle" id="ppToggle" aria-label="Toggle billing period"></button><span class="pp-bl" data-bl="yearly">Yearly <span class="pp-disc">−15%</span></span></div>
+
+  <!-- Layout A · split -->
+  <div class="pp-layout pp-split">
+    <div class="pp-payhire reveal">
+      <div class="pp-badge dark">No membership required</div>
+      <h3>Pay per hire</h3>
+      <div class="pp-bigprice">$3,490 <small>per hire</small></div>
+      <div class="pp-zero">$0 / month · no subscription</div>
+      <p>The simplest way to hire. Open a role and pay one placement fee — only when you actually hire. No retainer, no lock-in.</p>
+      <ul class="pp-feat"><li>Up to 2 shortlisted candidates</li><li>English + technical review</li><li>3-month replacement guarantee</li></ul>
+      <a class="btn primary" href="/book.html">Hire one role</a>
+    </div>
+    <div class="pp-members">
+      <div class="pp-members-head">Hiring often? Add a membership <span>— lowers your per-hire fee</span></div>
+      <div class="pp-mcard popular reveal">
+        <div class="pp-mtop"><span class="pp-mname">Growth</span><span class="pp-pill">Most popular</span></div>
+        <div class="pp-mprice"><span class="pp-fee" data-monthly="$990" data-yearly="$842">$990</span><small>/mo</small><span class="pp-billed">billed yearly</span></div>
+        <div class="pp-mfee">+ <strong>$1,990</strong> per hire <span class="pp-save">save $1,500/hire</span></div>
+        <p class="pp-break">Pays for itself with <b>one hire a month</b> — you save $1,500 each time.</p>
+      </div>
+      <div class="pp-mcard scale reveal">
+        <div class="pp-mtop"><span class="pp-mname">Scale</span></div>
+        <div class="pp-mprice"><span class="pp-fee" data-monthly="$2,500" data-yearly="$2,125">$2,500</span><small>/mo</small><span class="pp-billed">billed yearly</span></div>
+        <div class="pp-mfee">+ <strong>$1,300</strong> per hire <span class="pp-save violet">save $2,190/hire</span></div>
+        <p class="pp-break">Pays for itself from <b>two hires a month</b> — you save $2,190 each time.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout B · cards -->
+  <div class="pp-layout pp-cards">
+    <div class="direct-price-card pp-card-warm reveal"><span class="pp-tag-nomem">No membership</span><h3>Pay per hire</h3><div class="direct-price">$0<small>/mo · no subscription · $3,490 per hire</small></div><p>Open a role, pay one placement fee only when you hire. No retainer, nothing to cancel.</p><ul><li>Up to 2 shortlisted candidates</li><li>English + technical review</li><li>3-month replacement guarantee</li></ul></div>
+    <div class="direct-price-card popular reveal"><span>Growth membership</span><h3>Ongoing hiring</h3><div class="direct-price"><span class="pp-fee" data-monthly="$990" data-yearly="$842">$990</span>/mo<span class="pp-billed">billed yearly</span> <small>+ $1,990 per hire · save $1,500/hire</small></div><p>For teams opening roles regularly that want a lower fee on every hire.</p><ul><li>Up to 5 shortlisted candidates</li><li>Assigned talent specialist</li><li>Weekly progress call</li></ul></div>
+    <div class="direct-price-card pp-card-violet reveal"><span>Scale membership</span><h3>Long-term pipeline</h3><div class="direct-price"><span class="pp-fee" data-monthly="$2,500" data-yearly="$2,125">$2,500</span>/mo<span class="pp-billed">billed yearly</span> <small>+ $1,300 per hire · save $2,190/hire</small></div><p>For companies that want Nearwork as a recurring hiring engine.</p><ul><li>Unlimited candidates per role</li><li>Priority coordination</li><li>1 in-person verification / month</li></ul></div>
+  </div>
+
+  <!-- Layout C · stacked -->
+  <div class="pp-layout pp-stacked">
+    <div class="pp-shero reveal">
+      <div class="pp-shero-left"><div class="pp-badge dark">No membership required</div><h3>Pay per hire</h3><p>The default way to hire with Nearwork. One placement fee per hire — no monthly cost, no lock-in. A membership is only worth it once you're hiring every month.</p></div>
+      <div class="pp-shero-right"><div class="pp-bigprice">$3,490 <small>per hire</small></div><div class="pp-zero">$0 / month · no subscription</div></div>
+    </div>
+    <div class="pp-sgrid">
+      <div class="pp-mcard popular reveal">
+        <div class="pp-mtop"><span class="pp-mname">Growth membership</span><span class="pp-pill">Most popular</span></div>
+        <div class="pp-mprice"><span class="pp-fee" data-monthly="$990" data-yearly="$842">$990</span><small>/mo</small><span class="pp-billed">billed yearly</span></div>
+        <div class="pp-mfee">+ <strong>$1,990</strong> per hire <span class="pp-save">save $1,500/hire</span></div>
+        <p class="pp-break">Pays for itself with <b>one hire a month</b>. Best for teams opening roles regularly.</p>
+      </div>
+      <div class="pp-mcard scale reveal">
+        <div class="pp-mtop"><span class="pp-mname">Scale membership</span></div>
+        <div class="pp-mprice"><span class="pp-fee" data-monthly="$2,500" data-yearly="$2,125">$2,500</span><small>/mo</small><span class="pp-billed">billed yearly</span></div>
+        <div class="pp-mfee">+ <strong>$1,300</strong> per hire <span class="pp-save violet">save $2,190/hire</span></div>
+        <p class="pp-break">Pays for itself from <b>two hires a month</b>. Lowest per-hire fee we offer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-quick-cta reveal"><div><strong>Want the full plan breakdown?</strong><span>Monthly vs yearly pricing, shortlist limits, guarantees, support levels, and add-ons — all on the pricing page.</span></div><a class="btn primary" href="../pricing.html">View full pricing</a></div>
+</div>
+
+<div class="pp-tweaks" id="ppTweaks">
+  <div class="pp-tw-hd"><b>Tweaks</b><button class="pp-tw-x" id="ppTwX" aria-label="Close tweaks">✕</button></div>
+  <div class="pp-tw-body">
+    <div class="pp-tw-lbl">Pricing block layout</div>
+    <div class="pp-seg" id="ppLayoutSeg"><button data-l="split">Split</button><button data-l="cards">Cards</button><button data-l="stacked">Stacked</button></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var sec = document.getElementById('pricing');
+  if (!sec) return;
+  /* billing toggle */
+  var toggle = document.getElementById('ppToggle');
+  function setBilling(b){
+    sec.setAttribute('data-billing', b);
+    sec.querySelectorAll('.pp-fee').forEach(function(f){ f.textContent = b === 'yearly' ? f.dataset.yearly : f.dataset.monthly; });
+    sec.querySelectorAll('.pp-bl').forEach(function(s){ s.classList.toggle('on', s.dataset.bl === b); });
+    try { localStorage.setItem('dr-pricing-billing', b); } catch(e){}
+  }
+  toggle.addEventListener('click', function(){ setBilling(sec.getAttribute('data-billing') === 'yearly' ? 'monthly' : 'yearly'); });
+  var savedB; try { savedB = localStorage.getItem('dr-pricing-billing'); } catch(e){}
+  setBilling(savedB === 'yearly' ? 'yearly' : 'monthly');
+
+  /* layout switching */
+  var seg = document.getElementById('ppLayoutSeg');
+  function setLayout(l){
+    sec.setAttribute('data-pricing-layout', l);
+    seg.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on', b.dataset.l === l); });
+    sec.querySelector('.pp-' + l).querySelectorAll('.reveal').forEach(function(el){ el.classList.add('up'); });
+    try { localStorage.setItem('dr-pricing-layout', l); } catch(e){}
+  }
+  seg.addEventListener('click', function(e){ var b = e.target.closest('button'); if (b) setLayout(b.dataset.l); });
+  var savedL; try { savedL = localStorage.getItem('dr-pricing-layout'); } catch(e){}
+  setLayout(['split','cards','stacked'].indexOf(savedL) > -1 ? savedL : 'split');
+
+  /* tweaks host protocol */
+  var panel = document.getElementById('ppTweaks');
+  window.addEventListener('message', function(e){
+    var t = e && e.data && e.data.type;
+    if (t === '__activate_edit_mode') panel.classList.add('open');
+    else if (t === '__deactivate_edit_mode') panel.classList.remove('open');
+  });
+  document.getElementById('ppTwX').addEventListener('click', function(){
+    panel.classList.remove('open');
+    try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch(e){}
+  });
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch(e){}
+})();
+</script>
+
+<style id="assessment-styles">
+/* ── Assessment intelligence ── */
+.ax-intro { font-size:13.5px; font-weight:700; color:var(--fg); margin:22px 0 12px; }
+.ax-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.ax-method { display:flex; gap:12px; align-items:flex-start; background:#fff; border:1px solid var(--border); border-radius:16px; padding:15px 16px; }
+.ax-mic { width:38px; height:38px; border-radius:11px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.ax-mic svg { width:19px; height:19px; fill:none; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+.ax-mic.teal { background:var(--teal-lt); } .ax-mic.teal svg { stroke:var(--teal-dk); }
+.ax-mic.rose { background:var(--gold-lt); } .ax-mic.rose svg { stroke:var(--gold-dk); }
+.ax-mic.violet { background:var(--violet-lt); } .ax-mic.violet svg { stroke:#784899; }
+.ax-mic.dark { background:var(--bg-warm); } .ax-mic.dark svg { stroke:var(--fg); }
+.ax-method h4 { font-size:14px; letter-spacing:-.02em; margin-bottom:3px; }
+.ax-method p { font-size:12.5px; color:var(--fg-2); line-height:1.5; }
+.ax-close { font-size:14px; color:var(--fg-2); line-height:1.65; margin:18px 0 22px; }
+.ax-close b { color:var(--fg); font-weight:700; }
+
+/* candidate result card */
+.ax-card { background:#fff; border:1px solid var(--border); border-radius:28px; padding:24px; box-shadow:0 24px 70px rgba(0,0,0,.1); align-self:start; }
+.ax-card-head { display:flex; align-items:flex-start; gap:13px; }
+.ax-avatar { width:52px; height:52px; border-radius:50%; background:linear-gradient(140deg,var(--teal),var(--teal-dk)); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px; letter-spacing:-.02em; flex-shrink:0; }
+.ax-who { flex:1; min-width:0; }
+.ax-who h3 { font-size:18px; letter-spacing:-.03em; }
+.ax-who span { font-size:12px; color:var(--fg-3); }
+.ax-fit { display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:800; letter-spacing:.01em; color:var(--teal-dk); background:var(--teal-lt); border:1px solid var(--teal-mid); padding:6px 11px; border-radius:999px; white-space:nowrap; }
+.ax-fit::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--teal); }
+.ax-headscore { text-align:right; flex-shrink:0; display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+.ax-num-lbl { display:block; font-size:8.5px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:var(--fg-3); margin-bottom:3px; }
+.ax-num { font-size:32px; font-weight:800; letter-spacing:-.05em; line-height:.9; color:var(--fg); }
+.ax-num small { font-size:.4em; color:var(--fg-4); font-weight:700; letter-spacing:0; }
+.ax-radar { max-width:300px; margin:20px auto 0; }
+.ax-radar svg { width:100%; height:auto; display:block; overflow:visible; }
+.ax-legend { display:flex; gap:16px; justify-content:center; margin-top:8px; font-size:11px; color:var(--fg-2); }
+.ax-legend span { display:inline-flex; align-items:center; }
+.ax-legend i { display:inline-block; width:12px; height:4px; border-radius:2px; margin-right:6px; }
+.ax-pillars { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:18px; }
+.ax-pillar { text-align:center; background:var(--bg); border:1px solid var(--border); border-radius:13px; padding:12px 6px; }
+.ax-pillar span { display:block; font-size:9px; font-weight:800; letter-spacing:.03em; text-transform:uppercase; color:var(--fg-3); margin-bottom:6px; }
+.ax-pillar strong { font-size:17px; letter-spacing:-.03em; color:var(--fg); }
+.ax-pillar strong.pass { font-size:13px; }
+.ax-pillar.teal strong { color:var(--teal-dk); }
+.ax-pillar.rose strong { color:var(--gold-dk); }
+.ax-pillar.violet strong { color:#784899; }
+.ax-report { display:block; text-align:center; margin-top:16px; font-size:12.5px; font-weight:700; color:var(--teal-dk); text-decoration:none; }
+.ax-report:hover { text-decoration:underline; }
+.ax-tags { margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.ax-taglabel { font-size:10px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-3); margin-bottom:8px; }
+.ax-chips { display:flex; flex-wrap:wrap; gap:6px; }
+.ax-chip { font-size:11.5px; font-weight:600; padding:5px 10px; border-radius:999px; border:1px solid var(--border); }
+.ax-chip.good { color:var(--teal-dk); background:var(--teal-lt); border-color:var(--teal-mid); }
+.ax-chip.dev { color:var(--gold-dk); background:var(--gold-lt); border-color:var(--gold-mid); }
+.ax-source { margin-top:18px; padding-top:16px; border-top:1px solid var(--border); font-size:12px; color:var(--fg-3); line-height:1.55; }
+.ax-source b { color:var(--fg-2); font-weight:700; }
+.ax-thread { margin-top:18px; padding-top:16px; border-top:1px solid var(--border); }
+.ax-thread-h { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:12px; }
+.ax-thread-h .ax-taglabel { margin-bottom:0; }
+.ax-thread-h span { font-size:11px; color:var(--fg-4); }
+.ax-msgs { display:flex; flex-direction:column; justify-content:flex-end; gap:11px; height:208px; overflow:hidden; -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 40px); mask-image:linear-gradient(to bottom, transparent 0, #000 40px); }
+.ax-msgs.static { height:auto; justify-content:flex-start; -webkit-mask-image:none; mask-image:none; }
+.ax-msgs .ax-note { margin-top:0; }
+.ax-in { animation:axIn .42s var(--ease) both; }
+@keyframes axIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+.ax-dots { display:inline-flex; gap:4px; align-items:center; }
+.ax-dots i { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:axDot 1s infinite; }
+.ax-dots i:nth-child(2) { animation-delay:.15s; }
+.ax-dots i:nth-child(3) { animation-delay:.3s; }
+@keyframes axDot { 0%,100% { opacity:.3; transform:translateY(0); } 50% { opacity:1; transform:translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) { .ax-in { animation:none; } .ax-dots i { animation:none; } }
+.ax-msg { display:flex; gap:9px; align-items:flex-start; max-width:90%; }
+.ax-msg.them { align-self:flex-start; }
+.ax-msg.you { align-self:flex-end; flex-direction:row-reverse; }
+.ax-msg-av { width:26px; height:26px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:9.5px; font-weight:700; color:#fff; }
+.ax-msg.them .ax-msg-av { background:linear-gradient(140deg,var(--teal),var(--teal-dk)); }
+.ax-msg.you .ax-msg-av { background:var(--fg-3); }
+.ax-bub { border-radius:14px; padding:9px 12px; }
+.ax-msg.them .ax-bub { background:var(--teal-lt); border-bottom-left-radius:5px; }
+.ax-msg.you .ax-bub { background:var(--bg-cream); border-bottom-right-radius:5px; text-align:left; }
+.ax-msg.note .ax-msg-av { background:var(--gold-mid); color:var(--gold-dk); }
+.ax-msg.note .ax-bub { background:var(--gold-lt); border:1px dashed var(--gold-mid); }
+.ax-lock { display:inline-flex; align-items:center; gap:3px; margin-left:6px; padding:2px 6px; border-radius:999px; background:#fff; border:1px solid var(--gold-mid); color:var(--gold-dk); font-size:8px; font-weight:800; letter-spacing:.04em; vertical-align:middle; }
+.ax-lock svg { width:8px; height:8px; stroke:var(--gold-dk); fill:none; stroke-width:2; }
+.ax-from { display:block; font-size:9.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; margin-bottom:3px; color:var(--fg-3); }
+.ax-bub p { font-size:12.5px; line-height:1.5; color:var(--fg); }
+.ax-time { display:block; font-size:10px; color:var(--fg-4); margin-top:4px; }
+.ax-note { display:flex; gap:9px; align-items:flex-start; background:var(--gold-lt); border:1px dashed var(--gold-mid); border-radius:12px; padding:10px 12px; margin-top:12px; }
+.ax-note svg { width:14px; height:14px; stroke:var(--gold-dk); fill:none; stroke-width:2; flex-shrink:0; margin-top:1px; }
+.ax-note p { font-size:12px; color:var(--gold-dk); line-height:1.5; }
+.ax-note b { font-weight:800; }
+.ax-compose { display:flex; align-items:center; gap:8px; margin-top:12px; border:1px solid var(--border); border-radius:12px; padding:10px 12px; }
+.ax-compose span { color:var(--fg-4); font-size:12.5px; flex:1; }
+.ax-compose .ax-internal { flex:none; font-size:10px; font-weight:700; color:var(--fg-3); background:var(--bg); border:1px solid var(--border); border-radius:999px; padding:4px 9px; }
+.ax-compose svg { width:17px; height:17px; stroke:var(--teal); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.ax-profile { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+.ax-pp { background:var(--bg); border:1px solid var(--border); border-radius:13px; padding:13px 14px; }
+.ax-pp-h { display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:10px; }
+.ax-pp-h span { font-size:9px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-3); white-space:nowrap; }
+.ax-pp-h b { font-size:12px; letter-spacing:-.02em; text-align:right; }
+.ax-disc-bars { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; align-items:end; }
+.ax-disc-bars div { display:flex; flex-direction:column; align-items:center; }
+.ax-disc-bars i { width:16px; border-radius:4px 4px 0 0; }
+.ax-disc-bars .d i { background:#DC4C4C; } .ax-disc-bars .d em { color:#C23B3B; }
+.ax-disc-bars .i i { background:#E6A817; } .ax-disc-bars .i em { color:#B5840F; }
+.ax-disc-bars .s i { background:#2E9E6B; } .ax-disc-bars .s em { color:#26845A; }
+.ax-disc-bars .c i { background:#2F73D8; } .ax-disc-bars .c em { color:#2961BC; }
+.ax-disc-bars em { font-size:9px; font-weight:800; font-style:normal; color:var(--fg-3); margin-top:5px; }
+.ax-cefr { display:flex; gap:4px; }
+.ax-cefr span { flex:1; text-align:center; font-size:9px; font-weight:700; color:var(--fg-4); padding:6px 0; border-radius:6px; background:var(--bg-cream); }
+.ax-cefr span.hi { background:var(--teal); color:#fff; }
+.ax-pp p { font-size:11px; color:var(--fg-2); line-height:1.45; margin-top:9px; }
+@media (max-width:560px) { .ax-grid, .ax-tags, .ax-profile { grid-template-columns:1fr; } .ax-pillars { grid-template-columns:repeat(2,1fr); } }
+</style>
+
+<section class="section assessment-section" data-screen-label="Assessment intelligence"><div class="inner split"><div class="reveal" style="align-self:center;"><div class="tag">Assessment intelligence</div><h2>We learn your business first — then test for it.</h2><p class="section-lede">It starts with an introduction call. We ask the questions that matter: what you need, how your business actually runs day to day, and the exact skills your new team member has to bring. Everything we measure after that is built from your answers.</p>
+  <div class="ax-intro">With that in hand, every candidate goes through:</div>
+  <div class="ax-grid">
+    <div class="ax-method"><div class="ax-mic teal"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h4>Structured interview</h4><p>Experience, motivation, and how they think on the job.</p></div></div>
+    <div class="ax-method"><div class="ax-mic rose"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><h4>Skills assessment</h4><p>Role-based tasks that prove they can do the work.</p></div></div>
+    <div class="ax-method"><div class="ax-mic violet"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.4"/><path d="M2.5 20v-1.6a3.6 3.6 0 0 1 3.6-3.6h5.8a3.6 3.6 0 0 1 3.6 3.6V20"/><path d="M17.5 10.5l2 2 3.5-3.6"/></svg></div><div><h4>DISC profile</h4><p>How they communicate, decide, and work with a team.</p></div></div>
+    <div class="ax-method"><div class="ax-mic dark"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div><div><h4>Culture-fit test</h4><p>Whether they'll thrive in how your business runs.</p></div></div>
+  </div>
+  <p class="ax-close">Because at the end of the day, we want you to get the <b>best talent</b> — and watch your business grow.</p>
+  <div class="hero-actions"><a class="btn primary" href="/book.html">Ask about assessments</a><a class="btn" href="/services/direct-recruiting.html">Estimate my savings</a></div>
+</div>
+<div class="ax-card reveal">
+  <div class="ax-card-head"><div class="ax-avatar">MR</div><div class="ax-who"><h3>Mariana R.</h3><span>Helpdesk Support Lead · English C1 · Available in ~2 weeks</span></div><div class="ax-headscore"><div><span class="ax-num-lbl">Nearwork Score</span><div class="ax-num">8.9<small>/10</small></div></div><span class="ax-fit">Strong fit</span></div></div>
+  <div class="ax-radar"><svg id="axRadar" viewBox="0 0 240 240" aria-label="Candidate strengths radar"></svg>
+    <div class="ax-legend"><span><i style="background:var(--teal);"></i>Candidate</span><span><i style="background:#9CA3AF;"></i>Role target</span></div>
+  </div>
+  <div class="ax-pillars">
+    <div class="ax-pillar teal"><span>Interview</span><strong class="pass">Passed</strong></div>
+    <div class="ax-pillar rose"><span>Skills test</span><strong>88%</strong></div>
+    <div class="ax-pillar violet"><span>DISC</span><strong>SC</strong></div>
+    <div class="ax-pillar dark"><span>Culture fit</span><strong>94%</strong></div>
+  </div>
+  <div class="ax-profile">
+    <div class="ax-pp">
+      <div class="ax-pp-h"><span>DISC profile</span><b>SC · Steady-Conscientious</b></div>
+      <div class="ax-disc-bars"><div class="d"><i style="height:16px;"></i><em>D</em></div><div class="i"><i style="height:10px;"></i><em>I</em></div><div class="s"><i style="height:40px;"></i><em>S</em></div><div class="c"><i style="height:34px;"></i><em>C</em></div></div>
+      <p>Steady, dependable, and detail-oriented — calm under pressure and consistent in process-driven work.</p>
+    </div>
+    <div class="ax-pp">
+      <div class="ax-pp-h"><span>English</span><b>C1 · Advanced</b></div>
+      <div class="ax-cefr"><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span class="hi">C1</span><span>C2</span></div>
+      <p>Fluent in live client calls and comfortable writing clear documentation and updates.</p>
+    </div>
+  </div>
+  <div class="ax-tags">
+    <div><div class="ax-taglabel">Strengths</div><div class="ax-chips"><span class="ax-chip good">Customer focus</span><span class="ax-chip good">English C1</span><span class="ax-chip good">Reliability</span></div></div>
+    <div><div class="ax-taglabel">Areas of opportunity</div><div class="ax-chips"><span class="ax-chip dev">Escalation judgment</span><span class="ax-chip dev">Salesforce automation</span></div></div>
+  </div>
+  <div class="ax-thread">
+    <div class="ax-thread-h"><div class="ax-taglabel">Discussion</div><span>You + your Nearwork team</span></div>
+    <div class="ax-msgs" id="axMsgs"></div>
+    <div class="ax-compose"><span>Add a comment…</span><span class="ax-internal">Internal note</span><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+  </div>
+  <a class="ax-report" href="#">View full candidate report →</a>
+  <p class="ax-source">Built entirely from <b>your intro-call answers</b> — interview, skills assessment, DISC, and culture test combined into one score.</p>
+</div></div></section>
+
+<script>
+(function(){
+  var svg = document.getElementById('axRadar'); if (!svg) return;
+  var NS = 'http://www.w3.org/2000/svg', cx = 120, cy = 120, R = 78;
+  var axes = ['Technical','English','Problem solving','Customer focus','Reliability','Culture'];
+  var cand = [88,92,84,90,86,94], tgt = [80,85,80,75,80,80], n = axes.length;
+  function pt(v,i){ var a=(-90 + i*360/n)*Math.PI/180, r=v/100*R; return [cx+r*Math.cos(a), cy+r*Math.sin(a)]; }
+  function poly(arr){ return arr.map(function(v,i){ return pt(v,i).join(','); }).join(' '); }
+  function mk(t,a){ var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); return e; }
+  [25,50,75,100].forEach(function(lvl){ svg.appendChild(mk('polygon',{ points:poly(axes.map(function(){return lvl;})), fill:'none', stroke:'#EAEAE6', 'stroke-width':1 })); });
+  axes.forEach(function(lab,i){
+    var p=pt(100,i); svg.appendChild(mk('line',{ x1:cx, y1:cy, x2:p[0], y2:p[1], stroke:'#EAEAE6', 'stroke-width':1 }));
+    var lp=pt(122,i), anchor = Math.abs(lp[0]-cx)<6 ? 'middle' : (lp[0]>cx ? 'start' : 'end');
+    var t=mk('text',{ x:lp[0], y:lp[1], 'text-anchor':anchor, 'dominant-baseline':'middle', 'font-size':8.5, 'font-weight':600, 'font-family':"'Poppins',sans-serif", fill:'#888' });
+    t.textContent=lab; svg.appendChild(t);
+  });
+  svg.appendChild(mk('polygon',{ points:poly(tgt), fill:'none', stroke:'#9CA3AF', 'stroke-width':1.5, 'stroke-dasharray':'4 3' }));
+  svg.appendChild(mk('polygon',{ points:poly(cand), fill:'rgba(22,160,133,.16)', stroke:'#16A085', 'stroke-width':2, 'stroke-linejoin':'round' }));
+  cand.forEach(function(v,i){ var p=pt(v,i); svg.appendChild(mk('circle',{ cx:p[0], cy:p[1], r:3, fill:'#16A085' })); });
+})();
+
+/* animated discussion thread */
+(function(){
+  var box = document.getElementById('axMsgs'); if (!box) return;
+  var steps = [
+    { side:'you', text:"I like this candidate \u2014 can we schedule a call?", time:"10:42" },
+    { side:'nw',  typing:true, text:"Of course! Mariana's available tomorrow at noon \u2014 I'll set it up.", time:"10:46" },
+    { side:'you', note:true, author:"Diana", initials:"D", text:"I agree \u2014 she's a strong fit for the support role.", time:"10:47" },
+    { side:'you', note:true, author:"Marcus", initials:"M", text:"Her English and culture scores look great. Happy to move forward.", time:"10:49" },
+    { side:'you', text:"Great \u2014 let's lock the time.", time:"10:52" },
+    { side:'nw',  typing:true, text:"Done \u2713 \u2014 calendar invite sent.", time:"10:54" }
+  ];
+  var LOCK = '<span class="ax-lock"><svg viewBox="0 0 24 24"><rect x="3.5" y="11" width="17" height="10" rx="2"/><path d="M7.5 11V7.5a4.5 4.5 0 0 1 9 0V11"/></svg>Internal</span>';
+  function makeMsg(s){
+    var you = s.side === 'you';
+    var m = document.createElement('div');
+    m.className = 'ax-msg ' + (you ? 'you' : 'them') + (s.note ? ' note' : '') + ' ax-in';
+    var av = s.note ? s.initials : (you ? 'YOU' : 'NW');
+    var who = s.note ? s.author : (you ? 'You' : 'Nearwork');
+    var time = s.note ? (s.time + ' \u00b7 only your team') : s.time;
+    m.innerHTML = '<div class="ax-msg-av' + (s.note ? ' note' : '') + '">' + av + '</div>'
+      + '<div class="ax-bub' + (s.note ? ' note' : '') + '">'
+      + '<span class="ax-from">' + who + (s.note ? LOCK : '') + '</span>'
+      + '<p>' + s.text + '</p><span class="ax-time">' + time + '</span></div>';
+    return m;
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce){ box.classList.add('static'); steps.forEach(function(s){ var e = makeMsg(s); e.classList.remove('ax-in'); box.appendChild(e); }); return; }
+  function typingEl(){ var t = document.createElement('div'); t.className = 'ax-msg them ax-in'; t.innerHTML = '<div class="ax-msg-av">NW</div><div class="ax-bub ax-dots"><i></i><i></i><i></i></div>'; return t; }
+  var i = 0, timer = null;
+  function next(){
+    if (i >= steps.length){ timer = setTimeout(restart, 4200); return; }
+    var s = steps[i];
+    if (s.typing){
+      var t = typingEl(); box.appendChild(t);
+      timer = setTimeout(function(){ if (t.parentNode) box.removeChild(t); box.appendChild(makeMsg(s)); i++; timer = setTimeout(next, 2600); }, 1900);
+    } else {
+      box.appendChild(makeMsg(s)); i++; timer = setTimeout(next, 2400);
+    }
+  }
+  function restart(){
+    box.style.transition = 'opacity .6s'; box.style.opacity = '0';
+    timer = setTimeout(function(){ box.innerHTML = ''; box.style.opacity = '1'; i = 0; next(); }, 600);
+  }
+  var started = false;
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting && !started){ started = true; next(); } }); }, { threshold:0.25 });
+  io.observe(box);
+})();
+</script>
+
+
+<style id="why-choose-styles">
+.wc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.wc-card { border:1px solid var(--border); border-radius:24px; padding:30px 28px; box-shadow:0 16px 46px rgba(0,0,0,.06); display:flex; flex-direction:column; }
+.wc-card.teal { background:linear-gradient(155deg,var(--teal-lt),#fff 80%); border-color:var(--teal-mid); }
+.wc-card.rose { background:linear-gradient(155deg,var(--gold-lt),#fff 80%); border-color:var(--gold-mid); }
+.wc-card.violet { background:linear-gradient(155deg,var(--violet-lt),#fff 80%); border-color:#dbc7e8; }
+.wc-ic { width:56px; height:56px; border-radius:16px; background:#fff; display:flex; align-items:center; justify-content:center; margin-bottom:20px; box-shadow:0 8px 22px rgba(0,0,0,.07); }
+.wc-ic svg { width:27px; height:27px; fill:none; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+.wc-ic.teal svg { stroke:var(--teal-dk); }
+.wc-ic.rose svg { stroke:var(--gold-dk); }
+.wc-ic.violet svg { stroke:#784899; }
+.wc-card h3 { font-size:24px; letter-spacing:-.045em; line-height:1.1; margin-bottom:10px; }
+.wc-lead { color:var(--fg-2); font-size:14.5px; line-height:1.55; }
+.wc-matrix-label { text-align:center; font-size:15px; color:var(--fg-2); margin:32px 0 16px; }
+.wc-matrix-label b { color:var(--fg); font-weight:700; }
+.wc-cmp-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.wc-cmp { min-width:580px; border:1px solid var(--border); border-radius:24px; overflow:hidden; background:#fff; box-shadow:0 22px 70px rgba(0,0,0,.08); }
+.wc-cmp .row { display:grid; grid-template-columns:1.6fr 1fr 1fr 1.15fr; }
+.wc-cmp .row + .row { border-top:1px solid var(--border); }
+.wc-cmp .cell { padding:15px 22px; display:flex; align-items:center; gap:8px; font-size:14px; min-height:62px; }
+.wc-cmp .feat { font-weight:700; color:var(--fg); letter-spacing:-.01em; }
+.wc-cmp .alt { color:var(--fg-3); font-weight:600; }
+.wc-cmp .head { background:var(--fg); }
+.wc-cmp .head .cell { color:rgba(255,255,255,.55); font-size:11px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; min-height:50px; }
+.wc-cmp .head .nw { color:#fff; background:var(--teal); }
+.wc-cmp .nw { background:linear-gradient(180deg,var(--teal-lt),#EAFAF6); color:var(--teal-dk); font-weight:700; }
+.wc-cmp svg { width:18px; height:18px; fill:none; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+.wc-cmp .i-ok { stroke:var(--teal); }
+.wc-cmp .nw .i-ok { stroke:var(--teal-dk); }
+.wc-cmp .i-x { stroke:var(--fg-4); }
+.wc-cmp .nw-badge { display:inline-flex; align-items:center; gap:5px; }
+.wc-cmp .head .nw svg { width:12px; height:12px; fill:#fff; stroke:none; }
+@media (max-width:920px) { .wc-grid { grid-template-columns:1fr; } }
+</style>
+
+<section class="section"><div class="inner"><div class="section-head reveal"><div class="tag">Why companies choose Nearwork</div><h2>A recruiting partner that feels inside your team.</h2><p class="section-lede">It comes down to three things: you can see the work, you can trust the evidence, and you keep one partner as you grow.</p></div><div class="wc-grid reveal">
+  <div class="wc-card teal">
+    <div class="wc-ic teal"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+    <h3>See everything, live</h3>
+    <p class="wc-lead">Every role, candidate score, and note in one shared portal.</p>
+  </div>
+  <div class="wc-card rose">
+    <div class="wc-ic rose"><svg viewBox="0 0 24 24"><path d="M9 4H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 13l2 2 4-4"/></svg></div>
+    <h3>Proof, not résumés</h3>
+    <p class="wc-lead">Finalists arrive with a skills assessment, DISC, and a Nearwork Score.</p>
+  </div>
+  <div class="wc-card violet">
+    <div class="wc-ic violet"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20v-1.6a3.5 3.5 0 0 1 3.5-3.5h6a3.5 3.5 0 0 1 3.5 3.5V20"/><circle cx="17.5" cy="8.5" r="2.6"/><path d="M16 14.4a3.4 3.4 0 0 1 5.5 2.6V20"/></svg></div>
+    <h3>One partner as you grow</h3>
+    <p class="wc-lead">Recruiting now — add EOR, payroll, and support when you're ready.</p>
+  </div>
+</div>
+<div class="wc-matrix-label reveal">And next to the alternatives, <b>it's not close.</b></div>
+<div class="wc-cmp-wrap reveal"><div class="wc-cmp">
+  <div class="row head"><div class="cell feat">What you get</div><div class="cell alt">Agency</div><div class="cell alt">Internal team</div><div class="cell nw"><span class="nw-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 14.6 8.6 21.6 9 16.2 13.5 18 20.4 12 16.5 6 20.4 7.8 13.5 2.4 9 9.4 8.6 12 2"/></svg>Nearwork</span></div></div>
+  <div class="row"><div class="cell feat">Live pipeline visibility</div><div class="cell"><svg class="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><div class="cell alt">Partial</div><div class="cell nw"><svg class="i-ok" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <div class="row"><div class="cell feat">Skills assessment + DISC</div><div class="cell"><svg class="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><div class="cell alt">Manual</div><div class="cell nw"><svg class="i-ok" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <div class="row"><div class="cell feat">English-verified (C1) talent</div><div class="cell alt">Varies</div><div class="cell alt">Varies</div><div class="cell nw"><svg class="i-ok" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <div class="row"><div class="cell feat">Salary &amp; cost benchmarks</div><div class="cell"><svg class="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><div class="cell alt">Slow</div><div class="cell nw"><svg class="i-ok" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <div class="row"><div class="cell feat">Time to first finalists</div><div class="cell alt">4–8 wks</div><div class="cell alt">6+ wks</div><div class="cell nw">~21 days</div></div>
+  <div class="row"><div class="cell feat">3-month replacement guarantee</div><div class="cell alt">Sometimes</div><div class="cell"><svg class="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><div class="cell nw"><svg class="i-ok" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <div class="row"><div class="cell feat">EOR + payroll, on demand</div><div class="cell"><svg class="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><div class="cell"><svg class="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><div class="cell nw"><svg class="i-ok" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <div class="row"><div class="cell feat">After-hire team support</div><div class="cell"><svg class="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><div class="cell alt">Internal</div><div class="cell nw"><svg class="i-ok" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+</div></div>
+</div></section>
+
+
+
+<style id="proof-faq-styles">
+.tm-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.tm-card { border:1px solid var(--border); border-radius:24px; background:#fff; padding:28px 26px; box-shadow:0 16px 46px rgba(0,0,0,.06); display:flex; flex-direction:column; }
+.tm-mark { font-family:Georgia,serif; font-size:52px; line-height:.5; height:22px; color:var(--teal-mid); }
+.tm-card.rose .tm-mark { color:var(--gold-mid); }
+.tm-card.violet .tm-mark { color:#dbc7e8; }
+.tm-quote { font-size:15px; line-height:1.6; color:var(--fg); margin:16px 0 18px; }
+.tm-result { display:inline-flex; align-items:baseline; gap:8px; width:max-content; margin-bottom:20px; padding:9px 13px; border-radius:12px; background:var(--teal-lt); }
+.tm-card.rose .tm-result { background:var(--gold-lt); }
+.tm-card.violet .tm-result { background:var(--violet-lt); }
+.tm-result strong { font-size:19px; letter-spacing:-.04em; color:var(--teal-dk); }
+.tm-card.rose .tm-result strong { color:var(--gold-dk); }
+.tm-card.violet .tm-result strong { color:#784899; }
+.tm-result span { font-size:11.5px; color:var(--fg-2); font-weight:600; }
+.tm-who { display:flex; align-items:center; gap:11px; margin-top:auto; padding-top:18px; border-top:1px solid var(--border); }
+.tm-av { width:42px; height:42px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:14px; background:linear-gradient(140deg,var(--teal),var(--teal-dk)); }
+.tm-card.rose .tm-av { background:linear-gradient(140deg,var(--gold),var(--gold-dk)); }
+.tm-card.violet .tm-av { background:linear-gradient(140deg,var(--violet),#784899); }
+.tm-who b { font-size:14px; display:block; letter-spacing:-.01em; }
+.tm-who span { font-size:12px; color:var(--fg-3); }
+.faq-wrap { max-width:840px; margin:0 auto; }
+@media (max-width:920px) { .tm-grid { grid-template-columns:1fr; } }
+</style>
+
+<section class="section alt" data-screen-label="Testimonials"><div class="inner"><div class="section-head reveal"><div class="tag">Client stories</div><h2>What it's like to hire with Nearwork.</h2><p class="section-lede">A few words from teams that found their people with us. Real results, real timelines.</p></div><div class="tm-grid reveal">
+  <div class="tm-card teal">
+    <div class="tm-mark">“</div>
+    <p class="tm-quote">We needed a bilingual support lead fast. Nearwork sent three pre-assessed finalists in two weeks — we hired the first one we interviewed.</p>
+    <div class="tm-result"><strong>18 days</strong><span>open role to hired</span></div>
+    <div class="tm-who"><div class="tm-av">AM</div><div><b>Andrea M.</b><span>Head of CX · SaaS company</span></div></div>
+  </div>
+  <div class="tm-card rose">
+    <div class="tm-mark">“</div>
+    <p class="tm-quote">The candidate profiles did the convincing for us. Skills, English, DISC, salary — everything was there before our first call.</p>
+    <div class="tm-result"><strong>$45k</strong><span>saved per year</span></div>
+    <div class="tm-who"><div class="tm-av">DR</div><div><b>Daniel R.</b><span>COO · eCommerce brand</span></div></div>
+  </div>
+  <div class="tm-card violet">
+    <div class="tm-mark">“</div>
+    <p class="tm-quote">We started with one role and now run our whole support team through Nearwork — recruiting, payroll, all of it in one place.</p>
+    <div class="tm-result"><strong>1 → 8</strong><span>hires and growing</span></div>
+    <div class="tm-who"><div class="tm-av">PS</div><div><b>Priya S.</b><span>VP Operations · Fintech</span></div></div>
+  </div>
+</div></div></section>
+
+<section class="section" data-screen-label="FAQ"><div class="inner"><div class="section-head reveal"><div class="tag">FAQ</div><h2>Questions, answered.</h2></div><div class="faq-wrap reveal"><div class="faq-list">
+  <details open><summary>How fast can you fill a role?</summary><p>Most roles reach a shortlist of fully assessed finalists in about 21 days. The exact timing depends on seniority and how specific the skill set is — we'll give you a realistic range on the intro call.</p></details>
+  <details><summary>What if the hire doesn't work out?</summary><p>Every placement includes a 3-month replacement guarantee. If it isn't the right fit, we find a replacement at no additional placement fee.</p></details>
+  <details><summary>Where are the candidates based?</summary><p>Colombia, working in your time zone with full overlap on your business hours. Every candidate is English-verified — typically C1 — before they ever reach you.</p></details>
+  <details><summary>Do I need a subscription or long-term contract?</summary><p>No. You can pay a one-time placement fee per hire with no membership and nothing to cancel. If you hire regularly, an optional membership lowers the per-hire fee — but it's always your choice.</p></details>
+  <details><summary>How do you assess candidates?</summary><p>Each finalist goes through a structured interview, a role-based skills assessment, a DISC profile, and a culture-fit check — all built from what you tell us in the intro call. You see every result in their profile.</p></details>
+  <details><summary>Can you handle payroll and benefits too?</summary><p>Yes. Start with recruiting and add EOR, payroll, benefits, and ongoing team support whenever you're ready — one partner, no new vendors to onboard.</p></details>
+</div></div></div></section>
+
+<section class="section"><div class="inner cta reveal"><div><h2>Ready to see what Nearwork can find for your role?</h2><p>Book a free strategy call. We will talk through salary, role requirements, hiring timeline, and the best service model for your team.</p></div><a class="btn" href="/book.html">Book a strategy call</a></div></section>
 </main>
 <footer>
   <div class="trust-badges">
@@ -700,8 +1804,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="footer-grid">
     <div><a href="https://www.nearwork.co/" class="wordmark" style="font-size:19px;">Nearwork</a><p class="footer-brand-desc">The remote staffing agency that reduces your labor costs. On demand hiring for US and Canadian companies — full pipeline visibility, C1 English standard, transparent candidate evidence.</p><div class="social-row"><a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#E74C7C"/><circle cx="12" cy="12" r="4.5" stroke="#fff" stroke-width="1.8" fill="none"/><circle cx="17.5" cy="6.5" r="1.2" fill="#fff"/></svg></a><a href="https://www.linkedin.com/company/nearworkco/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://www.trustpilot.com/review/nearwork.co" class="social-link" aria-label="Trustpilot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#00B67A"><path d="M12 0L9.6 7.5H1.7l6.4 4.6-2.4 7.4 6.3-4.6 6.3 4.6-2.4-7.4 6.4-4.6h-7.9L12 0z"/></svg></a><a href="https://www.g2.com/products/nearwork/reviews" class="social-link" aria-label="G2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FF492C"/><text x="12" y="16" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="11" fill="#fff">G2</text></svg></a></div></div>
-    <div><div class="footer-col-title">Services</div><ul class="footer-links"><li><a href="direct-recruiting.html">Direct Recruiting</a></li><li><a href="eor.html">EOR</a></li><li><a href="strategic-partner-program.html">Strategic Partner Program</a></li><li><a href="managed-team.html">Managed Team</a></li></ul></div>
-    <div><div class="footer-col-title">Industries</div><ul class="footer-links"><li><a href="../industries/customer-service.html">Customer service</a></li><li><a href="../industries/technology.html">Technology</a></li><li><a href="../industries/sales.html">Sales</a></li><li><a href="../industries/finance.html">Finance & accounting</a></li><li><a href="../industries/marketing.html">Marketing</a></li><li><a href="../industries/operations.html">Operations & admin</a></li></ul></div>
+    <div><div class="footer-col-title">Services</div><ul class="footer-links"><li><a href="direct-recruiting.html">Direct Recruiting</a></li><li><a href="eor.html">EOR</a></li><li><a href="managed-team.html">Managed Team</a></li><li><a href="strategic-partner-program.html">Strategic Partner Program</a></li></ul></div>
+    <div><div class="footer-col-title">Industries</div><ul class="footer-links"><li><a href="../industries/customer-support.html">Customer service</a></li><li><a href="../industries/software-development.html">Technology</a></li><li><a href="../industries/sales.html">Sales</a></li><li><a href="../industries/finance-and-accounting.html">Finance & accounting</a></li><li><a href="../industries/marketing-and-content.html">Marketing</a></li><li><a href="../industries/operations-and-administration.html">Operations & admin</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a href="../about.html">About Nearwork</a></li><li><a href="../how-it-works.html">How it works</a></li><li><a href="../why-colombia.html">Why Colombia</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../faq.html">FAQ</a></li></ul></div>
     <div><div class="footer-col-title">Candidates</div><ul class="footer-links"><li><a href="https://talent.nearwork.co" target="_blank">Candidate login</a></li><li><a href="https://jobs.nearwork.co" target="_blank">Browse open roles</a></li><li><a href="../candidates/what-to-expect.html">What to expect</a></li></ul></div>
   </div>
@@ -775,8 +1879,8 @@ if (roleInput && usCostInput) {
 }
 </script>
 <!-- Start of HubSpot Embed Code -->
-<script>window.intercomSettings={api_base:"https://api-iam.intercom.io",app_id:"pelltlav"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic("reattach_activator");ic("update",w.intercomSettings)}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;var l=function(){var s=d.createElement("script");s.type="text/javascript";s.async=true;s.src="https://widget.intercom.io/widget/pelltlav";var x=d.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x)};if(document.readyState==="complete"){l()}else{w.addEventListener("load",l,false)}}})();</script>
+
 <!-- End of HubSpot Embed Code -->
-<script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once set_config".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_nYb2G6jySuJgxmmc55d9jMfT5TyuxpBGbgbZAGfYb7Ep",{api_host:"https://us.i.posthog.com",person_profiles:"identified_only"});</script>
+
 </body>
 </html>
