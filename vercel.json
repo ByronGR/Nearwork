@@ -1,8 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/book", "destination": "/book.html" },
-    { "source": "/booking", "destination": "/book.html" }
+  "redirects": [
+    { "source": "/booking", "destination": "/book", "permanent": true }
   ]
 }
