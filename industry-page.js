@@ -17,7 +17,7 @@
   /* ---------- NAV (matches services / marketing pages) ---------- */
   var NAV = ''
   + '<div class="nav-wrap"><div class="nav-pill" id="nav-pill">'
-  +   '<a href="../Marketing.html" class="wordmark">Nearwork</a>'
+  +   '<a href="/" class="wordmark">Nearwork</a>'
   +   '<nav class="nav-center" id="navCenter">'
   +     '<div class="dd" data-dd="services"><button class="dd-btn">Services <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>'
   +       '<div class="dd-panel wide wide-grid">'
@@ -66,7 +66,7 @@
   var em = esc(IND);
   var kicker = em + ' · Remote from Colombia';
 
-  var crumb = '<div class="wrap"><div class="crumb" data-crumb><a href="../Marketing.html">Home</a><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><a href="index.html">Industries</a><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><span class="cur">'+em+'</span></div></div>';
+  var crumb = '<div class="wrap"><div class="crumb" data-crumb><a href="/">Home</a><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><a href="index.html">Industries</a><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg><span class="cur">'+em+'</span></div></div>';
 
   var top = C.criteria[0];
   var heroCard = ''
@@ -202,7 +202,7 @@
   + '<div class="rf-brand"><div class="lg">Nearwork</div><p>On-demand remote staffing for US &amp; Canadian companies. Vetted talent, managed for you, at a fraction of US cost.</p></div>'
   + '<div class="rf-col"><h4>Industries</h4><a href="index.html">All industries</a><a href="software-development.html">Software Development</a><a href="sales.html">Sales</a><a href="finance-and-accounting.html">Finance &amp; Accounting</a></div>'
   + '<div class="rf-col"><h4>Services</h4><a href="../services/direct-recruiting.html">Direct Recruiting</a><a href="../services/eor.html">EOR</a><a href="../services/managed-team.html">Managed Team</a><a href="../services/strategic-partner-program.html">Partner Program</a></div>'
-  + '<div class="rf-col"><h4>Company</h4><a href="../Marketing.html">Home</a><a href="../pricing.html">Pricing</a><a href="/book">Hire on demand</a></div>'
+  + '<div class="rf-col"><h4>Company</h4><a href="/">Home</a><a href="../pricing.html">Pricing</a><a href="/book">Hire on demand</a></div>'
   + '</div><div class="rf-bot">© 2026 Nearwork. Remote staffing &amp; Employer of Record.</div></footer>';
 
   app.innerHTML = NAV + crumb + hero + whatWeDo + avail + assess + rolesSec + managed + cost + profiles + faq + related + cta + footer;
@@ -246,7 +246,7 @@
     setTxt('[data-kicker]', rt+' · Remote from Colombia');
     // breadcrumb: add the role as its own level
     var cb=document.querySelector('[data-crumb]');
-    if(cb){ var chev='<svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>'; cb.innerHTML='<a href="../Marketing.html">Home</a>'+chev+'<a href="index.html">Industries</a>'+chev+'<a href="'+slug+'.html">'+em+'</a>'+chev+'<span class="cur">'+t+'</span>'; }
+    if(cb){ var chev='<svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>'; cb.innerHTML='<a href="/">Home</a>'+chev+'<a href="index.html">Industries</a>'+chev+'<a href="'+slug+'.html">'+em+'</a>'+chev+'<span class="cur">'+t+'</span>'; }
     // what-we-do + assessment + cost + profiles + faq headings
     setTxt('[data-wwd-title]', 'Vetted '+rt+' talent — sourced, employed and managed for you.');
     setTxt('[data-prob-title]', 'Hiring a great '+rt+' is slow, costly and risky.');
