@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/booking", "destination": "/book", "permanent": true }
+    { "source": "/booking", "destination": "/book", "permanent": true },
+    { "source": "/savings", "destination": "/services/direct-recruiting#salary-intelligence", "permanent": false }
   ]
 }
