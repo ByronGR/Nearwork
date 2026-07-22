@@ -387,7 +387,7 @@ ${headerHtml()}
       <div class="meta-row">
         ${chips}
       </div>
-${salary ? `      <div class="salary">${escapeHtml(salary)}</div>\n` : ''}${body}      <a class="apply" href="https://jobs.nearwork.co/apply/${escapeHtml(job.code)}">Apply for this role</a>
+${salary ? `      <div class="salary">${escapeHtml(salary)}</div>\n` : ''}${body}      <a class="apply" href="https://jobs.nearwork.co/apply?code=${escapeHtml(job.code)}">Apply for this role</a>
     </article>
   </main>
 </body>
