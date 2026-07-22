@@ -139,9 +139,9 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
             <div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
             <div><div class="dd-title">Candidate login</div><div class="dd-desc">talent.nearwork.co — your profile & status</div></div>
           </a>
-          <a class="dd-item" href="/jobs" target="_blank" rel="noopener">
+          <a class="dd-item" href="/jobs">
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
-            <div><div class="dd-title">Browse open roles</div><div class="dd-desc">jobs.nearwork.co — find your next position</div></div>
+            <div><div class="dd-title">Jobs</div><div class="dd-desc">Browse open roles at US &amp; Canada companies</div></div>
           </a>
           <a class="dd-item" href="../candidates/what-to-expect.html">
             <div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
@@ -151,7 +151,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       </div>
       <div class="dd" data-dd="about">
         <button class="dd-btn">About <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="dd-panel">
+        <div class="dd-panel"><a class="dd-item" href="/blog"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div><div class="dd-title">Blog</div><div class="dd-desc">Guides on hiring nearshore talent</div></div></a>
           <a class="dd-item" href="../about.html">
             <div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
             <div><div class="dd-title">About Nearwork</div><div class="dd-desc">Who we are and what we believe</div></div>
@@ -170,7 +170,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
           </a>
         </div>
       </div>
-    <a class="dd-btn" href="/blog" style="text-decoration:none;">Blog</a><a class="dd-btn" href="/jobs" style="text-decoration:none;">Jobs</a></nav>
+    </nav>
     <div class="nav-right">
       <a href="https://app.nearwork.co" class="nav-ghost">Client login</a>
       <a href="/book.html" class="nav-cta">Hire on demand <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -181,8 +181,8 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 <div class="mobile-menu" id="mobMenu">
   <div class="mob-section"><div class="mob-section-title">Services</div><a class="mob-link" href="direct-recruiting.html">Direct Recruiting</a><a class="mob-link" href="eor.html">EOR</a><a class="mob-link" href="managed-team.html">Managed Team</a><a class="mob-link" href="strategic-partner-program.html">Strategic Partner Program</a></div>
   <div class="mob-section"><div class="mob-section-title">Industries</div><a class="mob-link" href="../industries/customer-support.html">Customer service</a><a class="mob-link" href="../industries/software-development.html">Technology</a><a class="mob-link" href="../industries/sales.html">Sales</a><a class="mob-link" href="../industries/finance-and-accounting.html">Finance & accounting</a><a class="mob-link" href="../industries/marketing-and-content.html">Marketing</a><a class="mob-link" href="../industries/operations-and-administration.html">Operations & admin</a></div>
-  <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="../pricing.html">Pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="/jobs" target="_blank">Browse jobs</a><a class="mob-link" href="../about.html">About</a><a class="mob-link" href="../how-it-works.html">How it works</a></div>
-  <div class="mob-section"><div class="mob-section-title">Explore</div><a class="mob-link" href="/blog">Blog</a><a class="mob-link" href="/jobs">Jobs</a></div><div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book.html">Hire on demand</a></div>
+  <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="../pricing.html">Pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="/jobs">Jobs</a><a class="mob-link" href="/blog">Blog</a><a class="mob-link" href="../about.html">About</a><a class="mob-link" href="../how-it-works.html">How it works</a></div>
+  <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book.html">Hire on demand</a></div>
 </div>
 <style id="eor-hero-styles">
 .eh-stage { position:relative; min-height:520px; align-self:center; display:flex; align-items:center; justify-content:center; width:100%; }
