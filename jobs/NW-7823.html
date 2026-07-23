@@ -8,7 +8,8 @@
   <link rel="canonical" href="https://www.nearwork.co/jobs/NW-7823">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once set_config".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_nYb2G6jySuJgxmmc55d9jMfT5TyuxpBGbgbZAGfYb7Ep",{api_host:"https://us.i.posthog.com",person_profiles:"identified_only"});</script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,62 +32,307 @@
 }
   </script>
   <style>
-  :root { --teal:#16A085; --teal-dark:#0f7a63; --ink:#111; --muted:#5b6670; --line:#e6e9ec; --bg:#f5f7f8; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
-  a { color:var(--teal); text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  .site-header { background:#fff; border-bottom:1px solid var(--line); }
-  .site-header .inner { max-width:760px; margin:0 auto; padding:18px 20px; display:flex; align-items:center; justify-content:space-between; }
-  .wordmark { font-weight:700; font-size:20px; color:var(--ink); letter-spacing:-0.02em; }
-  .wordmark:hover { text-decoration:none; }
-  .back-link { font-size:14px; font-weight:500; color:var(--muted); }
-  .wrap { max-width:760px; margin:0 auto; padding:32px 20px 64px; }
-  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:36px 40px; box-shadow:0 1px 2px rgba(17,17,17,0.04); }
-  h1 { font-size:30px; line-height:1.2; margin:0 0 14px; letter-spacing:-0.02em; }
-  h2 { font-size:19px; margin:32px 0 12px; letter-spacing:-0.01em; }
-  .meta-row { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 14px; }
-  .chip { background:#eef6f3; color:var(--teal-dark); font-size:13px; font-weight:500; padding:4px 12px; border-radius:999px; }
-  .salary { font-size:17px; font-weight:600; color:var(--ink); margin:6px 0 20px; }
-  p { margin:0 0 16px; color:#25303a; }
-  ul { margin:0 0 8px; padding-left:22px; }
-  li { margin:6px 0; color:#25303a; }
-  .apply { display:inline-block; margin-top:28px; background:var(--teal); color:#fff; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px; }
-  .apply:hover { background:var(--teal-dark); text-decoration:none; }
-  /* Board index */
-  .lede { font-size:17px; color:#25303a; max-width:680px; }
-  .benefits { list-style:none; padding:0; margin:22px 0 8px; display:grid; gap:10px; }
-  .benefits li { padding-left:28px; position:relative; }
-  .benefits li:before { content:'\2713'; position:absolute; left:0; color:var(--teal); font-weight:700; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px; margin-top:28px; }
-  .job-card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; display:flex; flex-direction:column; transition:box-shadow .15s,transform .15s; }
-  .job-card:hover { box-shadow:0 6px 18px rgba(17,17,17,0.08); transform:translateY(-2px); }
-  .job-card h3 { font-size:17px; margin:0 0 8px; letter-spacing:-0.01em; }
-  .job-card .jmeta { font-size:13px; color:var(--muted); margin:0 0 16px; }
-  .job-card .view { margin-top:auto; font-weight:600; font-size:14px; }
-  .empty { color:var(--muted); font-size:16px; margin-top:24px; }
-  .categories { margin-top:30px; }
-  .categories h2 { font-size:16px; margin:0 0 12px; color:var(--muted); font-weight:600; letter-spacing:0; }
-  .cat-links { display:flex; flex-wrap:wrap; gap:10px; }
-  .cat-links a { background:#eef6f3; color:var(--teal-dark); font-size:14px; font-weight:600; padding:10px 18px; border-radius:999px; }
-  .cat-links a:hover { background:#e0efe9; text-decoration:none; }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  :root {
+    --teal:#16A085; --teal-dk:#0E7060; --teal-lt:#E4F5F1; --teal-mid:#A4DAD0;
+    --gold:#E74C7C; --gold-dk:#B43564; --gold-lt:#FDEEF4;
+    --violet:#AF7AC5; --violet-lt:#F3EEF9;
+    --fg:#111111; --fg-2:#4A4A4A; --fg-3:#888888; --fg-4:#B8B8B5;
+    --border:#E8E8E4; --border-d:#D8D8D4;
+    --bg:#FAFAF8; --bg-cream:#F5F2EC; --white:#FFFFFF;
+    --ease:cubic-bezier(0.16,1,0.3,1); --max-w:1200px;
+  }
+  html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
+  body { font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg); color:var(--fg); overflow-x:hidden; line-height:1.6; }
+  a { color:var(--teal-dk); text-decoration:none; }
+  a:hover { color:var(--teal); }
+  svg { display:block; }
+
+  /* ══ NAV ══ */
+  .nav-wrap { position:fixed; top:16px; left:50%; transform:translateX(-50%); z-index:200; width:calc(100% - 48px); max-width:1140px; }
+  .nav-pill { position:relative; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px) saturate(180%); -webkit-backdrop-filter:blur(20px) saturate(180%); border:1px solid rgba(255,255,255,0.9); border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.04); padding:0 8px 0 18px; height:60px; display:flex; align-items:center; justify-content:space-between; transition:box-shadow 300ms var(--ease),background 300ms; }
+  .nav-pill.scrolled { background:rgba(255,255,255,0.97); box-shadow:0 8px 40px rgba(0,0,0,0.10),0 1px 4px rgba(0,0,0,0.05); }
+  .wordmark { position:relative; display:inline-block; font-weight:700; font-size:20px; color:var(--fg); letter-spacing:-0.03em; line-height:1; text-decoration:none; flex-shrink:0; }
+  .wordmark::after { content:''; position:absolute; bottom:-3px; left:0; width:56%; height:3px; background:var(--teal); border-radius:2px; }
+  .wordmark:hover { color:var(--fg); }
+  .nav-center { display:flex; align-items:center; gap:2px; flex:1; justify-content:center; }
+  .nav-link { font-size:13.5px; font-weight:500; color:var(--fg-2); padding:7px 14px; border-radius:10px; transition:color 150ms,background 150ms; white-space:nowrap; }
+  .nav-link:hover { color:var(--fg); background:var(--bg-cream); }
+  .nav-link.active { color:var(--teal-dk); font-weight:600; }
+  .nav-right { display:flex; align-items:center; gap:6px; flex-shrink:0; }
+  .nav-ghost { font-size:13px; font-weight:600; color:var(--teal-dk); text-decoration:none; padding:8px 16px; border-radius:10px; border:1.5px solid transparent; transition:color 150ms,background 150ms,border-color 150ms; white-space:nowrap; }
+  .nav-ghost:hover { color:#fff; background:var(--teal); border-color:var(--teal); }
+  .nav-cta { display:inline-flex; align-items:center; gap:6px; background:var(--fg); color:#fff; font-size:13px; font-weight:600; text-decoration:none; padding:9px 16px; border-radius:11px; transition:background 150ms,transform 100ms; white-space:nowrap; }
+  .nav-cta:hover { background:#2a2a2a; color:#fff; }
+  .nav-cta:active { transform:scale(0.97); }
+  .nav-cta svg { width:13px; height:13px; stroke:currentColor; stroke-width:2.5; fill:none; }
+  .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:10px; }
+  .hamburger span { display:block; width:20px; height:2px; background:var(--fg); border-radius:2px; transition:all 0.25s; }
+  .mobile-menu { display:none; position:fixed; top:88px; left:16px; right:16px; z-index:199; background:var(--white); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:0 16px 64px rgba(0,0,0,0.14); max-height:calc(100vh - 110px); overflow-y:auto; }
+  .mobile-menu.open { display:block; }
+  .mob-section { margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+  .mob-section:last-child { border-bottom:none; }
+  .mob-section-title { font-size:11px; font-weight:700; color:var(--fg-3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px; padding:0 4px; }
+  .mob-link { display:block; font-size:14px; font-weight:500; color:var(--fg); text-decoration:none; padding:10px 8px; border-radius:8px; }
+  .mob-link:hover { background:var(--bg-cream); }
+  .mob-ctas { display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+  .mob-primary { display:block; text-align:center; padding:14px; border-radius:11px; background:var(--fg); color:#fff; font-size:15px; font-weight:600; text-decoration:none; }
+  .mob-ghost { display:block; text-align:center; padding:14px; border-radius:11px; border:1.5px solid var(--border-d); color:var(--fg); font-size:15px; font-weight:600; text-decoration:none; }
+
+  /* ══ JOBS HERO ══ */
+  .jobs-hero { max-width:var(--max-w); margin:0 auto; padding:128px 48px 36px; }
+  .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal-dk); margin-bottom:18px; }
+  .eyebrow::before { content:''; width:22px; height:2px; background:var(--teal); border-radius:2px; }
+  .jobs-hero h1 { font-size:clamp(38px,5.6vw,60px); font-weight:800; letter-spacing:-0.035em; line-height:1.03; }
+  .jobs-hero h1 em, .jobs-hero h1 .accent { font-style:normal; color:var(--teal); }
+  .jobs-lede { font-size:18px; color:var(--fg-2); line-height:1.6; max-width:560px; margin-top:18px; text-wrap:pretty; }
+  .hero-stats { display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
+  .stat-chip { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--fg-2); background:var(--white); border:1px solid var(--border); padding:9px 15px; border-radius:999px; }
+  .stat-chip svg { width:15px; height:15px; stroke:var(--teal); stroke-width:2; fill:none; }
+  .stat-chip strong { color:var(--fg); }
+  .hub-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .hub-links a { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--teal-dk); background:var(--teal-lt); border:1px solid var(--teal-mid); padding:8px 15px; border-radius:999px; transition:background 150ms; }
+  .hub-links a:hover { background:#d5efe8; color:var(--teal-dk); }
+  .hub-links a svg { width:14px; height:14px; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* ══ FILTER BAR ══ */
+  .filter-bar { position:sticky; top:84px; z-index:100; }
+  .filter-bar::before { content:''; position:absolute; inset:0 -50vw; background:rgba(250,250,248,0.88); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--border); z-index:-1; }
+  .filter-inner { max-width:var(--max-w); margin:0 auto; padding:14px 48px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  .job-search { position:relative; flex:1; min-width:220px; display:flex; align-items:center; }
+  .job-search svg { position:absolute; left:15px; width:17px; height:17px; stroke:var(--fg-3); stroke-width:2; fill:none; pointer-events:none; }
+  .job-search input { width:100%; font-family:inherit; font-size:14px; color:var(--fg); padding:12px 16px 12px 42px; border-radius:12px; border:1.5px solid var(--border); background:var(--white); outline:none; transition:border-color 160ms,box-shadow 160ms; }
+  .job-search input::placeholder { color:var(--fg-3); }
+  .job-search input:focus { border-color:var(--teal-mid); box-shadow:0 0 0 4px var(--teal-lt); }
+  .filter-select { position:relative; }
+  .filter-select select { appearance:none; -webkit-appearance:none; font-family:inherit; font-size:13.5px; font-weight:500; color:var(--fg-2); background:var(--white); border:1.5px solid var(--border); border-radius:12px; padding:12px 38px 12px 15px; cursor:pointer; outline:none; transition:border-color 160ms; }
+  .filter-select select:hover { border-color:var(--teal-mid); }
+  .filter-select select:focus { border-color:var(--teal); }
+  .filter-select.set select { border-color:var(--teal-mid); color:var(--teal-dk); background:var(--teal-lt); font-weight:600; }
+  .filter-select svg { position:absolute; right:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; stroke:var(--fg-3); stroke-width:2.5; fill:none; pointer-events:none; }
+
+  /* ══ RESULT ROW ══ */
+  .result-row { max-width:var(--max-w); margin:0 auto; padding:26px 48px 6px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .result-count { font-size:15px; color:var(--fg-2); }
+  .result-count strong { color:var(--fg); font-weight:700; }
+  .clear-btn { font-family:inherit; font-size:13px; font-weight:600; color:var(--teal-dk); background:none; border:none; cursor:pointer; display:none; align-items:center; gap:5px; }
+  .clear-btn.show { display:inline-flex; }
+  .clear-btn svg { width:13px; height:13px; stroke:currentColor; stroke-width:2.5; fill:none; }
+
+  /* ══ JOB GRID ══ */
+  .job-grid { max-width:var(--max-w); margin:0 auto; padding:18px 48px 96px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .job-card { position:relative; display:flex; flex-direction:column; background:var(--white); border:1px solid var(--border); border-radius:20px; padding:24px; transition:transform 200ms var(--ease),box-shadow 200ms var(--ease),border-color 200ms; text-decoration:none; }
+  .job-card:hover { transform:translateY(-4px); box-shadow:0 16px 44px rgba(0,0,0,0.09); border-color:var(--border-d); }
+  .jc-top { display:flex; align-items:flex-start; gap:14px; margin-bottom:16px; }
+  .jc-logo { width:48px; height:48px; border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; color:#fff; flex-shrink:0; }
+  .jc-head { flex:1; min-width:0; }
+  .jc-title { font-size:18px; font-weight:700; letter-spacing:-0.02em; line-height:1.25; color:var(--fg); }
+  .job-card:hover .jc-title { color:var(--teal-dk); }
+  .jc-company { font-size:13.5px; color:var(--fg-3); margin-top:3px; }
+  .jc-company strong { color:var(--fg-2); font-weight:600; }
+  .jc-badge { flex-shrink:0; font-size:10.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:4px 9px; border-radius:999px; }
+  .badge-new { background:var(--teal-lt); color:var(--teal-dk); }
+  .jc-meta { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px; }
+  .meta-chip { display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:500; color:var(--fg-2); background:var(--bg-cream); padding:5px 10px; border-radius:8px; }
+  .meta-chip svg { width:12px; height:12px; stroke:var(--fg-3); stroke-width:2; fill:none; }
+  .jc-salary { font-size:15px; font-weight:700; color:var(--fg); letter-spacing:-0.01em; margin-top:auto; margin-bottom:0; }
+  .jc-foot { display:flex; align-items:center; justify-content:space-between; margin-top:18px; padding-top:16px; border-top:1px solid var(--border); }
+  .jc-posted { font-size:12px; color:var(--fg-3); }
+  .jc-view { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:var(--teal-dk); transition:gap 150ms; }
+  .job-card:hover .jc-view { gap:9px; }
+  .jc-view svg { width:14px; height:14px; stroke:currentColor; stroke-width:2.4; fill:none; }
+
+  .empty-state { grid-column:1 / -1; padding:70px 24px; text-align:center; border:1px dashed var(--border-d); border-radius:20px; color:var(--fg-3); }
+  .empty-state svg { width:36px; height:36px; stroke:var(--fg-4); stroke-width:1.5; fill:none; margin:0 auto 12px; }
+  .empty-state h3 { font-size:17px; font-weight:600; color:var(--fg-2); margin-bottom:4px; }
+  .empty-state p { font-size:14px; }
+
+  /* ══ SIGN-IN TEASER ══ */
+  .teaser { max-width:var(--max-w); margin:0 auto 40px; padding:0 48px; }
+  .teaser-inner { display:flex; align-items:center; gap:16px; background:var(--teal-lt); border:1px solid var(--teal-mid); border-radius:16px; padding:16px 22px; }
+  .teaser-inner > svg { width:22px; height:22px; stroke:var(--teal-dk); stroke-width:2; fill:none; flex-shrink:0; }
+  .teaser-text { flex:1; font-size:14px; color:var(--teal-dk); line-height:1.5; }
+  .teaser-text strong { font-weight:700; }
+  .teaser-cta { flex-shrink:0; font-size:13px; font-weight:700; color:#fff; background:var(--teal-dk); padding:10px 18px; border-radius:10px; white-space:nowrap; }
+  .teaser-cta:hover { color:#fff; background:var(--teal); }
+
+  /* ══ DETAIL HEADER ══ */
+  .detail-head { max-width:var(--max-w); margin:0 auto; padding:120px 48px 0; }
+  .breadcrumb { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--fg-3); margin-bottom:26px; flex-wrap:wrap; }
+  .breadcrumb a { color:var(--fg-3); font-weight:500; }
+  .breadcrumb a:hover { color:var(--fg); }
+  .breadcrumb svg { width:13px; height:13px; stroke:var(--fg-4); stroke-width:2; fill:none; }
+  .head-card { display:flex; align-items:flex-start; gap:20px; }
+  .head-logo { width:64px; height:64px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:800; color:#fff; flex-shrink:0; }
+  .head-main { flex:1; min-width:0; }
+  .head-badges { display:flex; gap:8px; margin-bottom:10px; }
+  .detail-head h1 { font-size:clamp(30px,4vw,42px); font-weight:800; letter-spacing:-0.03em; line-height:1.08; }
+  .head-company { font-size:16px; color:var(--fg-2); margin-top:8px; }
+  .head-company strong { color:var(--fg); font-weight:600; }
+
+  /* ══ DETAIL LAYOUT ══ */
+  .detail-layout { max-width:var(--max-w); margin:0 auto; padding:40px 48px 88px; display:grid; grid-template-columns:1fr 350px; gap:56px; align-items:start; }
+  .detail-body { min-width:0; }
+  .detail-body .meta-row { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:32px; }
+  .detail-body .meta-row .meta-chip { font-size:13px; color:var(--fg-2); background:var(--white); border:1px solid var(--border); padding:8px 13px; border-radius:10px; }
+  .detail-body .meta-row .meta-chip svg { width:14px; height:14px; stroke:var(--teal); }
+  .detail-body .meta-row .meta-chip strong { color:var(--fg); font-weight:600; }
+  .section { margin-bottom:36px; }
+  .section h2 { font-size:21px; font-weight:700; letter-spacing:-0.02em; color:var(--fg); margin-bottom:14px; }
+  .section p { font-size:15.5px; color:var(--fg-2); line-height:1.7; margin-bottom:12px; text-wrap:pretty; white-space:pre-line; }
+  .section ul { list-style:none; display:flex; flex-direction:column; gap:11px; }
+  .section li { position:relative; padding-left:28px; font-size:15px; color:var(--fg-2); line-height:1.6; }
+  .section li::before { content:''; position:absolute; left:2px; top:9px; width:8px; height:8px; border-radius:50%; background:var(--teal-mid); }
+  .section li.check::before { content:''; left:0; top:4px; width:16px; height:16px; border-radius:50%; background:var(--teal-lt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316A085' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/11px no-repeat; }
+  .benefits-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .benefit { display:flex; gap:13px; align-items:flex-start; background:var(--white); border:1px solid var(--border); border-radius:14px; padding:16px; }
+  .benefit-ico { width:38px; height:38px; border-radius:10px; background:var(--teal-lt); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .benefit-ico svg { width:18px; height:18px; stroke:var(--teal-dk); stroke-width:2; fill:none; }
+  .benefit-label { font-size:14px; font-weight:600; color:var(--fg); line-height:1.4; }
+
+  /* ══ APPLY RAIL ══ */
+  .apply-rail { position:sticky; top:96px; display:flex; flex-direction:column; gap:16px; }
+  .apply-card { background:var(--white); border:1px solid var(--border); border-radius:20px; padding:24px; box-shadow:0 8px 30px rgba(0,0,0,0.05); }
+  .apply-salary { font-size:24px; font-weight:800; letter-spacing:-0.02em; color:var(--fg); line-height:1.2; }
+  .apply-salary span { display:block; font-size:12.5px; font-weight:500; color:var(--fg-3); letter-spacing:0; margin-top:4px; }
+  .apply-facts { display:flex; flex-direction:column; gap:12px; margin:20px 0; padding:20px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .fact { display:flex; align-items:center; gap:11px; font-size:13.5px; color:var(--fg-2); }
+  .fact svg { width:16px; height:16px; stroke:var(--fg-3); stroke-width:2; fill:none; flex-shrink:0; }
+  .fact strong { color:var(--fg); font-weight:600; }
+  .btn-apply { width:100%; display:flex; align-items:center; justify-content:center; gap:8px; font-family:inherit; font-size:15px; font-weight:700; color:#fff; background:var(--fg); border:none; padding:15px; border-radius:13px; cursor:pointer; text-decoration:none; transition:background 150ms,transform 100ms; }
+  .btn-apply:hover { background:#2a2a2a; color:#fff; }
+  .btn-apply:active { transform:scale(0.98); }
+  .btn-apply svg { width:16px; height:16px; stroke:currentColor; stroke-width:2.4; fill:none; }
+  .btn-save { width:100%; display:flex; align-items:center; justify-content:center; gap:8px; font-family:inherit; font-size:14px; font-weight:600; color:var(--fg-2); background:var(--white); border:1.5px solid var(--border); padding:12px; border-radius:12px; cursor:pointer; text-decoration:none; margin-top:10px; transition:all 150ms; }
+  .btn-save:hover { border-color:var(--teal-mid); color:var(--teal-dk); background:var(--teal-lt); }
+  .btn-save svg { width:15px; height:15px; stroke:currentColor; stroke-width:2; fill:none; }
+  .apply-note { font-size:12px; color:var(--fg-3); line-height:1.5; margin-top:14px; text-align:center; }
+  .apply-note a { font-weight:600; }
+  .trust-card { background:var(--teal-lt); border:1px solid var(--teal-mid); border-radius:16px; padding:18px 20px; }
+  .trust-card h4 { font-size:13px; font-weight:700; color:var(--teal-dk); margin-bottom:6px; }
+  .trust-card p { font-size:12.5px; color:var(--teal-dk); line-height:1.55; opacity:0.9; }
+
+  /* ══ RELATED ══ */
+  .related { max-width:var(--max-w); margin:0 auto; padding:0 48px 90px; }
+  .related h2 { font-size:24px; font-weight:800; letter-spacing:-0.02em; margin-bottom:24px; }
+  .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .rel-card { background:var(--white); border:1px solid var(--border); border-radius:18px; padding:20px; transition:transform 200ms var(--ease),box-shadow 200ms var(--ease); text-decoration:none; }
+  .rel-card:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,0.08); }
+  .rel-top { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+  .rel-logo { width:40px; height:40px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:800; color:#fff; flex-shrink:0; }
+  .rel-title { font-size:15.5px; font-weight:700; letter-spacing:-0.01em; line-height:1.25; color:var(--fg); }
+  .rel-card:hover .rel-title { color:var(--teal-dk); }
+  .rel-company { font-size:12.5px; color:var(--fg-3); margin-top:2px; }
+  .rel-meta { font-size:12.5px; color:var(--fg-2); display:flex; gap:8px; flex-wrap:wrap; }
+  .rel-sal { font-weight:700; color:var(--fg); }
+
+  /* ══ FOOTER ══ */
+  footer { background:var(--white); border-top:1px solid var(--border); padding:72px 0 0; margin-top:20px; }
+  .footer-grid { max-width:var(--max-w); margin:0 auto 56px; padding:0 48px; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; }
+  .footer-brand-desc { font-size:14px; color:var(--fg-2); line-height:1.65; max-width:300px; margin:18px 0 0; }
+  .footer-col-title { font-size:11px; font-weight:700; color:var(--fg); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; }
+  .footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .footer-links li a { font-size:13.5px; color:var(--fg-2); text-decoration:none; transition:color 150ms; }
+  .footer-links li a:hover { color:var(--fg); }
+  .footer-bottom { max-width:var(--max-w); margin:0 auto; padding:24px 48px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .footer-copy { font-size:13px; color:var(--fg-3); }
+  .footer-co { display:flex; align-items:center; gap:6px; font-size:13px; color:var(--fg-3); }
+  .footer-co svg { width:12px; height:12px; stroke:currentColor; stroke-width:2; fill:none; }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width:1024px) {
+    .nav-center { display:none; }
+    .hamburger { display:flex; }
+    .detail-layout { grid-template-columns:1fr; gap:8px; }
+    .apply-rail { position:static; margin-top:16px; }
+    .related-grid { grid-template-columns:1fr 1fr; }
+    .footer-grid { grid-template-columns:1fr 1fr 1fr; gap:36px; padding:0 32px; }
+    .footer-grid > div:first-child { grid-column:1 / -1; }
+    .footer-bottom { padding:24px 32px; }
+  }
+  @media (max-width:768px) {
+    .nav-wrap { width:calc(100% - 24px); top:10px; }
+    .nav-right .nav-ghost { display:none; }
+    .hamburger { margin-left:auto; }
+    .jobs-hero { padding:108px 24px 24px; }
+    .filter-inner { padding:14px 24px; }
+    .filter-select select { padding:11px 34px 11px 13px; }
+    .result-row { padding:22px 24px 4px; }
+    .job-grid { grid-template-columns:1fr; padding:16px 24px 72px; }
+    .teaser { padding:0 24px; }
+    .teaser-inner { flex-direction:column; align-items:flex-start; }
+    .detail-head { padding:104px 24px 0; }
+    .head-logo { width:52px; height:52px; font-size:22px; }
+    .detail-layout { padding:32px 24px 64px; }
+    .benefits-grid { grid-template-columns:1fr; }
+    .related { padding:0 24px 72px; }
+    .related-grid { grid-template-columns:1fr; }
+    .footer-grid { grid-template-columns:1fr 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *,*::before,*::after { animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
 </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="inner">
-      <a class="wordmark" href="/">Nearwork</a>
-      <a class="back-link" href="/jobs">← All jobs</a>
+<div class="nav-wrap">
+  <div class="nav-pill" id="nav-pill">
+    <a href="/" class="wordmark">Nearwork</a>
+    <nav class="nav-center">
+      <a class="nav-link" href="/services/direct-recruiting">Services</a>
+      <a class="nav-link" href="/industries">Industries</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link active" href="/jobs">Jobs</a>
+      <a class="nav-link" href="/about">About</a>
+      <a class="nav-link" href="/blog">Blog</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://app.nearwork.co" class="nav-ghost">Client login</a>
+      <a href="/book" class="nav-cta">Hire on demand <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-  </header>
-  <main class="wrap">
-    <article class="card">
+    <button class="hamburger" id="hamBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div class="mobile-menu" id="mobMenu">
+  <div class="mob-section"><div class="mob-section-title">Explore</div>
+    <a class="mob-link" href="/services/direct-recruiting">Services</a>
+    <a class="mob-link" href="/industries">Industries</a>
+    <a class="mob-link" href="/pricing">Pricing</a>
+    <a class="mob-link" href="/jobs">Jobs</a>
+    <a class="mob-link" href="/about">About</a>
+    <a class="mob-link" href="/blog">Blog</a>
+  </div>
+  <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div>
+</div>
+
+<div class="detail-head">
+  <div class="breadcrumb">
+    <a href="/jobs">Jobs</a>
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span>Email &amp; Lifecycle Marketing Manager</span>
+  </div>
+  <div class="head-card">
+    <div class="head-logo" style="background:#E74C7C">F</div>
+    <div class="head-main">
+      <div class="head-badges"><span class="jc-badge badge-new">New</span></div>
       <h1>Email &amp; Lifecycle Marketing Manager</h1>
-      <div class="meta-row">
-        <span class="chip">Remote</span>
-        <span class="chip">1–3 years</span>
-      </div>
-      <p>Company&#39;s email channel is our oldest and highest-potential channel — and the one we&#39;ve leveraged the least. We&#39;ve built a strong technical foundation, but we&#39;re missing the layer that actually makes email work: content. Emails that land at the right moment, in the right way, and create real value for the people on our list.
+      <p class="head-company"><strong>Fresh Prints</strong> · placed through Nearwork</p>
+    </div>
+  </div>
+</div>
+
+<div class="detail-layout">
+  <div class="detail-body">
+    <div class="meta-row">
+      <span class="meta-chip"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Remote</span>
+      <span class="meta-chip"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>Full-time</span>
+      <span class="meta-chip"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-5"/></svg>1–3 years</span>
+      <span class="meta-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Posted 6 days ago</span>
+    </div>
+      <div class="section">
+        <h2>About</h2>
+        <p>Company&#39;s email channel is our oldest and highest-potential channel — and the one we&#39;ve leveraged the least. We&#39;ve built a strong technical foundation, but we&#39;re missing the layer that actually makes email work: content. Emails that land at the right moment, in the right way, and create real value for the people on our list.
 
 Company is looking for someone who is first and foremost a great marketer — someone who understands what makes an email get opened, get read, and drive a click. You&#39;ll own both our campaign email and our full lifecycle program, and you&#39;ll extend that same craft into SMS as we build it into a real channel.
 
@@ -99,34 +345,110 @@ Turning a solid technical setup into a channel people actually look forward to h
 Building lifecycle flows that feel like a conversation, not a drip someone got trapped in
 Writing for a college-age audience in a voice that feels made for them, not blasted at them
 Bringing a real point of view on performance — not just reading the numbers, but knowing what they&#39;re telling you to do next</p>
-      <h2>Responsibilities</h2>
-      <ul>
-        <li>Own email and SMS conceptualization — final say on subject lines, preview text, headers, body, and CTAs across all of Company&#39;s major marketing moments</li>
-        <li>Work with our brand and creative teams on design and copy so every send feels on-brand</li>
-        <li>Develop a campaign content calendar that ladders into the broader marketing calendar, so email and SMS amplify the right message at the right time</li>
-        <li>Own A/B testing for subject lines, content approaches, and CTAs — with the discipline to learn from the results and apply them</li>
-        <li>Write messages that resonate with a college-age audience: content that feels like it&#39;s actually written for them, not generic marketing</li>
-        <li>Own the strategy and content for Company&#39;s lifecycle flows: welcome series for new subscribers, post-purchase nurture, cart and browse abandonment, re-engagement, and win-back — across email and SMS</li>
-        <li>Audit the existing lifecycle program, identify gaps, underperforming flows, and moments in the customer journey where we&#39;re leaving engagement on the table</li>
-        <li>Own segmentation: define the audiences and journey logic that decide who gets what, when</li>
-        <li>Write and test improved lifecycle content, and build flows that feel like a conversation with the customer, not a sequence they got dropped into for checking a box</li>
-        <li>Monitor deliverability and engagement metrics — open rates, click-through rates, unsubscribe rates, spam complaints, bounce rates — and maintain a healthy sender reputation</li>
-        <li>Follow email and SMS deliverability best practices: list hygiene, warm-up protocols, segmentation for engaged vs. unengaged audiences, suppression management, and compliance</li>
-        <li>Report on performance on a regular cadence — what&#39;s working, what isn&#39;t, and what you&#39;re changing based on the data</li>
-        <li>Bring a point of view: not just &quot;open rate was 28%,&quot; but &quot;here&#39;s what that tells us about the subject-line approach, and here&#39;s what I&#39;m testing next&quot;</li>
-      </ul>
-      <h2>What we're looking for</h2>
-      <ul>
-        <li>4-8 years of experience in email, lifecycle, or CRM marketing, or a closely related role where writing was a primary responsibility</li>
-        <li>Hands-on experience with an ESP or marketing automation platform (Iterable, Klaviyo, HubSpot, Braze, or similar); SMS platform experience a plus</li>
-        <li>Demonstrated understanding of lifecycle programs: welcome series, post-purchase flows, re-engagement, cart abandonment, and the segmentation logic behind them</li>
-        <li>Comfort with email/SMS performance metrics — open rate, CTR, unsubscribe rate, deliverability indicators — and the ability to draw real insight from them</li>
-        <li>Basic HTML/CSS comfort for email (able to troubleshoot and adjust templates)</li>
-        <li>Strong written communication — you write clearly and with personality, not in marketing speak</li>
-        <li>Experience writing for a consumer audience is a strong plus; B2C or DTC background preferred over B2B or enterprise</li>
-      </ul>
-      <a class="apply" href="https://jobs.nearwork.co/apply?code=NW-7823">Apply for this role</a>
-    </article>
-  </main>
+      </div>
+      <div class="section">
+        <h2>What you&#39;ll do</h2>
+        <ul>
+          <li>Own email and SMS conceptualization — final say on subject lines, preview text, headers, body, and CTAs across all of Company&#39;s major marketing moments</li>
+          <li>Work with our brand and creative teams on design and copy so every send feels on-brand</li>
+          <li>Develop a campaign content calendar that ladders into the broader marketing calendar, so email and SMS amplify the right message at the right time</li>
+          <li>Own A/B testing for subject lines, content approaches, and CTAs — with the discipline to learn from the results and apply them</li>
+          <li>Write messages that resonate with a college-age audience: content that feels like it&#39;s actually written for them, not generic marketing</li>
+          <li>Own the strategy and content for Company&#39;s lifecycle flows: welcome series for new subscribers, post-purchase nurture, cart and browse abandonment, re-engagement, and win-back — across email and SMS</li>
+          <li>Audit the existing lifecycle program, identify gaps, underperforming flows, and moments in the customer journey where we&#39;re leaving engagement on the table</li>
+          <li>Own segmentation: define the audiences and journey logic that decide who gets what, when</li>
+          <li>Write and test improved lifecycle content, and build flows that feel like a conversation with the customer, not a sequence they got dropped into for checking a box</li>
+          <li>Monitor deliverability and engagement metrics — open rates, click-through rates, unsubscribe rates, spam complaints, bounce rates — and maintain a healthy sender reputation</li>
+          <li>Follow email and SMS deliverability best practices: list hygiene, warm-up protocols, segmentation for engaged vs. unengaged audiences, suppression management, and compliance</li>
+          <li>Report on performance on a regular cadence — what&#39;s working, what isn&#39;t, and what you&#39;re changing based on the data</li>
+          <li>Bring a point of view: not just &quot;open rate was 28%,&quot; but &quot;here&#39;s what that tells us about the subject-line approach, and here&#39;s what I&#39;m testing next&quot;</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h2>What we&#39;re looking for</h2>
+        <ul>
+          <li class="check">4-8 years of experience in email, lifecycle, or CRM marketing, or a closely related role where writing was a primary responsibility</li>
+          <li class="check">Hands-on experience with an ESP or marketing automation platform (Iterable, Klaviyo, HubSpot, Braze, or similar); SMS platform experience a plus</li>
+          <li class="check">Demonstrated understanding of lifecycle programs: welcome series, post-purchase flows, re-engagement, cart abandonment, and the segmentation logic behind them</li>
+          <li class="check">Comfort with email/SMS performance metrics — open rate, CTR, unsubscribe rate, deliverability indicators — and the ability to draw real insight from them</li>
+          <li class="check">Basic HTML/CSS comfort for email (able to troubleshoot and adjust templates)</li>
+          <li class="check">Strong written communication — you write clearly and with personality, not in marketing speak</li>
+          <li class="check">Experience writing for a consumer audience is a strong plus; B2C or DTC background preferred over B2B or enterprise</li>
+        </ul>
+      </div>
+  </div>
+
+  <aside class="apply-rail">
+    <div class="apply-card">
+      <div class="apply-salary">Competitive — USD<span>Salary shared during the process</span></div>
+      <div class="apply-facts">
+        <div class="fact"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Remote</div>
+        <div class="fact"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><strong>Full-time</strong></div>
+        <div class="fact"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-5"/></svg>1–3 years</div>
+        <div class="fact"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Process takes <strong>~21 days</strong></div>
+      </div>
+      <a class="btn-apply" href="https://jobs.nearwork.co/apply?code=NW-7823">Apply now <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a class="btn-save" href="https://talent.nearwork.co"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>Save role</a>
+      <p class="apply-note">Applying takes ~2 minutes. <a href="https://talent.nearwork.co">Sign in</a> to autofill from your profile.</p>
+    </div>
+    <div class="trust-card">
+      <h4>How Nearwork helps</h4>
+      <p>We prep you for interviews, advocate on salary, and handle contracts &amp; USD payments. You always work with the company directly — we just make it smooth.</p>
+    </div>
+  </aside>
+</div>
+
+<section class="related">
+  <h2>Similar roles</h2>
+  <div class="related-grid">
+    <a class="rel-card" href="/jobs/NW-2038">
+      <div class="rel-top"><div class="rel-logo" style="background:#E74C7C">F</div><div><div class="rel-title">Account Manager - Marketing</div><div class="rel-company">Fresh Prints</div></div></div>
+      <div class="rel-meta"><span>Remote</span></div>
+      <div class="rel-meta" style="margin-top:8px;"><span class="rel-sal">Competitive · USD</span></div>
+    </a>
+    <a class="rel-card" href="/jobs/NW-6235">
+      <div class="rel-top"><div class="rel-logo" style="background:#AF7AC5">D</div><div><div class="rel-title">Digital Marketing Specialist</div><div class="rel-company">Nearwork</div></div></div>
+      <div class="rel-meta"><span>Remote</span></div>
+      <div class="rel-meta" style="margin-top:8px;"><span class="rel-sal">Competitive · USD</span></div>
+    </a>
+    <a class="rel-card" href="/jobs/NW-8624">
+      <div class="rel-top"><div class="rel-logo" style="background:#E74C7C">S</div><div><div class="rel-title">Senior Customer Success Manager</div><div class="rel-company">Nearwork</div></div></div>
+      <div class="rel-meta"><span>Remote</span></div>
+      <div class="rel-meta" style="margin-top:8px;"><span class="rel-sal">Competitive · USD</span></div>
+    </a>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="/" class="wordmark" style="font-size:19px;">Nearwork</a>
+      <p class="footer-brand-desc">On-demand remote staffing for US &amp; Canadian companies. Vetted talent from across Latin America, paid in USD — full pipeline visibility and a C1 English standard.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links"><li><a href="/services/direct-recruiting">Direct Recruiting</a></li><li><a href="/services/eor">EOR</a></li><li><a href="/services/managed-team">Managed Team</a></li><li><a href="/services/strategic-partner-program">Strategic Partner Program</a></li></ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Industries</div>
+      <ul class="footer-links"><li><a href="/industries">All industries</a></li><li><a href="/industries/software-development">Software Development</a></li><li><a href="/industries/customer-support">Customer Support</a></li><li><a href="/industries/sales">Sales</a></li></ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/blog">Blog</a></li><li><a href="/jobs">Jobs</a></li><li><a href="/book">Hire on demand</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Nearwork. All rights reserved.</span>
+    <span class="footer-co"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Built with care from Colombia · Serving the US &amp; Canada</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var pill=document.getElementById('nav-pill');
+  if(pill){window.addEventListener('scroll',function(){pill.classList.toggle('scrolled',window.scrollY>20);},{passive:true});}
+  var ham=document.getElementById('hamBtn'),mob=document.getElementById('mobMenu');
+  if(ham&&mob){ham.addEventListener('click',function(){mob.classList.toggle('open');});}
+})();
+</script>
 </body>
 </html>
