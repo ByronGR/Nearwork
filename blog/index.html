@@ -31,21 +31,210 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 }
 </script>
 <style id="blog-styles">
-.blog-main{padding:140px 0 90px;}
-.blog-head{max-width:760px;margin:0 auto 48px;text-align:center;}
-.blog-head h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.02em;color:var(--fg);margin:0 0 14px;}
-.blog-head p{font-size:1.15rem;line-height:1.6;color:var(--fg-2);margin:0;}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1080px;margin:0 auto;}
-.blog-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
-.blog-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.08);border-color:var(--teal);}
-.blog-card-date{font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-2);margin-bottom:12px;}
-.blog-card h2{font-size:1.28rem;font-weight:700;line-height:1.3;color:var(--fg);margin:0 0 12px;}
-.blog-card p{font-size:.98rem;line-height:1.55;color:var(--fg-2);margin:0 0 20px;flex:1;}
-.blog-card-cta{font-size:.95rem;font-weight:600;color:var(--teal);}
+/* ══ blog index (scoped to .bx-* + blog classes) ══ */
+.bx-gold-mid{--gold-mid:#F5B5CC;}
+.blog-index{--bx-max:1200px;}
+.blog-index a{color:inherit;}
+
+/* nav search morph */
+.nav-pill{position:relative;}
+.nav-search-btn{width:38px;height:38px;border-radius:10px;border:1.5px solid var(--teal-mid);background:var(--teal-lt);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--teal-dk);transition:background 150ms,color 150ms,border-color 150ms,transform 100ms;flex-shrink:0;}
+.nav-search-btn:hover{background:var(--teal);border-color:var(--teal);color:#fff;}
+.nav-search-btn:active{transform:scale(0.94);}
+.nav-search-btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.4;fill:none;}
+.nav-search{position:absolute;inset:0;display:flex;align-items:center;gap:12px;padding:0 8px 0 20px;background:rgba(255,255,255,0.98);border-radius:18px;opacity:0;pointer-events:none;transform:scale(0.97);transition:opacity 280ms var(--ease),transform 280ms var(--ease);}
+.nav-pill.searching .nav-search{opacity:1;pointer-events:all;transform:scale(1);}
+.nav-pill > *:not(.nav-search){transition:opacity 200ms var(--ease);}
+.nav-pill.searching > *:not(.nav-search){opacity:0;pointer-events:none;}
+.nav-search .search-ico{width:20px;height:20px;stroke:var(--teal);stroke-width:2.2;fill:none;flex-shrink:0;}
+.nav-search input{flex:1;min-width:0;height:100%;border:none;outline:none;background:none;font-family:'Poppins',sans-serif;font-size:16px;color:var(--fg);letter-spacing:-0.01em;}
+.nav-search input::placeholder{color:var(--fg-3);}
+.nav-search-close{width:40px;height:40px;flex-shrink:0;border:none;background:none;cursor:pointer;font-size:22px;line-height:1;color:var(--fg-3);border-radius:12px;display:flex;align-items:center;justify-content:center;transition:background 150ms,color 150ms;}
+.nav-search-close:hover{background:var(--bg-cream);color:var(--fg);}
+
+/* header */
+.bx-header{max-width:var(--bx-max);margin:0 auto;padding:132px 48px 40px;}
+.bx-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal-dk);margin-bottom:18px;}
+.bx-eyebrow::before{content:'';width:22px;height:2px;background:var(--teal);border-radius:2px;}
+.bx-header h1{font-size:clamp(40px,6vw,64px);font-weight:800;letter-spacing:-0.035em;line-height:1.02;color:var(--fg);}
+.bx-header h1 .accent{color:var(--teal);}
+.bx-lede{font-size:19px;color:var(--fg-2);line-height:1.6;max-width:600px;margin-top:20px;text-wrap:pretty;}
+
+/* chip bar */
+.bx-chipbar{position:sticky;top:88px;z-index:100;max-width:var(--bx-max);margin:0 auto;padding:14px 48px;display:flex;gap:14px 20px;flex-wrap:wrap;align-items:center;}
+.bx-chipbar::before{content:'';position:absolute;inset:0;background:rgba(250,250,248,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:-1;}
+.bx-chipgroup{display:flex;gap:10px;flex-wrap:wrap;}
+.bx-chip{font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;color:var(--fg-2);background:var(--white);border:1.5px solid var(--border);padding:9px 18px;border-radius:999px;cursor:pointer;transition:all 160ms var(--ease);white-space:nowrap;}
+.bx-chip:hover{border-color:var(--teal-mid);color:var(--fg);}
+.bx-chip.active{background:var(--fg);color:#fff;border-color:var(--fg);}
+
+/* two-column layout */
+.bx-layout{max-width:var(--bx-max);margin:0 auto;padding:28px 48px 96px;display:grid;grid-template-columns:1fr 348px;gap:56px;align-items:start;}
+
+/* post list */
+.bx-list{display:flex;flex-direction:column;}
+.bx-row{display:grid;grid-template-columns:220px 1fr;gap:26px;padding:30px 0;border-top:1px solid var(--border);align-items:center;transition:opacity 200ms;}
+.bx-row:first-child{border-top:none;padding-top:4px;}
+.bx-thumb{position:relative;width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--bg-cream);}
+.bx-thumb.cover-cost-savings{background:linear-gradient(135deg,#FDEEF4,#F5B5CC);}
+.bx-thumb.cover-colombia-talent{background:linear-gradient(135deg,#FEF6E4,#F3D79E);}
+.bx-thumb.cover-remote-hiring{background:linear-gradient(135deg,#E4F5F1,#A4DAD0);}
+.bx-cat{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:12px;}
+.cat-cost-savings{background:#FDEEF4;color:#B43564;}
+.cat-colombia-talent{background:#FEF6E4;color:#B4762A;}
+.cat-remote-hiring{background:#E4F5F1;color:#0E7060;}
+.bx-title{font-size:22px;font-weight:700;letter-spacing:-0.02em;line-height:1.22;color:var(--fg);margin-bottom:9px;text-wrap:pretty;}
+.bx-title-link{text-decoration:none;}
+.bx-title-link:hover .bx-title{color:var(--teal-dk);}
+.bx-excerpt{font-size:14.5px;color:var(--fg-2);line-height:1.6;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.bx-meta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--fg-3);}
+.bx-avatar{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;background:var(--teal);}
+.bx-dot{width:3px;height:3px;border-radius:50%;background:var(--fg-4);}
+.bx-meta strong{color:var(--fg-2);font-weight:600;}
+.bx-empty{display:none;padding:60px 0;text-align:center;color:var(--fg-3);font-size:15px;}
+.bx-empty strong{color:var(--fg-2);font-weight:600;}
+
+/* sidebar */
+.bx-sidebar{position:sticky;top:150px;display:flex;flex-direction:column;gap:24px;}
+.bx-featured{background:var(--white);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.05);}
+.bx-featured .feat-img{position:relative;width:100%;aspect-ratio:16/10;}
+.feat-flag{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:var(--fg);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;}
+.feat-flag svg{width:12px;height:12px;fill:#F5B5CC;}
+.feat-body{padding:22px;}
+.feat-body .bx-title{font-size:20px;}
+.feat-body .bx-excerpt{-webkit-line-clamp:3;}
+.feat-link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--teal-dk);margin-top:14px;transition:gap 150ms;}
+.feat-link:hover{gap:11px;color:var(--teal-dk);}
+.feat-link svg{width:15px;height:15px;stroke:currentColor;stroke-width:2.4;fill:none;}
+.bx-card{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:22px;}
+.bx-sidetitle{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--fg-3);margin-bottom:16px;}
+.pop-item{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--border);align-items:flex-start;}
+.pop-item:first-of-type{border-top:none;padding-top:0;}
+.pop-num{font-size:20px;font-weight:800;color:var(--teal-mid);line-height:1;width:22px;flex-shrink:0;}
+.pop-text{display:block;font-size:14px;font-weight:600;line-height:1.35;color:var(--fg);text-wrap:pretty;}
+.pop-item:hover .pop-text{color:var(--teal-dk);}
+.pop-meta{display:block;font-size:11.5px;color:var(--fg-3);margin-top:5px;font-weight:500;}
+.pop-item > span:last-child{flex:1;}
+.bx-news{background:linear-gradient(155deg,#0E7060,#16A085);border:none;color:#fff;}
+.bx-news .bx-sidetitle{color:rgba(255,255,255,0.7);}
+.bx-news h4{font-size:19px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:8px;}
+.bx-news p{font-size:13.5px;color:rgba(255,255,255,0.82);line-height:1.5;margin-bottom:16px;}
+.news-form{display:flex;flex-direction:column;gap:9px;}
+.news-form input{font-family:'Poppins',sans-serif;font-size:14px;padding:12px 14px;border-radius:11px;border:none;background:rgba(255,255,255,0.16);color:#fff;outline:none;}
+.news-form input::placeholder{color:rgba(255,255,255,0.6);}
+.news-form input:focus{background:rgba(255,255,255,0.24);}
+.news-form button{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;padding:12px;border-radius:11px;border:none;background:#fff;color:var(--teal-dk);cursor:pointer;transition:transform 100ms;}
+.news-form button:active{transform:scale(0.98);}
+.news-fine{font-size:11px;color:rgba(255,255,255,0.6);margin-top:10px;}
+
+@media(max-width:1024px){
+  .bx-layout{grid-template-columns:1fr;gap:0;}
+  .bx-header{padding-left:32px;padding-right:32px;}
+  .bx-chipbar{padding-left:32px;padding-right:32px;}
+  .bx-layout{padding-left:32px;padding-right:32px;}
+  .bx-sidebar{position:static;flex-direction:row;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid var(--border);}
+  .bx-sidebar > *{flex:1;min-width:280px;}
+}
+@media(max-width:768px){
+  .bx-header{padding:112px 24px 28px;}
+  .bx-chipbar{padding:14px 24px;overflow-x:auto;flex-wrap:nowrap;}
+  .bx-layout{padding:24px 24px 72px;}
+  .bx-row{grid-template-columns:1fr;gap:16px;}
+  .bx-thumb{aspect-ratio:16/9;}
+}
+@media(prefers-reduced-motion:reduce){
+  .nav-search,.nav-pill > *:not(.nav-search),.bx-chip,.feat-link,.nav-search-btn{transition:none !important;}
+  html{scroll-behavior:auto;}
+}
 </style>
 </head>
 <body class="has-pill-nav" data-dir="a">
-<div id="app"><div class="nav-wrap"><div class="nav-pill" id="nav-pill"><a href="/" class="wordmark">Nearwork</a><nav class="nav-center" id="navCenter"><div class="dd" data-dd="services"><button class="dd-btn">Services <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel wide wide-grid"><a class="dd-item" href="../services/direct-recruiting.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><div><div class="dd-title">Direct Recruiting</div><div class="dd-desc">Source, screen, evaluate, and place top candidates</div></div></a><a class="dd-item" href="../services/eor.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div><div><div class="dd-title">EOR</div><div class="dd-desc">Hire talent without opening a local entity</div></div></a><a class="dd-item" href="../services/managed-team.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></div><div><div class="dd-title">Managed Team</div><div class="dd-desc">Dedicated teams with leads and support</div></div></a><a class="dd-item" href="../services/strategic-partner-program.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 17l2 2 3-4"/></svg></div><div><div class="dd-title">Strategic Partner Program</div><div class="dd-desc">White-label recruiting for partner firms</div></div></a></div></div><div class="dd" data-dd="industries"><button class="dd-btn">Industries <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel wide wide-grid"><a class="dd-item" href="../industries/customer-support.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div><div><div class="dd-title">Customer Support</div><div class="dd-desc">Empathetic, English-fluent support teams</div></div></a><a class="dd-item" href="../industries/software-development.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="dd-title">Software Development</div><div class="dd-desc">Engineers across every stack</div></div></a><a class="dd-item" href="../industries/sales.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div><div class="dd-title">Sales</div><div class="dd-desc">SDRs, AEs, and revenue operators</div></div></a><a class="dd-item" href="../industries/finance-and-accounting.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="dd-title">Finance &amp; Accounting</div><div class="dd-desc">Bookkeepers, analysts, and controllers</div></div></a><a class="dd-item" href="../industries/marketing-and-content.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 01-5.8-1.6"/></svg></div><div><div class="dd-title">Marketing &amp; Content</div><div class="dd-desc">Growth, content, SEO, and demand-gen</div></div></a><a class="dd-item" href="../industries/operations-and-administration.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div><div><div class="dd-title">Operations &amp; Admin</div><div class="dd-desc">Coordinators, VAs, and ops leads</div></div></a><div class="dd-footer"><div class="dd-footer-text">Don't see your industry? <strong>We staff every white-collar function.</strong></div><a class="dd-footer-cta" href="../industries/index.html">Browse all 18 industries <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div></div></div><div class="dd" data-dd="pricing"><button class="dd-btn">Pricing <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel"><a class="dd-item" href="../pricing.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="dd-title">All plans &amp; pricing</div><div class="dd-desc">Essential, Growth, Scale — full breakdown</div></div></a><a class="dd-item" href="../services/eor.html#eor-pricing"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div><div><div class="dd-title">EOR pricing</div><div class="dd-desc">Jump to EOR plans, fees, and benefits</div></div></a></div></div><div class="dd" data-dd="candidates"><button class="dd-btn">For candidates <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel"><a class="dd-item" href="https://talent.nearwork.co" target="_blank" rel="noopener"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><div class="dd-title">Candidate login</div><div class="dd-desc">talent.nearwork.co — your profile &amp; status</div></div></a><a class="dd-item" href="/jobs"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div><div class="dd-title">Jobs</div><div class="dd-desc">Browse open roles at US &amp; Canada companies</div></div></a></div></div><div class="dd" data-dd="about"><button class="dd-btn">About <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel"><a class="dd-item" href="/blog"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div><div class="dd-title">Blog</div><div class="dd-desc">Guides on hiring nearshore talent</div></div></a><a class="dd-item" href="../about.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><div><div class="dd-title">About Nearwork</div><div class="dd-desc">Who we are and what we believe</div></div></a><a class="dd-item" href="../why-colombia.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="dd-title">Why Colombia</div><div class="dd-desc">The talent advantage — explained with data</div></div></a></div></div></nav><div class="nav-right"><a href="https://app.nearwork.co" class="nav-ghost">Client login</a><a href="/book" class="nav-cta">Hire on demand <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div><button class="hamburger" id="hamBtn" aria-label="Menu"><span></span><span></span><span></span></button></div></div><div class="mobile-menu" id="mobMenu"><div class="mob-section"><div class="mob-section-title">Services</div><a class="mob-link" href="../services/direct-recruiting.html">Direct Recruiting</a><a class="mob-link" href="../services/eor.html">EOR</a><a class="mob-link" href="../services/managed-team.html">Managed Team</a><a class="mob-link" href="../services/strategic-partner-program.html">Strategic Partner Program</a></div><div class="mob-section"><div class="mob-section-title">Industries</div><a class="mob-link" href="../industries/customer-support.html">Customer Support</a><a class="mob-link" href="../industries/software-development.html">Software Development</a><a class="mob-link" href="../industries/sales.html">Sales</a><a class="mob-link" href="../industries/index.html">Browse all 18</a></div><div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="../pricing.html">Pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="../about.html">About</a></div><div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div></div><main class="blog-main"><div class="wrap"><div class="blog-head"><h1>Resources &amp; guides</h1><p>Practical, data-backed guides on hiring nearshore talent across Latin America.</p></div><div class="blog-grid"><a class="blog-card" href="/blog/cost-to-hire-a-developer-in-colombia"><div class="blog-card-date">July 2026</div><h2>Cost to Hire a Developer in Colombia (2026 Guide)</h2><p>Real rate ranges by seniority, agency vs. EOR fees, and total cost of a Colombian developer hire.</p><span class="blog-card-cta">Read guide →</span></a><a class="blog-card" href="/blog/colombia-developer-salary-guide-2026"><div class="blog-card-date">July 2026</div><h2>Colombia Software Developer Salary Guide (2026)</h2><p>2026 salary benchmarks by role and seniority, with US comparisons across frontend, backend, DevOps and more.</p><span class="blog-card-cta">Read guide →</span></a><a class="blog-card" href="/blog/nearshore-vs-offshore"><div class="blog-card-date">July 2026</div><h2>Nearshore vs Offshore: The 2026 Hiring Guide</h2><p>Nearshore vs offshore compared across cost, time zones, English, and compliance — and which fits your team.</p><span class="blog-card-cta">Read guide →</span></a></div></div></main><footer class="rf"><div class="rf-in"><div class="rf-brand"><div class="lg">Nearwork</div><p>On-demand remote staffing for US &amp; Canadian companies. Vetted talent from across Latin America, managed for you, at a fraction of US cost.</p></div><div class="rf-col"><h4>Industries</h4><a href="../industries/index.html">All industries</a><a href="../industries/software-development.html">Software Development</a><a href="../industries/sales.html">Sales</a><a href="../industries/finance-and-accounting.html">Finance &amp; Accounting</a></div><div class="rf-col"><h4>Services</h4><a href="../services/direct-recruiting.html">Direct Recruiting</a><a href="../services/eor.html">EOR</a><a href="../services/managed-team.html">Managed Team</a><a href="../services/strategic-partner-program.html">Partner Program</a></div><div class="rf-col"><h4>Company</h4><a href="/">Home</a><a href="../pricing.html">Pricing</a><a href="/book">Hire on demand</a><a href="/blog">Blog</a><a href="/jobs">Jobs</a></div></div><div class="rf-bot">© 2026 Nearwork. Remote staffing &amp; Employer of Record.</div></footer></div>
+<div id="app"><div class="nav-wrap"><div class="nav-pill" id="nav-pill"><a href="/" class="wordmark">Nearwork</a><nav class="nav-center" id="navCenter"><div class="dd" data-dd="services"><button class="dd-btn">Services <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel wide wide-grid"><a class="dd-item" href="../services/direct-recruiting.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><div><div class="dd-title">Direct Recruiting</div><div class="dd-desc">Source, screen, evaluate, and place top candidates</div></div></a><a class="dd-item" href="../services/eor.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div><div><div class="dd-title">EOR</div><div class="dd-desc">Hire talent without opening a local entity</div></div></a><a class="dd-item" href="../services/managed-team.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></div><div><div class="dd-title">Managed Team</div><div class="dd-desc">Dedicated teams with leads and support</div></div></a><a class="dd-item" href="../services/strategic-partner-program.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 17l2 2 3-4"/></svg></div><div><div class="dd-title">Strategic Partner Program</div><div class="dd-desc">White-label recruiting for partner firms</div></div></a></div></div><div class="dd" data-dd="industries"><button class="dd-btn">Industries <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel wide wide-grid"><a class="dd-item" href="../industries/customer-support.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div><div><div class="dd-title">Customer Support</div><div class="dd-desc">Empathetic, English-fluent support teams</div></div></a><a class="dd-item" href="../industries/software-development.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="dd-title">Software Development</div><div class="dd-desc">Engineers across every stack</div></div></a><a class="dd-item" href="../industries/sales.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div><div class="dd-title">Sales</div><div class="dd-desc">SDRs, AEs, and revenue operators</div></div></a><a class="dd-item" href="../industries/finance-and-accounting.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="dd-title">Finance &amp; Accounting</div><div class="dd-desc">Bookkeepers, analysts, and controllers</div></div></a><a class="dd-item" href="../industries/marketing-and-content.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 01-5.8-1.6"/></svg></div><div><div class="dd-title">Marketing &amp; Content</div><div class="dd-desc">Growth, content, SEO, and demand-gen</div></div></a><a class="dd-item" href="../industries/operations-and-administration.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div><div><div class="dd-title">Operations &amp; Admin</div><div class="dd-desc">Coordinators, VAs, and ops leads</div></div></a><div class="dd-footer"><div class="dd-footer-text">Don't see your industry? <strong>We staff every white-collar function.</strong></div><a class="dd-footer-cta" href="../industries/index.html">Browse all 18 industries <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div></div></div><div class="dd" data-dd="pricing"><button class="dd-btn">Pricing <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel"><a class="dd-item" href="../pricing.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="dd-title">All plans &amp; pricing</div><div class="dd-desc">Essential, Growth, Scale — full breakdown</div></div></a><a class="dd-item" href="../services/eor.html#eor-pricing"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div><div><div class="dd-title">EOR pricing</div><div class="dd-desc">Jump to EOR plans, fees, and benefits</div></div></a></div></div><div class="dd" data-dd="candidates"><button class="dd-btn">For candidates <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel"><a class="dd-item" href="https://talent.nearwork.co" target="_blank" rel="noopener"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><div class="dd-title">Candidate login</div><div class="dd-desc">talent.nearwork.co — your profile &amp; status</div></div></a><a class="dd-item" href="/jobs"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div><div class="dd-title">Jobs</div><div class="dd-desc">Browse open roles at US &amp; Canada companies</div></div></a></div></div><div class="dd" data-dd="about"><button class="dd-btn">About <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd-panel"><a class="dd-item" href="/blog"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div><div class="dd-title">Blog</div><div class="dd-desc">Guides on hiring nearshore talent</div></div></a><a class="dd-item" href="../about.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><div><div class="dd-title">About Nearwork</div><div class="dd-desc">Who we are and what we believe</div></div></a><a class="dd-item" href="../why-colombia.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="dd-title">Why Colombia</div><div class="dd-desc">The talent advantage — explained with data</div></div></a></div></div></nav><div class="nav-right"><button class="nav-search-btn" id="navSearchBtn" aria-label="Search the blog"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><a href="https://app.nearwork.co" class="nav-ghost">Client login</a><a href="/book" class="nav-cta">Hire on demand <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div><button class="hamburger" id="hamBtn" aria-label="Menu"><span></span><span></span><span></span></button><div class="nav-search" id="navSearch"><svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="searchInput" placeholder="Search articles…" aria-label="Search the blog" autocomplete="off"><button class="nav-search-close" id="navSearchClose" aria-label="Close search">&times;</button></div></div></div><div class="mobile-menu" id="mobMenu"><div class="mob-section"><div class="mob-section-title">Services</div><a class="mob-link" href="../services/direct-recruiting.html">Direct Recruiting</a><a class="mob-link" href="../services/eor.html">EOR</a><a class="mob-link" href="../services/managed-team.html">Managed Team</a><a class="mob-link" href="../services/strategic-partner-program.html">Strategic Partner Program</a></div><div class="mob-section"><div class="mob-section-title">Industries</div><a class="mob-link" href="../industries/customer-support.html">Customer Support</a><a class="mob-link" href="../industries/software-development.html">Software Development</a><a class="mob-link" href="../industries/sales.html">Sales</a><a class="mob-link" href="../industries/index.html">Browse all 18</a></div><div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="../pricing.html">Pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="../about.html">About</a></div><div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div></div><main class="blog-index">
+<header class="bx-header">
+  <span class="bx-eyebrow">Nearwork Insights</span>
+  <h1>Guides on hiring<br><span class="accent">nearshore talent</span></h1>
+  <p class="bx-lede">Practical, data-backed guides on hiring nearshore talent across Latin America — cost, salaries, and nearshore vs offshore.</p>
+</header>
+
+<div class="bx-chipbar" id="chipBar">
+  <div class="bx-chipgroup">
+    <button class="bx-chip active" data-cat="all">All</button>
+    <button class="bx-chip" data-cat="remote-hiring">Remote Hiring</button>
+    <button class="bx-chip" data-cat="cost-savings">Cost &amp; Savings</button>
+    <button class="bx-chip" data-cat="colombia-talent">Colombia Talent</button>
+  </div>
+</div>
+
+<div class="bx-layout">
+  <div class="bx-list" id="postList">
+
+    <article class="bx-row" data-category="cost-savings">
+      <div class="bx-thumb cover-cost-savings"></div>
+      <div>
+        <span class="bx-cat cat-cost-savings">Cost &amp; Savings</span>
+        <a class="bx-title-link" href="/blog/cost-to-hire-a-developer-in-colombia"><h2 class="bx-title">Cost to Hire a Developer in Colombia (2026 Guide)</h2></a>
+        <p class="bx-excerpt">Real rate ranges by seniority, agency vs. EOR fees, and total cost of a Colombian developer hire.</p>
+        <div class="bx-meta"><span class="bx-avatar">N</span><strong>Nearwork Talent Team</strong><span class="bx-dot"></span><span>Updated July 2026</span><span class="bx-dot"></span><span>8 min read</span></div>
+      </div>
+    </article>
+
+    <article class="bx-row" data-category="colombia-talent">
+      <div class="bx-thumb cover-colombia-talent"></div>
+      <div>
+        <span class="bx-cat cat-colombia-talent">Colombia Talent</span>
+        <a class="bx-title-link" href="/blog/colombia-developer-salary-guide-2026"><h2 class="bx-title">Colombia Software Developer Salary Guide (2026)</h2></a>
+        <p class="bx-excerpt">2026 salary benchmarks by role and seniority, with US comparisons across frontend, backend, DevOps and more.</p>
+        <div class="bx-meta"><span class="bx-avatar">N</span><strong>Nearwork Talent Team</strong><span class="bx-dot"></span><span>Updated July 2026</span><span class="bx-dot"></span><span>9 min read</span></div>
+      </div>
+    </article>
+
+    <article class="bx-row" data-category="remote-hiring">
+      <div class="bx-thumb cover-remote-hiring"></div>
+      <div>
+        <span class="bx-cat cat-remote-hiring">Remote Hiring</span>
+        <a class="bx-title-link" href="/blog/nearshore-vs-offshore"><h2 class="bx-title">Nearshore vs Offshore: The 2026 Hiring Guide</h2></a>
+        <p class="bx-excerpt">Nearshore vs offshore compared across cost, time zones, English, and compliance — and which fits your team.</p>
+        <div class="bx-meta"><span class="bx-avatar">N</span><strong>Nearwork Talent Team</strong><span class="bx-dot"></span><span>Updated July 2026</span><span class="bx-dot"></span><span>8 min read</span></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="bx-empty" id="emptyNote">No posts in this category yet.</div>
+
+  <aside class="bx-sidebar">
+    <div class="bx-featured">
+      <div class="feat-img bx-thumb cover-cost-savings">
+        <span class="feat-flag"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.5L12 18l-6.4 4 1.8-7.5-5.8-5 7.6-.6z"/></svg>Featured</span>
+      </div>
+      <div class="feat-body">
+        <span class="bx-cat cat-cost-savings">Cost &amp; Savings</span>
+        <a class="bx-title-link" href="/blog/cost-to-hire-a-developer-in-colombia"><h2 class="bx-title">Cost to Hire a Developer in Colombia (2026 Guide)</h2></a>
+        <p class="bx-excerpt">Real rate ranges by seniority, agency vs. EOR fees, and the total cost of a Colombian developer hire — with a clear breakdown of what you actually pay.</p>
+        <a class="feat-link" href="/blog/cost-to-hire-a-developer-in-colombia">Read the guide <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="bx-card">
+      <div class="bx-sidetitle">Most read</div>
+      <a class="pop-item" href="/blog/cost-to-hire-a-developer-in-colombia"><span class="pop-num">1</span><span><span class="pop-text">Cost to Hire a Developer in Colombia (2026 Guide)</span><span class="pop-meta">Cost &amp; Savings · 8 min</span></span></a>
+      <a class="pop-item" href="/blog/colombia-developer-salary-guide-2026"><span class="pop-num">2</span><span><span class="pop-text">Colombia Software Developer Salary Guide (2026)</span><span class="pop-meta">Colombia Talent · 9 min</span></span></a>
+      <a class="pop-item" href="/blog/nearshore-vs-offshore"><span class="pop-num">3</span><span><span class="pop-text">Nearshore vs Offshore: The 2026 Hiring Guide</span><span class="pop-meta">Remote Hiring · 8 min</span></span></a>
+    </div>
+
+    <div class="bx-card bx-news">
+      <div class="bx-sidetitle">Newsletter</div>
+      <h4>Hiring insights, twice a month</h4>
+      <p>The playbooks and salary data we use to help US &amp; Canadian teams hire nearshore.</p>
+      <form class="news-form" onsubmit="event.preventDefault();this.reset();this.querySelector('button').textContent='Subscribed ✓';">
+        <input type="email" placeholder="you@company.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="news-fine">By subscribing you agree to our privacy policy.</p>
+    </div>
+  </aside>
+</div>
+</main><footer class="rf"><div class="rf-in"><div class="rf-brand"><div class="lg">Nearwork</div><p>On-demand remote staffing for US &amp; Canadian companies. Vetted talent from across Latin America, managed for you, at a fraction of US cost.</p></div><div class="rf-col"><h4>Industries</h4><a href="../industries/index.html">All industries</a><a href="../industries/software-development.html">Software Development</a><a href="../industries/sales.html">Sales</a><a href="../industries/finance-and-accounting.html">Finance &amp; Accounting</a></div><div class="rf-col"><h4>Services</h4><a href="../services/direct-recruiting.html">Direct Recruiting</a><a href="../services/eor.html">EOR</a><a href="../services/managed-team.html">Managed Team</a><a href="../services/strategic-partner-program.html">Partner Program</a></div><div class="rf-col"><h4>Company</h4><a href="/">Home</a><a href="../pricing.html">Pricing</a><a href="/book">Hire on demand</a><a href="/blog">Blog</a><a href="/jobs">Jobs</a></div></div><div class="rf-bot">© 2026 Nearwork. Remote staffing &amp; Employer of Record.</div></footer></div>
 <script>
 /* nav dropdowns + scroll + mobile (from industry-page.js) */
 (function(){
@@ -55,6 +244,53 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
   dds.forEach(function(dd){ dd.querySelector('.dd-btn').addEventListener('click',function(e){ e.stopPropagation(); var w=dd.classList.contains('open'); dds.forEach(function(d){d.classList.remove('open');}); if(!w) dd.classList.add('open'); }); });
   document.addEventListener('click',function(e){ var inside=false; dds.forEach(function(d){ if(d.contains(e.target)) inside=true; }); if(!inside) dds.forEach(function(d){ d.classList.remove('open'); }); });
   var ham=document.getElementById('hamBtn'); if(ham) ham.addEventListener('click',function(){ document.getElementById('mobMenu').classList.toggle('open'); });
+})();
+/* blog search morph + category/search filter */
+(function(){
+  var pill=document.getElementById('nav-pill');
+  var chips=document.querySelectorAll('.bx-chip');
+  var rows=document.querySelectorAll('.bx-row');
+  var emptyNote=document.getElementById('emptyNote');
+  var searchInput=document.getElementById('searchInput');
+  var navSearchBtn=document.getElementById('navSearchBtn');
+  var navSearchClose=document.getElementById('navSearchClose');
+  if(!searchInput) return;
+  var activeCat='all';
+  function applyFilter(){
+    var q=searchInput.value.trim().toLowerCase();
+    var shown=0;
+    rows.forEach(function(row){
+      var catMatch=activeCat==='all'||row.dataset.category===activeCat;
+      var qMatch=q===''||row.textContent.toLowerCase().indexOf(q)!==-1;
+      var match=catMatch&&qMatch;
+      row.style.display=match?'':'none';
+      if(match) shown++;
+    });
+    if(shown===0){
+      emptyNote.innerHTML=q?'No articles match <strong>“'+searchInput.value.trim()+'”</strong>.':'No posts in this category yet.';
+      emptyNote.style.display='block';
+    } else { emptyNote.style.display='none'; }
+  }
+  function openSearch(){
+    pill.classList.add('searching');
+    document.querySelectorAll('.dd').forEach(function(d){d.classList.remove('open');});
+    setTimeout(function(){searchInput.focus();},140);
+    var cb=document.getElementById('chipBar');
+    if(cb) window.scrollTo({top:cb.offsetTop-90,behavior:'smooth'});
+  }
+  function closeSearch(){ pill.classList.remove('searching'); searchInput.value=''; applyFilter(); }
+  navSearchBtn.addEventListener('click',openSearch);
+  navSearchClose.addEventListener('click',closeSearch);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&pill.classList.contains('searching')) closeSearch(); });
+  searchInput.addEventListener('input',applyFilter);
+  chips.forEach(function(chip){ chip.addEventListener('click',function(){
+    chips.forEach(function(c){c.classList.remove('active');});
+    chip.classList.add('active');
+    activeCat=chip.dataset.cat;
+    applyFilter();
+  }); });
+  var urlQ=new URLSearchParams(location.search).get('q');
+  if(urlQ){ searchInput.value=urlQ; pill.classList.add('searching'); applyFilter(); }
 })();
 </script>
 </body>
