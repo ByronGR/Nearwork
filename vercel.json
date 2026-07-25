@@ -1,6 +1,17 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/api/submit-application", "destination": "https://jobs.nearwork.co/api/submit-application" },
+    { "source": "/api/parse-cv", "destination": "https://jobs.nearwork.co/api/parse-cv" },
+    { "source": "/api/send-email-proxy", "destination": "https://jobs.nearwork.co/api/send-email-proxy" },
+    { "source": "/api/send-reset", "destination": "https://jobs.nearwork.co/api/send-reset" },
+    { "source": "/api/confirm-reset", "destination": "https://jobs.nearwork.co/api/confirm-reset" },
+    { "source": "/api/check-application", "destination": "https://jobs.nearwork.co/api/check-application" },
+    { "source": "/api/send-confirmation", "destination": "https://jobs.nearwork.co/api/send-confirmation" },
+    { "source": "/api/intercom-token", "destination": "https://jobs.nearwork.co/api/intercom-token" },
+    { "source": "/api/auth-handoff", "destination": "https://jobs.nearwork.co/api/auth-handoff" }
+  ],
   "headers": [
     {
       "source": "/jobs/apply",
