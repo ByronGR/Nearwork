@@ -647,30 +647,24 @@ function navHtml() {
   <div class="nav-pill" id="nav-pill">
     <a href="/" class="wordmark">Nearwork</a>
     <nav class="nav-center">
-      <a class="nav-link" href="/services/direct-recruiting">Services</a>
-      <a class="nav-link" href="/industries">Industries</a>
-      <a class="nav-link" href="/pricing">Pricing</a>
-      <a class="nav-link active" href="/jobs">Jobs</a>
-      <a class="nav-link" href="/about">About</a>
-      <a class="nav-link" href="/blog">Blog</a>
+      <a class="nav-link active" href="/jobs">Browse jobs</a>
+      <a class="nav-link" href="/blog">Career blog</a>
+      <a class="nav-link" href="/about">About Nearwork</a>
     </nav>
     <div class="nav-right">
-      <a href="https://app.nearwork.co" class="nav-ghost">Client login</a>
-      <a href="/book" class="nav-cta">Hire on demand ${ICON.arrow}</a>
+      <a href="/" class="nav-ghost">For employers</a>
+      <a href="https://talent.nearwork.co" class="nav-cta">Candidate login ${ICON.arrow}</a>
     </div>
     <button class="hamburger" id="hamBtn" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </div>
 <div class="mobile-menu" id="mobMenu">
-  <div class="mob-section"><div class="mob-section-title">Explore</div>
-    <a class="mob-link" href="/services/direct-recruiting">Services</a>
-    <a class="mob-link" href="/industries">Industries</a>
-    <a class="mob-link" href="/pricing">Pricing</a>
-    <a class="mob-link" href="/jobs">Jobs</a>
-    <a class="mob-link" href="/about">About</a>
-    <a class="mob-link" href="/blog">Blog</a>
+  <div class="mob-section"><div class="mob-section-title">For candidates</div>
+    <a class="mob-link" href="/jobs">Browse jobs</a>
+    <a class="mob-link" href="/blog">Career blog</a>
+    <a class="mob-link" href="/about">About Nearwork</a>
   </div>
-  <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div>
+  <div class="mob-ctas"><a class="mob-ghost" href="/">For employers</a><a class="mob-primary" href="https://talent.nearwork.co">Candidate login</a></div>
 </div>`;
 }
 
@@ -833,7 +827,7 @@ ${relCards}
 </section>`;
   }
 
-  const applyUrl = `https://jobs.nearwork.co/apply?code=${escapeHtml(job.code)}`;
+  const applyUrl = `/jobs/apply?code=${escapeHtml(job.code)}`;
   const jsonLdBlock = `  <script type="application/ld+json">\n${jsonLd}\n  </script>\n`;
   const title = `${escapeHtml(job.title)} — Remote Job in Latin America | Nearwork`;
 
@@ -1248,8 +1242,10 @@ async function main() {
   // -------------------------------------------------------------------------
   console.log('\n===== JSON-LD VALIDATION =====');
   const hubFiles = new Set(HUBS.map((h) => `${h.slug}.html`));
+  // Only validate generated job-detail pages (NW-<code>.html) — skip the index,
+  // category hubs, and the ported candidate app pages (apply/reset-password).
   const files = fs.readdirSync(OUT_DIR)
-    .filter((n) => n.endsWith('.html') && n !== 'index.html' && !hubFiles.has(n));
+    .filter((n) => /^NW-.+\.html$/.test(n) && !hubFiles.has(n));
   let validLd = 0;
   let missingLd = 0;
   const badLd = [];
