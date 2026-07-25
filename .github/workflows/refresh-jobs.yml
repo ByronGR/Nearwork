@@ -22,7 +22,7 @@ jobs:
           node-version: 20
 
       - name: Build job board
-        run: node build-jobs.js
+        run: node build-jobs.cjs
 
       - name: Commit and push if changed
         run: |

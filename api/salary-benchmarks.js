@@ -77,7 +77,7 @@ function normalizeRecords(records) {
   return Object.keys(roles).length ? roles : fallbackRoles;
 }
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
   const key = process.env.AIRTABLE_KEY;
   const base = process.env.AIRTABLE_BASE;
