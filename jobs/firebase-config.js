@@ -753,8 +753,8 @@ export async function uploadCV(file, candCode) {
   return withTimeout(getDownloadURL(upload.ref), 'CV URL', 10000);
 }
 
-export async function getCurrentIdToken() {
-  return auth.currentUser?.getIdToken().catch(() => '') ?? '';
+export async function getCurrentIdToken(forceRefresh = false) {
+  return auth.currentUser?.getIdToken(forceRefresh).catch(() => '') ?? '';
 }
 
 export async function signInWithHandoffToken(customToken) {
