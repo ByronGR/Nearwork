@@ -301,7 +301,9 @@ function initialOf(job) {
 }
 
 function companyName(job) {
-  return job.orgName || 'Nearwork';
+  // Client company names are confidential — public output is always branded
+  // "Nearwork", never the underlying client org (e.g. the Firestore orgName).
+  return 'Nearwork';
 }
 
 function workTypeLabel(job) {
@@ -1212,6 +1214,23 @@ async function main() {
     pagesWritten++;
     const matched = jobs.filter((job) => jobMatchesHub(job, hub)).length;
     console.log(`Hub "${hub.slug}": ${matched} matching job(s).`);
+  }
+
+  // Prune stale job-detail pages. A NW-<code>.html file that is no longer in the
+  // current published set is an orphan — it stays live on the static host and can
+  // still expose a (now-unpublished) client's confidential details. Remove any
+  // NW-*.html that isn't a hub page and isn't backed by a current opening.
+  const liveCodes = new Set(jobs.map((j) => `${j.code}.html`));
+  const hubFileNames = new Set(HUBS.map((h) => `${h.slug}.html`));
+  const orphans = [];
+  for (const name of fs.readdirSync(OUT_DIR)) {
+    if (!/^NW-.+\.html$/.test(name)) continue;
+    if (hubFileNames.has(name) || liveCodes.has(name)) continue;
+    fs.unlinkSync(path.join(OUT_DIR, name));
+    orphans.push(name);
+  }
+  if (orphans.length) {
+    console.log(`Pruned ${orphans.length} stale job page(s): ${orphans.join(', ')}`);
   }
 
   // Update sitemap with current job + hub URLs.
