@@ -1273,24 +1273,26 @@ function setAccountFieldsEnabled(enabled) {
 }
 
 function resetAccountMode(clearEmail = true) {
-  accountMode = 'check';
+  accountMode = 'create';
   pendingAccountCandidate = null;
   authUser = null;
-  document.getElementById('account-note').textContent = 'Enter your email first. We will check whether you need to log in or create a profile.';
-  document.getElementById('account-continue-btn').textContent = 'Continue →';
+  document.getElementById('account-note').textContent = 'Create your profile to apply. Already have a Nearwork account? Enter the same email and we’ll switch you to log in.';
+  document.getElementById('account-continue-btn').textContent = 'Create profile & apply →';
   document.getElementById('account-msg').classList.remove('show');
   document.getElementById('account-forgot').style.display = 'none';
-  document.getElementById('a-password').placeholder = 'Password';
+  document.getElementById('a-password').placeholder = 'Create a password';
   document.getElementById('a-password').value = '';
   document.getElementById('a-password2').value = '';
   clearErr('err-a-password');
   clearErr('err-a-password2');
-  setAccountFieldsEnabled(false);
+  setAccountFieldsEnabled(true);
   if (clearEmail) document.getElementById('a-email').value = '';
 }
 
 document.getElementById('a-email')?.addEventListener('input', () => {
-  if (accountMode !== 'check') resetAccountMode(false);
+  // Only relevant when we've routed the candidate to password login — editing the
+  // email there returns them to the create flow. In create mode, typing does nothing.
+  if (accountMode === 'login') resetAccountMode(false);
 });
 
 function validateAccountStep() {
