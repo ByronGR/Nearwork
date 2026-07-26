@@ -2016,20 +2016,24 @@ async function goToOnboarding(signedInUser) {
   const nameParts = (user?.displayName || '').trim().split(/\s+/).filter(Boolean);
   const firstName = document.getElementById('a-first')?.value.trim() || nameParts[0] || '';
   const lastName  = document.getElementById('a-last')?.value.trim() || nameParts.slice(1).join(' ') || '';
-  // 1) Record the application to this role via the SERVER endpoint (admin SDK →
-  //    writes the top-level `applications` collection that Admin's pipeline reads).
-  //    Use the token off the user object — auth.currentUser can lag after signup.
+  // 1) Record the application via the client SDK — it writes the top-level
+  //    `applications` collection Admin reads, and works under the candidate's own
+  //    auth. Pass the uid explicitly (auth.currentUser can lag right after signup).
+  //    (The server /api/submit-application is currently 500-ing, so we don't use it.)
+  let applied = false;
   if (CODE) {
     try {
-      const appTok = (user && user.getIdToken ? await user.getIdToken().catch(() => '') : '') || await getCurrentIdToken();
-      const openingTitle = (typeof opening !== 'undefined' && opening && opening.title) ? opening.title : '';
-      const r = await fetch('/api/submit-application', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', ...(appTok ? { Authorization: `Bearer ${appTok}` } : {}) },
-        body: JSON.stringify({ openingCode: CODE, email, firstName, lastName, openingTitle }),
+      await submitApplication({
+        openingCode: CODE, email, firstName, lastName,
+        openingTitle: (typeof opening !== 'undefined' && opening && opening.title) ? opening.title : '',
+        ownerUid: user && user.uid ? user.uid : undefined,
+        authUid: user && user.uid ? user.uid : undefined,
       });
-      if (!r.ok && r.status !== 409) console.warn('[apply] submit-application HTTP', r.status);
-    } catch (e) { console.warn('[apply] application record skipped:', e?.message || e); }
+      applied = true;
+    } catch (e) {
+      if (e && e.code === 'already-applied') applied = true;
+      else console.warn('[apply] application record FAILED:', e && (e.message || e));
+    }
   }
   // 2) Mint a one-time custom token straight from talent (one hop) so it signs
   //    them in automatically. Cached token first, then force-refresh; retry.
@@ -2068,8 +2072,9 @@ async function goToOnboarding(signedInUser) {
     showHandoffLoader('Taking you to sign in…');
   }
   // Carry the role through so onboarding can confirm "Applying to <role>".
+  // Only pass the role (→ "Application sent" confirmation) if it actually recorded.
   let roleParams = '';
-  if (CODE) {
+  if (CODE && applied) {
     const rTitle = (typeof opening !== 'undefined' && opening && opening.title) ? opening.title : CODE;
     roleParams = `${ctQuery ? '&' : '?'}role=${encodeURIComponent(CODE)}&roleTitle=${encodeURIComponent(rTitle)}`;
   }
