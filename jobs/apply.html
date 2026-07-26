@@ -2025,29 +2025,36 @@ async function goToOnboarding(signedInUser) {
   //    them in automatically. Cached token first, then force-refresh; retry.
   showHandoffLoader('Signing you in…');
   let ctQuery = '';
+  let diag = 'no attempts';
   for (let attempt = 0; attempt < 3 && !ctQuery; attempt++) {
     try {
       let idToken = '';
-      if (user?.getIdToken) idToken = await user.getIdToken(attempt > 0).catch(() => '');
+      if (user?.getIdToken) idToken = await user.getIdToken(attempt > 0).catch((e) => { diag = 'getIdToken err: ' + (e?.code || e?.message || e); return ''; });
       if (!idToken) idToken = await getCurrentIdToken(attempt > 0);
       console.log('[handoff] attempt', attempt, '· idToken present?', !!idToken);
-      if (!idToken) { await new Promise((r) => setTimeout(r, 800)); continue; }
+      if (!idToken) { diag = 'no idToken (user obj: ' + (!!user) + ')'; await new Promise((r) => setTimeout(r, 800)); continue; }
       const res = await fetch('https://talent.nearwork.co/api/auth-handoff', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${idToken}`, 'Content-Type': 'application/json' },
       });
       const data = await res.json().catch(() => ({}));
       console.log('[handoff] talent status', res.status, '· customToken?', !!data.customToken, '·', data.error || '');
+      diag = 'talent HTTP ' + res.status + (data.error ? ' · ' + String(data.error).slice(0, 80) : (data.customToken ? ' · OK' : ' · no token'));
       if (data.customToken) ctQuery = `?ct=${encodeURIComponent(data.customToken)}`;
       else await new Promise((r) => setTimeout(r, 800));
     } catch (e) {
+      diag = 'fetch threw: ' + (e?.message || e);
       console.error('[handoff] fetch error:', e?.message || e);
       await new Promise((r) => setTimeout(r, 800));
     }
   }
-  // Fallback: if the token couldn't be minted, still send them to onboarding with
-  // their email prefilled — they can finish with the Google/email login there.
-  if (!ctQuery && email) ctQuery = `?email=${encodeURIComponent(email)}`;
+  // Fallback: if the token couldn't be minted, surface WHY on screen (temporary
+  // debug aid) before sending them to onboarding with email prefilled.
+  if (!ctQuery && email) {
+    ctQuery = `?email=${encodeURIComponent(email)}`;
+    showHandoffLoader('Auto sign-in failed — reason: ' + diag);
+    await new Promise((r) => setTimeout(r, 6000));
+  }
   window.location.href = `https://talent.nearwork.co/onboarding${ctQuery}`;
 }
 
