@@ -1140,7 +1140,7 @@ async function continueAfterAuth(user, candidate) {
   const nextCandidate = { ...fallbackCandidate, ...(candidate || {}) };
   prefillCandidate(nextCandidate);
   saveCandidateSession(nextCandidate);
-  await goToOnboarding();
+  await goToOnboarding(user);
 }
 
 window.showAccountStep = async function() {
@@ -1475,7 +1475,7 @@ async function createProfileAndContinue() {
   }
   prefillCandidate(candidate);
   saveCandidateSession(candidate);
-  await goToOnboarding();
+  await goToOnboarding(authUser);
 }
 
 // ── Render dynamic questions ──────────────────────────────────────────────
@@ -2007,9 +2007,11 @@ function showHandoffLoader(msg) {
   el.style.display = 'flex';
 }
 
-async function goToOnboarding() {
+async function goToOnboarding(signedInUser) {
   showHandoffLoader('Setting up your profile…');
-  const user = await clientTimeout(waitForAuthReady(), 4000, null, 'auth').catch(() => null);
+  // Prefer the user object we already hold from sign-in — auth.currentUser can
+  // still be null on the page's auth instance right after a popup/redirect.
+  const user = signedInUser || await clientTimeout(waitForAuthReady(), 4000, null, 'auth').catch(() => null);
   const email = (user?.email || document.getElementById('a-email')?.value || '').trim().toLowerCase();
   const nameParts = (user?.displayName || '').trim().split(/\s+/).filter(Boolean);
   const firstName = document.getElementById('a-first')?.value.trim() || nameParts[0] || '';
@@ -2025,7 +2027,9 @@ async function goToOnboarding() {
   let ctQuery = '';
   for (let attempt = 0; attempt < 3 && !ctQuery; attempt++) {
     try {
-      const idToken = await getCurrentIdToken(attempt > 0);
+      let idToken = '';
+      if (user?.getIdToken) idToken = await user.getIdToken(attempt > 0).catch(() => '');
+      if (!idToken) idToken = await getCurrentIdToken(attempt > 0);
       console.log('[handoff] attempt', attempt, '· idToken present?', !!idToken);
       if (!idToken) { await new Promise((r) => setTimeout(r, 800)); continue; }
       const res = await fetch('https://talent.nearwork.co/api/auth-handoff', {
