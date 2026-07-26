@@ -1140,7 +1140,7 @@ async function continueAfterAuth(user, candidate) {
   const nextCandidate = { ...fallbackCandidate, ...(candidate || {}) };
   prefillCandidate(nextCandidate);
   saveCandidateSession(nextCandidate);
-  showApplicationForm();
+  await goToOnboarding();
 }
 
 window.showAccountStep = async function() {
@@ -1461,7 +1461,7 @@ async function createProfileAndContinue() {
   }
   prefillCandidate(candidate);
   saveCandidateSession(candidate);
-  showApplicationForm();
+  await goToOnboarding();
 }
 
 // ── Render dynamic questions ──────────────────────────────────────────────
@@ -1974,6 +1974,33 @@ async function sendConfirmationEmail(payload) {
   } catch(e) {
     return { ok:false, error:e.message || 'Email endpoint request failed' };
   }
+}
+
+// After sign-up / login: record the application to this role, then hand the
+// candidate to the talent onboarding wizard (signed in via a one-time custom
+// token). Profile + CV are collected there now — no application form on this page.
+async function goToOnboarding() {
+  const user = await clientTimeout(waitForAuthReady(), 2500, null, 'auth').catch(() => null);
+  const email = (user?.email || document.getElementById('a-email')?.value || '').trim().toLowerCase();
+  const nameParts = (user?.displayName || '').trim().split(/\s+/).filter(Boolean);
+  const firstName = document.getElementById('a-first')?.value.trim() || nameParts[0] || '';
+  const lastName  = document.getElementById('a-last')?.value.trim() || nameParts.slice(1).join(' ') || '';
+  // 1) Record the application to this role (best-effort; ignore already-applied).
+  if (CODE) {
+    try { await submitApplication({ openingCode: CODE, email, firstName, lastName }); }
+    catch (e) { if (e?.code !== 'already-applied') console.warn('application record skipped:', e?.message || e); }
+  }
+  // 2) Mint a one-time custom token so talent signs them in automatically.
+  let ctQuery = '';
+  try {
+    const idToken = await getCurrentIdToken();
+    if (idToken) {
+      const res = await fetch('/api/auth-handoff', { method: 'POST', headers: { Authorization: `Bearer ${idToken}` } });
+      const data = await res.json().catch(() => ({}));
+      if (data.customToken) ctQuery = `?ct=${encodeURIComponent(data.customToken)}`;
+    }
+  } catch (e) { /* fall through — talent will ask them to log in */ }
+  window.location.href = `https://talent.nearwork.co/onboarding${ctQuery}`;
 }
 
 window.goToDashboard = async function() {
