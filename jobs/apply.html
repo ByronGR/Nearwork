@@ -1317,12 +1317,19 @@ function validateAccountStep() {
 }
 
 window.handleAccountContinue = async function() {
+  // Guard against a second click while the async account work is in flight —
+  // a double-submit would trigger a duplicate account-creation cascade.
+  const acBtn = document.getElementById('account-continue-btn');
+  const acLabel = acBtn ? acBtn.textContent : '';
+  if (acBtn) { acBtn.disabled = true; acBtn.textContent = 'Working…'; }
+
   const email = document.getElementById('a-email').value.trim();
   const msg = document.getElementById('account-msg');
   msg.className = 'quick-msg show';
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     showErr('err-a-email');
     msg.textContent = 'Enter a valid email to continue.';
+    if (acBtn) { acBtn.disabled = false; acBtn.textContent = acLabel; }
     return;
   }
 
@@ -1338,12 +1345,14 @@ window.handleAccountContinue = async function() {
     document.getElementById('a-password').placeholder = 'Create a password';
     document.getElementById('account-note').textContent = 'Create your Nearwork login. If this email already has an account, we will switch you to password login.';
     document.getElementById('account-continue-btn').textContent = 'Create profile and continue →';
+    if (acBtn) acBtn.disabled = false;
     document.getElementById('a-first').focus();
     return;
   }
 
   if (!validateAccountStep()) {
     document.querySelector('.ferr.show')?.scrollIntoView({behavior:'smooth',block:'center'});
+    if (acBtn) { acBtn.disabled = false; acBtn.textContent = acLabel; }
     return;
   }
 
@@ -1358,6 +1367,7 @@ window.handleAccountContinue = async function() {
         : code.includes('user-not-found')
           ? 'This email was not found. Please create an account to continue.'
           : 'Login failed. Please try again.';
+      if (acBtn) { acBtn.disabled = false; acBtn.textContent = acLabel; }
       return;
     }
     let candidate = pendingAccountCandidate;
@@ -1449,14 +1459,18 @@ async function createProfileAndContinue() {
     const code = e.code || '';
     if (code.includes('email-already-in-use')) {
       showLoginStepForCandidate({ email }, email, 'This email already has a Nearwork account. Enter your password to continue.');
+      document.getElementById('account-continue-btn').disabled = false;
       return;
     }
     if (code.includes('account-exists-with-different-credential')) {
       showLoginStepForCandidate({ email }, email, 'This email already exists with a different sign-in method. Enter your password to continue.');
+      document.getElementById('account-continue-btn').disabled = false;
       return;
     }
     showErr('err-a-email');
     document.getElementById('err-a-email').textContent = 'Could not create the account. Please try again.';
+    const cb = document.getElementById('account-continue-btn');
+    if (cb) { cb.disabled = false; cb.textContent = 'Create profile & apply →'; }
     return;
   }
   prefillCandidate(candidate);
