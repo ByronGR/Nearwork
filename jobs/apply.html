@@ -2003,7 +2003,7 @@ function showHandoffLoader(msg) {
     document.body.appendChild(el);
   }
   const m = el.querySelector('#nw-handoff-msg');
-  if (m) m.textContent = (msg || 'Setting up your profile…') + '  ·  build h8';
+  if (m) m.textContent = msg || 'Setting up your profile…';
   el.style.display = 'flex';
 }
 
@@ -2050,16 +2050,12 @@ async function goToOnboarding(signedInUser) {
   }
   // Fallback: if the token couldn't be minted, surface WHY on screen (temporary
   // debug aid) before sending them to onboarding with email prefilled.
+  // Fallback (rare): if the token couldn't be minted, send them to onboarding
+  // with email prefilled so they can finish via the Google/email login there.
   if (!ctQuery && email) {
-    const contUrl = `https://talent.nearwork.co/onboarding?email=${encodeURIComponent(email)}`;
-    const el = document.getElementById('nw-handoff-loader');
-    if (el) {
-      el.innerHTML = '<div style="max-width:460px;text-align:center;font-family:inherit;padding:28px;">'
-        + '<div style="font-size:17px;font-weight:700;color:#111;margin-bottom:14px;">Auto sign-in didn’t complete</div>'
-        + '<div style="font-size:13px;color:#555;line-height:1.6;margin-bottom:22px;">build h8 · reason:<br><code style="display:inline-block;margin-top:8px;background:#f5f4f0;padding:6px 10px;border-radius:6px;color:#111;font-size:12.5px;">' + String(diag).replace(/</g,'&lt;') + '</code></div>'
-        + '<button onclick="window.location.href=\'' + contUrl + '\'" style="background:#16A085;color:#fff;border:none;border-radius:12px;padding:12px 24px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;">Continue to sign in →</button></div>';
-    }
-    return;
+    console.warn('[handoff] mint failed, using email fallback ·', diag);
+    ctQuery = `?email=${encodeURIComponent(email)}`;
+    showHandoffLoader('Taking you to sign in…');
   }
   window.location.href = `https://talent.nearwork.co/onboarding${ctQuery}`;
 }
