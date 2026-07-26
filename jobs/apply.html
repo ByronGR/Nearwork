@@ -2067,7 +2067,13 @@ async function goToOnboarding(signedInUser) {
     ctQuery = `?email=${encodeURIComponent(email)}`;
     showHandoffLoader('Taking you to sign in…');
   }
-  window.location.href = `https://talent.nearwork.co/onboarding${ctQuery}`;
+  // Carry the role through so onboarding can confirm "Applying to <role>".
+  let roleParams = '';
+  if (CODE) {
+    const rTitle = (typeof opening !== 'undefined' && opening && opening.title) ? opening.title : CODE;
+    roleParams = `${ctQuery ? '&' : '?'}role=${encodeURIComponent(CODE)}&roleTitle=${encodeURIComponent(rTitle)}`;
+  }
+  window.location.href = `https://talent.nearwork.co/onboarding${ctQuery}${roleParams}`;
 }
 
 window.goToDashboard = async function() {
