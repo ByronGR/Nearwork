@@ -2016,25 +2016,10 @@ async function goToOnboarding(signedInUser) {
   const nameParts = (user?.displayName || '').trim().split(/\s+/).filter(Boolean);
   const firstName = document.getElementById('a-first')?.value.trim() || nameParts[0] || '';
   const lastName  = document.getElementById('a-last')?.value.trim() || nameParts.slice(1).join(' ') || '';
-  // 1) Record the application via the client SDK — it writes the top-level
-  //    `applications` collection Admin reads, and works under the candidate's own
-  //    auth. Pass the uid explicitly (auth.currentUser can lag right after signup).
-  //    (The server /api/submit-application is currently 500-ing, so we don't use it.)
-  let applied = false;
-  if (CODE) {
-    try {
-      await submitApplication({
-        openingCode: CODE, email, firstName, lastName,
-        openingTitle: (typeof opening !== 'undefined' && opening && opening.title) ? opening.title : '',
-        ownerUid: user && user.uid ? user.uid : undefined,
-        authUid: user && user.uid ? user.uid : undefined,
-      });
-      applied = true;
-    } catch (e) {
-      if (e && e.code === 'already-applied') applied = true;
-      else console.warn('[apply] application record FAILED:', e && (e.message || e));
-    }
-  }
+  // The application is recorded on the talent side right after sign-in — talent's
+  // own apply path (applyToJob) runs under the candidate's auth where the rules
+  // allow it, unlike the client write from here / the 500-ing jobs server. We just
+  // pass the role through below.
   // 2) Mint a one-time custom token straight from talent (one hop) so it signs
   //    them in automatically. Cached token first, then force-refresh; retry.
   showHandoffLoader('Signing you in…');
@@ -2072,9 +2057,9 @@ async function goToOnboarding(signedInUser) {
     showHandoffLoader('Taking you to sign in…');
   }
   // Carry the role through so onboarding can confirm "Applying to <role>".
-  // Only pass the role (→ "Application sent" confirmation) if it actually recorded.
+  // Pass the role so talent can record the application (applyToJob) + confirm it.
   let roleParams = '';
-  if (CODE && applied) {
+  if (CODE) {
     const rTitle = (typeof opening !== 'undefined' && opening && opening.title) ? opening.title : CODE;
     roleParams = `${ctQuery ? '&' : '?'}role=${encodeURIComponent(CODE)}&roleTitle=${encodeURIComponent(rTitle)}`;
   }
