@@ -26,7 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="services/service-page.css">
+<link rel="stylesheet" href="/service-page.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -161,7 +161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="pricing.html">Pricing</a><a class="mob-link" href="services/eor.html#eor-pricing">EOR pricing</a><a class="mob-link" href="https://talent.nearwork.co" target="_blank">Candidate login</a><a class="mob-link" href="https://jobs.nearwork.co" target="_blank">Browse jobs</a><a class="mob-link" href="about.html">About</a><a class="mob-link" href="how-it-works.html">How it works</a></div>
   <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book">Hire on demand</a></div>
 </div>
-<main><section class="section legal-section"><div class="inner legal-shell reveal"><div class="tag">Legal</div><h1>Privacy Policy</h1><p class="legal-updated">Last updated: June 12, 2026</p>
+<main><section class="section legal-section"><div class="inner legal-shell"><div class="tag">Legal</div><h1>Privacy Policy</h1><p class="legal-updated">Last updated: August 10, 2026</p>
 <h2>1. Introduction</h2>
 <p>Nearwork LLC (&quot;Nearwork,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is a remote staffing agency incorporated in Wyoming, USA, operating at 30 N Gould St, Ste R, Sheridan, WY 82801. We connect US and Canadian companies (&quot;Clients&quot;) with Colombia-based talent (&quot;Candidates&quot;) through our recruitment, Employer of Record (EOR), Managed Team, and staffing services.</p>
 <p>This Privacy Policy explains what personal information we collect, why we collect it, how we use and protect it, who we share it with, and what rights you have. By using our website (www.nearwork.co), our candidate portal (talent.nearwork.co), our job board (jobs.nearwork.co), or our client platform (app.nearwork.co), you acknowledge this policy.</p>
@@ -212,6 +212,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li>Microsoft Teams: Interviews may be conducted via Microsoft Teams. If sessions are recorded, recordings are stored within our Microsoft environment and subject to Microsoft&#x27;s privacy policy.</li>
   <li>Stripe: All payment processing is handled by Stripe. Nearwork does not store credit card numbers or full payment credentials on our servers.</li>
 </ul>
+<h3>3.4 Calendar Data (Clients Who Connect a Calendar)</h3>
+<p>Client users may choose to connect a Google Calendar or Microsoft Outlook calendar to Nearwork so that candidates can book interviews at times when the required interviewers are genuinely free. Connecting a calendar is entirely optional, and Nearwork is fully usable without it.</p>
+<p>When a Client user connects a calendar, we access the following:</p>
+<ul>
+  <li>Free/busy availability: We read only whether a given time period is free or busy for the connected users. We do not read event titles, descriptions, attendees, locations, attachments, or the contents of any existing calendar event.</li>
+  <li>Interview events we create: We create, update, and cancel only the calendar events that Nearwork itself generates for scheduled interviews. We do not modify or delete any other event on the connected calendar.</li>
+  <li>Account identity: The name and email address of the connected calendar account, so the Client can see which calendar is connected and disconnect it.</li>
+</ul>
+<p>How this data is handled:</p>
+<ul>
+  <li>Free/busy availability is requested live at the moment a candidate opens a booking page. It is used to render the available time slots and is not written to our database, cached, or retained afterwards.</li>
+  <li>We store the authorisation token that permits this access, encrypted, on our servers. We do not store a copy of any calendar.</li>
+  <li>We store details of the interviews we schedule (date, time, duration, participants, and the video meeting link) so that Clients, candidates, and Nearwork staff can see the booking.</li>
+  <li>Calendar data is never used for advertising, never sold, never used to train artificial intelligence or machine learning models, and never disclosed to anyone other than the participants of the interview being scheduled.</li>
+  <li>Client users can disconnect a calendar at any time from Settings in the Nearwork client portal, or by revoking access directly in their Google or Microsoft account. On disconnection we delete the stored authorisation token immediately. Interviews already scheduled remain on the participants&#x27; calendars.</li>
+</ul>
+<p>Nearwork&#x27;s use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 <h2>4. How We Use Your Information</h2>
 <p>We only use your information for the following purposes:</p>
 <h3>4.1 Candidates</h3>
@@ -268,6 +285,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul>
   <li>Candidate profiles: Retained indefinitely until you request deletion or your account has been inactive for 3 years, at which point we will notify you and delete your data within 30 days unless you confirm continued use.</li>
   <li>Client account data: Retained for the duration of the service relationship and for 5 years thereafter for legal and tax compliance purposes.</li>
+  <li>Scheduled interview records: Date, time, participants and the meeting link for interviews booked through Nearwork are retained for the duration of the relevant role and for 12 months after it closes. Free/busy availability read from a connected calendar is never stored (see section 3.4).</li>
   <li>Interview recordings: Retained for 90 days after the relevant role is filled or closed, then deleted unless a longer period is required for an active legal matter.</li>
   <li>CV parsing data (Affinda): Subject to Affinda&#x27;s retention policies. Our extracted data in Firebase follows our candidate profile retention policy above.</li>
   <li>Marketing contact data (HubSpot): Retained until you unsubscribe or request deletion.</li>
