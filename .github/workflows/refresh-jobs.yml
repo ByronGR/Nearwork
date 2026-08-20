@@ -19,10 +19,22 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
+      # Firestore's REST API intermittently returns 403 to GitHub's runners even
+      # though the same key works locally and on most runs (2026-08-20: 2 of 3
+      # consecutive runs succeeded, the middle one 403'd). It is a transient quota
+      # or edge-node refusal, not a broken key — so retry rather than emailing
+      # Byron a failure every time it blips. Three attempts, backing off.
       - name: Build job board
-        run: node build-jobs.cjs
+        run: |
+          for attempt in 1 2 3; do
+            if node build-jobs.cjs; then exit 0; fi
+            echo "attempt $attempt failed; retrying in $((attempt * 20))s"
+            sleep $((attempt * 20))
+          done
+          echo "::error::build-jobs.cjs failed 3 times — not a blip, check the Firebase key"
+          exit 1
 
       - name: Commit and push if changed
         run: |
