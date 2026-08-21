@@ -692,7 +692,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
         <div class="dd-panel">
           <a class="dd-item" href="../pricing.html">
             <div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-            <div><div class="dd-title">All plans & pricing</div><div class="dd-desc">Essential, Growth, Scale — full breakdown</div></div>
+            <div><div class="dd-title">All plans & pricing</div><div class="dd-desc">Sourcing and recruiting — full breakdown</div></div>
           </a>
           <a class="dd-item" href="eor.html#eor-pricing">
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div>
@@ -1383,72 +1383,40 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 }
 </style>
 
-<section class="section alt compact-section" id="pricing" data-pricing-layout="split" data-billing="monthly" data-screen-label="Pricing"><div class="inner"><div class="section-head reveal"><div class="tag">Pricing — a quick taste</div><h2>Hire without a subscription.</h2><p class="section-lede">Pay one placement fee per hire — no membership, no monthly cost. Hiring every month? A membership lowers that fee, but it's always optional. <a href="../pricing.html" style="color:var(--teal-dk);font-weight:600;text-decoration:underline;text-underline-offset:3px;">See full pricing →</a></p></div>
+<section class="section alt compact-section" id="pricing" data-pricing-layout="split" data-billing="monthly" data-screen-label="Pricing"><div class="inner"><div class="section-head reveal"><div class="tag">Pricing — a quick taste</div><h2>Hire without a subscription.</h2><p class="section-lede">Pay one flat fee per hire — no subscription, no monthly cost, never a percentage of salary. The fee depends on the seniority of the role, not the salary you end up paying. <a href="../pricing.html" style="color:var(--teal-dk);font-weight:600;text-decoration:underline;text-underline-offset:3px;">See full pricing →</a></p></div>
 
   <div class="pp-clarity reveal">
     <div class="pp-clarity-item lead"><span class="pp-clarity-q">Just hiring once?</span><strong>Pay per placement.</strong><em>$0 / month. No subscription, nothing to cancel.</em></div>
     <div class="pp-clarity-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-    <div class="pp-clarity-item"><span class="pp-clarity-q">Hiring every month?</span><strong>Add a membership.</strong><em>Optional — it lowers your fee on every single hire.</em></div>
+    <div class="pp-clarity-item"><span class="pp-clarity-q">Only need the shortlist?</span><strong>Choose Sourcing.</strong><em>$1,800 per role — you run the interviews yourself.</em></div>
   </div>
 
-  <div class="pp-billing reveal"><span class="pp-bl on" data-bl="monthly">Monthly</span><button class="pp-toggle" id="ppToggle" aria-label="Toggle billing period"></button><span class="pp-bl" data-bl="yearly">Yearly <span class="pp-disc">−15%</span></span></div>
 
   <!-- Layout A · split -->
   <div class="pp-layout pp-split">
     <div class="pp-payhire reveal">
-      <div class="pp-badge dark">No membership required</div>
-      <h3>Pay per hire</h3>
-      <div class="pp-bigprice">$3,490 <small>per hire</small></div>
+      <div class="pp-badge dark">Up to 3 years experience</div>
+      <h3>Recruiting</h3>
+      <div class="pp-bigprice">$2,500 <small>per hire</small></div>
       <div class="pp-zero">$0 / month · no subscription</div>
-      <p>The simplest way to hire. Open a role and pay one placement fee — only when you actually hire. No retainer, no lock-in.</p>
-      <ul class="pp-feat"><li>Up to 2 shortlisted candidates</li><li>English + technical review</li><li>3-month replacement guarantee</li></ul>
+      <p>Sourced, assessed and placed. The common case for junior to mid roles — you interview a scored shortlist and we coordinate the process around you.</p>
+      <ul class="pp-feat"><li>Sourced, assessed and scored shortlist</li><li>English + technical review on every profile</li><li>Interview coordination</li><li>3-month replacement guarantee</li></ul>
       <a class="btn primary" href="/book.html">Hire one role</a>
     </div>
-    <div class="pp-members">
-      <div class="pp-members-head">Hiring often? Add a membership <span>— lowers your per-hire fee</span></div>
-      <div class="pp-mcard popular reveal">
-        <div class="pp-mtop"><span class="pp-mname">Growth</span><span class="pp-pill">Most popular</span></div>
-        <div class="pp-mprice"><span class="pp-fee" data-monthly="$990" data-yearly="$842">$990</span><small>/mo</small><span class="pp-billed">billed yearly</span></div>
-        <div class="pp-mfee">+ <strong>$1,990</strong> per hire <span class="pp-save">save $1,500/hire</span></div>
-        <p class="pp-break">Pays for itself with <b>one hire a month</b> — you save $1,500 each time.</p>
-      </div>
-      <div class="pp-mcard scale reveal">
-        <div class="pp-mtop"><span class="pp-mname">Scale</span></div>
-        <div class="pp-mprice"><span class="pp-fee" data-monthly="$2,500" data-yearly="$2,125">$2,500</span><small>/mo</small><span class="pp-billed">billed yearly</span></div>
-        <div class="pp-mfee">+ <strong>$1,300</strong> per hire <span class="pp-save violet">save $2,190/hire</span></div>
-        <p class="pp-break">Pays for itself from <b>two hires a month</b> — you save $2,190 each time.</p>
-      </div>
+    <div class="pp-payhire reveal">
+      <div class="pp-badge dark">More than 3 years experience</div>
+      <h3>Recruiting</h3>
+      <div class="pp-bigprice">$3,500 <small>per hire</small></div>
+      <div class="pp-zero">$0 / month · no subscription</div>
+      <p>Senior and specialist roles, benchmarked against the market before the search starts so the offer is right the first time.</p>
+      <ul class="pp-feat"><li>Sourced, assessed and scored shortlist</li><li>English + technical review on every profile</li><li>Interview coordination and salary benchmarking</li><li>3-month replacement guarantee</li></ul>
+      <a class="btn primary" href="/book.html">Hire one role</a>
     </div>
   </div>
 
-  <!-- Layout B · cards -->
-  <div class="pp-layout pp-cards">
-    <div class="direct-price-card pp-card-warm reveal"><span class="pp-tag-nomem">No membership</span><h3>Pay per hire</h3><div class="direct-price">$0<small>/mo · no subscription · $3,490 per hire</small></div><p>Open a role, pay one placement fee only when you hire. No retainer, nothing to cancel.</p><ul><li>Up to 2 shortlisted candidates</li><li>English + technical review</li><li>3-month replacement guarantee</li></ul></div>
-    <div class="direct-price-card popular reveal"><span>Growth membership</span><h3>Ongoing hiring</h3><div class="direct-price"><span class="pp-fee" data-monthly="$990" data-yearly="$842">$990</span>/mo<span class="pp-billed">billed yearly</span> <small>+ $1,990 per hire · save $1,500/hire</small></div><p>For teams opening roles regularly that want a lower fee on every hire.</p><ul><li>Up to 5 shortlisted candidates</li><li>Assigned talent specialist</li><li>Weekly progress call</li></ul></div>
-    <div class="direct-price-card pp-card-violet reveal"><span>Scale membership</span><h3>Long-term pipeline</h3><div class="direct-price"><span class="pp-fee" data-monthly="$2,500" data-yearly="$2,125">$2,500</span>/mo<span class="pp-billed">billed yearly</span> <small>+ $1,300 per hire · save $2,190/hire</small></div><p>For companies that want Nearwork as a recurring hiring engine.</p><ul><li>Unlimited candidates per role</li><li>Priority coordination</li><li>1 in-person verification / month</li></ul></div>
-  </div>
+  <p class="section-lede" style="text-align:center;margin-top:22px;">Only need the shortlist? <a href="sourcing.html" style="color:var(--teal-dk);font-weight:600;text-decoration:underline;text-underline-offset:3px;">Sourcing is $1,800 per role</a> — you run the interviews.</p>
 
-  <!-- Layout C · stacked -->
-  <div class="pp-layout pp-stacked">
-    <div class="pp-shero reveal">
-      <div class="pp-shero-left"><div class="pp-badge dark">No membership required</div><h3>Pay per hire</h3><p>The default way to hire with Nearwork. One placement fee per hire — no monthly cost, no lock-in. A membership is only worth it once you're hiring every month.</p></div>
-      <div class="pp-shero-right"><div class="pp-bigprice">$3,490 <small>per hire</small></div><div class="pp-zero">$0 / month · no subscription</div></div>
-    </div>
-    <div class="pp-sgrid">
-      <div class="pp-mcard popular reveal">
-        <div class="pp-mtop"><span class="pp-mname">Growth membership</span><span class="pp-pill">Most popular</span></div>
-        <div class="pp-mprice"><span class="pp-fee" data-monthly="$990" data-yearly="$842">$990</span><small>/mo</small><span class="pp-billed">billed yearly</span></div>
-        <div class="pp-mfee">+ <strong>$1,990</strong> per hire <span class="pp-save">save $1,500/hire</span></div>
-        <p class="pp-break">Pays for itself with <b>one hire a month</b>. Best for teams opening roles regularly.</p>
-      </div>
-      <div class="pp-mcard scale reveal">
-        <div class="pp-mtop"><span class="pp-mname">Scale membership</span></div>
-        <div class="pp-mprice"><span class="pp-fee" data-monthly="$2,500" data-yearly="$2,125">$2,500</span><small>/mo</small><span class="pp-billed">billed yearly</span></div>
-        <div class="pp-mfee">+ <strong>$1,300</strong> per hire <span class="pp-save violet">save $2,190/hire</span></div>
-        <p class="pp-break">Pays for itself from <b>two hires a month</b>. Lowest per-hire fee we offer.</p>
-      </div>
-    </div>
-  </div>
+
 
   <div class="pricing-quick-cta reveal"><div><strong>Want the full plan breakdown?</strong><span>Monthly vs yearly pricing, shortlist limits, guarantees, support levels, and add-ons — all on the pricing page.</span></div><a class="btn primary" href="../pricing.html">View full pricing</a></div>
 </div>
@@ -1850,7 +1818,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
   <details open><summary>How fast can you fill a role?</summary><p>Most roles reach a shortlist of fully assessed finalists in about 21 days. The exact timing depends on seniority and how specific the skill set is — we'll give you a realistic range on the intro call.</p></details>
   <details><summary>What if the hire doesn't work out?</summary><p>Every placement includes a 3-month replacement guarantee. If it isn't the right fit, we find a replacement at no additional placement fee.</p></details>
   <details><summary>Where are the candidates based?</summary><p>Colombia, working in your time zone with full overlap on your business hours. Every candidate is English-verified — typically C1 — before they ever reach you.</p></details>
-  <details><summary>Do I need a subscription or long-term contract?</summary><p>No. You can pay a one-time placement fee per hire with no membership and nothing to cancel. If you hire regularly, an optional membership lowers the per-hire fee — but it's always your choice.</p></details>
+  <details><summary>Do I need a subscription or long-term contract?</summary><p>No. Every option is a one-time flat fee with nothing to cancel — $1,800 per role for Sourcing, or $2,500 to $3,500 per hire for Recruiting depending on seniority. There is no subscription of any kind.</p></details>
   <details><summary>How do you assess candidates?</summary><p>Each finalist goes through a structured interview, a role-based skills assessment, a DISC profile, and a culture-fit check — all built from what you tell us in the intro call. You see every result in their profile.</p></details>
   <details><summary>Can you handle payroll and benefits too?</summary><p>Yes. Start with recruiting and add COR, payroll, benefits, and ongoing team support whenever you're ready — one partner, no new vendors to onboard.</p></details>
 </div></div></div></section>

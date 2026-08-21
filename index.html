@@ -1696,7 +1696,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
             <div class="dd-icon" style="background:var(--teal-lt);">
               <svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
             </div>
-            <div><div class="dd-title">All plans &amp; pricing</div><div class="dd-desc">Pay per hire, Growth &amp; Scale — full breakdown</div></div>
+            <div><div class="dd-title">All plans &amp; pricing</div><div class="dd-desc">Sourcing and recruiting — full breakdown</div></div>
           </a>
           <a class="dd-item" href="services/eor.html#eor-pricing">
             <div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div>
@@ -2919,6 +2919,30 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 .jx-billed { display: none; font-style: normal; font-size: 11px; font-weight: 700; color: var(--teal-dk); margin-left: 6px; }
 .jx-pricing[data-billing="yearly"] .jx-billed { display: inline; }
 
+/* ── Three tiers ─────────────────────────────────────────────────────────
+   Sourcing, and Recruiting split by seniority. Equal weight: the middle card
+   is emphasised because it is the common case, not because it is upsold —
+   there is no subscription to upsell to any more. */
+.jx-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1140px; margin: 0 auto; align-items: stretch; }
+.jx-tier { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 26px; background: linear-gradient(165deg, #F7FAF9, #fff 58%); padding: 30px 28px 28px; transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
+.jx-tier:hover { transform: translateY(-3px); box-shadow: 0 22px 50px -28px rgba(11,21,18,.18); }
+.jx-tier.feat { border-color: var(--teal-mid); background: linear-gradient(165deg, var(--teal-lt), #fff 58%); }
+.jx-tier.senior { border-color: #F3C9D8; background: linear-gradient(165deg, #FDF1F5, #fff 58%); }
+.jx-tier-badge { align-self: flex-start; background: var(--fg); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 6px 13px; border-radius: 999px; }
+.jx-tier-name { font-size: 27px; font-weight: 800; letter-spacing: -.03em; color: var(--fg); margin-top: 16px; }
+.jx-tier-for { font-size: 13.5px; color: var(--fg-2); margin-top: 4px; min-height: 38px; line-height: 1.45; }
+.jx-tier-price { display: flex; align-items: baseline; gap: 9px; margin-top: 20px; }
+.jx-tier-price b { font-size: 44px; font-weight: 800; letter-spacing: -.05em; line-height: 1; color: var(--fg); }
+.jx-tier-price span { font-size: 14px; font-weight: 600; color: var(--fg-3); }
+.jx-tier-zero { margin-top: 10px; font-size: 14px; font-weight: 700; color: var(--teal-dk); }
+.jx-tier.senior .jx-tier-zero { color: #C2436B; }
+.jx-tier .jx-plan-list { flex: 1; }
+/* Said plainly rather than left off the card — a guarantee nobody mentioned is
+   the kind of thing a client discovers at the worst moment. */
+.jx-tier .jx-plan-list li.jx-no { color: var(--fg-3); }
+.jx-tier .jx-plan-list li.jx-no svg { stroke: var(--fg-3); }
+@media (max-width: 940px) { .jx-tiers { grid-template-columns: 1fr; max-width: 460px; } .jx-tier-for { min-height: 0; } }
+
 .jx-plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 1080px; margin: 0 auto; align-items: stretch; }
 
 /* hero — pay per hire */
@@ -2976,68 +3000,65 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
   <div class="jx-wrap">
     <div class="jx-head reveal">
       <div class="section-tag">Transparent pricing</div>
-      <h2>Flat fees. <span class="jx-accent teal">No salary percentage.</span></h2>
-      <p class="section-sub">Pay one placement fee per hire — never a cut of the salary. Hiring often? An optional membership lowers that fee on every single hire.</p>
+      <h2>Three ways to hire. <span class="jx-accent teal">One flat fee.</span></h2>
+      <p class="section-sub">Take the shortlist and run your own process, or have us assess, coordinate and place. No subscription in any case.</p>
     </div>
 
-    <div class="jx-bill reveal">
-      <span class="jx-bl on" data-bl="monthly">Monthly</span>
-      <button class="jx-bill-toggle" id="jxBillToggle" aria-label="Toggle billing period"></button>
-      <span class="jx-bl" data-bl="yearly">Yearly <span class="jx-bl-disc">save 15%</span></span>
-    </div>
 
-    <div class="jx-plans reveal">
-      <div class="jx-hero-plan">
-        <div class="jx-hero-badge">No subscription required</div>
-        <div class="jx-hero-name">Pay per hire</div>
-        <div class="jx-hero-for">The simplest way to hire — one role, one fee</div>
-        <div class="jx-hero-price"><b>$3,490</b><span>per hire</span></div>
-        <div class="jx-hero-zero">$0 / month · nothing to cancel</div>
+    <div class="jx-tiers reveal">
+      <div class="jx-tier">
+        <div class="jx-tier-badge">Shortlist only</div>
+        <div class="jx-tier-name">Sourcing</div>
+        <div class="jx-tier-for">We run the search — you run your own process</div>
+        <div class="jx-tier-price"><b>$1,800</b><span>per role</span></div>
+        <div class="jx-tier-zero">$0 / month · no subscription</div>
         <ul class="jx-plan-list">
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Up to 2 shortlisted candidates per role</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Role intake and market mapping</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Sourced, screened, English-checked shortlist</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Profiles delivered in your portal</li>
+          <li class="jx-no"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>No replacement guarantee</li>
+        </ul>
+        <a class="jx-plan-cta outline" href="services/sourcing.html">Start a search</a>
+      </div>
+
+      <div class="jx-tier feat">
+        <div class="jx-tier-badge">Up to 3 years experience</div>
+        <div class="jx-tier-name">Recruiting</div>
+        <div class="jx-tier-for">Sourced, assessed and placed — junior to mid roles</div>
+        <div class="jx-tier-price"><b>$2,500</b><span>per hire</span></div>
+        <div class="jx-tier-zero">$0 / month · no subscription</div>
+        <ul class="jx-plan-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Sourced, assessed and scored shortlist</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>English + technical review on every profile</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Standard interview coordination</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Interview coordination</li>
           <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>3-month replacement guarantee</li>
         </ul>
         <a class="jx-plan-cta solid" href="book.html">Hire one role</a>
       </div>
 
-      <div class="jx-members">
-        <div class="jx-members-head">Hiring often? <b>Add a membership</b> — it lowers your per-hire fee every time.</div>
-        <div class="jx-mplan feat">
-          <div class="jx-mtop"><span class="jx-mname">Growth</span><span class="jx-mpill">Most popular</span></div>
-          <div class="jx-mfor">Best for ongoing hiring</div>
-          <div class="jx-mprice"><b class="jx-fee" data-monthly="$990" data-yearly="$842">$990</b><span>/mo</span><em class="jx-billed">billed yearly</em></div>
-          <div class="jx-mfee">+ <b>$1,990</b> per hire <span class="jx-save">save $1,500 / hire</span></div>
-          <ul class="jx-mlist">
-            <li>Up to 5 shortlisted candidates per role</li>
-            <li>Assigned talent specialist · weekly calls</li>
-            <li>6-month replacement guarantee</li>
-          </ul>
-          <a class="jx-plan-cta solid" href="book.html">Choose Growth</a>
-        </div>
-        <div class="jx-mplan">
-          <div class="jx-mtop"><span class="jx-mname">Scale</span><span class="jx-mpill ghost">Lowest fee</span></div>
-          <div class="jx-mfor">Best for a recurring hiring pipeline</div>
-          <div class="jx-mprice"><b class="jx-fee" data-monthly="$2,500" data-yearly="$2,125">$2,500</b><span>/mo</span><em class="jx-billed">billed yearly</em></div>
-          <div class="jx-mfee">+ <b>$1,300</b> per hire <span class="jx-save">save $2,190 / hire</span></div>
-          <ul class="jx-mlist">
-            <li>Unlimited candidates per role</li>
-            <li>Priority specialist · monthly verification</li>
-            <li>Guarantee extension included</li>
-          </ul>
-          <a class="jx-plan-cta outline" href="book.html">Build with Scale</a>
-        </div>
+      <div class="jx-tier senior">
+        <div class="jx-tier-badge">More than 3 years experience</div>
+        <div class="jx-tier-name">Recruiting</div>
+        <div class="jx-tier-for">Senior and specialist roles, benchmarked before the search</div>
+        <div class="jx-tier-price"><b>$3,500</b><span>per hire</span></div>
+        <div class="jx-tier-zero">$0 / month · no subscription</div>
+        <ul class="jx-plan-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Sourced, assessed and scored shortlist</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>English + technical review on every profile</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Interview coordination and salary benchmarking</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>3-month replacement guarantee</li>
+        </ul>
+        <a class="jx-plan-cta solid" href="book.html">Hire one role</a>
       </div>
     </div>
 
     <div class="jx-eor-strip reveal">
       <div class="jx-eor-l">
         <div class="jx-eor-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V6l8-3v18M19 21V11l-6-2.5"/></svg></div>
-        <div class="jx-eor-t"><b>Need to employ them, not just hire them?</b><span>Nearwork COR runs contracts, payroll, compliance and benefits in Colombia.</span></div>
+        <div class="jx-eor-t"><b>Need them contracted and paid, not just hired?</b><span>Nearwork COR runs contracts, payroll, compliance and benefits in Colombia.</span></div>
       </div>
       <div class="jx-eor-r">
-        <span class="jx-eor-price">from $350 / contractor / mo</span>
+        <span class="jx-eor-price">from $99 / contractor / mo</span>
         <a class="jx-btn-ghost" href="services/eor.html">See COR pricing <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
@@ -3047,20 +3068,6 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
     </div>
   </div>
 </section>
-<script>
-(function () {
-  var sec = document.getElementById('pricing');
-  var toggle = document.getElementById('jxBillToggle');
-  if (!sec || !toggle) return;
-  function set(mode) {
-    sec.setAttribute('data-billing', mode);
-    sec.querySelectorAll('.jx-bl').forEach(function (el) { el.classList.toggle('on', el.dataset.bl === mode); });
-    sec.querySelectorAll('.jx-fee').forEach(function (el) { el.textContent = el.dataset[mode]; });
-  }
-  toggle.addEventListener('click', function () { set(sec.getAttribute('data-billing') === 'monthly' ? 'yearly' : 'monthly'); });
-  sec.querySelectorAll('.jx-bl').forEach(function (el) { el.addEventListener('click', function () { set(el.dataset.bl); }); });
-})();
-</script>
 
 <!-- ══ WHY NEARWORK / LOW-RISK ══ -->
 <section class="jx-section jx-security" data-screen-label="Why Nearwork">
@@ -3074,7 +3081,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <div class="jx-sec-card">
         <div class="jx-sec-ic"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>Flat placement fee</h3>
-        <p>You pay a fixed fee per hire — never a percentage of salary. From $1,300 to $3,490, depending on your plan.</p>
+        <p>You pay a fixed fee — never a percentage of salary. $1,800 per role for Sourcing, or $2,500 to $3,500 per hire for Recruiting.</p>
       </div>
       <div class="jx-sec-card">
         <div class="jx-sec-ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div>
@@ -3084,7 +3091,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <div class="jx-sec-card">
         <div class="jx-sec-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V6l8-3v18M19 21V11l-6-2.5"/></svg></div>
         <h3>Compliant employment, handled</h3>
-        <p>Through our Colombia COR we run contracts, payroll, taxes and benefits in-country — from $350 per contractor each month.</p>
+        <p>Through our Colombia COR we run contracts, payroll, taxes and benefits in-country — from $99 per contractor each month.</p>
       </div>
       <div class="jx-sec-card">
         <div class="jx-sec-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
