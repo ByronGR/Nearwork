@@ -1553,7 +1553,7 @@ footer { background: var(--white); border-top: 1px solid var(--border); padding:
 @media (prefers-reduced-motion: reduce) { .jx-logos-track { animation: none; } }
 
 /* ── Built for success (services) ── */
-.jx-services { padding: 96px 0 104px; background: var(--bg); }
+.jx-services { padding: 96px 0 60px; background: var(--bg); }
 .jx-services .jx-head { margin-bottom: 56px; }
 .jx-models { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; max-width: var(--max-w); margin: 0 auto; }
 .jx-model { position: relative; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 26px; padding: 30px; text-decoration: none; color: inherit; min-height: 232px; transition: transform 220ms var(--ease), box-shadow 220ms var(--ease), border-color 220ms var(--ease); }
@@ -1710,7 +1710,7 @@ footer { background: var(--white); border-top: 1px solid var(--border); padding:
 </style>
 <style id="jx-extra-styles">
 /* ── How it works ── */
-.jx-how { padding: 96px 0 104px; background: var(--bg); }
+.jx-how { padding: 60px 0 104px; background: var(--bg); }
 .jx-how .jx-head { margin-bottom: 18px; }
 .jx-how-promise { display: flex; justify-content: center; margin-bottom: 56px; }
 .jx-how-promise > span { display: inline-flex; align-items: center; gap: 9px; background: var(--teal-lt); color: var(--teal-dk); font-size: 13px; font-weight: 700; padding: 9px 18px; border-radius: 999px; }
@@ -1987,6 +1987,28 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
   ]
 }
 </script>
+<style id="nwai-styles">
+.nwai{position:relative;overflow:hidden;background:transparent;padding:56px 0 44px;text-align:center}
+.nwai-in{max-width:640px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.nwai-h{font-size:23px;font-weight:700;letter-spacing:-.03em;color:var(--fg)}
+.nwai-sub{font-size:13.5px;color:var(--fg-2);margin-top:8px;line-height:1.55}
+.nwai-btns{display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap}
+.nwai-b{text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--fg);background:transparent;border:1px solid var(--border-d);border-radius:999px;padding:9px 16px;cursor:pointer;transition:transform .16s ease,border-color .16s,background .16s}
+.nwai-b:hover{transform:translateY(-2px);border-color:var(--fg);background:rgba(255,255,255,.6)}
+.nwai-b img,.nwai-b svg{width:17px;height:17px;display:block;flex-shrink:0}
+.nwai-note{font-size:12px;color:var(--fg-3);margin-top:14px;min-height:16px}
+.nwai::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(42% 36% at 16% 10%,rgba(231,76,124,.14),transparent 60%),radial-gradient(44% 38% at 86% 8%,rgba(175,122,197,.16),transparent 62%),radial-gradient(64% 50% at 50% 118%,rgba(22,160,133,.18),transparent 70%),radial-gradient(70% 52% at 50% 4%,rgba(244,196,150,.26),transparent 62%),linear-gradient(180deg,#FBF3EA 0%,#F4F4ED 34%,#E8F5F1 64%,#FFFFFF 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 46%,#000 62%,rgba(0,0,0,.5) 82%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 46%,#000 62%,rgba(0,0,0,.5) 82%,transparent 100%)}
+.nh-askai{position:relative;z-index:3;display:grid;justify-items:center;gap:12px;margin-top:30px}
+.nh-askai-l{font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--fg-2);margin:0}
+.nh-askai-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.nh-askai .nwai-b.nh-ai{padding:0;width:42px;height:42px;justify-content:center;border-radius:50%;background:rgba(255,255,255,.72);border-color:var(--border-d);box-shadow:0 2px 10px rgba(17,17,17,.05)}
+.nh-askai .nwai-b.nh-ai:hover{background:#fff;box-shadow:0 8px 22px rgba(17,17,17,.1)}
+.nh-askai .nwai-b.nh-ai img{width:20px;height:20px}
+.nh-askai .nwai-note{margin-top:0}
+</style>
 </head>
 <body>
 <div class="nav-wrap">
@@ -2009,19 +2031,19 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
             <div class="dd-icon" style="background:var(--gold-lt);">
               <svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
             </div>
-            <div><div class="dd-title">EOR</div><div class="dd-desc">Hire without opening a Colombian entity</div></div>
-          </a>
-          <a class="dd-item" href="services/managed-team.html">
-            <div class="dd-icon" style="background:var(--violet-lt);">
-              <svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
-            </div>
-            <div><div class="dd-title">Managed Team</div><div class="dd-desc">Dedicated teams with leads, SLA reporting, and support</div></div>
+            <div><div class="dd-title">EOR</div><div class="dd-desc">Hire without opening a LATAM entity</div></div>
           </a>
           <a class="dd-item" href="services/strategic-partner-program.html">
             <div class="dd-icon" style="background:var(--teal-lt);">
               <svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 17l2 2 3-4"/></svg>
             </div>
             <div><div class="dd-title">Strategic Partner Program</div><div class="dd-desc">White-label recruiting and talent operations</div></div>
+          </a>
+          <a class="dd-item" href="services/managed-team.html">
+            <div class="dd-icon" style="background:var(--violet-lt);">
+              <svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+            </div>
+            <div><div class="dd-title">Managed Team</div><div class="dd-desc">Dedicated teams with leads, SLA reporting, and support</div></div>
           </a>
           <div class="dd-footer">
             <div class="dd-footer-text">One partner for <strong>recruiting, EOR, and team operations</strong></div>
@@ -2178,8 +2200,8 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
     <div class="mob-section-title">Services</div>
     <a class="mob-link" href="services/direct-recruiting.html">Direct Recruiting</a>
     <a class="mob-link" href="services/eor.html">EOR</a>
-    <a class="mob-link" href="services/managed-team.html">Managed Team</a>
     <a class="mob-link" href="services/strategic-partner-program.html">Strategic Partner Program</a>
+    <a class="mob-link" href="services/managed-team.html">Managed Team</a>
   </div>
   <div class="mob-section">
     <div class="mob-section-title">Industries</div>
@@ -2362,6 +2384,21 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 </article>
 </main>
 
+<section class="nwai">
+  <div class="nwai-in">
+    <div class="nwai-h">Request an AI Summary</div>
+    <p class="nwai-sub">Pick a model — it opens a new chat with a research prompt about Nearwork already written.</p>
+    <div class="nwai-btns">
+      <a class="nwai-b" data-ai="chatgpt" target="_blank" rel="noopener" href="#"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&amp;sz=64" alt="" width="17" height="17" loading="lazy">ChatGPT</a>
+      <a class="nwai-b" data-ai="claude" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/claude/D97757" alt="" width="17" height="17" loading="lazy">Claude</a>
+      <a class="nwai-b" data-ai="gemini" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="" width="17" height="17" loading="lazy">Gemini</a>
+      <a class="nwai-b" data-ai="perplexity" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/perplexity/20808D" alt="" width="17" height="17" loading="lazy">Perplexity</a>
+      <a class="nwai-b" data-ai="grok" target="_blank" rel="noopener" href="#"><img src="https://www.google.com/s2/favicons?domain=grok.com&amp;sz=64" alt="" width="17" height="17" loading="lazy">Grok</a>
+    </div>
+    <div class="nwai-note" id="nwaiNote"></div>
+  </div>
+</section>
+
 <footer>
   <!-- Trust badges row -->
   <div class="trust-badges">
@@ -2422,8 +2459,8 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <ul class="footer-links">
         <li><a href="services/direct-recruiting.html">Direct Recruiting</a></li>
         <li><a href="services/eor.html">Employer of record</a></li>
-        <li><a href="services/managed-team.html">Managed Team</a></li>
         <li><a href="services/strategic-partner-program.html">Strategic Partner Program</a></li>
+        <li><a href="services/managed-team.html">Managed Team</a></li>
       </ul>
     </div>
     <div>
@@ -2496,6 +2533,36 @@ const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); revealObs.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
+<script id="nwai-script">
+(function () {
+  var P = "Research Nearwork (nearwork.co), a remote staffing company that places vetted, English-fluent professionals from across Latin America with US and Canadian companies. They offer sourcing, direct recruiting, contractor-of-record payments and managed teams, charging flat fees instead of a percentage of salary. Tell me what they do, how nearshore hiring in Latin America compares with hiring in-house or using a staffing agency, and what I should ask them before signing.";
+
+  var U = {
+    chatgpt:    "https://chatgpt.com/?hints=search&q=",
+    claude:     "https://claude.ai/new?q=",
+    gemini:     "https://gemini.google.com/app?q=",
+    perplexity: "https://www.perplexity.ai/search?q=",
+    grok:       "https://grok.com/?q="
+  };
+  var N = {
+    chatgpt: " ", perplexity: " ", grok: " ",
+    claude: "The prompt is on your clipboard — paste it into Claude and send.",
+    gemini: "The prompt is on your clipboard — paste it into Gemini and send."
+  };
+
+  var q = encodeURIComponent(P);
+  document.querySelectorAll(".nwai-b").forEach(function (b) {
+    var k = b.getAttribute("data-ai");
+    if (!U[k]) return;
+    b.href = U[k].indexOf("q=") > -1 ? U[k] + q : U[k];
+    b.addEventListener("click", function () {
+      try { if (navigator.clipboard) navigator.clipboard.writeText(P); } catch (e) {}
+      var n = document.getElementById("nwaiNote");
+      if (n) { n.hidden = false; n.textContent = N[k] || " "; }
+    });
+  });
+})();
 </script>
 </body>
 </html>

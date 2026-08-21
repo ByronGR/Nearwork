@@ -27,6 +27,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/service-page.css">
+<style id="nwai-styles">
+.nwai{position:relative;overflow:hidden;background:transparent;padding:56px 0 44px;text-align:center}
+.nwai-in{max-width:640px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.nwai-h{font-size:23px;font-weight:700;letter-spacing:-.03em;color:var(--fg)}
+.nwai-sub{font-size:13.5px;color:var(--fg-2);margin-top:8px;line-height:1.55}
+.nwai-btns{display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap}
+.nwai-b{text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--fg);background:transparent;border:1px solid var(--border-d);border-radius:999px;padding:9px 16px;cursor:pointer;transition:transform .16s ease,border-color .16s,background .16s}
+.nwai-b:hover{transform:translateY(-2px);border-color:var(--fg);background:rgba(255,255,255,.6)}
+.nwai-b img,.nwai-b svg{width:17px;height:17px;display:block;flex-shrink:0}
+.nwai-note{font-size:12px;color:var(--fg-3);margin-top:14px;min-height:16px}
+.nwai::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(42% 36% at 16% 10%,rgba(231,76,124,.14),transparent 60%),radial-gradient(44% 38% at 86% 8%,rgba(175,122,197,.16),transparent 62%),radial-gradient(64% 50% at 50% 118%,rgba(22,160,133,.18),transparent 70%),radial-gradient(70% 52% at 50% 4%,rgba(244,196,150,.26),transparent 62%),linear-gradient(180deg,#FBF3EA 0%,#F4F4ED 34%,#E8F5F1 64%,#FFFFFF 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 46%,#000 62%,rgba(0,0,0,.5) 82%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 46%,#000 62%,rgba(0,0,0,.5) 82%,transparent 100%)}
+.nh-askai{position:relative;z-index:3;display:grid;justify-items:center;gap:12px;margin-top:30px}
+.nh-askai-l{font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--fg-2);margin:0}
+.nh-askai-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.nh-askai .nwai-b.nh-ai{padding:0;width:42px;height:42px;justify-content:center;border-radius:50%;background:rgba(255,255,255,.72);border-color:var(--border-d);box-shadow:0 2px 10px rgba(17,17,17,.05)}
+.nh-askai .nwai-b.nh-ai:hover{background:#fff;box-shadow:0 8px 22px rgba(17,17,17,.1)}
+.nh-askai .nwai-b.nh-ai img{width:20px;height:20px}
+.nh-askai .nwai-note{margin-top:0}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -253,7 +275,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li>Email: legal@nearwork.co</li>
   <li>Mail: Nearwork LLC, Attn: Privacy, 30 N Gould St, Ste R, Sheridan, WY 82801</li>
 </ul>
-</div></section></main><footer>
+</div></section></main><section class="nwai">
+  <div class="nwai-in">
+    <div class="nwai-h">Request an AI Summary</div>
+    <p class="nwai-sub">Pick a model — it opens a new chat with a research prompt about Nearwork already written.</p>
+    <div class="nwai-btns">
+      <a class="nwai-b" data-ai="chatgpt" target="_blank" rel="noopener" href="#"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&amp;sz=64" alt="" width="17" height="17" loading="lazy">ChatGPT</a>
+      <a class="nwai-b" data-ai="claude" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/claude/D97757" alt="" width="17" height="17" loading="lazy">Claude</a>
+      <a class="nwai-b" data-ai="gemini" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="" width="17" height="17" loading="lazy">Gemini</a>
+      <a class="nwai-b" data-ai="perplexity" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/perplexity/20808D" alt="" width="17" height="17" loading="lazy">Perplexity</a>
+      <a class="nwai-b" data-ai="grok" target="_blank" rel="noopener" href="#"><img src="https://www.google.com/s2/favicons?domain=grok.com&amp;sz=64" alt="" width="17" height="17" loading="lazy">Grok</a>
+    </div>
+    <div class="nwai-note" id="nwaiNote"></div>
+  </div>
+</section>
+
+<footer>
   <div class="trust-badges">
     <div class="trust-badge"><div class="trust-badge-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg></div><span class="tb-label"><strong>Nearwork portal</strong> for clients and candidates</span></div>
     <div class="trust-badge"><div class="trust-badge-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 8.5 12 2"/></svg></div><span class="tb-label"><strong>Structured pipeline</strong> from profile review to hired</span></div>
@@ -298,5 +335,35 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 <script>window.intercomSettings={api_base:"https://api-iam.intercom.io",app_id:"pelltlav"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic("reattach_activator");ic("update",w.intercomSettings)}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;var l=function(){var s=d.createElement("script");s.type="text/javascript";s.async=true;s.src="https://widget.intercom.io/widget/pelltlav";var x=d.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x)};if(document.readyState==="complete"){l()}else{w.addEventListener("load",l,false)}}})();</script>
 <!-- End of HubSpot Embed Code -->
 <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once set_config".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_nYb2G6jySuJgxmmc55d9jMfT5TyuxpBGbgbZAGfYb7Ep",{api_host:"https://us.i.posthog.com",person_profiles:"identified_only"});</script>
+<script id="nwai-script">
+(function () {
+  var P = "Research Nearwork (nearwork.co), a remote staffing company that places vetted, English-fluent professionals from across Latin America with US and Canadian companies. They offer sourcing, direct recruiting, contractor-of-record payments and managed teams, charging flat fees instead of a percentage of salary. Tell me what they do, how nearshore hiring in Latin America compares with hiring in-house or using a staffing agency, and what I should ask them before signing.";
+
+  var U = {
+    chatgpt:    "https://chatgpt.com/?hints=search&q=",
+    claude:     "https://claude.ai/new?q=",
+    gemini:     "https://gemini.google.com/app?q=",
+    perplexity: "https://www.perplexity.ai/search?q=",
+    grok:       "https://grok.com/?q="
+  };
+  var N = {
+    chatgpt: " ", perplexity: " ", grok: " ",
+    claude: "The prompt is on your clipboard — paste it into Claude and send.",
+    gemini: "The prompt is on your clipboard — paste it into Gemini and send."
+  };
+
+  var q = encodeURIComponent(P);
+  document.querySelectorAll(".nwai-b").forEach(function (b) {
+    var k = b.getAttribute("data-ai");
+    if (!U[k]) return;
+    b.href = U[k].indexOf("q=") > -1 ? U[k] + q : U[k];
+    b.addEventListener("click", function () {
+      try { if (navigator.clipboard) navigator.clipboard.writeText(P); } catch (e) {}
+      var n = document.getElementById("nwaiNote");
+      if (n) { n.hidden = false; n.textContent = N[k] || " "; }
+    });
+  });
+})();
+</script>
 </body>
 </html>

@@ -1553,7 +1553,7 @@ footer { background: var(--white); border-top: 1px solid var(--border); padding:
 @media (prefers-reduced-motion: reduce) { .jx-logos-track { animation: none; } }
 
 /* ── Built for success (services) ── */
-.jx-services { padding: 96px 0 104px; background: var(--bg); }
+.jx-services { padding: 96px 0 60px; background: var(--bg); }
 .jx-services .jx-head { margin-bottom: 56px; }
 .jx-models { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; max-width: var(--max-w); margin: 0 auto; }
 .jx-model { position: relative; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 26px; padding: 30px; text-decoration: none; color: inherit; min-height: 232px; transition: transform 220ms var(--ease), box-shadow 220ms var(--ease), border-color 220ms var(--ease); }
@@ -1710,7 +1710,7 @@ footer { background: var(--white); border-top: 1px solid var(--border); padding:
 </style>
 <style id="jx-extra-styles">
 /* ── How it works ── */
-.jx-how { padding: 96px 0 104px; background: var(--bg); }
+.jx-how { padding: 60px 0 104px; background: var(--bg); }
 .jx-how .jx-head { margin-bottom: 18px; }
 .jx-how-promise { display: flex; justify-content: center; margin-bottom: 56px; }
 .jx-how-promise > span { display: inline-flex; align-items: center; gap: 9px; background: var(--teal-lt); color: var(--teal-dk); font-size: 13px; font-weight: 700; padding: 9px 18px; border-radius: 999px; }
@@ -1939,6 +1939,28 @@ footer { background: var(--white); border-top: 1px solid var(--border); padding:
 <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once set_config".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_nYb2G6jySuJgxmmc55d9jMfT5TyuxpBGbgbZAGfYb7Ep",{api_host:"https://us.i.posthog.com",person_profiles:"identified_only"});
 /* nw-conversion-events */
 document.addEventListener("click",function(e){if(!window.posthog||!e.target.closest)return;var a=e.target.closest('a[href*="book"], .nav-cta, .mob-primary, .nh-btn-primary, .jx-btn-dark');if(a){posthog.capture("book_call_clicked");}});</script>
+<style id="nwai-styles">
+.nwai{position:relative;overflow:hidden;background:transparent;padding:56px 0 44px;text-align:center}
+.nwai-in{max-width:640px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.nwai-h{font-size:23px;font-weight:700;letter-spacing:-.03em;color:var(--fg)}
+.nwai-sub{font-size:13.5px;color:var(--fg-2);margin-top:8px;line-height:1.55}
+.nwai-btns{display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap}
+.nwai-b{text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--fg);background:transparent;border:1px solid var(--border-d);border-radius:999px;padding:9px 16px;cursor:pointer;transition:transform .16s ease,border-color .16s,background .16s}
+.nwai-b:hover{transform:translateY(-2px);border-color:var(--fg);background:rgba(255,255,255,.6)}
+.nwai-b img,.nwai-b svg{width:17px;height:17px;display:block;flex-shrink:0}
+.nwai-note{font-size:12px;color:var(--fg-3);margin-top:14px;min-height:16px}
+.nwai::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(42% 36% at 16% 10%,rgba(231,76,124,.14),transparent 60%),radial-gradient(44% 38% at 86% 8%,rgba(175,122,197,.16),transparent 62%),radial-gradient(64% 50% at 50% 118%,rgba(22,160,133,.18),transparent 70%),radial-gradient(70% 52% at 50% 4%,rgba(244,196,150,.26),transparent 62%),linear-gradient(180deg,#FBF3EA 0%,#F4F4ED 34%,#E8F5F1 64%,#FFFFFF 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 46%,#000 62%,rgba(0,0,0,.5) 82%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 46%,#000 62%,rgba(0,0,0,.5) 82%,transparent 100%)}
+.nh-askai{position:relative;z-index:3;display:grid;justify-items:center;gap:12px;margin-top:30px}
+.nh-askai-l{font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--fg-2);margin:0}
+.nh-askai-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.nh-askai .nwai-b.nh-ai{padding:0;width:42px;height:42px;justify-content:center;border-radius:50%;background:rgba(255,255,255,.72);border-color:var(--border-d);box-shadow:0 2px 10px rgba(17,17,17,.05)}
+.nh-askai .nwai-b.nh-ai:hover{background:#fff;box-shadow:0 8px 22px rgba(17,17,17,.1)}
+.nh-askai .nwai-b.nh-ai img{width:20px;height:20px}
+.nh-askai .nwai-note{margin-top:0}
+</style>
 </head>
 <body>
 <div class="nav-wrap">
@@ -1961,19 +1983,19 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
             <div class="dd-icon" style="background:var(--gold-lt);">
               <svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
             </div>
-            <div><div class="dd-title">EOR</div><div class="dd-desc">Hire without opening a Colombian entity</div></div>
-          </a>
-          <a class="dd-item" href="services/managed-team.html">
-            <div class="dd-icon" style="background:var(--violet-lt);">
-              <svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
-            </div>
-            <div><div class="dd-title">Managed Team</div><div class="dd-desc">Dedicated teams with leads, SLA reporting, and support</div></div>
+            <div><div class="dd-title">EOR</div><div class="dd-desc">Hire without opening a LATAM entity</div></div>
           </a>
           <a class="dd-item" href="services/strategic-partner-program.html">
             <div class="dd-icon" style="background:var(--teal-lt);">
               <svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 17l2 2 3-4"/></svg>
             </div>
             <div><div class="dd-title">Strategic Partner Program</div><div class="dd-desc">White-label recruiting and talent operations</div></div>
+          </a>
+          <a class="dd-item" href="services/managed-team.html">
+            <div class="dd-icon" style="background:var(--violet-lt);">
+              <svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+            </div>
+            <div><div class="dd-title">Managed Team</div><div class="dd-desc">Dedicated teams with leads, SLA reporting, and support</div></div>
           </a>
           <div class="dd-footer">
             <div class="dd-footer-text">One partner for <strong>recruiting, EOR, and team operations</strong></div>
@@ -2130,8 +2152,8 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
     <div class="mob-section-title">Services</div>
     <a class="mob-link" href="services/direct-recruiting.html">Direct Recruiting</a>
     <a class="mob-link" href="services/eor.html">EOR</a>
-    <a class="mob-link" href="services/managed-team.html">Managed Team</a>
     <a class="mob-link" href="services/strategic-partner-program.html">Strategic Partner Program</a>
+    <a class="mob-link" href="services/managed-team.html">Managed Team</a>
   </div>
   <div class="mob-section">
     <div class="mob-section-title">Industries</div>
@@ -2190,6 +2212,21 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 <section style="padding:82px 0;background:linear-gradient(125deg,#0C6354 0%,var(--teal) 44%,#4F8DB8 74%,#6D57B0 100%);"><div class="reveal" style="max-width:1000px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;text-align:center;color:#fff;"><div><div style="font-size:clamp(34px,4vw,50px);font-weight:800;letter-spacing:-.05em;line-height:1;">~10 days</div><div style="opacity:.85;font-size:14px;margin-top:10px;line-height:1.45;">To your first vetted shortlist</div></div><div><div style="font-size:clamp(34px,4vw,50px);font-weight:800;letter-spacing:-.05em;line-height:1;">2–3 wks</div><div style="opacity:.85;font-size:14px;margin-top:10px;line-height:1.45;">To a completed hire</div></div><div><div style="font-size:clamp(34px,4vw,50px);font-weight:800;letter-spacing:-.05em;line-height:1;">6 mo</div><div style="opacity:.85;font-size:14px;margin-top:10px;line-height:1.45;">Replacement guarantee</div></div><div><div style="font-size:clamp(34px,4vw,50px);font-weight:800;letter-spacing:-.05em;line-height:1;">1 portal</div><div style="opacity:.85;font-size:14px;margin-top:10px;line-height:1.45;">Full visibility for your team</div></div></div></section>
 <section class="jx-section" style="padding:96px 0;background:var(--bg);" data-screen-label="After you hire"><div class="jx-wrap"><div class="jx-head reveal"><div class="section-tag">After you hire</div><h2>We do not disappear <span class="jx-accent teal">after the offer</span></h2><p class="section-sub">Two things we include as standard — so your hire is set up to succeed, and so are you.</p></div><div class="hw-care-grid reveal"><div class="hw-care teal"><div class="hw-care-badge">Free of charge</div><h3>An industry expert manages your team</h3><p>An experienced lead keeps your team on track and delivering — included, never billed as an add-on or a higher tier.</p></div><div class="hw-care violet"><div class="hw-care-badge">Free of charge</div><h3>Replacement guarantee</h3><p>If a hire is not the right fit, we source and onboard a replacement at no additional cost — 3 to 6 months of cover on every placement.</p></div></div><p style="text-align:center;font-size:15px;color:var(--fg-2);max-width:600px;margin:32px auto 0;line-height:1.6;">And everything lives in <b style="color:var(--fg);font-weight:700;">one portal</b> — track every candidate from first review to hired, with one login for your whole team.</p></div></section>
 <section class="jx-section jx-finale" data-screen-label="Get started"><div class="jx-finale-box reveal"><div class="jx-finale-inner"><h2>Let us scope your first role</h2><p class="jx-finale-sub">Book a free call — we will map the role and start sourcing within days.</p><div class="jx-finale-grid"><a class="jx-tile" href="book.html"><div class="jx-tile-ic"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div><h3>Hire on demand</h3><p>A free 30-minute call to scope the role and start sourcing.</p><span class="jx-tile-go">Book a consult <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a><a class="jx-tile" href="services/direct-recruiting.html#salary-intelligence"><div class="jx-tile-ic"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h3M8 18h3"/></svg></div><h3>Calculate savings</h3><p>See what a Nearwork hire saves versus a US salary.</p><span class="jx-tile-go">Run the numbers <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a><a class="jx-tile" href="pricing.html"><div class="jx-tile-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>See pricing</h3><p>Flat fees and optional memberships, laid out in full.</p><span class="jx-tile-go">View pricing <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a></div><p class="jx-finale-note">Free consultation · No commitment · 6-month replacement guarantee</p></div></div></section>
+<section class="nwai">
+  <div class="nwai-in">
+    <div class="nwai-h">Request an AI Summary</div>
+    <p class="nwai-sub">Pick a model — it opens a new chat with a research prompt about Nearwork already written.</p>
+    <div class="nwai-btns">
+      <a class="nwai-b" data-ai="chatgpt" target="_blank" rel="noopener" href="#"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&amp;sz=64" alt="" width="17" height="17" loading="lazy">ChatGPT</a>
+      <a class="nwai-b" data-ai="claude" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/claude/D97757" alt="" width="17" height="17" loading="lazy">Claude</a>
+      <a class="nwai-b" data-ai="gemini" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="" width="17" height="17" loading="lazy">Gemini</a>
+      <a class="nwai-b" data-ai="perplexity" target="_blank" rel="noopener" href="#"><img src="https://cdn.simpleicons.org/perplexity/20808D" alt="" width="17" height="17" loading="lazy">Perplexity</a>
+      <a class="nwai-b" data-ai="grok" target="_blank" rel="noopener" href="#"><img src="https://www.google.com/s2/favicons?domain=grok.com&amp;sz=64" alt="" width="17" height="17" loading="lazy">Grok</a>
+    </div>
+    <div class="nwai-note" id="nwaiNote"></div>
+  </div>
+</section>
+
 <footer>
   <!-- Trust badges row -->
   <div class="trust-badges">
@@ -2250,8 +2287,8 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <ul class="footer-links">
         <li><a href="services/direct-recruiting.html">Direct Recruiting</a></li>
         <li><a href="services/eor.html">Employer of record</a></li>
-        <li><a href="services/managed-team.html">Managed Team</a></li>
         <li><a href="services/strategic-partner-program.html">Strategic Partner Program</a></li>
+        <li><a href="services/managed-team.html">Managed Team</a></li>
       </ul>
     </div>
     <div>
@@ -2324,6 +2361,36 @@ const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); revealObs.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
+<script id="nwai-script">
+(function () {
+  var P = "Research Nearwork (nearwork.co), a remote staffing company that places vetted, English-fluent professionals from across Latin America with US and Canadian companies. They offer sourcing, direct recruiting, contractor-of-record payments and managed teams, charging flat fees instead of a percentage of salary. Tell me what they do, how nearshore hiring in Latin America compares with hiring in-house or using a staffing agency, and what I should ask them before signing.";
+
+  var U = {
+    chatgpt:    "https://chatgpt.com/?hints=search&q=",
+    claude:     "https://claude.ai/new?q=",
+    gemini:     "https://gemini.google.com/app?q=",
+    perplexity: "https://www.perplexity.ai/search?q=",
+    grok:       "https://grok.com/?q="
+  };
+  var N = {
+    chatgpt: " ", perplexity: " ", grok: " ",
+    claude: "The prompt is on your clipboard — paste it into Claude and send.",
+    gemini: "The prompt is on your clipboard — paste it into Gemini and send."
+  };
+
+  var q = encodeURIComponent(P);
+  document.querySelectorAll(".nwai-b").forEach(function (b) {
+    var k = b.getAttribute("data-ai");
+    if (!U[k]) return;
+    b.href = U[k].indexOf("q=") > -1 ? U[k] + q : U[k];
+    b.addEventListener("click", function () {
+      try { if (navigator.clipboard) navigator.clipboard.writeText(P); } catch (e) {}
+      var n = document.getElementById("nwaiNote");
+      if (n) { n.hidden = false; n.textContent = N[k] || " "; }
+    });
+  });
+})();
 </script>
 </body>
 </html>
