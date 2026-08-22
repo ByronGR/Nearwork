@@ -2049,6 +2049,12 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 .jx-model.pink { background: linear-gradient(150deg, #fff, var(--gold-lt)); } .jx-model.pink::after { background: var(--gold-mid); }
 .jx-model.violet { background: linear-gradient(150deg, #fff, var(--violet-lt)); } .jx-model.violet::after { background: var(--violet); opacity: .18; }
 .jx-model.gold { background: linear-gradient(150deg, #fff, #FFF7DF); } .jx-model.gold::after { background: #FFD66B; opacity: .35; }
+.jx-model.sky { background: linear-gradient(150deg, #fff, #E8F2F7); } .jx-model.sky::after { background: #A9CFE3; opacity: .45; }
+.jx-model.sky .jx-model-link { color: #1F6E96; }
+/* Five tiles in a two-column grid leaves one alone. The Partner Program is the
+   one to widen: it is the only tile addressed to agencies rather than to a
+   company hiring, so sitting apart on its own row reads as deliberate. */
+.jx-model.wide { grid-column: 1 / -1; min-height: 0; }
 .jx-model-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; position: relative; z-index: 1; }
 .jx-model-ic { width: 44px; height: 44px; border-radius: 14px; background: #fff; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
 .jx-model-ic svg { width: 20px; height: 20px; fill: none; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }
@@ -2228,9 +2234,9 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 <!-- ══ BUILT FOR SUCCESS (services) ══ -->
 <section class="jx-section jx-services" id="services" data-screen-label="Built for success">
   <div class="jx-head reveal">
-    <div class="section-tag">Four ways to hire</div>
+    <div class="section-tag">Five ways to hire</div>
     <h2>Built for the way <span class="jx-accent teal">you actually hire</span></h2>
-    <p class="section-sub">One strong hire, a legal employer, a managed operation, or a partner engine you can resell. Pick the model — we run the pipeline.</p>
+    <p class="section-sub">Just the shortlist, one placed hire, compliant employment, a managed operation, or a partner engine you can resell. Pick the model — we run the pipeline.</p>
   </div>
   <div class="jx-models">
     <a class="jx-model teal reveal" href="services/direct-recruiting.html">
@@ -2241,6 +2247,15 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <h3>Direct Recruiting</h3>
       <p>We source, vet and score 2–3 candidates for your role. You interview the shortlist and hire — flat fee, no salary percentage.</p>
       <span class="jx-model-link">Explore direct recruiting <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a class="jx-model sky reveal" href="services/sourcing.html">
+      <div class="jx-model-top">
+        <div class="jx-model-ic"><svg viewBox="0 0 24 24" stroke="#1F6E96"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <span class="jx-model-kick">Shortlist only</span>
+      </div>
+      <h3>Sourcing</h3>
+      <p>We run the search and hand you a screened, English-checked shortlist — then you interview and hire on your own terms. $1,800 per role.</p>
+      <span class="jx-model-link">Explore sourcing <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
     </a>
     <a class="jx-model pink reveal" href="services/cor.html">
       <div class="jx-model-top">
@@ -2260,7 +2275,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <p>Stand up a whole function — support, ops, sales dev — with a Nearwork team lead managing performance, QA and reporting end to end.</p>
       <span class="jx-model-link">Explore managed teams <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
     </a>
-    <a class="jx-model gold reveal" href="services/strategic-partner-program.html">
+    <a class="jx-model gold wide reveal" href="services/strategic-partner-program.html">
       <div class="jx-model-top">
         <div class="jx-model-ic"><svg viewBox="0 0 24 24" stroke="#B8860B"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.4 13.3l7.2 4.4M15.6 6.3L8.4 10.7"/></svg></div>
         <span class="jx-model-kick">Resell &amp; earn</span>
