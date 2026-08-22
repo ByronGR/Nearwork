@@ -27,6 +27,7 @@
     { "source": "/savings", "destination": "/services/direct-recruiting#salary-intelligence", "permanent": false },
     { "source": "/cost-to-hire-a-developer-in-colombia", "destination": "/blog/cost-to-hire-a-developer-in-colombia", "permanent": true },
     { "source": "/colombia-developer-salary-guide-2026", "destination": "/blog/colombia-developer-salary-guide-2026", "permanent": true },
-    { "source": "/nearshore-vs-offshore", "destination": "/blog/nearshore-vs-offshore", "permanent": true }
+    { "source": "/nearshore-vs-offshore", "destination": "/blog/nearshore-vs-offshore", "permanent": true },
+    { "source": "/services/eor", "destination": "/services/cor", "permanent": true }
   ]
 }
