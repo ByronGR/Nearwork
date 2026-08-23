@@ -204,7 +204,7 @@
   + '<div class="rf-brand"><div class="lg">Nearwork</div><p>On-demand remote staffing for US &amp; Canadian companies. Vetted talent, managed for you, at a fraction of US cost.</p></div>'
   + '<div class="rf-col"><h4>Industries</h4><a href="index.html">All industries</a><a href="software-development.html">Software Development</a><a href="sales.html">Sales</a><a href="finance-and-accounting.html">Finance &amp; Accounting</a></div>'
   + '<div class="rf-col"><h4>Services</h4><a href="../services/direct-recruiting.html">Direct Recruiting</a><a href="../services/sourcing.html">Sourcing</a><a href="../services/cor.html">COR</a><a href="../services/dedicated-team.html">Dedicated Team</a><a href="../services/strategic-partner-program.html">Partner Program</a></div>'
-  + '<div class="rf-col"><h4>Company</h4><a href="/">Home</a><a href="../pricing.html">Pricing</a><a href="/book">Hire on demand</a></div>'
+  + '<div class="rf-col"><h4>Company</h4><a href="/">Home</a><a href="../pricing.html">Pricing</a><a href="/compare">Pricing comparison</a><a href="/book">Hire on demand</a></div>'
   + '</div><div class="rf-bot">© 2026 Nearwork. Remote staffing &amp; Employer of Record.</div></footer>';
 
   app.innerHTML = NAV + crumb + hero + whatWeDo + avail + assess + rolesSec + managed + cost + profiles + faq + related + cta + footer;
