@@ -67,8 +67,6 @@ a { color:inherit; }
 .direct-hero-inner.two-col { grid-template-columns:minmax(390px,.76fr) minmax(620px,1.24fr); align-items:center; }
 .direct-hero-copy { max-width:860px; }
 .direct-hero-copy h1 { max-width:800px; }
-.direct-hero-copy h1 span { color:var(--gold); position:relative; display:inline-block; }
-.direct-hero-copy h1 span::after { content:''; position:absolute; left:0; right:0; bottom:.04em; height:.18em; background:var(--gold-lt); z-index:-1; border-radius:999px; }
 .direct-pipeline-showcase { background:var(--white); border:1px solid var(--border); border-radius:28px; box-shadow:0 24px 80px rgba(0,0,0,.12); overflow:hidden; }
 .direct-pipeline-showcase.hero-side { min-height:520px; transform:rotate(1deg); }
 .direct-pipeline-showcase.hero-side:hover { transform:rotate(0deg) translateY(-3px); transition:transform 260ms var(--ease); }
@@ -499,8 +497,6 @@ h2 { font-size:clamp(30px,3.3vw,48px); line-height:1.1; letter-spacing:-.04em; m
 .market-meter i { display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--gold),var(--teal)); }
 .market-card p { color:var(--fg-2); font-size:14px; line-height:1.65; }
 .managed-hero { background:radial-gradient(circle at 76% 18%, rgba(22,160,133,.20), transparent 32%), radial-gradient(circle at 18% 82%, rgba(231,76,124,.13), transparent 34%), linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px), var(--bg); background-size:auto,auto,80px 80px,80px 80px,auto; }
-.managed-hero h1 span { color:var(--teal); position:relative; display:inline-block; }
-.managed-hero h1 span::after { content:''; position:absolute; left:0; right:0; bottom:.04em; height:.18em; border-radius:999px; background:var(--teal-lt); z-index:-1; }
 .managed-ops-hero { align-self:center; overflow:hidden; border:1px solid var(--border); border-radius:30px; background:linear-gradient(145deg,#fff 0%,#fff 48%,var(--teal-lt) 100%); box-shadow:0 28px 90px rgba(0,0,0,.13); }
 .managed-ops-hero .demo-top { height:54px; padding:0 18px; }
 .managed-dashboard-hero { align-self:center; overflow:hidden; border:1px solid var(--border); border-radius:30px; background:linear-gradient(145deg,#fff 0%,#fff 48%,var(--teal-lt) 100%); box-shadow:0 28px 90px rgba(0,0,0,.13); }
@@ -584,8 +580,6 @@ h2 { font-size:clamp(30px,3.3vw,48px); line-height:1.1; letter-spacing:-.04em; m
 .managed-timeline h3 { margin:34px 0 10px; font-size:24px; letter-spacing:-.05em; }
 .managed-timeline p { color:var(--fg-2); font-size:14px; line-height:1.65; }
 .support-hero { background:radial-gradient(circle at 80% 14%, rgba(231,76,124,.15), transparent 30%), radial-gradient(circle at 12% 86%, rgba(22,160,133,.17), transparent 34%), linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px), var(--bg); background-size:auto,auto,80px 80px,80px 80px,auto; }
-.support-hero h1 span { color:var(--pink); position:relative; display:inline-block; }
-.support-hero h1 span::after { content:''; position:absolute; left:0; right:0; bottom:.04em; height:.18em; border-radius:999px; background:var(--pink-lt); z-index:-1; }
 .support-console { align-self:center; overflow:hidden; border:1px solid var(--border); border-radius:30px; background:linear-gradient(145deg,#fff 0%,#fff 48%,var(--pink-lt) 100%); box-shadow:0 28px 90px rgba(0,0,0,.13); }
 .support-console .demo-top { height:54px; padding:0 18px; }
 .support-console-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; padding:22px; }
@@ -623,14 +617,6 @@ h2 { font-size:clamp(30px,3.3vw,48px); line-height:1.1; letter-spacing:-.04em; m
 .support-scorecard div:nth-child(4) { border-color:#dbc7e8; background:linear-gradient(135deg,#fff,var(--violet-lt)); }
 .support-scorecard strong { display:block; font-size:38px; letter-spacing:-.065em; margin-top:10px; }
 .industry-hero { background:radial-gradient(circle at 82% 18%, rgba(22,160,133,.17), transparent 32%), radial-gradient(circle at 12% 84%, rgba(231,76,124,.12), transparent 34%), linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px), var(--bg); background-size:auto,auto,80px 80px,80px 80px,auto; }
-.industry-hero h1 span { position:relative; display:inline-block; color:var(--teal); }
-.industry-hero h1 span::after { content:''; position:absolute; left:0; right:0; bottom:.04em; height:.18em; border-radius:999px; background:var(--teal-lt); z-index:-1; }
-.industry-violet h1 span { color:var(--violet); }
-.industry-violet h1 span::after { background:var(--violet-lt); }
-.industry-gold h1 span { color:var(--gold-dk); }
-.industry-gold h1 span::after { background:var(--gold-lt); }
-.industry-pink h1 span { color:var(--pink); }
-.industry-pink h1 span::after { background:var(--pink-lt); }
 .industry-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; max-width:600px; margin-top:28px; }
 .industry-metrics div { border:1px solid var(--border); border-radius:18px; background:rgba(255,255,255,.78); padding:16px; box-shadow:0 12px 34px rgba(0,0,0,.04); }
 .industry-metrics strong { display:block; font-size:28px; line-height:1; letter-spacing:-.06em; color:var(--teal-dk); }
@@ -751,8 +737,6 @@ h2 { font-size:clamp(30px,3.3vw,48px); line-height:1.1; letter-spacing:-.04em; m
   .industry-bar-row,.payback-bars div { grid-template-columns:1fr; }
   .industry-savings-lead,.industry-confidence-band { padding:24px; }
 }
-.marketing-page h1 span { color:var(--pink); position:relative; display:inline-block; z-index:1; }
-.marketing-page h1 span::after { content:''; position:absolute; left:0; right:0; bottom:.05em; height:.18em; border-radius:999px; background:var(--pink-lt); z-index:-1; }
 .calc-hero { background:radial-gradient(circle at 82% 16%, rgba(22,160,133,.18), transparent 32%), radial-gradient(circle at 12% 86%, rgba(231,76,124,.14), transparent 34%), linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px), var(--bg); background-size:auto,auto,80px 80px,80px 80px,auto; }
 .compare-hero { background:radial-gradient(circle at 78% 22%, rgba(231,76,124,.16), transparent 30%), radial-gradient(circle at 18% 80%, rgba(22,160,133,.16), transparent 34%), var(--bg); }
 .candidate-hero { background:radial-gradient(circle at 78% 18%, rgba(22,160,133,.18), transparent 32%), radial-gradient(circle at 16% 78%, rgba(150,94,180,.14), transparent 34%), var(--bg); }
@@ -1235,4 +1219,75 @@ footer { background:var(--white); border-top:1px solid var(--border); padding:72
   .candidate-step-large > span,.how-path-step > span { width:54px; height:54px; border-radius:18px; }
   .candidate-step-large > div,.how-path-step > div,.about-story-copy { padding:22px; }
   .about-belief-band { padding:30px; }
+}
+
+/* ── Highlighted phrase in a hero headline ───────────────────────────────────
+   These were inline-block with an absolutely positioned underline, which makes
+   the phrase one unbreakable box: when it does not fit, the whole phrase drops
+   to its own line and whatever follows starts the next one. On the Dedicated
+   Team page that left a comma alone at the start of a line.
+
+   Painting the underline as a background gradient instead lets the phrase wrap
+   like ordinary text, with the underline following each line — box-decoration-
+   break: clone is what draws it on every fragment rather than only the first. */
+.direct-hero-copy h1 span {
+  color: var(--gold);
+  background-image: linear-gradient(var(--gold-lt), var(--gold-lt));
+  background-repeat: no-repeat;
+  background-size: 100% .18em;
+  background-position: 0 88%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.managed-hero h1 span {
+  color: var(--teal);
+  background-image: linear-gradient(var(--teal-lt), var(--teal-lt));
+  background-repeat: no-repeat;
+  background-size: 100% .18em;
+  background-position: 0 88%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.support-hero h1 span {
+  color: var(--pink);
+  background-image: linear-gradient(var(--pink-lt), var(--pink-lt));
+  background-repeat: no-repeat;
+  background-size: 100% .18em;
+  background-position: 0 88%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.industry-hero h1 span {
+  color: var(--teal);
+  background-image: linear-gradient(var(--teal-lt), var(--teal-lt));
+  background-repeat: no-repeat;
+  background-size: 100% .18em;
+  background-position: 0 88%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.direct-hero-copy h1, .managed-hero h1, .support-hero h1, .industry-hero h1 {
+  text-wrap: balance;
+}
+.marketing-page h1 span {
+  color: var(--pink);
+  background-image: linear-gradient(var(--pink-lt), var(--pink-lt));
+  background-repeat: no-repeat;
+  background-size: 100% .18em;
+  background-position: 0 88%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+/* Per-industry accents. These must follow .industry-hero h1 span above. */
+.industry-violet h1 span {
+  color: var(--violet);
+  background-image: linear-gradient(var(--violet-lt), var(--violet-lt));
+}
+.industry-gold h1 span {
+  color: var(--gold-dk);
+  background-image: linear-gradient(var(--gold-lt), var(--gold-lt));
+}
+.industry-pink h1 span {
+  color: var(--pink);
+  background-image: linear-gradient(var(--pink-lt), var(--pink-lt));
 }
