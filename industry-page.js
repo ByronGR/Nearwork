@@ -137,7 +137,7 @@
   +   '<div class="step"><div class="step-n">1</div><h3>Source &amp; assess</h3><p>We screen the market and score every '+esc(C.noun)+' on the criteria that matter — then present 2–3 finalists.</p></div>'
   +   '<div class="step"><div class="step-n">2</div><h3>Onboard &amp; contract</h3><p>We hire them locally as Employer of Record — compliant contracts, payroll, benefits and equipment. No entity needed.</p></div>'
   +   '<div class="step"><div class="step-n">3</div><h3>Manage &amp; coach</h3><p>A dedicated success lead runs 1:1s, quality reviews, performance tracking, time-off and day-to-day HR.</p></div>'
-  +   '<div class="step"><div class="step-n">4</div><h3>Report &amp; scale</h3><p>Monthly performance reviews and SLAs — plus a 6-month replacement guarantee if the fit isn\'t right.</p></div>'
+  +   '<div class="step"><div class="step-n">4</div><h3>Report &amp; scale</h3><p>Monthly performance reviews and SLAs — plus a 3-month replacement guarantee if the fit isn\'t right.</p></div>'
   + '</div></div></section>';
 
   var cost = '<section class="sec"><div class="wrap"><div class="sec-head center"><div class="tag">The math</div><h2 class="sh" data-cost-title>A senior '+esc(C.noun)+', for less than half.</h2></div>'
@@ -179,7 +179,7 @@
   var genFaq = [
     ["Do I need a legal entity in Colombia?","No. Nearwork acts as the Employer of Record and handles local contracts, payroll, benefits and compliance. Your hire works for you day to day; we\'re their legal employer."],
     ["How fast can I hire?","Most searches produce a scored shortlist in about 14 days. You interview the finalists you like and pick — no résumé piles."],
-    ["What if a hire isn\'t the right fit?","You\'re covered by a 6-month replacement guarantee. If it isn\'t working out, we re-source at no extra cost."]
+    ["What if a hire isn\'t the right fit?","You\'re covered by a 3-month replacement guarantee. If it isn\'t working out, we re-source at no extra cost."]
   ];
   var allFaq = C.faqs.concat(genFaq);
   var faq = '<section class="sec"><div class="wrap"><div class="sec-head"><div class="tag">FAQ</div><h2 class="sh" data-faq-title>Hiring '+em+' talent, answered.</h2></div><div class="faq">'
