@@ -398,7 +398,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <h1>Hire across Latin America <span>without</span> the entity setup.</h1>
       <p class="hero-copy">Nearwork handles contracts, payroll, compliance, benefits, and local HR support while your team manages the work.</p>
       <div class="hero-actions"><a class="btn primary" href="#cor-pricing">See COR pricing</a><a class="btn" href="/book.html">Book a strategy call</a></div>
-      <div class="hero-proof-row"><strong>$250</strong><span>starting monthly COR fee / employee</span><strong>3</strong><span>plans from compliance to full coverage</span></div>
+      <div class="hero-proof-row"><strong>$99</strong><span>starting monthly COR fee / employee</span><strong>3</strong><span>plans from compliance to full coverage</span></div>
     </div>
     <div class="eh-nw reveal" aria-label="Nearwork COR coverage">
       <div class="nw-card">
@@ -426,7 +426,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 
 
 <section class="section alt compact-section" id="cor-pricing"><div class="inner"><div class="section-head reveal"><div class="tag">COR pricing</div><h2>Simple, all-in pricing for your Latin American team.</h2><p class="section-lede">One flat fee per contractor, per month. Pick the plan that fits how much support and benefits you want around the employee.</p></div><div class="eor-plan-grid">
-  <article class="eor-plan reveal"><div class="eor-plan-head"><div><h3>Core</h3><span>Compliance only</span></div><strong>$250</strong><small>total / employee / month</small></div><p>Fully compliant employment in-country, built for peace of mind.</p><ul><li>COR &mdash; compliant local employment</li><li>Managed payroll, tax filings &amp; reporting</li><li>Worker classification compliance</li><li>Dedicated Account Manager &amp; HRBP</li><li class="muted">No selectable benefits</li></ul><a class="btn" href="#customize-eor">Choose Core</a></article>
+  <article class="eor-plan reveal"><div class="eor-plan-head"><div><h3>Core</h3><span>Compliance only</span></div><strong>$99</strong><small>total / employee / month</small></div><p>Fully compliant employment in-country, built for peace of mind.</p><ul><li>COR &mdash; compliant local employment</li><li>Managed payroll, tax filings &amp; reporting</li><li>Worker classification compliance</li><li>Dedicated Account Manager &amp; HRBP</li><li class="muted">No selectable benefits</li></ul><a class="btn" href="#customize-eor">Choose Core</a></article>
   <article class="eor-plan featured reveal"><div class="eor-plan-head"><div><h3>Essentials</h3><span>Most picked</span></div><strong>$400</strong><small>total / employee / month</small></div><p>Everything in Core, plus benefits your team gets to choose.</p><ul><li>Everything in Core</li><li>Automated onboarding &amp; compliance</li><li>Choose <b>3 benefits</b> from Tier A</li><li>Build the package in the planner below</li></ul><a class="btn primary" href="#customize-eor">Choose Essentials</a></article>
   <article class="eor-plan reveal"><div class="eor-plan-head"><div><h3>Premium</h3><span>Full coverage</span></div><strong>$860</strong><small>total / employee / month</small></div><p>The whole Core package, plus the widest benefit selection available.</p><ul><li>Everything in Essentials</li><li>Choose <b>6 benefits</b> across Tier A + B</li><li>Priority employee support</li><li>Build the package in the planner below</li></ul><a class="btn" href="#customize-eor">Choose Premium</a></article>
 </div></div></section>
@@ -499,7 +499,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
     <button type="button" class="eor-custom-plan pc-core" data-plan="core">
       <span class="pc-top"><span class="pc-ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></span><span class="pc-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></span>
       <span class="pc-nameRow"><span class="pc-name">Core</span></span>
-      <strong class="pc-price">$250<em>/mo</em></strong>
+      <strong class="pc-price">$99<em>/mo</em></strong>
       <span class="pc-tag">Compliance only</span>
     </button>
     <button type="button" class="eor-custom-plan pc-ess" data-plan="essentials">
@@ -602,7 +602,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
   const root=document.querySelector('.eor-customizer');
   if(!root) return;
   const limits={core:0,essentials:3,premium:6};
-  const prices={core:'$250 / employee / mo',essentials:'$400 / employee / mo',premium:'$860 / employee / mo'};
+  const prices={core:'$99 / employee / mo',essentials:'$400 / employee / mo',premium:'$860 / employee / mo'};
   const names={core:'Core',essentials:'Essentials',premium:'Premium'};
   const plans=[...root.querySelectorAll('.eor-custom-plan')];
   const checks=[...root.querySelectorAll('input[type="checkbox"]')];
