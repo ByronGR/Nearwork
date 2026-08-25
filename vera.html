@@ -67,6 +67,13 @@
   .ve-split li{font-size:14.5px;color:var(--fg-2);line-height:1.6;display:flex;gap:10px;}
   .ve-split li svg{flex-shrink:0;margin-top:3px;}
 
+  .ve-media{aspect-ratio:16/9;border-radius:20px;border:1px solid var(--border);background:radial-gradient(circle at 50% 40%,var(--teal-lt),var(--bg-cream));display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+  .ve-media-inner{text-align:center;color:var(--fg-2);}
+  .ve-media .play{width:66px;height:66px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 14px 34px -12px rgba(22,160,133,.6);}
+  .ve-media .play svg{width:26px;height:26px;fill:#fff;margin-left:4px;}
+  .ve-media-inner b{display:block;font-size:16px;color:var(--fg);letter-spacing:-.01em;}
+  .ve-media-inner small{display:block;font-size:12px;color:var(--fg-3);margin-top:5px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+
   .ve-cta{text-align:center;max-width:720px;margin:0 auto;}
   .ve-cta h2{font-size:clamp(27px,3.2vw,38px);margin-bottom:14px;letter-spacing:-.02em;}
   .ve-cta p{color:var(--fg-2);font-size:16.5px;line-height:1.7;margin-bottom:26px;}
@@ -137,6 +144,19 @@
     <div class="eyebrow" style="justify-content:center;">The problem</div>
     <h2>A good interview isn't a <span class="ve-accent">good hire.</span></h2>
     <p>Polished résumés and rehearsed interviews tell you who prepared well — not who'll perform when the work gets messy. By the time you find out, you've already committed. Vera closes that gap.</p>
+  </div>
+</section>
+
+<section class="ve-sec" style="padding-top:0;">
+  <div class="ve-wrap">
+    <!-- AI animation slot: replace .ve-media contents with <video>/<iframe> when ready -->
+    <div class="ve-media" id="veraAnimation">
+      <div class="ve-media-inner">
+        <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <b>See how Vera works</b>
+        <small>AI walkthrough — coming soon</small>
+      </div>
+    </div>
   </div>
 </section>
 
