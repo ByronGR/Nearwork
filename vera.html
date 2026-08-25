@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Vera | Audio Situational-Judgment Assessment for Hiring | Nearwork</title>
+<meta name="description" content="Vera is Nearwork's audio-based situational-judgment assessment — it drops candidates into real, on-the-job scenarios under pressure and scores how they actually think, plus a DISC profile and verified English. Hear how they think before you commit.">
+<meta name="keywords" content="Vera, situational judgment assessment, audio assessment hiring, candidate assessment, DISC profile, verified English, skills assessment, pre-hire assessment, how candidates think under pressure">
+<link rel="canonical" href="https://www.nearwork.co/vera">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nearwork">
+<meta property="og:title" content="Vera — Hear how they think.">
+<meta property="og:description" content="Nearwork's audio situational-judgment assessment. Real scenarios, real pressure, real judgment — scored. Plus DISC and verified English.">
+<meta property="og:url" content="https://www.nearwork.co/vera">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/service-page.css">
+<style>
+  .ve-hero{padding:150px 28px 60px;text-align:center;}
+  .ve-hero-inner{max-width:900px;margin:0 auto;}
+  .ve-hero .eyebrow{justify-content:center;}
+  .ve-hero h1{max-width:820px;margin:6px auto 12px;font-size:clamp(40px,6vw,72px);line-height:1.0;letter-spacing:-.035em;}
+  .ve-hero h1 .ve-accent{color:var(--teal-dk);}
+  .ve-hero p.hero-copy{max-width:640px;margin:0 auto;color:var(--fg-2);font-size:17px;line-height:1.7;}
+  .ve-hero-actions{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap;}
+  .ve-wave{display:flex;align-items:center;justify-content:center;gap:5px;height:52px;margin:30px auto 0;}
+  .ve-wave i{width:5px;border-radius:3px;background:var(--teal);opacity:.85;animation:vew 1.2s ease-in-out infinite;}
+  @keyframes vew{0%,100%{height:12px}50%{height:44px}}
+
+  .ve-sec{padding:82px 28px;}
+  .ve-sec.alt{background:var(--bg-cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .ve-sec.dark{background:var(--fg);color:#fff;}
+  .ve-wrap{max-width:1000px;margin:0 auto;}
+  .ve-head{text-align:center;max-width:720px;margin:0 auto 46px;}
+  .ve-head h2{font-size:clamp(27px,3.2vw,38px);letter-spacing:-.02em;margin-bottom:12px;}
+  .ve-head h2 .ve-accent{color:var(--teal-dk);}
+  .ve-sec.dark .ve-head h2 .ve-accent{color:var(--teal-mid);}
+  .ve-head p{color:var(--fg-2);font-size:16.5px;line-height:1.7;}
+  .ve-sec.dark .ve-head p{color:rgba(255,255,255,.72);}
+
+  .ve-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .ve-step{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:26px 22px;}
+  .ve-step .n{width:34px;height:34px;border-radius:10px;background:var(--teal-lt);color:var(--teal-dk);font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:15px;}
+  .ve-step h3{font-size:16px;margin-bottom:8px;letter-spacing:-.01em;}
+  .ve-step p{font-size:13.5px;color:var(--fg-2);line-height:1.6;}
+
+  .ve-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .ve-card{border-radius:18px;padding:30px 28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);}
+  .ve-card .ic{width:44px;height:44px;border-radius:12px;background:rgba(164,218,208,.16);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .ve-card .ic svg{width:22px;height:22px;fill:none;stroke:var(--teal-mid);stroke-width:2;}
+  .ve-card h3{font-size:18px;margin-bottom:9px;letter-spacing:-.01em;}
+  .ve-card p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.72);}
+
+  .ve-split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--white);max-width:1000px;margin:0 auto;}
+  .ve-split .bad,.ve-split .good{padding:40px 40px;}
+  .ve-split .good{background:var(--teal-lt);}
+  .ve-split h3{font-size:15px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:16px;font-weight:800;}
+  .ve-split .bad h3{color:var(--fg-3);}
+  .ve-split .good h3{color:var(--teal-dk);}
+  .ve-split ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .ve-split li{font-size:14.5px;color:var(--fg-2);line-height:1.6;display:flex;gap:10px;}
+  .ve-split li svg{flex-shrink:0;margin-top:3px;}
+
+  .ve-cta{text-align:center;max-width:720px;margin:0 auto;}
+  .ve-cta h2{font-size:clamp(27px,3.2vw,38px);margin-bottom:14px;letter-spacing:-.02em;}
+  .ve-cta p{color:var(--fg-2);font-size:16.5px;line-height:1.7;margin-bottom:26px;}
+
+  @media (max-width:900px){.ve-steps{grid-template-columns:1fr 1fr;}.ve-cards{grid-template-columns:1fr;}.ve-split{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-pill" id="nav-pill">
+    <a href="/" class="wordmark">Nearwork</a>
+    <nav class="nav-center" id="navCenter">
+      <div class="dd" data-dd="services">
+        <button class="dd-btn">Services <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dd-panel wide wide-grid">
+          <a class="dd-item" href="/services/direct-recruiting.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><div><div class="dd-title">Direct Recruiting</div><div class="dd-desc">Source, screen, evaluate, and place top candidates</div></div></a>
+          <a class="dd-item" href="/services/sourcing.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><div><div class="dd-title">Sourcing</div><div class="dd-desc">A screened shortlist — you run the interviews</div></div></a>
+          <a class="dd-item" href="/services/cor.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div><div><div class="dd-title">COR</div><div class="dd-desc">Hire talent without opening a local entity</div></div></a>
+          <a class="dd-item" href="/services/strategic-partner-program.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M18 17l2 2 3-4"/></svg></div><div><div class="dd-title">Strategic Partner Program</div><div class="dd-desc">White-label recruiting for partner firms</div></div></a>
+          <a class="dd-item" href="/services/dedicated-team.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></div><div><div class="dd-title">Dedicated Team</div><div class="dd-desc">Dedicated teams with leads, managers, and support</div></div></a>
+        </div>
+      </div>
+      <div class="dd" data-dd="pricing">
+        <button class="dd-btn">Pricing <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dd-panel">
+          <a class="dd-item" href="/pricing.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="dd-title">All plans &amp; pricing</div><div class="dd-desc">Sourcing and recruiting — full breakdown</div></div></a>
+          <a class="dd-item" href="/compare.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><path d="M9 3v18M15 3v18M3 9h6M3 15h6M15 9h6M15 15h6"/></svg></div><div><div class="dd-title">Compare</div><div class="dd-desc">Nearwork vs. every competitor</div></div></a>
+        </div>
+      </div>
+      <div class="dd" data-dd="about">
+        <button class="dd-btn">About <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dd-panel">
+          <a class="dd-item" href="/compare.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M9 3v18M15 3v18M3 9h6M3 15h6M15 9h6M15 15h6"/></svg></div><div><div class="dd-title">Compare</div><div class="dd-desc">Nearwork vs the competition — who wins</div></div></a>
+          <a class="dd-item" href="/blog"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div><div class="dd-title">Blog</div><div class="dd-desc">Guides on hiring nearshore talent</div></div></a>
+          <a class="dd-item" href="/about.html"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><div><div class="dd-title">About Nearwork</div><div class="dd-desc">Who we are and what we believe</div></div></a>
+          <a class="dd-item" href="/how-it-works.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="dd-title">How it works</div><div class="dd-desc">Client and candidate journey</div></div></a>
+          <a class="dd-item" href="/why-colombia.html"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="dd-title">Why Colombia</div><div class="dd-desc">The talent advantage — explained with data</div></div></a>
+          <a class="dd-item" href="/faq.html"><div class="dd-icon" style="background:var(--gold-lt);"><svg viewBox="0 0 24 24" stroke="var(--gold-dk)"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div><div class="dd-title">FAQ</div><div class="dd-desc">Everything you wanted to ask</div></div></a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-right">
+      <a href="https://app.nearwork.co" class="nav-ghost">Client login</a>
+      <a href="/book.html" class="nav-cta">Hire on demand <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <button class="hamburger" id="hamBtn" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div class="mobile-menu" id="mobMenu">
+  <div class="mob-section"><div class="mob-section-title">Services</div><a class="mob-link" href="/services/direct-recruiting.html">Direct Recruiting</a><a class="mob-link" href="/services/sourcing.html">Sourcing</a><a class="mob-link" href="/services/cor.html">COR</a><a class="mob-link" href="/services/strategic-partner-program.html">Strategic Partner Program</a><a class="mob-link" href="/services/dedicated-team.html">Dedicated Team</a></div>
+  <div class="mob-section"><div class="mob-section-title">More</div><a class="mob-link" href="/pricing.html">Pricing</a><a class="mob-link" href="/compare.html">Compare</a><a class="mob-link" href="/blog">Blog</a><a class="mob-link" href="/about.html">About</a><a class="mob-link" href="/how-it-works.html">How it works</a><a class="mob-link" href="/faq.html">FAQ</a></div>
+  <div class="mob-ctas"><a class="mob-ghost" href="https://app.nearwork.co">Client login</a><a class="mob-primary" href="/book.html">Hire on demand</a></div>
+</div>
+<main>
+
+<section class="hero ve-hero">
+  <div class="ve-hero-inner">
+    <div class="eyebrow">Vera · by Nearwork</div>
+    <h1>Hear how <span class="ve-accent">they think.</span></h1>
+    <p class="hero-copy">Vera is Nearwork's audio-based situational-judgment assessment. It drops a candidate into real, on-the-job scenarios under time pressure — and scores how they actually think, not what they memorized.</p>
+    <div class="ve-wave"><i style="animation-delay:0s"></i><i style="animation-delay:0.15s"></i><i style="animation-delay:0.3s"></i><i style="animation-delay:0.45s"></i><i style="animation-delay:0.2s"></i><i style="animation-delay:0.05s"></i><i style="animation-delay:0.35s"></i><i style="animation-delay:0.5s"></i><i style="animation-delay:0.1s"></i><i style="animation-delay:0.4s"></i><i style="animation-delay:0.25s"></i><i style="animation-delay:0.15s"></i><i style="animation-delay:0.45s"></i><i style="animation-delay:0.3s"></i><i style="animation-delay:0.05s"></i><i style="animation-delay:0.2s"></i><i style="animation-delay:0.4s"></i><i style="animation-delay:0.1s"></i><i style="animation-delay:0.35s"></i><i style="animation-delay:0.25s"></i></div>
+    <div class="ve-hero-actions"><a class="btn primary" href="/book.html">Book a strategy call</a><a class="btn" href="#how">See how it works</a></div>
+  </div>
+</section>
+
+<section class="ve-sec">
+  <div class="ve-wrap ve-head" style="margin-bottom:0;">
+    <div class="eyebrow" style="justify-content:center;">The problem</div>
+    <h2>A good interview isn't a <span class="ve-accent">good hire.</span></h2>
+    <p>Polished résumés and rehearsed interviews tell you who prepared well — not who'll perform when the work gets messy. By the time you find out, you've already committed. Vera closes that gap.</p>
+  </div>
+</section>
+
+<section class="ve-sec alt" id="how">
+  <div class="ve-wrap">
+    <div class="ve-head">
+      <div class="eyebrow" style="justify-content:center;">How Vera works</div>
+      <h2>Real scenarios. Real pressure. <span class="ve-accent">Real judgment.</span></h2>
+      <p>No multiple choice, no script to memorize. Vera listens to how a candidate reasons in the moment — then turns it into a score you can compare.</p>
+    </div>
+    <div class="ve-steps">
+      <div class="ve-step"><div class="n">1</div><h3>Real scenarios</h3><p>We drop the candidate into authentic, on-the-job situations for the exact role.</p></div>
+      <div class="ve-step"><div class="n">2</div><h3>Under pressure</h3><p>Time-boxed and audio-based — you hear how they reason live, with nowhere to hide.</p></div>
+      <div class="ve-step"><div class="n">3</div><h3>Scored in plain bands</h3><p>Their judgment is scored into clear, comparable bands, so you can rank a shortlist at a glance.</p></div>
+      <div class="ve-step"><div class="n">4</div><h3>The full read</h3><p>Every profile also includes a DISC behavioral profile and a verified English level.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ve-sec dark">
+  <div class="ve-wrap">
+    <div class="ve-head">
+      <div class="eyebrow" style="justify-content:center;">What you get</div>
+      <h2>One assessment, <span class="ve-accent">three answers.</span></h2>
+      <p>Everything you need to know a candidate will perform — before you commit.</p>
+    </div>
+    <div class="ve-cards">
+      <div class="ve-card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></div><h3>Real-world judgment</h3><p>A clear, comparable read on how each candidate actually thinks under pressure — scored in plain bands.</p></div>
+      <div class="ve-card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><h3>DISC profile</h3><p>How they communicate, decide, and work with a team — so you know the fit before day one.</p></div>
+      <div class="ve-card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 5h12M9 3v2M12 20l4.5-11 4.5 11M14 16h5"/><path d="M5 9c0 3 2 5 4 5"/></svg></div><h3>Verified English</h3><p>A confirmed English level, so communication is never a question mark on the shortlist.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ve-sec">
+  <div class="ve-wrap">
+    <div class="ve-head">
+      <div class="eyebrow" style="justify-content:center;">The difference</div>
+      <h2>What the interview shows vs. <span class="ve-accent">what Vera shows.</span></h2>
+    </div>
+    <div class="ve-split">
+      <div class="bad">
+        <h3>A polished interview</h3>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--fg-4)" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Rewards preparation and confidence</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--fg-4)" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Easy to rehearse, hard to compare</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--fg-4)" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>You find out how they think after you hire</span></li>
+        </ul>
+      </div>
+      <div class="good">
+        <h3>A Vera assessment</h3>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal-dk)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Rewards real judgment under pressure</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal-dk)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Scored in plain bands — rank at a glance</span></li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal-dk)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>You know how they think before you commit</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ve-sec alt">
+  <div class="ve-wrap ve-cta">
+    <div class="eyebrow" style="justify-content:center;">The payoff</div>
+    <h2>From "seemed sharp" to <span class="ve-accent">proven sharp.</span></h2>
+    <p>Vera turns a gut feeling into evidence. Every candidate Nearwork places can come Vera-verified — real judgment, DISC, and English — on top of our sourcing, recruiting, COR/EOR and dedicated teams. It's proof no competitor offers.</p>
+    <div class="ve-hero-actions" style="justify-content:center;"><a class="btn primary" href="/book.html">See Vera on your next hire</a><a class="btn" href="/how-it-works.html">How hiring works</a></div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="trust-badges">
+    <div class="trust-badge"><span class="tb-label"><strong>40+</strong> US and Canadian companies hiring on demand</span></div>
+    <div class="trust-divider"></div>
+    <div class="trust-badge" style="padding-right:0;"><span class="tb-label" style="color:var(--teal);font-weight:600;">US and Canada clients · talent across Latin America</span></div>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <a href="/index.html" class="wordmark" style="font-size:19px;">Nearwork</a>
+      <p class="footer-brand-desc">The remote staffing agency that reduces your labor costs. On-demand hiring of vetted nearshore talent from across Latin America for US and Canadian companies — full pipeline visibility, C1 English standard, transparent candidate evidence.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="/services/direct-recruiting.html">Direct Recruiting</a></li>
+        <li><a href="/services/sourcing.html">Sourcing</a></li>
+        <li><a href="/services/cor.html">Contractor of record</a></li>
+        <li><a href="/services/strategic-partner-program.html">Strategic Partner Program</a></li>
+        <li><a href="/services/dedicated-team.html">Dedicated Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Compare</div>
+      <ul class="footer-links">
+        <li><a href="/compare.html">All comparisons</a></li>
+        <li><a href="/compare/nearwork-vs-bairesdev.html">vs BairesDev</a></li>
+        <li><a href="/compare/nearwork-vs-turing.html">vs Turing</a></li>
+        <li><a href="/compare/nearwork-vs-revelo.html">vs Revelo</a></li>
+        <li><a href="/compare/nearwork-vs-toptal.html">vs Toptal</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about.html">About Nearwork</a></li>
+        <li><a href="/how-it-works.html">How it works</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/why-colombia.html">Why Colombia</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Candidates</div>
+      <ul class="footer-links">
+        <li><a href="https://talent.nearwork.co" target="_blank">Candidate login</a></li>
+        <li><a href="/jobs" target="_blank">Browse open roles</a></li>
+        <li><a href="/candidates/what-to-expect.html">What to expect</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Nearwork. All rights reserved.</span>
+    <span class="footer-co"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Built with care from Colombia · Serving the US &amp; Canada</span>
+    <div class="footer-legal"><a href="/privacy-policy.html">Privacy</a><a href="/terms-of-service.html">Terms</a><a href="/cookie-policy.html">Cookies</a></div>
+  </div>
+</footer>
+<script>
+const pill=document.getElementById('nav-pill');
+window.addEventListener('scroll',()=>{pill.classList.toggle('scrolled',window.scrollY>20);});
+const dropdowns=document.querySelectorAll('.dd');
+dropdowns.forEach(dd=>{const btn=dd.querySelector('.dd-btn');btn.addEventListener('click',e=>{e.stopPropagation();const wasOpen=dd.classList.contains('open');dropdowns.forEach(d=>d.classList.remove('open'));if(!wasOpen)dd.classList.add('open');});});
+document.addEventListener('click',e=>{let inside=false;dropdowns.forEach(d=>{if(d.contains(e.target))inside=true;});if(!inside)dropdowns.forEach(d=>d.classList.remove('open'));});
+function toggleMob(){document.getElementById('mobMenu').classList.toggle('open');}
+</script>
+</body>
+</html>
