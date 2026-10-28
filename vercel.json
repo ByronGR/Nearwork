@@ -144,6 +144,61 @@
       "source": "/about-press",
       "destination": "/about",
       "permanent": true
+    },
+    {
+      "source": "/hire-in-chile",
+      "destination": "/hire-developers-latin-america#chile",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-peru",
+      "destination": "/hire-developers-latin-america#peru",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-uruguay",
+      "destination": "/hire-developers-latin-america#uruguay",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-costa-rica",
+      "destination": "/hire-developers-latin-america#costa-rica",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-panama",
+      "destination": "/hire-developers-latin-america#panama",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-guatemala",
+      "destination": "/hire-developers-latin-america#guatemala",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-el-salvador",
+      "destination": "/hire-developers-latin-america#el-salvador",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-dominican-republic",
+      "destination": "/hire-developers-latin-america#dominican-republic",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-bolivia",
+      "destination": "/hire-developers-latin-america#bolivia",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-paraguay",
+      "destination": "/hire-developers-latin-america#paraguay",
+      "permanent": true
+    },
+    {
+      "source": "/hire-in-venezuela",
+      "destination": "/hire-developers-latin-america#venezuela",
+      "permanent": true
     }
   ]
 }
