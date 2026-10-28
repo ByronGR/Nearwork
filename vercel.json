@@ -2,33 +2,148 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/api/submit-application", "destination": "https://jobs.nearwork.co/api/submit-application" },
-    { "source": "/api/parse-cv", "destination": "https://jobs.nearwork.co/api/parse-cv" },
-    { "source": "/api/send-email-proxy", "destination": "https://jobs.nearwork.co/api/send-email-proxy" },
-    { "source": "/api/send-reset", "destination": "https://jobs.nearwork.co/api/send-reset" },
-    { "source": "/api/confirm-reset", "destination": "https://jobs.nearwork.co/api/confirm-reset" },
-    { "source": "/api/check-application", "destination": "https://jobs.nearwork.co/api/check-application" },
-    { "source": "/api/send-confirmation", "destination": "https://jobs.nearwork.co/api/send-confirmation" },
-    { "source": "/api/intercom-token", "destination": "https://jobs.nearwork.co/api/intercom-token" },
-    { "source": "/api/auth-handoff", "destination": "https://jobs.nearwork.co/api/auth-handoff" }
+    {
+      "source": "/api/submit-application",
+      "destination": "https://jobs.nearwork.co/api/submit-application"
+    },
+    {
+      "source": "/api/parse-cv",
+      "destination": "https://jobs.nearwork.co/api/parse-cv"
+    },
+    {
+      "source": "/api/send-email-proxy",
+      "destination": "https://jobs.nearwork.co/api/send-email-proxy"
+    },
+    {
+      "source": "/api/send-reset",
+      "destination": "https://jobs.nearwork.co/api/send-reset"
+    },
+    {
+      "source": "/api/confirm-reset",
+      "destination": "https://jobs.nearwork.co/api/confirm-reset"
+    },
+    {
+      "source": "/api/check-application",
+      "destination": "https://jobs.nearwork.co/api/check-application"
+    },
+    {
+      "source": "/api/send-confirmation",
+      "destination": "https://jobs.nearwork.co/api/send-confirmation"
+    },
+    {
+      "source": "/api/intercom-token",
+      "destination": "https://jobs.nearwork.co/api/intercom-token"
+    },
+    {
+      "source": "/api/auth-handoff",
+      "destination": "https://jobs.nearwork.co/api/auth-handoff"
+    }
   ],
   "headers": [
     {
       "source": "/jobs/apply",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     },
     {
       "source": "/jobs/reset-password",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ],
   "redirects": [
-    { "source": "/booking", "destination": "/book", "permanent": true },
-    { "source": "/savings", "destination": "/services/direct-recruiting#salary-intelligence", "permanent": false },
-    { "source": "/cost-to-hire-a-developer-in-colombia", "destination": "/blog/cost-to-hire-a-developer-in-colombia", "permanent": true },
-    { "source": "/colombia-developer-salary-guide-2026", "destination": "/blog/colombia-developer-salary-guide-2026", "permanent": true },
-    { "source": "/nearshore-vs-offshore", "destination": "/blog/nearshore-vs-offshore", "permanent": true },
-    { "source": "/services/eor", "destination": "/services/cor", "permanent": true },
-    { "source": "/services/managed-team", "destination": "/services/dedicated-team", "permanent": true }
+    {
+      "source": "/booking",
+      "destination": "/book",
+      "permanent": true
+    },
+    {
+      "source": "/savings",
+      "destination": "/services/direct-recruiting#salary-intelligence",
+      "permanent": false
+    },
+    {
+      "source": "/cost-to-hire-a-developer-in-colombia",
+      "destination": "/blog/cost-to-hire-a-developer-in-colombia",
+      "permanent": true
+    },
+    {
+      "source": "/colombia-developer-salary-guide-2026",
+      "destination": "/blog/colombia-developer-salary-guide-2026",
+      "permanent": true
+    },
+    {
+      "source": "/nearshore-vs-offshore",
+      "destination": "/blog/nearshore-vs-offshore",
+      "permanent": true
+    },
+    {
+      "source": "/services/eor",
+      "destination": "/services/cor",
+      "permanent": true
+    },
+    {
+      "source": "/services/managed-team",
+      "destination": "/services/dedicated-team",
+      "permanent": true
+    },
+    {
+      "source": "/services/workforce-program-management",
+      "destination": "/services/strategic-partner-program",
+      "permanent": true
+    },
+    {
+      "source": "/services/workforce-program-management.html",
+      "destination": "/services/strategic-partner-program",
+      "permanent": true
+    },
+    {
+      "source": "/resources-salary-guide",
+      "destination": "/blog/latam-developer-salary-report-2026",
+      "permanent": true
+    },
+    {
+      "source": "/resources-hiring-guides",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/why-colombia-english",
+      "destination": "/why-colombia",
+      "permanent": true
+    },
+    {
+      "source": "/why-colombia-vs-others",
+      "destination": "/why-colombia",
+      "permanent": true
+    },
+    {
+      "source": "/why-colombia-universities",
+      "destination": "/why-colombia",
+      "permanent": true
+    },
+    {
+      "source": "/how-it-works-savings",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/how-it-works-after-hire",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/about-press",
+      "destination": "/about",
+      "permanent": true
+    }
   ]
 }
