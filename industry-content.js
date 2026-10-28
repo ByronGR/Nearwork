@@ -7,7 +7,7 @@ window.NW_CONTENT = {
   lead:"Product-minded engineers across every stack — sourced, tested on real problems, and fully managed by Nearwork from Colombia.",
   poolLine:"Colombia graduates thousands of CS and software engineers every year, and a decade of nearshore product work built a deep bench of senior builders in US time zones.",
   availList:["Senior builders across frontend, backend, mobile and AI","Real overlap with US and Canadian standups and sprints","Tested on live coding and system-design problems, not trivia","Comfortable in modern stacks, CI/CD and code review culture"],
-  strip:[["12,000+","vetted engineers"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Coding & problem solving","96","Live problems in your stack — not algorithm trivia — scored by senior engineers."],
     ["System design","93","Designs services that scale, reason about trade-offs, and document decisions."],
@@ -27,7 +27,7 @@ window.NW_CONTENT = {
   lead:"Growth, content, SEO and demand-gen specialists who can own a channel — sourced, assessed on real work, and managed by Nearwork.",
   poolLine:"A booming regional startup scene created a deep pool of bilingual marketers who write, rank and run paid channels for US audiences.",
   availList:["Content, SEO, paid, lifecycle and growth specialists","Write natively for US and Canadian audiences","Assessed on portfolios and live briefs, not buzzwords","Fluent in HubSpot, GA4, Ahrefs, Webflow and the modern stack"],
-  strip:[["4,800+","vetted marketers"],["C1","English standard"],["~14 days","brief to shortlist"],["60%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["60%","less than a US hire"]],
   criteria:[
     ["Writing & messaging","95","Clear, on-brand copy for US audiences — scored on a live brief, not a résumé."],
     ["Channel expertise","93","Real depth in SEO, paid, lifecycle or content — not a shallow generalist."],
@@ -47,7 +47,7 @@ window.NW_CONTENT = {
   lead:"Analysts, data engineers and scientists who turn messy data into decisions — sourced, tested on real datasets, and managed by Nearwork.",
   poolLine:"Strong STEM universities and a mature analytics scene give Colombia a deep bench of data talent fluent in SQL, Python and the modern warehouse.",
   availList:["Analysts, analytics engineers and data scientists","Overlap with US business hours for live analysis","Tested on real SQL, modeling and dashboarding tasks","Fluent in dbt, Snowflake, BigQuery, Python and BI tools"],
-  strip:[["3,600+","vetted data pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["SQL & data modeling","95","Writes correct, performant SQL and models data that others can trust."],
     ["Statistical reasoning","92","Chooses the right method, sizes the effect and avoids the obvious traps."],
@@ -67,7 +67,7 @@ window.NW_CONTENT = {
   lead:"Infrastructure, CI/CD and reliability engineers who keep production healthy — sourced, tested on real ops scenarios, and managed by Nearwork.",
   poolLine:"Years of nearshore platform work built a bench of engineers who run real cloud infrastructure for US companies, in US time zones.",
   availList:["Platform, SRE, CI/CD and cloud infrastructure engineers","On-call-capable overlap with US business hours","Tested on real infra, incident and pipeline scenarios","Fluent in AWS, GCP, Kubernetes, Terraform and observability"],
-  strip:[["2,900+","vetted DevOps pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Cloud infrastructure","95","Designs and runs resilient infra on AWS, GCP or Azure with real cost sense."],
     ["CI/CD & automation","93","Builds pipelines and automation that make deploys boring — the goal."],
@@ -87,7 +87,7 @@ window.NW_CONTENT = {
   lead:"Product, brand and UX designers who ship polished, thoughtful work — sourced, assessed on portfolios and live briefs, and managed by Nearwork.",
   poolLine:"A vibrant regional design community produces product and brand designers who work daily with US startups and design systems.",
   availList:["Product, UX, brand and design-system specialists","Overlap with US design reviews and sprints","Assessed on portfolios and a live design brief","Fluent in Figma, prototyping and design-system thinking"],
-  strip:[["2,400+","vetted designers"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Visual & interaction craft","95","Polished, considered work — spacing, type and states that hold up."],
     ["Product thinking","93","Designs for the user and the metric, not just the mock."],
@@ -107,7 +107,7 @@ window.NW_CONTENT = {
   lead:"Product managers and delivery leads who keep teams shipping the right thing — sourced, assessed on real scenarios, and managed by Nearwork.",
   poolLine:"A mature startup ecosystem produced PMs and delivery leads who run discovery, roadmaps and sprints for US product teams.",
   availList:["Product managers, project managers and delivery leads","Overlap with US standups, planning and reviews","Assessed on prioritization and stakeholder scenarios","Fluent in Jira, Linear, Notion and modern PM craft"],
-  strip:[["2,200+","vetted PMs"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Prioritization & judgment","94","Cuts scope to what matters and can explain exactly why."],
     ["Discovery & user insight","92","Talks to users, frames the problem and validates before building."],
@@ -127,7 +127,7 @@ window.NW_CONTENT = {
   lead:"Bookkeepers, analysts and controllers you can trust with the numbers — sourced, tested for accuracy, and managed by Nearwork.",
   poolLine:"Colombia has a large, well-trained accounting workforce familiar with US GAAP-style books and the modern finance stack.",
   availList:["Bookkeepers, FP&A analysts, controllers and AP/AR","Overlap with US close cycles and reporting","Tested on real reconciliation and modeling tasks","Fluent in QuickBooks, NetSuite, Excel and reporting tools"],
-  strip:[["3,300+","vetted finance pros"],["C1","English standard"],["~14 days","brief to shortlist"],["60%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["60%","less than a US hire"]],
   criteria:[
     ["Accuracy & attention to detail","96","Reconciles to the penny and catches the error before the close."],
     ["Accounting knowledge","93","Solid on accrual accounting, month-end and US-style reporting."],
@@ -147,7 +147,7 @@ window.NW_CONTENT = {
   lead:"Coordinators, executive assistants and operations leads who keep the business running — sourced, assessed on real tasks, and managed by Nearwork.",
   poolLine:"A deep service-economy workforce gives Colombia reliable, organized operators who run back-office and executive support for US teams.",
   availList:["Executive assistants, ops coordinators and ops leads","Real-time overlap with US business hours","Assessed on organization, judgment and tooling","Fluent in the modern ops stack — Notion, Slack, Asana, sheets"],
-  strip:[["3,000+","vetted ops pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Organization & follow-through","95","Nothing drops — tracks the details and closes every loop."],
     ["Judgment & prioritization","92","Knows what is urgent, what can wait and when to escalate."],
@@ -167,7 +167,7 @@ window.NW_CONTENT = {
   lead:"SDRs, AEs and revenue operators who hit quota — sourced, assessed on live call scenarios, and managed by Nearwork.",
   poolLine:"A decade of nearshore sales work built a bench of persuasive, English-fluent reps who sell to US and Canadian buyers every day.",
   availList:["SDRs, AEs, sales ops and revenue operators","Real-time overlap with US selling hours","Assessed on live call and objection-handling scenarios","Fluent in Salesforce, HubSpot, Outreach and the sales stack"],
-  strip:[["2,700+","vetted sales pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Prospecting & pipeline","93","Builds pipeline consistently and works a list without babysitting."],
     ["Discovery & objection handling","94","Runs real discovery and handles objections without a script."],
@@ -187,7 +187,7 @@ window.NW_CONTENT = {
   lead:"Empathetic, English-fluent support professionals — sourced, assessed for what actually matters in support, and fully managed by Nearwork.",
   poolLine:"A decade of nearshore BPO built one of the region's deepest support talent pools — fluent English, US-hours overlap and a genuine service culture.",
   availList:["Career support professionals, not gig fillers","Real-time overlap with US and Canadian business hours","Warm, service-first culture customers actually feel","Experienced across chat, email, phone and social support"],
-  strip:[["3,100+","vetted support pros"],["C1","English standard"],["~14 days","brief to shortlist"],["55%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["55%","less than a US hire"]],
   criteria:[
     ["Empathy & tone","97","Reads emotion, mirrors tone and de-escalates without a script."],
     ["Problem resolution","93","First-contact resolution and root-cause thinking, knows when to escalate."],
@@ -207,7 +207,7 @@ window.NW_CONTENT = {
   lead:"Recruiters, HR generalists and people-ops specialists who build great teams — sourced, assessed on real scenarios, and managed by Nearwork.",
   poolLine:"A large, people-first professional workforce gives Colombia strong recruiters and HR partners fluent in US hiring and people practices.",
   availList:["Recruiters, HR generalists and people-ops specialists","Overlap with US interview loops and business hours","Assessed on sourcing, screening and HR scenarios","Fluent in Greenhouse, Lever, BambooHR and the HR stack"],
-  strip:[["2,000+","vetted HR pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Sourcing & pipeline","93","Finds and engages strong candidates in competitive markets."],
     ["Screening & judgment","92","Reads a résumé and a conversation for real signal, not keywords."],
@@ -227,7 +227,7 @@ window.NW_CONTENT = {
   lead:"Helpdesk and systems support that keeps your people running — sourced, tested on real tickets, and managed by Nearwork.",
   poolLine:"A deep IT services workforce gives Colombia reliable helpdesk and systems technicians who support US employees in real time.",
   availList:["Helpdesk, desktop and systems support technicians","Real-time overlap with US business hours","Tested on real troubleshooting and ticket scenarios","Fluent in Jira Service, Intune, Google Workspace and M365"],
-  strip:[["2,100+","vetted IT pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Troubleshooting","95","Diagnoses fast, fixes the root cause and documents the fix."],
     ["Systems & tooling","92","Comfortable across M365, Google Workspace, Intune and MDM."],
@@ -247,7 +247,7 @@ window.NW_CONTENT = {
   lead:"Analysts who bridge business and technology — sourced, assessed on real requirements scenarios, and managed by Nearwork.",
   poolLine:"A mature enterprise and consulting sector produced business and systems analysts fluent in requirements, process and US-style delivery.",
   availList:["Business analysts, systems analysts and process leads","Overlap with US stakeholder and delivery meetings","Assessed on requirements and process scenarios","Fluent in Jira, Confluence, SQL and BPMN"],
-  strip:[["1,700+","vetted analysts"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Requirements & elicitation","94","Draws out what stakeholders actually need and writes it clearly."],
     ["Process modeling","92","Maps and improves processes others can follow and build from."],
@@ -267,7 +267,7 @@ window.NW_CONTENT = {
   lead:"Security engineers and analysts who protect your stack — sourced, tested on real security scenarios, and managed by Nearwork.",
   poolLine:"Growing demand for nearshore security built a bench of Colombian engineers and analysts who defend US environments in real time.",
   availList:["Security engineers, SOC analysts and GRC specialists","Overlap with US business hours and incident windows","Tested on real detection and hardening scenarios","Fluent in SIEM, cloud security, IAM and compliance frameworks"],
-  strip:[["1,400+","vetted security pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Threat detection & response","94","Spots the anomaly, triages fast and drives the incident to closure."],
     ["Cloud & infrastructure security","93","Hardens cloud, identity and networks against real attack paths."],
@@ -287,7 +287,7 @@ window.NW_CONTENT = {
   lead:"Patient coordination and medical administration handled with care — sourced, assessed for accuracy and empathy, and managed by Nearwork.",
   poolLine:"A large trained health-services workforce gives Colombia reliable, HIPAA-aware coordinators and medical admins for US practices.",
   availList:["Patient coordinators, medical admins and billing support","Real-time overlap with US clinic hours","Assessed for accuracy, empathy and privacy awareness","Familiar with EHRs, scheduling and US healthcare workflows"],
-  strip:[["1,500+","vetted healthcare pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Accuracy & attention to detail","95","Gets patient records, codes and schedules exactly right."],
     ["Empathy & patient communication","94","Warm, clear and calm with patients on every interaction."],
@@ -298,7 +298,7 @@ window.NW_CONTENT = {
   ],
   cost:{us:"$55k / year", uspct:100, nw:"$24k / year", nwpct:44, save:"Save $31k/yr"},
   faqs:[
-    ["Are they HIPAA-aware?","Yes. Candidates are screened on PHI handling and privacy practices, and we put the right agreements and safeguards in place as your Employer of Record."],
+    ["Are they HIPAA-aware?","Yes. Candidates are screened on PHI handling and privacy practices, and we put the right agreements and safeguards in place as your Contractor of Record."],
     ["Which healthcare tasks can they cover?","Patient scheduling and coordination, intake, records, prior authorizations and billing support — matched to your practice and EHR."]
   ]
 },
@@ -307,7 +307,7 @@ window.NW_CONTENT = {
   lead:"Paralegals and legal support professionals who get the details right — sourced, assessed on real tasks, and managed by Nearwork.",
   poolLine:"A large legal-services workforce gives Colombia detail-obsessed paralegals and legal admins fluent in US-style document work.",
   availList:["Paralegals, legal assistants and contract admins","Overlap with US business hours and filing windows","Assessed on drafting, review and organization tasks","Familiar with document management and e-signature tools"],
-  strip:[["900+","vetted legal pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Accuracy & precision","96","Catches the missing clause and the wrong date every time."],
     ["Legal drafting & review","92","Drafts and reviews routine documents cleanly and consistently."],
@@ -327,7 +327,7 @@ window.NW_CONTENT = {
   lead:"Manual and automation QA engineers who ship quality — sourced, tested on real bugs, and managed by Nearwork.",
   poolLine:"A strong software sector produced QA engineers who build test coverage and automation for US product teams every day.",
   availList:["Manual QA, automation and SDET engineers","Overlap with US release and sprint cycles","Tested on real bug-finding and automation tasks","Fluent in Playwright, Cypress, Selenium and CI test suites"],
-  strip:[["1,300+","vetted QA pros"],["C1","English standard"],["~14 days","brief to shortlist"],["58%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["58%","less than a US hire"]],
   criteria:[
     ["Test design & coverage","94","Designs cases that find real bugs, not just happy paths."],
     ["Bug finding & reporting","93","Reproduces cleanly and writes reports engineers can act on."],
@@ -347,7 +347,7 @@ window.NW_CONTENT = {
   lead:"Fractional and senior operators who can lead the work — sourced, assessed on real leadership scenarios, and managed by Nearwork.",
   poolLine:"A mature regional business scene produced experienced managers and directors who lead distributed teams for US companies.",
   availList:["Team leads, managers and fractional directors","Overlap with US leadership and planning cadences","Assessed on leadership, strategy and delivery scenarios","Proven at building and running distributed remote teams"],
-  strip:[["600+","vetted leaders"],["C1","English standard"],["~14 days","brief to shortlist"],["55%","less than a US hire"]],
+  strip:[["3 mo","replacement guarantee"],["C1","English standard"],["~2 wks","target to shortlist"],["55%","less than a US hire"]],
   criteria:[
     ["Team leadership","94","Builds, coaches and retains strong distributed teams."],
     ["Strategic thinking","93","Sets direction and connects daily work to the business goal."],

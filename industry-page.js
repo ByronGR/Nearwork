@@ -50,7 +50,7 @@
   +     '<div class="dd" data-dd="about"><button class="dd-btn">About <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>'
   +       '<div class="dd-panel">'
   +         '<a class="dd-item" href="/about"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><div><div class="dd-title">About Nearwork</div><div class="dd-desc">Who we are and what we believe</div></div></a>'
-  +         '<a class="dd-item" href="/why-colombia"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="dd-title">Why Colombia</div><div class="dd-desc">The talent advantage — explained with data</div></div></a><a class="dd-item" href="/compare"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 6h7M3 12h7M3 18h7"/><path d="M14 6h7M14 12h7M14 18h7"/></svg></div><div><div class="dd-title">Compare</div><div class="dd-desc">Nearwork against Toptal, BairesDev, Turing and more</div></div></a>'
+  +         '<a class="dd-item" href="/hire-developers-latin-america"><div class="dd-icon" style="background:var(--violet-lt);"><svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="dd-title">Why Latin America</div><div class="dd-desc">The talent advantage, country by country</div></div></a><a class="dd-item" href="/compare"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 6h7M3 12h7M3 18h7"/><path d="M14 6h7M14 12h7M14 18h7"/></svg></div><div><div class="dd-title">Compare</div><div class="dd-desc">Nearwork against Toptal, BairesDev, Turing and more</div></div></a>'
   +       '</div></div>'
   +   '</nav>'
   +   '<div class="nav-right"><a href="https://app.nearwork.co" class="nav-ghost">Client login</a><a href="/book" class="nav-cta">Hire on demand <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>'
@@ -108,7 +108,7 @@
   + '<div class="svc-grid">'
   +   '<a class="svc" href="/services/direct-recruiting"><div class="svc-ic" style="background:var(--teal-lt);">'+svcIcon.dr+'</div><b>Direct Recruiting</b><p>We source, screen and score candidates — you hire them directly onto your payroll.</p></a>'
   +   '<a class="svc" href="/services/sourcing"><div class="svc-ic" style="background:var(--teal-lt);">'+svcIcon.dr+'</div><b>Sourcing</b><p>We run the search and hand you a screened shortlist — you interview and hire on your own terms.</p></a>'
-  +   '<a class="svc" href="/services/cor"><div class="svc-ic" style="background:var(--gold-lt);">'+svcIcon.eor+'</div><b>COR &amp; Payroll</b><p>We become the legal employer — contracts, payroll, benefits and compliance, no local entity.</p></a>'
+  +   '<a class="svc" href="/services/cor"><div class="svc-ic" style="background:var(--gold-lt);">'+svcIcon.eor+'</div><b>COR &amp; Payroll</b><p>We hold the contractor agreement and handle payments and compliance, no local entity.</p></a>'
   +   '<a class="svc" href="/services/dedicated-team"><div class="svc-ic" style="background:var(--teal-lt);">'+svcIcon.mt+'</div><b>Dedicated Team</b><p>A dedicated team with a Nearwork lead running quality, coaching and day-to-day delivery.</p></a>'
   +   '<a class="svc" href="/services/strategic-partner-program"><div class="svc-ic" style="background:var(--violet-lt);">'+svcIcon.spp+'</div><b>Partner Program</b><p>White-label recruiting and staffing for agencies and firms that place talent for clients.</p></a>'
   + '</div></div></section>';
@@ -132,10 +132,10 @@
 
   var rolesSec = '<section class="sec alt"><div class="wrap"><div class="sec-head"><div class="tag teal">Roles we place</div><h2 class="sh">Every '+em+' role, vetted the same way.</h2><p class="lede">Pick the role you\'re hiring for — we shortlist scored, English-fluent candidates in about two weeks.</p></div><div class="roles-cloud" data-roles-cloud></div></div></section>';
 
-  var managed = '<section class="sec dark"><div class="wrap"><div class="sec-head"><div class="tag teal">Managed service</div><h2 class="sh">We don\'t just place them — we run them for you.</h2><p class="lede">Nearwork is the Employer of Record and the operating layer. You get the output of a '+esc(C.noun)+'; we handle everything behind it.</p></div>'
+  var managed = '<section class="sec dark"><div class="wrap"><div class="sec-head"><div class="tag teal">Managed service</div><h2 class="sh">We don\'t just place them — we run them for you.</h2><p class="lede">Nearwork is the Contractor of Record and the operating layer. You get the output of a '+esc(C.noun)+'; we handle everything behind it.</p></div>'
   + '<div class="steps">'
   +   '<div class="step"><div class="step-n">1</div><h3>Source &amp; assess</h3><p>We screen the market and score every '+esc(C.noun)+' on the criteria that matter — then present 2–3 finalists.</p></div>'
-  +   '<div class="step"><div class="step-n">2</div><h3>Onboard &amp; contract</h3><p>We hire them locally as Employer of Record — compliant contracts, payroll, benefits and equipment. No entity needed.</p></div>'
+  +   '<div class="step"><div class="step-n">2</div><h3>Onboard &amp; contract</h3><p>We contract them as Contractor of Record — compliant agreements, payments and equipment. No entity needed.</p></div>'
   +   '<div class="step"><div class="step-n">3</div><h3>Manage &amp; coach</h3><p>A dedicated success lead runs 1:1s, quality reviews, performance tracking, time-off and day-to-day HR.</p></div>'
   +   '<div class="step"><div class="step-n">4</div><h3>Report &amp; scale</h3><p>Monthly performance reviews and SLAs — plus a 3-month replacement guarantee if the fit isn\'t right.</p></div>'
   + '</div></div></section>';
@@ -177,8 +177,8 @@
 
   /* FAQ = 2 tailored + 3 generic */
   var genFaq = [
-    ["Do I need a legal entity in Colombia?","No. Nearwork acts as the Employer of Record and handles local contracts, payroll, benefits and compliance. Your hire works for you day to day; we\'re their legal employer."],
-    ["How fast can I hire?","Most searches produce a scored shortlist in about 14 days. You interview the finalists you like and pick — no résumé piles."],
+    ["Do I need a legal entity in Colombia?","No. Nearwork acts as the Contractor of Record and handles the contractor agreement, monthly payments and compliance. Your hire works for you day to day; we handle the paperwork."],
+    ["How fast can I hire?","We aim to deliver a scored shortlist in about 2 weeks. You interview the finalists you like and pick — no résumé piles."],
     ["What if a hire isn\'t the right fit?","You\'re covered by a 3-month replacement guarantee. If it isn\'t working out, we re-source at no extra cost."]
   ];
   var allFaq = C.faqs.concat(genFaq);
@@ -205,7 +205,7 @@
   + '<div class="rf-col"><h4>Industries</h4><a href="/industries">All industries</a><a href="/industries/software-development">Software Development</a><a href="/industries/sales">Sales</a><a href="/industries/finance-and-accounting">Finance &amp; Accounting</a></div>'
   + '<div class="rf-col"><h4>Services</h4><a href="/services/direct-recruiting">Direct Recruiting</a><a href="/services/sourcing">Sourcing</a><a href="/services/cor">COR</a><a href="/services/dedicated-team">Dedicated Team</a><a href="/services/strategic-partner-program">Partner Program</a></div>'
   + '<div class="rf-col"><h4>Company</h4><a href="/">Home</a><a href="/pricing">Pricing</a><a href="/compare">Pricing comparison</a><a href="/book">Hire on demand</a></div>'
-  + '</div><div class="rf-bot">© 2026 Nearwork. Remote staffing &amp; Employer of Record.</div></footer>';
+  + '</div><div class="rf-bot">© 2026 Nearwork. Remote staffing &amp; Contractor of Record.</div></footer>';
 
   app.innerHTML = NAV + crumb + hero + whatWeDo + avail + assess + rolesSec + managed + cost + profiles + faq + related + cta + footer;
 
