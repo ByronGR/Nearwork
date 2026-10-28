@@ -239,7 +239,13 @@ function buildJsonLd(job) {
   }
 
   const datePosted = isoDate(job.publishedAt);
-  const validThrough = addDaysIso(job.publishedAt, 60);
+  // Jobs still published in Firestore are open, so validThrough rolls forward.
+  // Anchored to the start of the current week so it changes once a week, not on every 2-hourly build.
+  // Unpublished jobs are removed by the build, so Google never sees an expired-but-live posting.
+  const weekStart = new Date();
+  weekStart.setUTCHours(0, 0, 0, 0);
+  weekStart.setUTCDate(weekStart.getUTCDate() - weekStart.getUTCDay());
+  const validThrough = addDaysIso(weekStart.toISOString(), 37);
 
   const obj = {
     '@context': 'https://schema.org',
