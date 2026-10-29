@@ -1552,9 +1552,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       ],
       "sameAs": [
         "https://www.linkedin.com/company/nearworkco",
-        "https://clutch.co/profile/nearwork",
-        "https://www.g2.com/products/nearwork",
-        "https://www.trustpilot.com/review/nearwork.co"
+        "https://clutch.co/profile/nearwork"
       ]
     },
     {
@@ -1752,11 +1750,11 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
             </div>
             <div><div class="dd-title">How it works</div><div class="dd-desc">Client and candidate journey</div></div>
           </a>
-          <a class="dd-item" href="/why-colombia">
+          <a class="dd-item" href="/hire-developers-latin-america">
             <div class="dd-icon" style="background:var(--violet-lt);">
               <svg viewBox="0 0 24 24" stroke="var(--violet)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <div><div class="dd-title">Why Colombia</div><div class="dd-desc">The talent advantage — explained with data</div></div>
+            <div><div class="dd-title">Why Latin America</div><div class="dd-desc">The talent advantage, country by country</div></div>
           </a>
           <a class="dd-item" href="/compare"><div class="dd-icon" style="background:var(--teal-lt);"><svg viewBox="0 0 24 24" stroke="var(--teal)"><path d="M3 6h7M3 12h7M3 18h7"/><path d="M14 6h7M14 12h7M14 18h7"/></svg></div><div><div class="dd-title">Compare</div><div class="dd-desc">Nearwork against Toptal, BairesDev, Turing and more</div></div></a>
           <a class="dd-item" href="/faq">
@@ -1964,7 +1962,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
   function render(q){
     items=search(q); sel=0;
     if(!items.length){
-      list.innerHTML='<div class="nh-empty">No exact match — <a href="/book">tell us the role</a> and we\'ll source it in ~21 days.</div>';
+      list.innerHTML='<div class="nh-empty">No exact match — <a href="/book">tell us the role</a> and we\'ll source it for you.</div>';
       if(countEl) countEl.textContent='';
     } else {
       list.innerHTML=items.map(function(r,i){return rowHTML(r,i,q);}).join('');
@@ -2027,6 +2025,13 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 
 /* ── Trusted-by logo strip ── */
 .jx-trust { padding: 56px 0 8px; background: var(--bg); }
+.jx-proof-row { max-width: 1120px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.jx-proof { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 1px solid var(--border); border-radius: 16px; background: var(--white, #fff); font-size: 13px; line-height: 1.45; color: var(--fg-2); text-decoration: none; }
+.jx-proof b { font-size: 15px; font-weight: 700; color: var(--fg); letter-spacing: -0.01em; }
+a.jx-proof:hover { border-color: var(--teal); }
+@media (max-width: 1024px) { .jx-proof-row { grid-template-columns: repeat(3, 1fr); padding: 0 32px; } }
+@media (max-width: 640px) { .jx-proof-row { grid-template-columns: 1fr 1fr; padding: 0 22px; } }
+
 .jx-trust-label { text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--fg-3); margin-bottom: 30px; }
 .jx-trust-label strong { color: var(--fg); font-weight: 700; }
 .jx-logos-wrap { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
@@ -2202,33 +2207,15 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
 }
 </style>
 
-<!-- ══ TRUSTED BY (logo strip) ══ -->
-<section class="jx-section jx-trust" data-screen-label="Trusted by">
-  <p class="jx-trust-label">Fast-growing US &amp; Canadian teams build their bench with <strong>Nearwork</strong></p>
-  <!-- SLOT: placeholder company names — swap for real partner logos when signed -->
-  <div class="jx-logos-wrap reveal">
-    <div class="jx-logos-track">
-      <span class="jx-logo"><span class="jx-logo-dot"></span>Lorikeet</span>
-      <span class="jx-logo round"><span class="jx-logo-dot"></span>Saltbush</span>
-      <span class="jx-logo"><span class="jx-logo-dot"></span>Tidewell</span>
-      <span class="jx-logo round"><span class="jx-logo-dot"></span>Bondi Labs</span>
-      <span class="jx-logo"><span class="jx-logo-dot"></span>Wattle</span>
-      <span class="jx-logo round"><span class="jx-logo-dot"></span>Driftly</span>
-      <span class="jx-logo"><span class="jx-logo-dot"></span>Koala Cloud</span>
-      <span class="jx-logo round"><span class="jx-logo-dot"></span>Verda</span>
-      <span class="jx-logo"><span class="jx-logo-dot"></span>Outpost</span>
-      <span class="jx-logo round"><span class="jx-logo-dot"></span>Ember Pay</span>
-      <span class="jx-logo" aria-hidden="true"><span class="jx-logo-dot"></span>Lorikeet</span>
-      <span class="jx-logo round" aria-hidden="true"><span class="jx-logo-dot"></span>Saltbush</span>
-      <span class="jx-logo" aria-hidden="true"><span class="jx-logo-dot"></span>Tidewell</span>
-      <span class="jx-logo round" aria-hidden="true"><span class="jx-logo-dot"></span>Bondi Labs</span>
-      <span class="jx-logo" aria-hidden="true"><span class="jx-logo-dot"></span>Wattle</span>
-      <span class="jx-logo round" aria-hidden="true"><span class="jx-logo-dot"></span>Driftly</span>
-      <span class="jx-logo" aria-hidden="true"><span class="jx-logo-dot"></span>Koala Cloud</span>
-      <span class="jx-logo round" aria-hidden="true"><span class="jx-logo-dot"></span>Verda</span>
-      <span class="jx-logo" aria-hidden="true"><span class="jx-logo-dot"></span>Outpost</span>
-      <span class="jx-logo round" aria-hidden="true"><span class="jx-logo-dot"></span>Ember Pay</span>
-    </div>
+<!-- ══ TRUST SIGNALS ══ -->
+<section class="jx-section jx-trust" data-screen-label="Why trust us">
+  <p class="jx-trust-label">What you can hold <strong>Nearwork</strong> to</p>
+  <div class="jx-proof-row reveal">
+    <span class="jx-proof"><b>Founder-led</b>Our founders stay involved in every search</span>
+    <span class="jx-proof"><b>Flat fees</b>Never a percentage of salary</span>
+    <span class="jx-proof"><b>3-month guarantee</b>Free replacement if a hire doesn't work out</span>
+    <a class="jx-proof" href="#solutions"><b>See the portal</b>Every candidate's evidence, live</a>
+    <a class="jx-proof" href="/how-it-works"><b>Our vetting</b>C1 English, skills and DISC, scored</a>
   </div>
 </section>
 
@@ -2264,7 +2251,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
         <span class="jx-model-kick">Compliant employment</span>
       </div>
       <h3>Contractor of Record</h3>
-      <p>We become the legal employer abroad — payroll, taxes, benefits and compliance handled. Your hire works for you; the paperwork is ours.</p>
+      <p>We hold the contractor agreement and handle monthly payments and compliance. Your hire works for you; the paperwork is ours.</p>
       <span class="jx-model-link">Explore COR <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
     </a>
     <a class="jx-model violet reveal" href="/services/dedicated-team">
@@ -2401,7 +2388,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <h2>From open role to <span class="jx-accent teal">hired and managed</span></h2>
       <p class="section-sub">No entity to open, no job ads to run, no agency markup. Four steps — and we handle everything after the handshake.</p>
     </div>
-    <div class="jx-how-promise reveal"><span><span class="pulse"></span> First vetted candidates in ~5 business days</span></div>
+    <div class="jx-how-promise reveal"><span><span class="pulse"></span> First vetted candidates in about 2 weeks</span></div>
     <div class="jx-steps reveal">
       <div class="jx-step">
         <div class="jx-step-num">1</div>
@@ -2411,7 +2398,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <div class="jx-step">
         <div class="jx-step-num">2</div>
         <h3>Get a vetted shortlist</h3>
-        <p>Within ~5 business days, 3–5 pre-vetted candidates land in your portal — scored, DISC-profiled and reference-checked.</p>
+        <p>Within about 2 weeks, pre-vetted candidates land in your portal — scored, DISC-profiled and reference-checked.</p>
       </div>
       <div class="jx-step">
         <div class="jx-step-num">3</div>
@@ -2432,19 +2419,19 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
   <div class="jx-wrap">
     <div class="jx-head reveal">
       <div class="section-tag">The numbers</div>
-      <h2>Real teams. <span class="jx-accent">Real savings.</span></h2>
-      <p class="section-sub">Every Nearwork hire is sourced, scored and managed against the same standard — here's what that delivers.</p>
+      <h2>Clear terms. <span class="jx-accent">Real savings.</span></h2>
+      <p class="section-sub">Every Nearwork hire is sourced, scored and managed against the same standard. Here's what you get.</p>
     </div>
     <div class="jx-stat-grid reveal">
       <div class="jx-stat teal">
         <div class="jx-stat-ic"><svg viewBox="0 0 24 24"><path d="M23 18l-9.5-9.5-5 5L1 6"/><path d="M17 18h6v-6"/></svg></div>
         <b>40–65<small>%</small></b>
-        <span class="jx-stat-lbl">Lower cost vs. an equivalent US hire</span>
+        <span class="jx-stat-lbl">Typical salary difference vs. an equivalent US hire</span>
       </div>
       <div class="jx-stat pink">
         <div class="jx-stat-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <b>21<small> days</small></b>
-        <span class="jx-stat-lbl">From brief to a signed, scored hire</span>
+        <b>Flat<small> fee</small></b>
+        <span class="jx-stat-lbl">Per hire, never a percentage of salary</span>
       </div>
       <div class="jx-stat violet">
         <div class="jx-stat-ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg></div>
@@ -2453,121 +2440,12 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       </div>
       <div class="jx-stat gold">
         <div class="jx-stat-ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg></div>
-        <b>6<small> mo</small></b>
+        <b>3<small> mo</small></b>
         <span class="jx-stat-lbl">Free replacement guarantee, every hire</span>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ══ TESTIMONIALS ══ -->
-<!-- DRAFT COPY — swap quotes/names/companies/photos for real client & talent stories -->
-<section class="jx-section jx-testi" id="testimonials" data-screen-label="Testimonials">
-  <div class="jx-wrap">
-    <div class="jx-head reveal">
-      <div class="section-tag gold">In their words</div>
-      <h2>Loved by the teams who hire — <span class="jx-accent">and the talent we place</span></h2>
-      <p class="section-sub">Companies cutting their cost-to-hire, and professionals building real careers. Both sides, in their own words.</p>
-    </div>
-    <div class="jx-testi-cols reveal" id="jxTestiCols"></div>
-  </div>
-</section>
-<script>
-(function(){
-  // ── Testimonial pool. Edit text/names/roles here; cards render into 3 columns. ──
-  // type: 'partner' (a hiring company) or 'talent' (a Latin American professional we placed)
-  var P = function(q,n,role,g,i){ return {t:'partner', q:q, n:n, r:role, g:g, i:i}; };
-  var T = function(q,n,role,g,i){ return {t:'talent',  q:q, n:n, r:role, g:g, i:i}; };
-
-  var PARTNERS = [
-    P("Hiring a US ops manager was quietly eating our margins. Nearwork placed someone sharper in nine days — and cut the cost by 60%.", "Sarah C.", "COO · E-commerce", "women", 44),
-    P("We couldn't scale support fast enough without risking bad hires. Nearwork built our bench from 2 to 11 in a quarter — zero misses.", "David O.", "Customer Support Lead · Technology", "men", 75),
-    P("I'd been burned by offshore reps before. Nearwork's vetting and DISC scoring fixed that — every hire since has stuck.", "Marcus R.", "VP Sales · Healthcare", "men", 32),
-    P("Three hires across two countries meant a payroll nightmare. Nearwork turned it into one invoice and zero compliance headaches.", "Priya N.", "Founder · Marketing", "women", 68),
-    P("Onboarding contractors abroad was a compliance risk I dreaded. Nearwork took payroll and legal off my plate entirely.", "Hannah W.", "Finance Director · Logistics", "women", 65),
-    P("Senior engineers were out of reach on our budget. Nearwork found two who shipped in week one — at half the cost.", "James T.", "CTO · Fintech", "men", 12),
-    P("Our content pipeline kept stalling. Nearwork placed a writer and a designer in days and the backlog vanished.", "Olivia M.", "Head of Marketing · SaaS", "women", 22),
-    P("I was losing nights to bookkeeping. Nearwork matched me with an accountant who took it all over — flawlessly.", "Daniel K.", "CEO · Real Estate", "men", 46),
-    P("Recruiting was draining my whole team. Nearwork's shortlist was so tight we interviewed three and hired two.", "Sophia L.", "HR Director · Insurance", "women", 30),
-    P("A key hire quit and we were stuck. Nearwork backfilled in eight days with someone even stronger.", "Ethan B.", "Operations Manager · Manufacturing", "men", 51),
-    P("Our paid campaigns needed a specialist we just couldn't find. Nearwork delivered one who lifted ROAS 40%.", "Mia R.", "Head of Growth · Retail", "women", 15),
-    P("Bugs kept slipping into production. Nearwork placed a QA tester who cleaned it up within weeks.", "Liam P.", "Product Lead · Education", "men", 29),
-    P("Closing the books ate two weeks every month. Our Nearwork hire got us down to three days.", "Grace H.", "Controller · Hospitality", "women", 52),
-    P("I needed an editor yesterday. Nearwork had a vetted candidate in my inbox the next morning.", "Noah F.", "Founder · Media", "men", 64),
-    P("Peak-season tickets completely buried us. Nearwork stood up a support pod that handled it calmly.", "Ava C.", "Head of CX · Travel", "women", 9),
-    P("Hiring DevOps locally was taking months. Nearwork closed the gap in under two weeks.", "Lucas D.", "VP Engineering · Telecom", "men", 83),
-    P("Admin work was swallowing my day. My Nearwork assistant handed me back hours, immediately.", "Emma S.", "Office Manager · Legal", "women", 41),
-    P("Our social presence had gone flat. Nearwork's social manager doubled our engagement in a month.", "Henry W.", "CMO · Construction", "men", 3),
-    P("Our queue exploded after launch and we were drowning. Nearwork staffed a support squad that caught up in days.", "Owen R.", "Head of Support · Gaming", "men", 0),
-    P("Scaling ops across locations stalled on hiring. Nearwork filled four roles before our next opening.", "Chloe M.", "VP Operations · Food & Beverage", "women", 0),
-    P("I was wearing every hat and burning out. Nearwork's first two hires gave me my week back.", "Nathan B.", "Founder · Automotive", "men", 0),
-    P("Our campaigns lacked a real data person. Nearwork placed an analyst who turned guesswork into a roadmap.", "Ruby S.", "Marketing Director · Energy", "women", 0),
-    P("Month-end reporting was always a scramble. Our Nearwork hire made it boring — in the best way.", "Caleb T.", "Finance Lead · Pharma", "men", 0)
-  ];
-
-  var TALENT = [
-    T("The process was quick and completely transparent. I landed a better role with a US team — and the pay is genuinely good.", "Camila R.", "Customer Success · Bogotá", "women", 79),
-    T("Simple, honest process from day one. Better opportunities than anything local — and I'm paid well, on time, every time.", "Mateo F.", "Backend Developer · Medellín", "men", 41),
-    T("Application to offer was fast and clear at every step. The role is a real step up — and the pay reflects it.", "Diego H.", "Data Analyst · Cali", "men", 55),
-    T("Short, straightforward and transparent. Nearwork opened doors to work I couldn't find here, with pay that matches my skills.", "Andrea S.", "QA Engineer · Barranquilla", "women", 90),
-    T("No endless rounds, no guessing — the process was clear and fast. And the offer beat anything nearby.", "Valentina O.", "Frontend Developer · Cartagena", "women", 57),
-    T("Everything was upfront, from pay to expectations. I grew into a bigger role with a great US company.", "Santiago M.", "DevOps Engineer · Bucaramanga", "men", 36),
-    T("Easy, transparent and quick. I finally found work that values my craft — and pays for it properly.", "Isabella G.", "Graphic Designer · Pereira", "women", 63),
-    T("The steps were simple and honest. Better clients, better pay, and real room to grow.", "Sebastián V.", "Sales Development Rep · Manizales", "men", 24),
-    T("From first call to offer felt effortless and clear. The pay is excellent and the team treats me as their own.", "Daniela P.", "Bookkeeper · Bogotá", "women", 76),
-    T("A short, respectful process with no games. I moved into a senior role I couldn't have reached locally.", "Juan C.", "Project Manager · Medellín", "men", 68),
-    T("Transparent from start to finish. Bigger opportunities, fair pay, and I get to work from home.", "Mariana L.", "Content Writer · Santa Marta", "women", 85),
-    T("Quick and crystal clear. I landed a better job than I expected — and the pay is well above market here.", "Felipe R.", "Recruiter · Cali", "men", 77),
-    T("The process was simple and honest, and the role is a genuine step up. The pay finally fits my experience.", "Laura T.", "UX Designer · Bogotá", "women", 12),
-    T("Straightforward and fast, with no surprises. Better opportunity, better pay, and always paid on time.", "Andrés M.", "Accountant · Cúcuta", "men", 90),
-    T("Clear at every step. I found a stable US role with great pay without ever leaving Colombia.", "Carolina S.", "Support Specialist · Ibagué", "women", 33),
-    T("Fast, transparent and easy. The work is more exciting and the pay is the best I've had.", "Nicolás B.", "Social Media Manager · Armenia", "men", 15),
-    T("Simple process, clear expectations. A bigger role with a US firm — and pay that reflects it.", "Gabriela H.", "Paralegal · Bogotá", "women", 48),
-    T("Honest and quick from the very first message. Better opportunities and pay I can build a life on.", "Tomás A.", "Frontend Developer · Medellín", "men", 60),
-    T("The whole process was clear and fast. I support a US exec now — better work and far better pay.", "Juliana M.", "Executive Assistant · Bogotá", "women", 0),
-    T("Transparent and simple from the start. I build real products for a US team, and the pay is excellent.", "Esteban R.", "Mobile Developer · Medellín", "men", 0),
-    T("Quick, honest and easy. I found a stable role with great pay without leaving my city.", "Sofía G.", "Customer Support · Cali", "women", 0),
-    T("Straightforward every step of the way. Bigger opportunities than I'd find locally, and the pay proves it.", "Camilo V.", "SEO Specialist · Barranquilla", "men", 0)
-  ];
-
-  // Interleave partner/talent, then split into three columns of 12 (6 + 6 each)
-  var all = [];
-  for (var k = 0; k < Math.max(PARTNERS.length, TALENT.length); k++) {
-    if (PARTNERS[k]) all.push(PARTNERS[k]);
-    if (TALENT[k]) all.push(TALENT[k]);
-  }
-  // Assign a unique avatar per person (sequential within each gender) so no face repeats
-  var gc = { men: 0, women: 0 };
-  all.forEach(function(d){ d.img = 'https://randomuser.me/api/portraits/' + d.g + '/' + (gc[d.g]++) + '.jpg'; });
-  var per = Math.ceil(all.length / 3);
-  var cols = [all.slice(0, per), all.slice(per, per * 2), all.slice(per * 2)];
-
-  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-  function cardHTML(d){
-    var cls = d.t === 'partner' ? 'client' : 'talent';
-    var label = d.t === 'partner' ? 'Partner' : 'Talent';
-    var img = d.img;
-    return '<div class="jx-tcard">'
-      + '<span class="jx-tcard-tag ' + cls + '"><i></i>' + label + '</span>'
-      + '<p>' + esc(d.q) + '</p>'
-      + '<div class="jx-tcard-by">'
-      + '<span class="jx-tcard-av" style="background-image:url(\'' + img + '\');"></span>'
-      + '<div><div class="jx-tcard-name">' + esc(d.n) + '</div><div class="jx-tcard-role">' + esc(d.r) + '</div></div>'
-      + '</div></div>';
-  }
-
-  var wrap = document.getElementById('jxTestiCols');
-  cols.forEach(function(list, idx){
-    var col = document.createElement('div');
-    col.className = 'jx-testi-col c' + (idx + 1);
-    // Render the set twice; CSS animates translateY 0 -> -50%, so it wraps on an identical
-    // frame (each set is exactly half the column height) for a seamless, smooth loop.
-    var html = list.map(cardHTML).join('');
-    col.innerHTML = html + html;
-    wrap.appendChild(col);
-  });
-})();
-</script>
 
 <!-- ══ SOLUTIONS / CANDIDATE PIPELINE SHOWCASE ══ -->
 <section class="jx-section jx-solutions" id="solutions" data-screen-label="Candidate pipeline">
@@ -3071,7 +2949,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
     <div class="jx-eor-strip reveal">
       <div class="jx-eor-l">
         <div class="jx-eor-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V6l8-3v18M19 21V11l-6-2.5"/></svg></div>
-        <div class="jx-eor-t"><b>Need them contracted and paid, not just hired?</b><span>Nearwork COR runs contracts, payroll, compliance and benefits in-country.</span></div>
+        <div class="jx-eor-t"><b>Need them contracted and paid, not just hired?</b><span>Nearwork COR runs contractor agreements, payments and compliance.</span></div>
       </div>
       <div class="jx-eor-r">
         <span class="jx-eor-price">from $99 / contractor / mo</span>
@@ -3107,7 +2985,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
       <div class="jx-sec-card">
         <div class="jx-sec-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V6l8-3v18M19 21V11l-6-2.5"/></svg></div>
         <h3>Compliant employment, handled</h3>
-        <p>Through our COR we run contracts, payroll, taxes and benefits in-country — from $99 per contractor each month.</p>
+        <p>Through our COR we run contractor agreements, payments and compliance — from $99 per contractor each month.</p>
       </div>
       <div class="jx-sec-card">
         <div class="jx-sec-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
@@ -3158,7 +3036,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
           <p>You're covered by a 3-month free replacement guarantee. If a placement isn't the right fit, we source and onboard a replacement at no additional placement fee.</p>
         </details>
         <details class="jx-faq-item">
-          <summary>Who handles payroll, taxes and compliance?<span class="jx-faq-q-ic"></span></summary>
+          <summary>Who handles payments and compliance?<span class="jx-faq-q-ic"></span></summary>
           <p>We do. Through our COR, Nearwork acts as the contractor of record — running payroll and staying compliant with local labor law — so you never open an entity or chase paperwork.</p>
         </details>
         <details class="jx-faq-item">
@@ -3167,7 +3045,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
         </details>
         <details class="jx-faq-item">
           <summary>How fast can I actually hire?<span class="jx-faq-q-ic"></span></summary>
-          <p>Most teams see their first vetted shortlist within about 5 business days, and complete a hire within two to three weeks — far faster than building a pipeline yourself.</p>
+          <p>We aim to deliver your first vetted shortlist in about 2 weeks — far faster than building a pipeline yourself.</p>
         </details>
         <details class="jx-faq-item">
           <summary>Is my data and IP protected?<span class="jx-faq-q-ic"></span></summary>
@@ -3186,9 +3064,9 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
     {"@type":"Question","name":"How do you vet candidates?","acceptedAnswer":{"@type":"Answer","text":"Every candidate goes through role-specific skills assessments, an English fluency evaluation, DISC behavioral profiling, plus reference and background checks. You see all of it in their profile before you commit."}},
     {"@type":"Question","name":"Will they work in my time zone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our talent works your business hours, so there's real-time overlap with your team for standups, calls and collaboration."}},
     {"@type":"Question","name":"What if a hire doesn't work out?","acceptedAnswer":{"@type":"Answer","text":"You're covered by a 3-month free replacement guarantee. If a placement isn't the right fit, we source and onboard a replacement at no additional placement fee."}},
-    {"@type":"Question","name":"Who handles payroll, taxes and compliance?","acceptedAnswer":{"@type":"Answer","text":"Through our COR, Nearwork acts as the contractor of record, running payroll and staying compliant with local labor law, so you never open an entity or chase paperwork."}},
+    {"@type":"Question","name":"Who handles payments and compliance?","acceptedAnswer":{"@type":"Answer","text":"Through our COR, Nearwork acts as the contractor of record, running payroll and staying compliant with local labor law, so you never open an entity or chase paperwork."}},
     {"@type":"Question","name":"How is pricing structured?","acceptedAnswer":{"@type":"Answer","text":"No monthly subscription. You pay one flat fee — per role for Sourcing, or per hire for Recruiting — never a percentage of salary, and no surprise invoices. Optional Contractor of Record (payroll and compliance) is $99 per contractor per month."}},
-    {"@type":"Question","name":"How fast can I actually hire?","acceptedAnswer":{"@type":"Answer","text":"Most teams see their first vetted shortlist within about 5 business days, and complete a hire within two to three weeks."}},
+    {"@type":"Question","name":"How fast can I actually hire?","acceptedAnswer":{"@type":"Answer","text":"We aim to deliver your first vetted shortlist in about 2 weeks."}},
     {"@type":"Question","name":"Is my data and IP protected?","acceptedAnswer":{"@type":"Answer","text":"Every engagement is covered by NDAs, with device security and access controls so your systems, data and intellectual property stay protected."}}
   ]
 }
@@ -3284,7 +3162,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
   <!-- Trust badges row -->
   <div class="trust-badges">
     <div class="trust-badge">
-      <span class="tb-label"><strong>40+</strong> US and Canadian companies hiring on demand</span>
+      <span class="tb-label"><strong>Founder-led</strong> · flat fees · 3-month replacement guarantee</span>
     </div>
     <div class="trust-divider"></div>
     <div class="trust-badge" style="padding-right:0;">
@@ -3322,17 +3200,6 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
         <a href="https://www.linkedin.com/company/nearwork" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <!-- Trustpilot -->
-        <a href="https://www.trustpilot.com/review/nearwork.co" class="social-link" target="_blank" rel="noopener" aria-label="Trustpilot">
-          <svg viewBox="0 0 24 24" fill="#00B67A"><path d="M12 0L9.6 7.5H1.7l6.4 4.6-2.4 7.4 6.3-4.6 6.3 4.6-2.4-7.4 6.4-4.6h-7.9L12 0z"/></svg>
-        </a>
-        <!-- G2 -->
-        <a href="https://www.g2.com/products/nearwork/reviews" class="social-link" target="_blank" rel="noopener" aria-label="G2">
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="11" fill="#FF492C"/>
-            <text x="12" y="16" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="11" fill="#fff">G2</text>
-          </svg>
-        </a>
       </div>
     </div>
     <div>
@@ -3362,7 +3229,7 @@ document.addEventListener("click",function(e){if(!window.posthog||!e.target.clos
         <li><a href="/about">About Nearwork</a></li>
         <li><a href="/how-it-works">How it works</a></li>
         <li><a href="/blog">Blog</a></li><li><a href="/jobs">Jobs</a></li>
-        <li><a href="/why-colombia">Why Colombia</a></li>
+        <li><a href="/hire-developers-latin-america">Why Latin America</a></li>
         
         <li><a href="/pricing">Pricing</a></li><li><a href="/compare">Pricing comparison</a></li>
         <li><a href="/faq">FAQ</a></li>
