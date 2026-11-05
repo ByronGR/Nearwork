@@ -1,0 +1,50 @@
+name: IndexNow ping
+
+# After each successful production deploy on Vercel, tell Bing (and other
+# IndexNow search engines) which pages changed, so they recrawl them quickly.
+on: deployment_status
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+          fetch-depth: 2
+
+      - name: Send changed pages to IndexNow
+        env:
+          INDEXNOW_KEY: e6af2939c6d959825553c2968af47532
+          SITE: https://www.nearwork.co
+        run: |
+          set -euo pipefail
+          changed=$(git diff --name-only HEAD~1 HEAD -- '*.html' || true)
+          if [ -z "$changed" ]; then echo "No page changes to report."; exit 0; fi
+          urls=$(echo "$changed" | python3 -c '
+          import sys, json, os
+          site = os.environ["SITE"]
+          out = []
+          for f in sys.stdin.read().split():
+              if not os.path.exists(f):
+                  continue  # deleted page; redirects handle it
+              p = f[:-5]
+              if p == "index":
+                  p = ""
+              elif p.endswith("/index"):
+                  p = p[:-6]
+              out.append(site + "/" + p)
+          print(json.dumps(out[:10000]))
+          ')
+          count=$(echo "$urls" | python3 -c 'import sys,json;print(len(json.load(sys.stdin)))')
+          if [ "$count" = "0" ]; then echo "No live pages to report."; exit 0; fi
+          body=$(python3 -c 'import json,os,sys;print(json.dumps({"host":"www.nearwork.co","key":os.environ["INDEXNOW_KEY"],"keyLocation":os.environ["SITE"]+"/"+os.environ["INDEXNOW_KEY"]+".txt","urlList":json.loads(sys.argv[1])}))' "$urls")
+          echo "Submitting $count page(s) to IndexNow"
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' -d "$body")
+          echo "IndexNow response: $code"
+          case "$code" in 200|202) ;; *) echo "::warning::IndexNow returned $code" ;; esac
