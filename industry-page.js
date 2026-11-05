@@ -260,7 +260,7 @@
     document.querySelectorAll('[data-prof-role]').forEach(function(el){ el.textContent=rt; });
     // cta + page title
     var ct=document.querySelector('[data-cta-title]'); if(ct) ct.textContent='Ready to hire a '+rt+'?';
-    document.title='Hire a '+rt+' | Nearwork — '+IND+' Talent from Colombia';
+    document.title='Hire a '+rt+' in Latin America | Nearwork';
   }
 
   // nav dropdowns + scroll + mobile
